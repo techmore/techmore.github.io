@@ -15,6 +15,44 @@ cat <<EOF >> index.html
 <div class="w3-col l8 s12">
 
 <div class="w3-card-4 w3-margin w3-white">
+    <img src="july-15-2017.png" alt="Nature" style="width:50%">
+    <div class="w3-container">
+      <h3><b>Mead staggard nutrient fermentation</b></h3>
+      <h5>Optomizing yeast and time<span class="w3-opacity">July 15, 2017</span></h5>
+    </div>
+    <div class="w3-container">
+      <p>Requirements Sanitizer spray bottle, 1 gallon carboy, funnel, 3 lbs honey, teaspoon.</p>
+      <p> Start yeast - sterilize bowl 2oz water @ 104-109 f for 15 minutes</p>
+      <p> Fill carboy 1/3 with water, add honey and stir vigorously.</p>
+      <p>    Note : Avoid heating the honey for better flavor or effect.</p>
+      <p>           Potable water probably brewable water. </p>
+      <p> Add yeast to carboy fill with water until 3 inches left.</p>
+      <p> Fit airlock with sterile water.</p>
+      <p> Staggard Nutrient Bonus rounds!</p>
+      <p> Add yeast nutrients on the following days after initial creation</p>
+      <p>  day 2</p>
+      <p>  day 3</p>
+      <p>  day 5</p>      
+      <p>Rack after clear, approximately 2 - 3 weeks.</p>
+      <p>Possibly drinkable or rack another 3 weeks.</p>
+      <p></p>
+      <p>Recipe is inspired by these links
+      <a href="http://brewingtv.com/episodes/2010/10/8/brewing-tv-episode-21-making-mead-with-curt-stock.html">Brewing TV Episode 21 Making Mead With Curt Stock</a>
+      <a href="https://www.youtube.com/watch?v=_Ld4hO_GeP0">Ask This Old House - Homebrew Mead</a>
+      
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <a href="July-10-2017.html" class="button"> READ MORE </a>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  
+ <div class="w3-card-4 w3-margin w3-white">
     <img src="july-10-2017.png" alt="Nature" style="width:50%">
     <div class="w3-container">
       <h3><b>Creating a post</b></h3>
