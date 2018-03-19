@@ -62,6 +62,54 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-card-4 w3-margin w3-white">
     <img src="https://raw.githubusercontent.com/techmore/techmore.github.io/master/July-15-2017.jpg" alt="Starting to brew" style="width:30%"><img src="https://techmore.github.io/July-15-2017-b.jpg" alt="Finished" style="width:30%">
     <div class="w3-container">
+      <h3><b>LXD hosting nginx</b></h3>
+      <h5>Replacing FreeNAS and hosting, <span class="w3-opacity">March 19, 2018</span></h5>
+    </div>
+    <div class="w3-container">
+      <p> Recently there were some storms that passed through and my FreeNAS was
+      <br> having trouble restarting. Eventually I realized it was the USB that
+      <br> my Dell R710 was booting from, but by then I had migrated to a USB
+      <br> to sata cable with a samsung evo 850 ssd with ubuntu 16.04 server on it.
+      <br> 
+      <br> 1. Setup mdadm my RAID, find your devices with this command.
+      <br><code> lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT</code>
+      <br> 2. Create RAID 10 with desired drive
+      <br><code> sudo mdadm --create --verbose /dev/md0 --level=10 /
+      <br>  --raid-devices=4 /dev/sdb /dev/sdc /dev/sdd /dev/sde </code>
+
+      <br>  day 2 - day 3 - day 5      
+      <br>Rack after clear, approximately 2 - 3 weeks.
+      <br>Possibly drinkable or rack another 3 weeks.</p>
+      <p>Recipe is inspired by these links
+      <br><a href="http://brewingtv.com/episodes/2010/10/8/brewing-tv-episode-21-making-mead-with-curt-stock.html">Brewing TV Episode 21 Making Mead With Curt Stock</a>
+      <br><a href="https://www.youtube.com/watch?v=_Ld4hO_GeP0">Ask This Old House - Homebrew Mead</a></p>
+      <p><u>Some berries to consider trying!</u>
+      <br>Apple Apricot BlackBerry BlackCherry
+      <br>Blackcurrant BloodOrange BlueBerry
+      <br>Cherry Grapes ElderBerry GooseBerry 
+      <br>Frapefruit Guava HoneyDew Kiwi 
+      <br>Lemon Lime Mandarin Mango Mulberry
+      <br>Watermelon Orange Papaya Passionfruit
+      <br>pear pineapple Plum Peach Raspberry
+        <br>Strawberry Vanilla</p>
+      <br>
+      
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <a href="July-10-2017.html" class="button"> READ MORE </a>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <hr> 
+  
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="https://raw.githubusercontent.com/techmore/techmore.github.io/master/July-15-2017.jpg" alt="Starting to brew" style="width:30%"><img src="https://techmore.github.io/July-15-2017-b.jpg" alt="Finished" style="width:30%">
+    <div class="w3-container">
       <h3><b>Mead staggard nutrient fermentation</b></h3>
       <h5>Optomizing yeast and time, <span class="w3-opacity">July 15, 2017</span></h5>
     </div>
