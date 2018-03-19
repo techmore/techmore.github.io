@@ -71,31 +71,42 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <br> my Dell R710 was booting from, but by then I had migrated to a USB
       <br> to sata cable with a samsung evo 850 ssd with ubuntu 16.04 server on it.
       <br> 
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_lsblk .png" alt="Starting to brew" style="width:70%">  
-        
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_lsblk.png" alt="Starting to brew" style="width:90%">  
       <br> 1. Setup mdadm my RAID, find your devices with this command.
       <br><code> lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT</code>
       <br>
-        
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_mdadm.png" alt="Starting to brew" style="width:90%">  
       <br> 2. Create RAID 10 with desired drive
       <br><code> sudo mdadm --create --verbose /dev/md0 --level=10 /
       <br>  --raid-devices=4 /dev/sdb /dev/sdc /dev/sdd /dev/sde </code>
-
-      <br>  day 2 - day 3 - day 5      
-      <br>Rack after clear, approximately 2 - 3 weeks.
-      <br>Possibly drinkable or rack another 3 weeks.</p>
-      <p>Recipe is inspired by these links
-      <br><a href="http://brewingtv.com/episodes/2010/10/8/brewing-tv-episode-21-making-mead-with-curt-stock.html">Brewing TV Episode 21 Making Mead With Curt Stock</a>
-      <br><a href="https://www.youtube.com/watch?v=_Ld4hO_GeP0">Ask This Old House - Homebrew Mead</a></p>
-      <p><u>Some berries to consider trying!</u>
-      <br>Apple Apricot BlackBerry BlackCherry
-      <br>Blackcurrant BloodOrange BlueBerry
-      <br>Cherry Grapes ElderBerry GooseBerry 
-      <br>Frapefruit Guava HoneyDew Kiwi 
-      <br>Lemon Lime Mandarin Mango Mulberry
-      <br>Watermelon Orange Papaya Passionfruit
-      <br>pear pineapple Plum Peach Raspberry
-        <br>Strawberry Vanilla</p>
+      <br>
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_proc-mdstat.png" alt="Starting to brew" style="width:90%">  
+      <br> 3. View RAID device creation status
+      <br><code> cat /proc/mdstat </code>
+      <br>
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_proc-watch-proc.png" alt="Starting to brew" style="width:90%">  
+      <br> 4.Using watch to get 2 second interval updates
+      <br><code> watch cat /proc/mdstat </code>
+      <br>
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_mkfs-ext4.png" alt="Starting to brew" style="width:90%">  
+      <br> 5. Create ext4 filesystem on device
+      <br><code> sudo mkfs.ext4 -F /dev/md0 </code>
+      <br>
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_verify-fs.png" alt="Starting to brew" style="width:90%">  
+      <br> 6. Create directory mount it the new volume for access
+      <br><code> mkdir -p /mnt/md0
+        <br> mount /dev/md0 /mnt/md0
+        <br> df -h -x devtmpfs -x tmpfs</code>
+      <br>
+      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_automount.png" alt="Starting to brew" style="width:90%">  
+      <br> 7. Auto mount RAID volume
+      <br><code> mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
+      <br> sudo update-initramfs -u
+      <br> echo 'dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab 
+      <br> /dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0</code>
+      
+      
+      
       <br>
       
       <div class="w3-row">
