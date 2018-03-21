@@ -67,46 +67,46 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
 
     <div class="w3-container">
-      <img src="3-21-2018/3-21-2018_04.png" alt="Finished" style="width:100%">
+      <img src="3-21-2018/march-21-2018_04.png" alt="Finished" style="width:100%">
       <p>Start by adding yourself to the correct group so you don't require sudo.
       <br><code> sudo usermod --append --gorups lxd sdolbec</code>
        <br> 
-      <img src="3-21-2018/3-21-2018_05.png" alt="Finished" style="width:100%">
+      <img src="3-21-2018/march-21-2018_05.png" alt="Finished" style="width:100%">
       <br>Initialize lxd and configure, I kept all defaults accept disabled IPv6
       <br><code>sudo lxd init</code>
        <br>
-       <img src="3-21-2018/3-21-2018_06.png" alt="Finished" style="width:100%">
+       <img src="3-21-2018/march-21-2018_06.png" alt="Finished" style="width:100%">
        <br>To create our first container use this command
        <br> <code>lxc launch ubuntu:16.04 www-techmore-co</code>
         <br>
-       <img src="3-21-2018/3-21-2018_07.png" alt="Finished" style="width:100%">
+       <img src="3-21-2018/march-21-2018_07.png" alt="Finished" style="width:100%">
         <br>Check running containers
        <br><code>lcx list</code>
         <br>
-       <img src="3-21-2018/3-21-2018_08.png" alt="Finished" style="width:100%"> 
+       <img src="3-21-2018/march-21-2018_08.png" alt="Finished" style="width:100%"> 
         <br>Enter the containers and utilize it
        <br><code>lxc exec www-techmore-co bash</code>
         <br>
-       <img src="3-21-2018/3-21-2018_06.jpg" alt="Finished" style="width:100%"> 
+       <img src="3-21-2018/march-21-2018_06.jpg" alt="Finished" style="width:100%"> 
         <br>Lets install update, upgrade and install nginx
        <br><code>apt update -y; apt upgrade -y; apt dist-upgrade</code>
         <br>
-       <img src="3-21-2018/3-21-2018_07.png" alt="Finished" style="width:100%">
+       <img src="3-21-2018/march-21-2018_07.png" alt="Finished" style="width:100%">
         <br>Replace the default nginx code and query
        <br><code> echo "<pre> Techmore.co </pre>" > /var/www/html/index.nginx-debian.html</code>
        <br><code> curl localhost</code>
         <br>
-       <img src="3-21-2018/3-21-2018_08.png" alt="Finished" style="width:100%">
+       <img src="3-21-2018/march-21-2018_08.png" alt="Finished" style="width:100%">
         <br> The main problem for me at this point is this machine is only available from the host.
         <br> There are multiple ways to solve the problem but I like the macvlan way.
         <br> Lets setup a new profile
         <br><code lxc profile list</code>
         <br>
-        <img src="3-21-2018/3-21-2018_09.png" alt="Finished" style="width:100%">
+        <img src="3-21-2018/march-21-2018_09.png" alt="Finished" style="width:100%">
         <br>copy the existing profile
         <br><code> lxc profile copy default lanprofile</code>
         <br>
-        <img src="3-21-2018/3-21-2018_10.png" alt="Finished" style="width:100%">
+        <img src="3-21-2018/march-21-2018_10.png" alt="Finished" style="width:100%">
         <br>check your current nic
           <code>ip route show default 0.0.0.0/0</code>
         <br>
