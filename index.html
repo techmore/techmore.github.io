@@ -1,387 +1,202 @@
 <!DOCTYPE html>
-<html>
-<title>Techmore</title>
-  <head>
- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117161742-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techmore</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117161742-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-117161742-1');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+        .card-pulsing {
+            animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            border-color: oklch(22% 0.025 110) !important;
+        }
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0px oklch(62% 0.055 110 / 0.4); }
+            50% { box-shadow: 0 0 0 10px oklch(62% 0.055 110 / 0.1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
+                    <a href="wp/index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
+                    <a href="guitar.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Guitar</a>
+                    <a href="dnd.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">DnD 5e</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  gtag('config', 'UA-117161742-1');
-</script>
- </head>
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-  a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto pt-16 pb-12 px-4 text-center">
+        <h1 class="text-7xl font-display italic text-olive-950 mb-4">Techmore</h1>
+        <span class="inline-block px-4 py-1 bg-olive-800 text-olive-50 rounded-full text-sm font-medium tracking-wide">Get more!</span>
+    </header>
 
-    text-decoration: none;
-    color: initial;
-    background-color: #000000; /* Black */
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-  a.button:hover {
-    background-color: #555555;
-    color: white;
-}
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Blog entries -->
+            <div class="lg:col-span-8 space-y-12">
+                
+                <!-- Entry 1: LXD install -->
+                <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden card-pulsing">
+                    <div class="p-8">
+                        <img src="http://i1-news.softpedia-static.com/images/news2/canonical-announces-lxd-2-8-pure-container-hypervisor-for-ubuntu-16-04-and-14-04-512279-2.jpg" alt="LXD" class="w-1/3 rounded-xl mb-6 shadow-sm">
+                        <h2 class="text-4xl text-olive-950 mb-2">LXD install and nginx</h2>
+                        <h3 class="text-xl text-olive-600 mb-6 font-sans italic">Replacing jails with lxd, <span class="opacity-60">March 21, 2018</span></h3>
+                        
+                        <div class="prose prose-olive max-w-none text-olive-900 space-y-4">
+                            <p>Start by adding yourself to the correct group so you don't require sudo.</p>
+                            <code class="block p-4 bg-olive-100 rounded-lg font-mono text-sm border border-olive-200 text-olive-800">sudo usermod --append --groups lxd sdolbec</code>
+                            
+                            <img src="3-21-2018/march-21-2018_04.png" alt="Progress" class="w-full rounded-xl border border-olive-200">
+                            
+                            <p>Initialize lxd and configure, I kept all defaults except disabled IPv6</p>
+                            <code class="block p-4 bg-olive-100 rounded-lg font-mono text-sm border border-olive-200 text-olive-800">sudo lxd init</code>
+                            
+                            <img src="3-21-2018/march-21-2018_05.png" alt="Config" class="w-full rounded-xl border border-olive-200">
+                            
+                            <p>To create our first container use this command</p>
+                            <code class="block p-4 bg-olive-100 rounded-lg font-mono text-sm border border-olive-200 text-olive-800">lxc launch ubuntu:16.04 www-techmore-co</code>
+                            
+                            <img src="3-21-2018/march-21-2018_06.png" alt="Launch" class="w-full rounded-xl border border-olive-200">
+                        </div>
+                        
+                        <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                            <a href="July-9-2017.html" class="inline-flex items-center px-6 py-3 bg-olive-950 text-olive-50 rounded-full hover:bg-olive-800 transition-colors font-medium">READ MORE</a>
+                            <div class="text-sm font-bold uppercase tracking-widest text-olive-400">Comments: 0</div>
+                        </div>
+                    </div>
+                </article>
 
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
+                <!-- Entry 2: LXD hosting -->
+                <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+                    <div class="p-8">
+                        <img src="https://assets.ubuntu.com/v1/c037fd75-ubuntu-logo.png" alt="Ubuntu" class="w-1/3 rounded-xl mb-6 opacity-80">
+                        <h2 class="text-4xl text-olive-950 mb-2">LXD hosting nginx</h2>
+                        <h3 class="text-xl text-olive-600 mb-6 font-sans italic">Replacing FreeNAS and hosting, <span class="opacity-60">March 19, 2018</span></h3>
+                        
+                        <div class="prose prose-olive max-w-none text-olive-900 space-y-4">
+                            <p>Recently there were some storms that passed through and my FreeNAS was having trouble restarting. Eventually I realized it was the USB that my Dell R710 was booting from, but by then I had migrated to a USB to sata cable with a samsung evo 850 ssd with ubuntu 16.04 server on it.</p>
+                            
+                            <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_lsblk.png" alt="lsblk" class="w-full rounded-xl border border-olive-200">
+                            
+                            <p>1. Setup mdadm my RAID, find your devices with this command.</p>
+                            <code class="block p-4 bg-olive-100 rounded-lg font-mono text-sm border border-olive-200 text-olive-800">lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT</code>
+                        </div>
 
-<!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="index.html" class="w3-button w3-block w3-black">Blog</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="wp/index.html" class="w3-button w3-block w3-black">Writing Prompts</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="guitar.html" class="w3-button w3-block w3-black">Guitar</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="dnd.html" class="w3-button w3-block w3-black">DnD 5e</a>
-    </div>
-  </div>
-</div>
-  
-  
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <br><h1><b>Techmore</b></h1>
-  <p><span class="w3-tag">Get more!</span></p>
-</header>
+                        <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                            <a href="July-10-2017.html" class="inline-flex items-center px-6 py-3 bg-olive-950 text-olive-50 rounded-full hover:bg-olive-800 transition-colors font-medium">READ MORE</a>
+                            <div class="text-sm font-bold uppercase tracking-widest text-olive-400">Comments: 0</div>
+                        </div>
+                    </div>
+                </article>
 
-<!-- Grid -->
-<div class="w3-row">
+                <!-- Entry 3: Mead -->
+                <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex gap-4 mb-6">
+                            <img src="https://raw.githubusercontent.com/techmore/techmore.github.io/master/July-15-2017.jpg" alt="Mead Start" class="w-1/3 rounded-xl shadow-sm">
+                            <img src="https://techmore.github.io/July-15-2017-b.jpg" alt="Mead Finish" class="w-1/3 rounded-xl shadow-sm">
+                        </div>
+                        <h2 class="text-4xl text-olive-950 mb-2">Mead staggard nutrient fermentation</h2>
+                        <h3 class="text-xl text-olive-600 mb-6 font-sans italic">Optimizing yeast and time, <span class="opacity-60">July 15, 2017</span></h3>
+                        
+                        <div class="prose prose-olive max-w-none text-olive-900 space-y-4">
+                            <p>Requirements: Sanitizer spray bottle, 1 gallon carboy, funnel, 3 lbs honey, teaspoon.</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Start yeast - sterilize bowl 2oz water @ 104-109 f for 15 minutes</li>
+                                <li>Fill carboy 1/3 with water, add honey and stir vigorously.</li>
+                                <li>Add yeast to carboy fill with water until 3 inches left.</li>
+                            </ul>
+                        </div>
 
+                        <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                            <a href="July-10-2017.html" class="inline-flex items-center px-6 py-3 bg-olive-950 text-olive-50 rounded-full hover:bg-olive-800 transition-colors font-medium">READ MORE</a>
+                            <div class="text-sm font-bold uppercase tracking-widest text-olive-400">Comments: 0</div>
+                        </div>
+                    </div>
+                </article>
 
+            </div>
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-
-   <div class="w3-card-4 w3-margin w3-white">
-    <img src="http://i1-news.softpedia-static.com/images/news2/canonical-announces-lxd-2-8-pure-container-hypervisor-for-ubuntu-16-04-and-14-04-512279-2.jpg" alt="Finished" style="width:30%">
-    <div class="w3-container">
-      <h3><b>LXD install and nginx</b></h3>
-      <h5>Replacing jails with lxd, <span class="w3-opacity">March 21, 2018</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <img src="3-21-2018/march-21-2018_04.png" alt="Finished" style="width:100%">
-      <p>Start by adding yourself to the correct group so you don't require sudo.
-      <br><code> sudo usermod --append --gorups lxd sdolbec</code>
-       <br> 
-      <img src="3-21-2018/march-21-2018_05.png" alt="Finished" style="width:100%">
-      <br>Initialize lxd and configure, I kept all defaults accept disabled IPv6
-      <br><code>sudo lxd init</code>
-       <br>
-       <img src="3-21-2018/march-21-2018_06.png" alt="Finished" style="width:100%">
-       <br>To create our first container use this command
-       <br> <code>lxc launch ubuntu:16.04 www-techmore-co</code>
-        <br>
-       <img src="3-21-2018/march-21-2018_07.png" alt="Finished" style="width:100%">
-        <br>Check running containers
-       <br><code>lcx list</code>
-        <br>
-       <img src="3-21-2018/march-21-2018_08.png" alt="Finished" style="width:100%"> 
-        <br>Enter the containers and utilize it
-       <br><code>lxc exec www-techmore-co bash</code>
-        <br>
-       <img src="3-21-2018/march-21-2018_06.jpg" alt="Finished" style="width:100%"> 
-        <br>Lets install update, upgrade and install nginx
-       <br><code>apt update -y; apt upgrade -y; apt dist-upgrade</code>
-        <br>
-       <img src="3-21-2018/march-21-2018_07.png" alt="Finished" style="width:100%">
-        <br>Replace the default nginx code and query
-       <br><code> echo "<pre> Techmore.co </pre>" > /var/www/html/index.nginx-debian.html</code>
-       <br><code> curl localhost</code>
-        <br>
-       <img src="3-21-2018/march-21-2018_08.png" alt="Finished" style="width:100%">
-        <br> The main problem for me at this point is this machine is only available from the host.
-        <br> There are multiple ways to solve the problem but I like the macvlan way.
-        <br> Lets setup a new profile
-        <br><code lxc profile list</code>
-        <br>
-        <img src="3-21-2018/march-21-2018_09.png" alt="Finished" style="width:100%">
-        <br>copy the existing profile
-        <br><code> lxc profile copy default lanprofile</code>
-        <br>
-        <img src="3-21-2018/march-21-2018_10.png" alt="Finished" style="width:100%">
-        <br>check your current nic
-          <code>ip route show default 0.0.0.0/0</code>
-        <br>
-        <br> We will check our config and change the types to match our setup
-        <br><code>lxc porfile show lanprofile</code>
-        <br><code>lxc profile device set lanprofile eth0 nictype macvlan</code>
-        <br><code>lxc profile device set lanprofile eth- parent enp0s3</code>
-        <br>
-        <img src="3-21-2018/3-21-2018_11.jpg" alt="Finished" style="width:100%">
-        <br> Let launch a new containers and specify the new profile
-        <br><code> lxc launch -p lanprofile ubuntu:16.04 PD-www-techmore-co</code>
-        <br>
-        <br> Lets see what IP address this container got
-        <code>lxc list</code>
-        
-        
-        
-      </p>
-      
-      
-      
-      
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="July-9-2017.html" class="button"> READ MORE </a>
+            <!-- Sidebar -->
+            <aside class="lg:col-span-4 space-y-8">
+                <!-- About -->
+                <div class="bg-olive-50 rounded-2xl p-8 border border-olive-200 shadow-sm sticky top-24">
+                    <img src="techmore.png" alt="Techmore" class="w-full rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500">
+                    <h4 class="text-3xl text-olive-950 mb-4">Techmore</h4>
+                    <p class="text-olive-700 leading-relaxed italic">An effort to document some projects.</p>
+                    
+                    <div class="mt-12 space-y-4 text-sm font-bold uppercase tracking-widest text-olive-400">
+                        <div>Follow the journey</div>
+                        <div class="flex gap-4">
+                            <div class="size-8 rounded-full bg-olive-200 flex items-center justify-center text-olive-600 hover:bg-olive-950 hover:text-olive-50 transition-colors cursor-pointer">GH</div>
+                            <div class="size-8 rounded-full bg-olive-200 flex items-center justify-center text-olive-600 hover:bg-olive-950 hover:text-olive-50 transition-colors cursor-pointer">TW</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
 
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="https://assets.ubuntu.com/v1/c037fd75-ubuntu-logo.png" alt="Starting to brew" style="width:30%">
-    <div class="w3-container">
-      <h3><b>LXD hosting nginx</b></h3>
-      <h5>Replacing FreeNAS and hosting, <span class="w3-opacity">March 19, 2018</span></h5>
-    </div>
-    <div class="w3-container">
-      <p> Recently there were some storms that passed through and my FreeNAS was
-      <br> having trouble restarting. Eventually I realized it was the USB that
-      <br> my Dell R710 was booting from, but by then I had migrated to a USB
-      <br> to sata cable with a samsung evo 850 ssd with ubuntu 16.04 server on it.
-      <br> 
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_lsblk.png" alt="Starting to brew" style="width:100%">  
-      <br> 1. Setup mdadm my RAID, find your devices with this command.
-      <br><code> lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT</code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_mdadm.png" alt="Starting to brew" style="width:100%">  
-      <br> 2. Create RAID 10 with desired drive
-      <br><code> sudo mdadm --create --verbose /dev/md0 --level=10 /
-      <br>  --raid-devices=4 /dev/sdb /dev/sdc /dev/sdd /dev/sde </code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_proc-mdstat.png" alt="Starting to brew" style="width:100%">  
-      <br> 3. View RAID device creation status
-      <br><code> cat /proc/mdstat </code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_watch-proc.png" alt="Starting to brew" style="width:100%">  
-      <br> 4 .Using watch to get 2 second interval updates
-      <br><code> watch cat /proc/mdstat </code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_mkfs-ext4.png" alt="Starting to brew" style="width:100%">  
-      <br> 5. Create ext4 filesystem on device
-      <br><code> sudo mkfs.ext4 -F /dev/md0 </code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_verify-fs.png" alt="Starting to brew" style="width:100%">  
-      <br> 6. Create directory mount it the new volume for access
-      <br><code> mkdir -p /mnt/md0
-        <br> mount /dev/md0 /mnt/md0
-        <br> df -h -x devtmpfs -x tmpfs</code>
-      <br>
-      <img src="3-18-2018/3-18-2017_lxd-hosting-nginx_automount.png" alt="Starting to brew" style="width:100%">  
-      <br> 7. Auto mount RAID volume
-      <br><code> mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
-      <br> sudo update-initramfs -u
-      <br> echo 'dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab 
-      <br> /dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0</code>
-      
-      
-      
-      <br>
-      
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="July-10-2017.html" class="button"> READ MORE </a>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-      <br>
-    </div>
-  </div>
-  <hr> 
-  
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="https://raw.githubusercontent.com/techmore/techmore.github.io/master/July-15-2017.jpg" alt="Starting to brew" style="width:30%"><img src="https://techmore.github.io/July-15-2017-b.jpg" alt="Finished" style="width:30%">
-    <div class="w3-container">
-      <h3><b>Mead staggard nutrient fermentation</b></h3>
-      <h5>Optomizing yeast and time, <span class="w3-opacity">July 15, 2017</span></h5>
-    </div>
-    <div class="w3-container">
-      <p>Requirements Sanitizer spray bottle, 1 gallon carboy, funnel, 3 lbs honey, teaspoon.
-      <br> Start yeast - sterilize bowl 2oz water @ 104-109 f for 15 minutes
-      <br> Fill carboy 1/3 with water, add honey and stir vigorously.
-      <br>    Note : Avoid heating the honey for better flavor or effect.
-      <br>           Potable water probably brewable water. 
-      <br> Add yeast to carboy fill with water until 3 inches left.
-      <br> Fit airlock with sterile water.
-        <br><u> Staggard Nutrient Bonus rounds!</u>
-      <br> Add yeast nutrients on the following days after initial creation.
-      <br>  day 2 - day 3 - day 5      
-      <br>Rack after clear, approximately 2 - 3 weeks.
-      <br>Possibly drinkable or rack another 3 weeks.</p>
-      <p>Recipe is inspired by these links
-      <br><a href="http://brewingtv.com/episodes/2010/10/8/brewing-tv-episode-21-making-mead-with-curt-stock.html">Brewing TV Episode 21 Making Mead With Curt Stock</a>
-      <br><a href="https://www.youtube.com/watch?v=_Ld4hO_GeP0">Ask This Old House - Homebrew Mead</a></p>
-      <p><u>Some berries to consider trying!</u>
-      <br>Apple Apricot BlackBerry BlackCherry
-      <br>Blackcurrant BloodOrange BlueBerry
-      <br>Cherry Grapes ElderBerry GooseBerry 
-      <br>Frapefruit Guava HoneyDew Kiwi 
-      <br>Lemon Lime Mandarin Mango Mulberry
-      <br>Watermelon Orange Papaya Passionfruit
-      <br>pear pineapple Plum Peach Raspberry
-        <br>Strawberry Vanilla</p>
-      <br>
-      
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="July-10-2017.html" class="button"> READ MORE </a>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-      <br>
-    </div>
-  </div>
-  <hr>
-  
-<div class="w3-card-4 w3-margin w3-white">
-    <img src="july-10-2017.png" alt="Nature" style="width:50%">
-    <div class="w3-container">
-      <h3><b>Creating a post</b></h3>
-      <h5>Finally putting in content, <span class="w3-opacity">July 10, 2017</span></h5>
-    </div>
-    <div class="w3-container">
-      <p>I'm finally getting that hang out this. So the content is stored and edited on Github, it's free and public and I can always pull from it and recreate the blog. It's easier then a public google drive link that doesn't seem to allow a wget. I can copy and paste 3 lines and build the site again in docker. If you want to update the content, you just update github and rebuild the server in a few seconds and it's good to go.</p>
-      <p>The cooler thing is the paypal store i've made with the same foundation, update coming soon.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="July-10-2017.html" class="button"> READ MORE </a>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="blog.jpg" alt="Nature" style="width:20%">
-    <div class="w3-container">
-      <h3><b>Day 1 Blogging</b></h3>
-      <h5>Creation of a reuseable blog, <span class="w3-opacity">July 9, 2017</span></h5>
-    </div>
+    </main>
 
-    <div class="w3-container">
-      <p>I Hate Macish</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <a href="July-9-2017.html" class="button"> READ MORE </a>
-
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-<!-- END BLOG ENTRIES -->
-</div>
-
-
-
-
-
-<!-- Introduction -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card-2 w3-margin w3-margin-top">
-  <img src="techmore.png" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>Techmore</b></h4>
-      <p>An effort to document some projects.</p>
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-<!--  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- -->
-  <!-- Labels / tags -->
-<!--  <div class="w3-card-2 w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-    </p>
-    </div>
-  </div>
-  -->
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-<!--  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button> -->
-<!--  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>  -->
-</footer>
+    <!-- Footer -->
+    <footer class="bg-olive-950 py-20 text-center border-t border-olive-800">
+        <p class="text-olive-600 text-sm font-mono tracking-tighter uppercase opacity-50">© Techmore 2026. Built with OKLCH Olive.</p>
+    </footer>
 
 </body>
 </html>
