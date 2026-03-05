@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFi Firewall Comparison Under $1000 - Techmore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
+                    <a href="wp/index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
+                    <a href="guitar.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Guitar</a>
+                    <a href="dnd.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">DnD 5e</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+            <div class="p-8 md:p-12">
+                <a href="index.html" class="inline-flex items-center text-olive-600 hover:text-olive-800 mb-8 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Blog
+                </a>
+
+                <h1 class="text-4xl md:text-5xl text-olive-950 mb-4">UniFi Firewall Comparison Under $1000</h1>
+                <h2 class="text-xl text-olive-600 mb-8 font-sans italic">Pure firewall vs. multi-use (NVR) options, <span class="opacity-60">March 4, 2026</span></h2>
+
+                <div class="prose prose-olive max-w-none text-olive-900 space-y-6">
+                    <p class="text-lg leading-relaxed">Choosing the right UniFi gateway for home or small business use under $1000 requires understanding your primary use case. Are you focusing purely on firewall/routing, or do you need integrated video surveillance? Here's a breakdown comparing the current UniFi Cloud Gateway and Dream Machine lineup.</p>
+
+                    <div class="bg-olive-200/50 p-4 rounded-xl border border-olive-200">
+                        <p class="font-medium text-olive-800"><strong>How to read this guide:</strong> We've organized options by use case. Prices are MSRP and fluctuate. All devices below include the UniFi Controller software - no subscription required.</p>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950 mt-8" id="category-1-pure-firewall">Category 1: Pure Firewall & Routing</h3>
+                    <p class="text-olive-700">These devices focus entirely on network security, routing, and throughput. No built-in WiFi or NVR - you add those separately. <em>Best if you already have WiFi access points or want maximum flexibility.</em></p>
+
+                    <div class="not-prose grid gap-6">
+                        <!-- UCG Ultra -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/cg/images/UCG-Ultra.png" alt="UCG-Ultra" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Cloud Gateway Ultra</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$179</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">1 Gbps throughput • 30+ UniFi devices • 300+ clients</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want a basic, compact gateway for a small home network. It's USB-C powered (think desktop form factor) and great for apartments or starter setups. Won't bottleneck a gigabit connection. The entry point to the UniFi ecosystem.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UCG Max -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/cg/images/UCG-Max.png" alt="UCG-Max" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Cloud Gateway Max</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$299</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">2.5 Gbps throughput • 30+ UniFi devices • 200+ clients</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want the <em>best all-around value</em> in UniFi. It has built-in 512GB NVMe storage for NVR (more on this below), handles multi-gig internet, and is still compact. This is the sweet spot for most home users.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UCG Fiber -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/cg/images/UCG-Fiber.png" alt="UCG-Fiber" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Cloud Gateway Fiber</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$379</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">5 Gbps throughput • 50+ UniFi devices • 500+ clients</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You have or plan to get fiber internet (or multi-gig), want SFP+ connectivity, and need to manage more devices. Great for prosumers with rack-mounted fiber modems. No WiFi built-in.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UDM-Pro -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/d/UDM-Pro/images/udm-pro-front.png" alt="UDM-Pro" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Dream Machine Pro</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$379</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">3.5 Gbps throughput • Rackmount • Full UniFi Suite</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want the <em>classic UniFi experience</em> with room to grow. It accepts a 3.5" HDD for NVR (up to 10TB+), supports the full UniFi application suite (Network, Access, Talk, Protect), and fits in a 1U rack. The gold standard for home labs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UDM-Pro Max -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/d/udm-pro-max/images/udm-pro-max-front.png" alt="UDM-Pro Max" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Dream Machine Pro Max</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$499</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">10 Gbps throughput • 2U rackmount • 2000+ clients</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You need serious throughput for multi-gig fiber or 10G LAN. It's basically a UDM-Pro on steroids - same NVR capability but can handle heavy IDS/IPS scanning at line rate. Overkill for most homes, perfect for small offices.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl text-olive-950 mt-8 font-display">Recommendation for Pure Firewall:</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Entry level:</strong> UCG-Ultra ($179) - for basic home networks</li>
+                        <li><strong>Best value (our pick):</strong> UCG-Max ($299) - NVR included, best price/performance</li>
+                        <li><strong>Pro/expandable:</strong> UDM-Pro ($379) - rackmount, full UniFi suite</li>
+                        <li><strong>Future-proof:</strong> UCG-Fiber ($379) - for multi-gig/fiber</li>
+                    </ul>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950 mt-8" id="category-2-wifi-integrated">Category 2: WiFi Integrated Gateways</h3>
+                    <p class="text-olive-700">All-in-one solutions with built-in WiFi access points - great for homes where you want a single device handling routing + WiFi. <em>Best if you don't already have UniFi access points.</em></p>
+
+                    <div class="not-prose grid gap-6">
+                        <!-- Express 7 -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/ux7/images/ux7-front.png" alt="UniFi Express 7" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Express 7</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$199</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">WiFi 7 • 300+ clients • Compact desktop</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want WiFi 7 on a budget in a tiny form factor. It's basically a mesh node that works as a gateway. Great for apartments, small condos, or as a starter device. Can also mesh with other UniFi WiFi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UDR -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/udr/images/udr-front.png" alt="UDR" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Dream Router</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$299</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">WiFi 6 • 150+ clients • Full UniFi Suite</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want the <em>complete UniFi home experience</em> in one box. WiFi 6, UniFi OS, and can add a USB drive for NVR. Perfect for typical suburban homes that want solid WiFi without deploying separate APs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UDR7 -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/udr7/images/udr7-front.png" alt="UDR7" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Dream Router 7</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$349</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">WiFi 7 • 300+ clients • 10G WAN • Full UniFi Suite</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want the <em>best WiFi 7 gateway</em> UniFi makes. Has 10G WAN for future-proofing, full UniFi suite, and handles more clients. The successor to the UDR with WiFi 7 and better throughput.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl text-olive-950 mt-8 font-display">Recommendation for WiFi Integrated:</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Budget WiFi 7:</strong> UniFi Express 7 ($199) - tiny, mesh-capable</li>
+                        <li><strong>Best home all-in-one:</strong> UDR ($299) - WiFi 6, full ecosystem</li>
+                        <li><strong>Best WiFi 7:</strong> UDR7 ($349) - latest tech, 10G WAN</li>
+                    </ul>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950 mt-8" id="category-3-multi-use">Category 3: Multi-Use (NVR + Firewall)</h3>
+                    <p class="text-olive-700">These devices combine routing with UniFi Protect video surveillance. <em>Best if you want to add cameras without buying a separate NVR.</em></p>
+
+                    <div class="not-prose grid gap-6">
+                        <!-- UCG-Max NVR -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden ring-2 ring-olive-400">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/cg/images/UCG-Max.png" alt="UCG-Max" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Cloud Gateway Max ⭐</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$299</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">512GB NVMe built-in • 2.5 Gbps • Compact</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want <em>the easiest way to start with UniFi cameras</em>. The 512GB NVMe is pre-installed - just add cameras and you're recording. Enough for 2-4 cameras with ~7-14 days retention. Sweet spot for most homes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UDM-Pro NVR -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/d/UDM-Pro/images/udm-pro-front.png" alt="UDM-Pro" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Dream Machine Pro + HDD</h4>
+                                        <span class="text-2xl font-bold text-olive-800">~$460</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">3.5 Gbps • 1x 3.5" SATA bay • Full UniFi Suite</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You want <em>maximum NVR storage and flexibility</em>. Add a 4-10TB HDD and record 8+ cameras for 30+ days. The 3.5" bay supports enterprise-grade drives. Best for permanent installations with lots of cameras.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Key Gen2 Plus -->
+                        <div class="bg-white rounded-xl border border-olive-200 overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/4 bg-olive-100 p-6 flex items-center justify-center">
+                                    <img src="https://dl.ui.com/ckg2p/images/ckg2p-front.png" alt="Cloud Key Gen2 Plus" class="w-32 h-auto mix-blend-multiply" onerror="this.style.display='none'">
+                                </div>
+                                <div class="md:w-3/4 p-6">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-xl font-medium text-olive-950">UniFi Cloud Key Gen2 Plus</h4>
+                                        <span class="text-2xl font-bold text-olive-800">$299</span>
+                                    </div>
+                                    <p class="text-sm text-olive-600 mb-3">1x 2.5" SATA bay • Dedicated NVR • Controller</p>
+                                    <p class="text-olive-700"><strong>Use this if:</strong> You already have a router and want a dedicated NVR, or you want to keep NVR separate from your gateway. The 2.5" bay fits SSDs (faster) or laptop drives. Good for if your gateway dies, cameras keep recording.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl text-olive-950 mt-8 font-display">Recommendation for NVR + Firewall:</h4>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Easiest start (our pick):</strong> UCG-Max ($299) - just add cameras</li>
+                        <li><strong>Most storage:</strong> UDM-Pro + 4TB HDD (~$460) - long retention</li>
+                        <li><strong>Separate systems:</strong> Cloud Key Gen2 Plus + any gateway above</li>
+                    </ul>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950 mt-8">Quick Comparison Chart</h3>
+                    
+                    <div class="not-prose overflow-x-auto">
+                        <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-olive-200">
+                            <thead class="bg-olive-950 text-olive-50">
+                                <tr>
+                                    <th class="p-3 text-left">Model</th>
+                                    <th class="p-3 text-left">Price</th>
+                                    <th class="p-3 text-left">Throughput</th>
+                                    <th class="p-3 text-left">WiFi</th>
+                                    <th class="p-3 text-left">NVR</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-olive-100 text-sm">
+                                <tr>
+                                    <td class="p-3 font-medium">UCG-Ultra</td>
+                                    <td class="p-3">$179</td>
+                                    <td class="p-3">1 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">No</td>
+                                </tr>
+                                <tr class="bg-olive-200">
+                                    <td class="p-3 font-medium">UCG-Max ⭐ BEST VALUE</td>
+                                    <td class="p-3 font-bold">$299</td>
+                                    <td class="p-3">2.5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3 font-medium">512GB NVMe</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UCG-Fiber</td>
+                                    <td class="p-3">$379</td>
+                                    <td class="p-3 font-medium">5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">No</td>
+                                </tr>
+                                <tr class="bg-olive-100">
+                                    <td class="p-3 font-medium">UDM-Pro</td>
+                                    <td class="p-3">$379</td>
+                                    <td class="p-3">3.5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">1x 3.5" SATA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDM-Pro Max</td>
+                                    <td class="p-3">$499</td>
+                                    <td class="p-3 font-medium">10 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">1x 3.5" SATA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UniFi Express 7</td>
+                                    <td class="p-3">$199</td>
+                                    <td class="p-3">1 Gbps</td>
+                                    <td class="p-3 font-medium">WiFi 7</td>
+                                    <td class="p-3">No</td>
+                                </tr>
+                                <tr class="bg-olive-100">
+                                    <td class="p-3 font-medium">UDR</td>
+                                    <td class="p-3">$299</td>
+                                    <td class="p-3">1 Gbps</td>
+                                    <td class="p-3">WiFi 6</td>
+                                    <td class="p-3">USB only</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDR7</td>
+                                    <td class="p-3">$349</td>
+                                    <td class="p-3">2.3 Gbps</td>
+                                    <td class="p-3 font-medium">WiFi 7</td>
+                                    <td class="p-3">USB only</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Cloud Key G2+</td>
+                                    <td class="p-3">$299</td>
+                                    <td class="p-3">N/A</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3 font-medium">1x 2.5" SATA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4 flex gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-olive-200 rounded"></div>
+                            <span>Recommended</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 bg-olive-950 rounded"></div>
+                            <span>Best Value</span>
+                        </div>
+                    </div>
+                                    <td class="p-3">2.5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">512GB NVMe</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UCG-Fiber</td>
+                                    <td class="p-3">$379</td>
+                                    <td class="p-3">5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">No</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDM-Pro</td>
+                                    <td class="p-3">$379</td>
+                                    <td class="p-3">3.5 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">1x 3.5" SATA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDM-Pro Max</td>
+                                    <td class="p-3">$499</td>
+                                    <td class="p-3">10 Gbps</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">1x 3.5" SATA</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UniFi Express 7</td>
+                                    <td class="p-3">$199</td>
+                                    <td class="p-3">1 Gbps</td>
+                                    <td class="p-3">WiFi 7</td>
+                                    <td class="p-3">No</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDR</td>
+                                    <td class="p-3">$299</td>
+                                    <td class="p-3">1 Gbps</td>
+                                    <td class="p-3">WiFi 6</td>
+                                    <td class="p-3">USB only</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">UDR7</td>
+                                    <td class="p-3">$349</td>
+                                    <td class="p-3">2.3 Gbps</td>
+                                    <td class="p-3">WiFi 7</td>
+                                    <td class="p-3">USB only</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">Cloud Key G2+</td>
+                                    <td class="p-3">$299</td>
+                                    <td class="p-3">N/A</td>
+                                    <td class="p-3">No</td>
+                                    <td class="p-3">1x 2.5" SATA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950 mt-8">Final Verdict</h3>
+                    <div class="bg-olive-100 p-6 rounded-xl border border-olive-200">
+                        <ul class="space-y-4">
+                            <li id="best-overall"><strong>🏆 Best overall value:</strong> <span class="font-medium">UCG-Max ($299)</span> - <a href="#category-1-pure-firewall" class="underline">Best price/performance</a>. NVR included. 2.5 Gbps. Works for 90% of home users.</li>
+                            <li id="best-nvr"><strong>🎯 Best for NVR + cameras:</strong> <span class="font-medium">UCG-Max ($299)</span> or <span class="font-medium">UDM-Pro + HDD (~$460)</span> <a href="#category-3-multi-use" class="underline">(see NVR section)</a> depending on retention needs.</li>
+                            <li id="best-wifi"><strong>📶 Best WiFi integrated:</strong> <span class="font-medium">UDR ($299)</span> for WiFi 6, <span class="font-medium">UDR7 ($349)</span> for WiFi 7 <a href="#category-2-wifi-integrated" class="underline">(see WiFi section)</a>.</li>
+                            <li id="best-perf"><strong>🚀 Best performance:</strong> <span class="font-medium">UDM-Pro Max ($499)</span> or <span class="font-medium">UCG-Fiber ($379)</span> <a href="#category-1-pure-firewall" class="underline">(see firewall section)</a> for multi-gig.</li>
+                            <li id="best-budget"><strong>💰 Budget pick:</strong> <span class="font-medium">UCG-Ultra ($179)</span> - <a href="#category-1-pure-firewall" class="underline">entry level</a>, basic networking.</li>
+                        </ul>
+                    </div>
+
+                    <p class="mt-6 text-olive-600 italic">Note: Prices and availability fluctuate frequently. UniFi regularly updates their lineup. Check store.ui.com for current pricing. All devices run UniFi OS and include the controller - no subscription required.</p>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-olive-200 flex justify-between items-center">
+                    <a href="index.html" class="inline-flex items-center px-6 py-3 bg-olive-950 text-olive-50 rounded-full hover:bg-olive-800 transition-colors font-medium">Back to Blog</a>
+                    <div class="text-sm font-bold uppercase tracking-widest text-olive-400">Comments: 0</div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-olive-950 py-20 text-center border-t border-olive-800">
+        <p class="text-olive-600 text-sm font-mono tracking-tighter uppercase opacity-50">© Techmore 2026. Built with OKLCH Olive.</p>
+    </footer>
+</body>
+</html>
