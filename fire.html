@@ -659,134 +659,189 @@
 
                         <hr class="border-olive-200">
 
-                        <h3 class="text-2xl text-olive-950">💡 Option A: Full Off-Grid (Realistic?)</h3>
-                        <p class="text-olive-700">For true off-grid with my usage, I'd need:</p>
+                        <h3 class="text-2xl text-olive-950">🛠️ Equipment Research</h3>
+                        <p class="text-olive-700">Based on pricing from Current Connected and other suppliers:</p>
+
+                        <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">SunPro 440W Bifacial Panels</h4>
+                                <p class="text-sm text-olive-700 mt-1">440W, 22.53% efficiency, bifacial</p>
+                                <p class="text-sm text-olive-600">$190.84 each (min 8 for pallet order)</p>
+                                <a href="https://www.currentconnected.com/product/yhsunpro-440w-bifacial-solar-panel/" target="_blank" class="text-sm underline text-olive-800">View on Current Connected →</a>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">EG4 FlexBOSS21 Hybrid</h4>
+                                <p class="text-sm text-olive-700 mt-1">12-16kW output, 3 MPPT, 600Vdc max</p>
+                                <p class="text-sm text-olive-600">$4,199 (includes transfer switch)</p>
+                                <a href="https://www.currentconnected.com/product/eg4flexboss21/" target="_blank" class="text-sm underline text-olive-800">View on Current Connected →</a>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">EG4 GridBOSS</h4>
+                                <p class="text-sm text-olive-700 mt-1">200A transfer switch, smart loads</p>
+                                <p class="text-sm text-olive-600">$1,999.99</p>
+                                <a href="https://www.currentconnected.com/product/eg4-gridboss-microgrid-interconnect-device-mid/" target="_blank" class="text-sm underline text-olive-800">View on Current Connected →</a>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">EG4 WallMount Battery 14.3kWh</h4>
+                                <p class="text-sm text-olive-700 mt-1">48V, 280Ah, LiFePO4, heated (outdoor)</p>
+                                <p class="text-sm text-olive-600">$3,499 (outdoor) / $3,110 (indoor)</p>
+                                <a href="https://www.currentconnected.com/product/eg4-outdoor-wallmount-allweather-48v-280ah-lifepo4-battery-14-3kwh-all-weather-energy-storage/" target="_blank" class="text-sm underline text-olive-800">View on Current Connected →</a>
+                            </div>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">💡 Option A: Full Off-Grid</h3>
+                        <p class="text-olive-700">Based on Mobile Solar Power sizing: With my ~87kWh/day usage in winter, I need:</p>
 
                         <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
                             <table class="w-full">
                                 <tbody class="divide-y divide-olive-100">
                                     <tr>
-                                        <td class="py-3">Solar Panels</td>
-                                        <td class="py-3 text-right font-medium">32 kW (~$25,000-35,000)</td>
+                                        <td class="py-3">Solar Panels (72 x 440W)</td>
+                                        <td class="py-3 text-right font-medium">32 kW (72 panels × $190.84)</td>
+                                        <td class="py-3 text-right">~$13,740</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3">Battery Bank</td>
-                                        <td class="py-3 text-right font-medium">200+ kWh LiFePO4 (~$25,000-40,000)</td>
+                                        <td class="py-3">Battery Bank (15 x 14.3kWh)</td>
+                                        <td class="py-3 text-right font-medium">~215 kWh LiFePO4</td>
+                                        <td class="py-3 text-right">~$52,485</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3">Inverter</td>
-                                        <td class="py-3 text-right font-medium">12-15 kW all-in-one (~$3,000-5,000)</td>
+                                        <td class="py-3">EG4 FlexBOSS21</td>
+                                        <td class="py-3 text-right font-medium">12-16kW inverter</td>
+                                        <td class="py-3 text-right">$4,199</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3">Mounting/Wiring</td>
-                                        <td class="py-3 text-right font-medium">~$3,000-5,000</td>
+                                        <td class="py-3">EG4 GridBOSS</td>
+                                        <td class="py-3 text-right font-medium">200A transfer switch</td>
+                                        <td class="py-3 text-right">$2,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Mounting/Wiring/Breakers</td>
+                                        <td class="py-3 text-right font-medium"></td>
+                                        <td class="py-3 text-right">~$3,000</td>
                                     </tr>
                                     <tr class="border-t-2 border-olive-300">
                                         <td class="py-4 font-bold">Estimated Total</td>
-                                        <td class="py-4 font-bold text-xl text-right">$55,000-85,000</td>
+                                        <td class="py-4 text-right font-bold"></td>
+                                        <td class="py-4 font-bold text-xl text-right">~$75,400</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <p class="text-olive-600 italic">At ~$585/month electricity cost, that's 8-12 years to break even. Only makes sense if grid power fails often or you want full independence.</p>
+                        <p class="text-olive-600 italic mt-4">At $585/month, that's ~10+ years to break even. This is only for those wanting full grid independence.</p>
 
                         <hr class="border-olive-200">
 
-                        <h3 class="text-2xl text-olive-950">🔌 Option B: Hybrid / Backup Power</h3>
-                        <p class="text-olive-700">More realistic: keep grid power but add battery backup for outages + solar to reduce bills.</p>
+                        <h3 class="text-2xl text-olive-950">🔌 Option B: Hybrid System (Recommended)</h3>
+                        <p class="text-olive-700">Per Mobile Solar Power: For my "normal house with heat pump AC", I'd need <strong>2 FlexBOSS + 1 GridBOSS</strong> per their sizing guide. Here's a realistic hybrid setup:</p>
+
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-3">EG4 FlexBOSS21 (×2)</td>
+                                        <td class="py-3 text-right font-medium">24-32kW combined</td>
+                                        <td class="py-3 text-right">$8,398</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">EG4 GridBOSS</td>
+                                        <td class="py-3 text-right font-medium">200A transfer switch</td>
+                                        <td class="py-3 text-right">$2,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">EG4 Battery (×2 = 28.6kWh)</td>
+                                        <td class="py-3 text-right font-medium">Outdoor rated, heated</td>
+                                        <td class="py-3 text-right">$6,998</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">SunPro 440W Panels (×20)</td>
+                                        <td class="py-3 text-right font-medium">8.8 kW solar array</td>
+                                        <td class="py-3 text-right">$3,817</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Mounting, wiring, breakers</td>
+                                        <td class="py-3 text-right font-medium"></td>
+                                        <td class="py-3 text-right">~$2,000</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-4 font-bold">Estimated Total</td>
+                                        <td class="py-4 text-right font-bold"></td>
+                                        <td class="py-4 font-bold text-xl text-right">~$23,213</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-200 mt-4">
+                            <p class="text-green-800"><strong>Plus 30% Federal Tax Credit:</strong> ~$6,964 back! Net cost: <strong>~$16,250</strong></p>
+                        </div>
 
                         <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
                             <div class="bg-olive-100 p-4 rounded-xl">
-                                <h4 class="font-medium text-olive-950">Recommended: EG4 Hybrid System</h4>
+                                <h4 class="font-medium text-olive-950">What This Gets You</h4>
                                 <ul class="text-sm text-olive-700 mt-2 space-y-1">
-                                    <li>• <a href="https://www.mobile-solarpower.com/eg4-6000xp.html" target="_blank" class="underline">EG4 6000XP</a> inverter - $1,499</li>
-                                    <li>• <a href="https://www.mobile-solarpower.com/eg4-18kpv.html" target="_blank" class="underline">EG4 18KPV</a> hybrid - $2,499</li>
-                                    <li>• 10-20 kWh battery</li>
-                                    <li>• 5-10 kW solar</li>
+                                    <li>• 24-32kW inverter capacity</li>
+                                    <li>• 28.6 kWh battery (1-2 days backup)</li>
+                                    <li>• 8.8 kW solar (~$50/day production)</li>
+                                    <li>• Grid-tied with auto failover</li>
+                                    <li>• Net metering capable</li>
                                 </ul>
                             </div>
                             <div class="bg-olive-100 p-4 rounded-xl">
-                                <h4 class="font-medium text-olive-950">Key Benefits</h4>
+                                <h4 class="font-medium text-olive-950">Expected Production</h4>
                                 <ul class="text-sm text-olive-700 mt-2 space-y-1">
-                                    <li>• Grid-tied with battery backup</li>
-                                    <li>• Net metering possible</li>
-                                    <li>• Automatic failover during outages</li>
-                                    <li>• Reduces monthly bill</li>
+                                    <li>• ~35-45 kWh/day summer</li>
+                                    <li>• ~15-25 kWh/day winter</li>
+                                    <li>• ~50-70% of annual usage</li>
+                                    <li>• Grid backup for rest</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <div class="bg-green-50 p-6 rounded-xl border border-green-200 mt-6">
-                            <h4 class="font-medium text-green-800 mb-2">Realistic Hybrid Setup</h4>
-                            <table class="w-full text-sm">
-                                <tbody class="divide-y divide-green-100">
-                                    <tr>
-                                        <td class="py-2">EG4 6500EX Hybrid Inverter</td>
-                                        <td class="py-2 text-right">~$1,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-2">EG4 48V Battery (Server Rack)</td>
-                                        <td class="py-2 text-right">~$1,000-1,500 per 5kWh</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-2">Solar Panels (4-8 x 400W)</td>
-                                        <td class="py-2 text-right">~$2,000-4,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-2">Mounting, wiring, breaker</td>
-                                        <td class="py-2 text-right">~$500-1,000</td>
-                                    </tr>
-                                    <tr class="border-t-2 border-green-300">
-                                        <td class="py-3 font-bold">Est. Total</td>
-                                        <td class="py-3 font-bold text-right">$5,000-10,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
 
                         <hr class="border-olive-200">
 
-                        <h3 class="text-2xl text-olive-950">⚡ Option C: Critical Loads Only</h3>
-                        <p class="text-olive-700">If I just want to keep essentials running during outages (fridge, some lights, internet):</p>
+                        <h3 class="text-2xl text-olive-950">⚡ Option C: Start Small</h3>
+                        <p class="text-olive-700">If budget is tight, start with 1 FlexBOSS + partial solar:</p>
 
-                        <div class="not-prose grid gap-4 mt-4">
-                            <div class="bg-white p-4 rounded-xl border border-olive-200">
-                                <h4 class="font-medium text-olive-950">Smaller System for Critical Loads</h4>
-                                <p class="text-sm text-olive-700 mt-2">Essential circuits: fridge (~150W), internet/modem (~20W), some LED lights (~100W), laptop (~50W)</p>
-                                <p class="text-sm text-olive-700 mt-2"><strong>Peak load: ~500W | Daily: ~5-10 kWh</strong></p>
-                            </div>
-                        </div>
-
-                        <div class="bg-olive-100 p-6 rounded-xl border border-olive-200 mt-4">
-                            <h4 class="font-medium text-olive-950 mb-2">Budget "Start Small" System</h4>
-                            <table class="w-full text-sm">
-                                <tbody class="divide-y divide-olive-200">
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-100">
                                     <tr>
-                                        <td class="py-2">EG4 3000W All-in-One</td>
-                                        <td class="py-2 text-right">~$699</td>
+                                        <td class="py-3">EG4 FlexBOSS21 (×1)</td>
+                                        <td class="py-3 text-right">$4,199</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-2">100Ah LiFePO4 Battery (5kWh)</td>
-                                        <td class="py-2 text-right">~$900</td>
+                                        <td class="py-3">EG4 WallMount Battery 14.3kWh</td>
+                                        <td class="py-3 text-right">$3,499</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-2">400W Solar Panel</td>
-                                        <td class="py-2 text-right">~$200-300</td>
+                                        <td class="py-3">SunPro 440W Panels (×8)</td>
+                                        <td class="py-3 text-right">$1,527</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-2">Cables, breaker, mount</td>
-                                        <td class="py-2 text-right">~$200</td>
+                                        <td class="py-3">Mounting, wiring</td>
+                                        <td class="py-3 text-right">~$1,000</td>
                                     </tr>
                                     <tr class="border-t-2 border-olive-300">
-                                        <td class="py-3 font-bold">Total</td>
-                                        <td class="py-3 font-bold text-right">~$2,000</td>
+                                        <td class="py-3 font-bold">Subtotal</td>
+                                        <td class="py-3 font-bold text-right">~$10,225</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Less 30% Tax Credit</td>
+                                        <td class="py-3 text-right">-$3,068</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-3 font-bold">Net Cost</td>
+                                        <td class="py-3 font-bold text-xl text-right">~$7,157</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <p class="text-olive-600 mt-4">This would run my essentials for 1-2 days during an outage. Not enough to replace grid, but great for backup.</p>
+                        <p class="text-olive-600 mt-4">This gives you 3.5kW solar + 14.3kWh battery — enough to run critical loads during outages and offset ~30% of your bill. Easy to expand later.</p>
 
                         <hr class="border-olive-200">
 
@@ -799,38 +854,44 @@
                                         <td class="py-3 text-right font-bold">~$7,020/year</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3">Full off-grid system cost</td>
-                                        <td class="py-3 text-right">$55,000-85,000</td>
+                                        <td class="py-3">Full off-grid (Option A)</td>
+                                        <td class="py-3 text-right">~$75,000</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3">Break-even (full off-grid)</td>
-                                        <td class="py-3 text-right">8-12 years</td>
+                                        <td class="py-3">Hybrid System (Option B) - net</td>
+                                        <td class="py-3 text-right">~$16,250 (after 30% credit)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Break-even (Hybrid)</td>
+                                        <td class="py-3 text-right">~2.3 years</td>
                                     </tr>
                                     <tr class="border-t-2 border-olive-300">
                                         <td class="py-4 font-bold text-lg">Recommendation</td>
-                                        <td class="py-4 text-right font-bold text-lg">Hybrid (Option B)</td>
+                                        <td class="py-4 text-right font-bold text-lg">Option B or C</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <ul class="list-disc pl-6 space-y-2 mt-6">
-                            <li><strong>Start with:</strong> A smaller backup system (~$2,000) for outages</li>
-                            <li><strong>Expand to:</strong> 5-10kW hybrid system as funds allow</li>
-                            <li><strong>Watch for:</strong> Pennsylvania SREC/rebate programs, federal tax credits (30% through 2032)</li>
-                            <li><strong>Consider:</strong> Heat pump efficiency — once my new heat pump stabilizes, usage should drop significantly</li>
+                            <li><strong>Best value:</strong> Option 2 FlexBOSS — B Hybrid GridBOSS +  + 120 panels + 2 batteries</li>
+                            <li><strong>Start small:</strong> Option C —  1 FlexBOSS +14.3kWh battery + 8 panels</li>
+                            <li><strong>Tax credit:</strong>  2032 makes30% federal through hybrid attractive very</li>
+                            <li><strong>Watch:</strong> PA SREC programs for additional rebates</li>
+                            <li><strong>Heat pump:</strong> Once optimized, summer usage should drop — system will cover more</li>
                         </ul>
 
                         <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 mt-6">
-                            <p class="text-lg text-blue-800"><strong>📋 Resources Used:</strong></p>
+                            <p class="text-lg text-blue-800"><strong>📋 Key Resources:</strong></p>
                             <ul class="text-blue-700 mt-2 space-y-1">
-                                <li>• <a href="https://www.mobile-solarpower.com/" target="_blank" class="underline">Mobile Solar Power</a> — Excellent DIY guides and system builders</li>
-                                <li>• <a href="https://mysolarfault.com/off-grid-solar-system-calculator/" target="_blank" class="underline">MySolarFault Calculator</a> — Free sizing tool</li>
-                                <li>• <a href="https://www.mobile-solarpower.com/inverters.html" target="_blank" class="underline">EG4 Inverters</a> — Recommended all-in-one units</li>
+                                <li>• <a href="https://www.mobile-solarpower.com/" target="_blank" class="underline">Mobile Solar Power</a> — System builders & guides</li>
+                                <li>• <a href="https://www.mobile-solarpower.com/code-compliant-48v-offgrid-system.html" target="_blank" class="underline">EG4 Hybrid Builder</a> — FlexBOSS/GridBOSS packages</li>
+                                <li>• <a href="https://www.currentconnected.com/product/eg4flexboss21/" target="_blank" class="underline">EG4 FlexBOSS21</a> — $4,199 at Current Connected</li>
+                                <li>• <a href="https://www.currentconnected.com/product/yhsunpro-440w-bifacial-solar-panel/" target="_blank" class="underline">SunPro 440W Panels</a> — $190.84 each</li>
                             </ul>
                         </div>
 
-                        <p class="mt-6 text-olive-600 italic">The math is brutal for full off-grid with electric heat. But a smaller hybrid system for backup + partial offset? That's doable and provides peace of mind during outages.</p>
+                        <p class="mt-6 text-olive-600 italic">The math is clear: full off-grid is overkill for my situation. But a hybrid system with 30% tax credit brings the payback down to ~2 years and provides serious outage protection. Starting with Option C is the smart play.</p>
                     </div>
 
                     <div class="mt-8 pt-8 border-t border-t border-olive-200 flex justify-between items-center">
