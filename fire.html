@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.I.R.E. - Techmore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
+                    <a href="fire.html" class="px-4 py-2 rounded-lg bg-olive-800 transition-colors font-medium">F.I.R.E.</a>
+                    <a href="wp/index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
+                    <a href="guitar.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Guitar</a>
+                    <a href="dnd.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">DnD 5e</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">F.I.R.E.</h1>
+            <p class="text-xl text-olive-600 italic">Finances. Independence. Retire. Escape.</p>
+            <p class="mt-4 text-olive-700 max-w-2xl mx-auto">A journey toward financial independence through intentional living, smart spending, and building passive income streams.</p>
+        </div>
+
+        <div class="grid gap-8">
+            <!-- Power Costs Post -->
+            <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="size-16 rounded-full bg-olive-950 flex items-center justify-center text-olive-50 text-2xl font-bold">⚡</div>
+                        <div class="size-16 rounded-full bg-olive-200 flex items-center justify-center text-olive-800 text-2xl font-bold">$</div>
+                    </div>
+                    <h2 class="text-4xl text-olive-950 mb-2">Cutting My Electric Bill by $700/Year</h2>
+                    <h3 class="text-xl text-olive-600 mb-6 font-sans italic">Power costs, supplier switching, and assistance programs, <span class="opacity-60">March 2026</span></h3>
+                    
+                    <div class="prose prose-olive max-w-none text-olive-900 space-y-6">
+                        <p class="text-lg leading-relaxed">After getting a handle on all my bills, I decided to dig into my Met-Ed electric bills from the past year. What I found was shocking — I was significantly overpaying for electricity due to a bad supplier contract. Here's exactly what I did to cut my costs.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🚨 Priority #1: Ditch the Expensive Supplier</h3>
+                        <p>I was using <strong>AEP Energy</strong> as my electric generation supplier at <strong>14.49 cents/KWH</strong>. But Met-Ed's "Price to Compare" (their default service rate) was only <strong>11.04 cents/KWH</strong>.</p>
+                        
+                        <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                            <p class="text-lg"><strong>The Math:</strong> Over 11 months, I used ~20,000 KWH. At 3.5 cents difference, that's roughly <strong>$650–$700 in pure overpayment</strong> just for choosing the wrong supplier.</p>
+                        </div>
+
+                        <p><strong>What I did:</strong> Switched from AEP Energy (14.49¢) to <strong>Townsquare Energy (11.17¢)</strong> — a savings of about 3.3 cents per kWh. That's roughly <strong>$15/month</strong> or $180/year in pure savings, just by shopping around.</p>
+                        
+                        <p class="text-sm text-olive-600"><strong>How:</strong> Use <a href="https://papowerswitch.com" class="underline" target="_blank">PA PowerSwitch</a> — Pennsylvania's official PUC comparison tool. Enter your usage and compare rates. Most switches take 5 minutes online.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">💸 Priority #2: Cancel Junk Charges</h3>
+                        <p>Every single bill included a <strong>$6.99/month HomeServe</strong> charge — that's $84/year for an optional home repair protection plan I never used.</p>
+                        
+                        <p><strong>What I did:</strong> Called <strong>888-658-3800</strong> to cancel. Took about 5 minutes. Immediate $84/year savings.</p>
+
+                        <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                            <p class="text-lg"><strong>Quick win:</strong> Review your bills for recurring charges you don't use — warranty programs, insurance add-ons, etc. Call to cancel.</p>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">📊 Priority #3: Equal Payment Plan</h3>
+                        <p>Switched to Met-Ed's <strong>Equal Payment Plan</strong> to lock in <strong>$135/month</strong> instead of wild swings from $300 in summer to $692 in winter.</p>
+                        
+                        <p>How it works: They take a running 12-month average of your costs, lock you in at that amount each month, then do a "true-up" push or pull at the end of the year to settle up.</p>
+                        
+                        <p class="text-olive-600 italic"><strong>Note:</strong> Since I just got a heat pump system installed, my winter usage will likely increase this year. I should expect an extra $100-200/month this coming winter and budget accordingly.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🔍 What I Learned About My Usage</h3>
+                        <p>My usage pattern tells a clear story:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Summer:</strong> ~900–1,900 KWH/month</li>
+                            <li><strong>Winter:</strong> ~2,100–3,100 KWH/month</li>
+                        </ul>
+                        
+                        <p>This dramatic winter jump strongly suggests <strong>electric heat</strong> (baseboard or heat pump). The good news: a new heat pump is typically 3x more efficient than electric baseboard, so my costs should normalize over time.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🆘 Assistance Programs to Look Into</h3>
+                        <p>If you qualify, these PA programs can help significantly:</p>
+                        
+                        <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">LIHEAP</h4>
+                                <p class="text-sm text-olive-700">$200–$1,000 one-time grant sent directly to your utility. Based on income (150% federal poverty). <strong>Apply at compass.state.pa.us</strong></p>
+                            </div>
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">PCAP</h4>
+                                <p class="text-sm text-olive-700">Met-Ed's Customer Assistance Program — percentage-of-income payment plan for low-income customers. <strong>Call 1-800-545-7741</strong></p>
+                            </div>
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">LIURP/WARM</h4>
+                                <p class="text-sm text-olive-700">Free weatherization — insulation, sealing, heating system upgrades. Based on income and usage. <strong>Call 1-800-764-0111</strong></p>
+                            </div>
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">Customer Service</h4>
+                                <p class="text-sm text-olive-700">Always worth a call — Met-Ed: 1-800-545-7741. Ask about budget billing, assistance programs, and payment plans.</p>
+                            </div>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">📈 Summary</h3>
+                        <div class="bg-olive-100 p-6 rounded-xl border border-olive-200">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-200">
+                                    <tr>
+                                        <td class="py-2">Switched supplier (AEP → Townsquare)</td>
+                                        <td class="py-2 font-medium text-right">~$15/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Canceled HomeServe</td>
+                                        <td class="py-2 font-medium text-right">$6.99/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Equal Payment Plan</td>
+                                        <td class="py-2 font-medium text-right">Predictability</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-3 font-medium">Total Annual Savings</td>
+                                        <td class="py-3 font-bold text-lg text-right">~$260/year+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="mt-6 text-olive-600 italic">The biggest win was realizing I was even on AEP Energy in the first place. If you're on a third-party supplier, check your rate against your utility's Price to Compare. You might be leaving hundreds of dollars on the table.</p>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                        <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Power</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-olive-950 py-20 text-center border-t border-olive-800">
+        <p class="text-olive-600 text-sm font-mono tracking-tighter uppercase opacity-50">© Techmore 2026. Built with OKLCH Olive.</p>
+    </footer>
+</body>
+</html>
