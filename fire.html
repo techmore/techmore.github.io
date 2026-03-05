@@ -94,6 +94,13 @@
                         <div class="text-sm text-olive-600">Bulk shopping & value analysis</div>
                     </div>
                 </a>
+                <a href="#solar" class="flex items-center gap-3 p-3 bg-white rounded-lg hover:bg-olive-50 transition-colors border border border-olive-200">
+                    <span class="text-2xl">☀️</span>
+                    <div>
+                        <div class="font-medium text-olive-950">Solar Power</div>
+                        <div class="text-sm text-olive-600">Off-grid sizing & analysis</div>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -556,6 +563,279 @@
                     <div class="mt-8 pt-8 border-t border-t border-olive-200 flex justify-between items-center">
                         <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Costco</div>
                         <a href="#costco" class="text-olive-600 hover:text-olive-800">↑ Top</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Solar Post -->
+            <article id="solar" class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="size-16 rounded-full bg-olive-950 flex items-center justify-center text-olive-50 text-2xl font-bold">☀️</div>
+                        <div class="size-16 rounded-full bg-olive-200 flex items-center justify-center text-olive-800 text-2xl font-bold">$</div>
+                    </div>
+                    <h2 class="text-4xl text-olive-950 mb-2">Solar Power: Off-Grid Sizing Analysis</h2>
+                    <h3 class="text-xl text-olive-600 mb-6 font-sans italic">Using my power usage to size a solar system, <span class="opacity-60">March 2026</span></h3>
+                    
+                    <div class="prose prose-olive max-w-none text-olive-900 space-y-6">
+                        <p class="text-lg leading-relaxed">With electric bills running $135/month under the Equal Payment Plan and winter usage spiking to 3,000+ kWh, I wanted to understand what it would take to go solar — either off-grid or as backup power. Here's my analysis using the excellent resources at <a href="https://www.mobile-solarpower.com/" target="_blank" class="underline font-medium">Mobile Solar Power</a>.</p>
+
+                        <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
+                            <p class="text-lg"><strong>📚 Resource:</strong> Mobile Solar Power has fantastic <a href="https://www.mobile-solarpower.com/off-grid-system-builder.html" target="_blank" class="underline">system builders</a> and calculators. Highly recommend their <a href="https://www.mobile-solarpower.com/48v-complete-system-blueprint-559371.html" target="_blank" class="underline">48V system blueprint</a> for anyone serious about DIY solar.</p>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">📊 My Power Usage Baseline</h3>
+                        <p>Based on my past 3 months (Dec 2025 - Feb 2026) from the electrical section:</p>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Month</th>
+                                        <th class="text-right py-2">Usage (kWh)</th>
+                                        <th class="text-right py-2">Bill ($)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">December 2025</td>
+                                        <td class="py-2 text-right">2,101 kWh</td>
+                                        <td class="py-2 text-right">$467</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">January 2026</td>
+                                        <td class="py-2 text-right">2,663 kWh</td>
+                                        <td class="py-2 text-right">$595</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">February 2026</td>
+                                        <td class="py-2 text-right">3,110 kWh</td>
+                                        <td class="py-2 text-right">$692</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-3 font-medium">3-Month Average</td>
+                                        <td class="py-3 font-bold text-right">~2,625 kWh/month</td>
+                                        <td class="py-3 font-bold text-right">~$585/month</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="bg-olive-100 p-4 rounded-xl border border-olive-200">
+                            <p class="text-olive-800"><strong>Daily Average:</strong> ~2,625 kWh ÷ 30 days = <strong>~87.5 kWh/day</strong></p>
+                        </div>
+
+                        <p class="mt-4 text-olive-700">This is high usage — likely due to electric heat (heat pump). In summer, usage drops to ~30-60 kWh/day. I'll size for winter needs since that's the worst case.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🔢 The Math: Sizing My System</h3>
+                        <p>Using the formulas from Mobile Solar Power and <a href="https://mysolarfault.com/off-grid-solar-system-calculator/" target="_blank" class="underline">MySolarFault calculator</a>:</p>
+
+                        <div class="not-prose space-y-4 mt-6">
+                            <div class="bg-olive-100 p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">Step 1: Calculate Solar Array</h4>
+                                <p class="text-olive-700 text-sm mt-2">Formula: Daily Wh ÷ Sun Hours ÷ 0.8 (efficiency) × 1.3 (safety margin)</p>
+                                <p class="text-olive-800 mt-2">87,500 Wh ÷ 4.5 sun hours ÷ 0.8 × 1.3 = <strong>~31,800W (32 kW) solar</strong></p>
+                            </div>
+
+                            <div class="bg-olive-100 p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">Step 2: Calculate Battery Storage</h4>
+                                <p class="text-olive-700 text-sm mt-2">Formula: Daily kWh × Days of Autonomy ÷ Depth of Discharge</p>
+                                <p class="text-olive-800 mt-2">87.5 kWh × 2 days ÷ 0.8 (LiFePO4) = <strong>~219 kWh battery bank</strong></p>
+                                <p class="text-olive-600 text-sm mt-2">That's huge! For reference, a typical home might do 1-2 days autonomy.</p>
+                            </div>
+
+                            <div class="bg-olive-100 p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">Step 3: Inverter Sizing</h4>
+                                <p class="text-olive-700 text-sm mt-2">Need to handle peak loads. A typical home might run 5-10kW continuously with 15kW surges.</p>
+                                <p class="text-olive-800 mt-2"><strong>Recommended: 12-15 kW inverter</strong></p>
+                            </div>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">💡 Option A: Full Off-Grid (Realistic?)</h3>
+                        <p class="text-olive-700">For true off-grid with my usage, I'd need:</p>
+
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-3">Solar Panels</td>
+                                        <td class="py-3 text-right font-medium">32 kW (~$25,000-35,000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Battery Bank</td>
+                                        <td class="py-3 text-right font-medium">200+ kWh LiFePO4 (~$25,000-40,000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Inverter</td>
+                                        <td class="py-3 text-right font-medium">12-15 kW all-in-one (~$3,000-5,000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Mounting/Wiring</td>
+                                        <td class="py-3 text-right font-medium">~$3,000-5,000</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-4 font-bold">Estimated Total</td>
+                                        <td class="py-4 font-bold text-xl text-right">$55,000-85,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="text-olive-600 italic">At ~$585/month electricity cost, that's 8-12 years to break even. Only makes sense if grid power fails often or you want full independence.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🔌 Option B: Hybrid / Backup Power</h3>
+                        <p class="text-olive-700">More realistic: keep grid power but add battery backup for outages + solar to reduce bills.</p>
+
+                        <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">Recommended: EG4 Hybrid System</h4>
+                                <ul class="text-sm text-olive-700 mt-2 space-y-1">
+                                    <li>• <a href="https://www.mobile-solarpower.com/eg4-6000xp.html" target="_blank" class="underline">EG4 6000XP</a> inverter - $1,499</li>
+                                    <li>• <a href="https://www.mobile-solarpower.com/eg4-18kpv.html" target="_blank" class="underline">EG4 18KPV</a> hybrid - $2,499</li>
+                                    <li>• 10-20 kWh battery</li>
+                                    <li>• 5-10 kW solar</li>
+                                </ul>
+                            </div>
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">Key Benefits</h4>
+                                <ul class="text-sm text-olive-700 mt-2 space-y-1">
+                                    <li>• Grid-tied with battery backup</li>
+                                    <li>• Net metering possible</li>
+                                    <li>• Automatic failover during outages</li>
+                                    <li>• Reduces monthly bill</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 p-6 rounded-xl border border-green-200 mt-6">
+                            <h4 class="font-medium text-green-800 mb-2">Realistic Hybrid Setup</h4>
+                            <table class="w-full text-sm">
+                                <tbody class="divide-y divide-green-100">
+                                    <tr>
+                                        <td class="py-2">EG4 6500EX Hybrid Inverter</td>
+                                        <td class="py-2 text-right">~$1,500</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">EG4 48V Battery (Server Rack)</td>
+                                        <td class="py-2 text-right">~$1,000-1,500 per 5kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Solar Panels (4-8 x 400W)</td>
+                                        <td class="py-2 text-right">~$2,000-4,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Mounting, wiring, breaker</td>
+                                        <td class="py-2 text-right">~$500-1,000</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-green-300">
+                                        <td class="py-3 font-bold">Est. Total</td>
+                                        <td class="py-3 font-bold text-right">$5,000-10,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">⚡ Option C: Critical Loads Only</h3>
+                        <p class="text-olive-700">If I just want to keep essentials running during outages (fridge, some lights, internet):</p>
+
+                        <div class="not-prose grid gap-4 mt-4">
+                            <div class="bg-white p-4 rounded-xl border border-olive-200">
+                                <h4 class="font-medium text-olive-950">Smaller System for Critical Loads</h4>
+                                <p class="text-sm text-olive-700 mt-2">Essential circuits: fridge (~150W), internet/modem (~20W), some LED lights (~100W), laptop (~50W)</p>
+                                <p class="text-sm text-olive-700 mt-2"><strong>Peak load: ~500W | Daily: ~5-10 kWh</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-olive-100 p-6 rounded-xl border border-olive-200 mt-4">
+                            <h4 class="font-medium text-olive-950 mb-2">Budget "Start Small" System</h4>
+                            <table class="w-full text-sm">
+                                <tbody class="divide-y divide-olive-200">
+                                    <tr>
+                                        <td class="py-2">EG4 3000W All-in-One</td>
+                                        <td class="py-2 text-right">~$699</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">100Ah LiFePO4 Battery (5kWh)</td>
+                                        <td class="py-2 text-right">~$900</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">400W Solar Panel</td>
+                                        <td class="py-2 text-right">~$200-300</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Cables, breaker, mount</td>
+                                        <td class="py-2 text-right">~$200</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-3 font-bold">Total</td>
+                                        <td class="py-3 font-bold text-right">~$2,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="text-olive-600 mt-4">This would run my essentials for 1-2 days during an outage. Not enough to replace grid, but great for backup.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🧮 My Verdict</h3>
+                        <div class="bg-olive-100 p-6 rounded-xl border border-olive-200">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-200">
+                                    <tr>
+                                        <td class="py-3"><strong>Current annual electric cost</strong></td>
+                                        <td class="py-3 text-right font-bold">~$7,020/year</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Full off-grid system cost</td>
+                                        <td class="py-3 text-right">$55,000-85,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3">Break-even (full off-grid)</td>
+                                        <td class="py-3 text-right">8-12 years</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300">
+                                        <td class="py-4 font-bold text-lg">Recommendation</td>
+                                        <td class="py-4 text-right font-bold text-lg">Hybrid (Option B)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <ul class="list-disc pl-6 space-y-2 mt-6">
+                            <li><strong>Start with:</strong> A smaller backup system (~$2,000) for outages</li>
+                            <li><strong>Expand to:</strong> 5-10kW hybrid system as funds allow</li>
+                            <li><strong>Watch for:</strong> Pennsylvania SREC/rebate programs, federal tax credits (30% through 2032)</li>
+                            <li><strong>Consider:</strong> Heat pump efficiency — once my new heat pump stabilizes, usage should drop significantly</li>
+                        </ul>
+
+                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 mt-6">
+                            <p class="text-lg text-blue-800"><strong>📋 Resources Used:</strong></p>
+                            <ul class="text-blue-700 mt-2 space-y-1">
+                                <li>• <a href="https://www.mobile-solarpower.com/" target="_blank" class="underline">Mobile Solar Power</a> — Excellent DIY guides and system builders</li>
+                                <li>• <a href="https://mysolarfault.com/off-grid-solar-system-calculator/" target="_blank" class="underline">MySolarFault Calculator</a> — Free sizing tool</li>
+                                <li>• <a href="https://www.mobile-solarpower.com/inverters.html" target="_blank" class="underline">EG4 Inverters</a> — Recommended all-in-one units</li>
+                            </ul>
+                        </div>
+
+                        <p class="mt-6 text-olive-600 italic">The math is brutal for full off-grid with electric heat. But a smaller hybrid system for backup + partial offset? That's doable and provides peace of mind during outages.</p>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-t border-olive-200 flex justify-between items-center">
+                        <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Solar</div>
+                        <a href="#solar" class="text-olive-600 hover:text-olive-800">↑ Top</a>
                     </div>
                 </div>
             </article>
