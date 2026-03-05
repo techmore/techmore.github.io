@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFi Network Project - Techmore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
+                    <a href="fire.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">F.I.R.E.</a>
+                    <a href="taxes.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">PA Taxes</a>
+                    <a href="unifi-network-project.html" class="px-4 py-2 rounded-lg bg-olive-800 transition-colors font-medium">UniFi Project</a>
+                    <a href="wp/index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
+                    <a href="guitar.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Guitar</a>
+                    <a href="dnd.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">DnD 5e</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden">
+            <div class="p-8 md:p-12">
+                <a href="index.html" class="inline-flex items-center text-olive-600 hover:text-olive-800 mb-8 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Blog
+                </a>
+
+                <h1 class="text-4xl md:text-5xl text-olive-950 mb-4">UniFi Network Build: 2.5GbE with Dedicated Firewall</h1>
+                <h2 class="text-xl text-olive-600 mb-8 font-sans italic">A modular approach with Cloud Gateway Ultra and Flex Switch 2.5G PoE, <span class="opacity-60">March 5, 2026</span></h2>
+
+                <div class="prose prose-olive max-w-none text-olive-900 space-y-6">
+                    <p class="text-lg leading-relaxed">After researching UniFi options, I landed on a dedicated firewall + switch + AP approach rather than an all-in-one Dream Machine. Here's why and the full buildout with expansion options for additional buildings.</p>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">🎯 Why Separate Firewall & AP?</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-olive-200">
+                                    <th class="text-left py-2">Approach</th>
+                                    <th class="text-right py-2">Pros</th>
+                                    <th class="text-right py-2">Cons</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-olive-100">
+                                <tr>
+                                    <td class="py-2 font-medium">Dream Machine (All-in-One)</td>
+                                    <td class="py-2 text-right text-sm">Simple, cheap, one device</td>
+                                    <td class="py-2 text-right text-sm">Shared resources, no PoE on some models, limited throughput</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">Dedicated Gateway + Switch + AP</td>
+                                    <td class="py-2 text-right text-sm">Full throughput, PoE, modular, upgradeable</td>
+                                    <td class="py-2 text-right text-sm">More expensive, more to manage</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="mt-4">For my use case (multiple buildings, 2.5GbE needs, potential expansion), the dedicated approach makes more sense. The Cloud Gateway Ultra handles routing/firewall while the Flex Switch 2.5G provides PoE+ and 2.5GbE ports.</p>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">📦 Main Building Build</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4 overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-olive-200">
+                                    <th class="text-left py-2">Item</th>
+                                    <th class="text-right py-2">Price</th>
+                                    <th class="text-right py-2">Qty</th>
+                                    <th class="text-right py-2">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-olive-100">
+                                <tr>
+                                    <td class="py-2">UniFi Cloud Gateway Ultra (UCG-Ultra)</td>
+                                    <td class="py-2 text-right">$129.00</td>
+                                    <td class="py-2 text-right">1</td>
+                                    <td class="py-2 text-right">$129.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">UniFi Flex Switch 2.5G PoE (8-port)</td>
+                                    <td class="py-2 text-right">$199.00</td>
+                                    <td class="py-2 text-right">1</td>
+                                    <td class="py-2 text-right">$199.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">UniFi U7 Long-Range AP</td>
+                                    <td class="py-2 text-right">$159.00</td>
+                                    <td class="py-2 text-right">1</td>
+                                    <td class="py-2 text-right">$159.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">AC Adapter 210W (PoE power)</td>
+                                    <td class="py-2 text-right">$79.00</td>
+                                    <td class="py-2 text-right">1</td>
+                                    <td class="py-2 text-right">$79.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Vertiv Liebert PSA5 UPS 1500VA</td>
+                                    <td class="py-2 text-right">$185.16</td>
+                                    <td class="py-2 text-right">1</td>
+                                    <td class="py-2 text-right">$185.16</td>
+                                </tr>
+                                <tr class="border-t-2 border-olive-300 bg-olive-50">
+                                    <td class="py-3 font-bold">Total</td>
+                                    <td class="py-3 text-right"></td>
+                                    <td class="py-3 text-right"></td>
+                                    <td class="py-3 font-bold text-xl text-right">$751.16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-olive-100 p-4 rounded-xl">
+                            <h4 class="font-medium text-olive-950">Optional Add-ons</h4>
+                            <ul class="text-sm text-olive-700 mt-2 space-y-1">
+                                <li>• UI Care U7-LR: $39</li>
+                                <li>• UI Care USW-Flex: $39</li>
+                                <li>• UI Care UCG-Ultra: $25</li>
+                                <li>• CyberSecure (UCG-Ultra): $99</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl">
+                            <h4 class="font-medium text-green-800">Why These Choices?</h4>
+                            <ul class="text-sm text-green-700 mt-2 space-y-1">
+                                <li>• 2.5GbE for faster LAN speeds</li>
+                                <li>• PoE+ to power AP without adapters</li>
+                                <li>• Dedicated firewall = full throughput</li>
+                                <li>• UPS keeps network up during outages</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">🏗️ Expansion: Adding More Buildings</h3>
+                    <p class="text-olive-700">If you have additional buildings (like rental properties or workshops), you can extend the network with just a POE switch and AP — no additional firewall needed since they're behind the main gateway.</p>
+
+                    <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                        <h4 class="font-medium text-olive-950 mb-4">Per Building Add-on</h4>
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-olive-200">
+                                    <th class="text-left py-2">Item</th>
+                                    <th class="text-right py-2">Price</th>
+                                    <th class="text-right py-2">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-olive-100">
+                                <tr>
+                                    <td class="py-2">UniFi Flex Switch 2.5G PoE</td>
+                                    <td class="py-2 text-right">$199.00</td>
+                                    <td class="py-2 text-right text-olive-600">8-port, PoE+</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">UniFi U7 Long-Range AP</td>
+                                    <td class="py-2 text-right">$159.00</td>
+                                    <td class="py-2 text-right text-olive-600">WiFi 7, PoE powered</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Cat6a Cable (100ft)</td>
+                                    <td class="py-2 text-right">~$30-50</td>
+                                    <td class="py-2 text-right text-olive-600">Or fiber for longer runs</td>
+                                </tr>
+                                <tr class="border-t-2 border-olive-300 bg-olive-50">
+                                    <td class="py-3 font-bold">Per Building Total</td>
+                                    <td class="py-3 text-right"></td>
+                                    <td class="py-3 font-bold text-right">~$390-410</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">🔌 Network Topology</h3>
+                    
+                    <div class="bg-olive-100 p-6 rounded-xl border border-olive-200 mt-4">
+                        <div class="font-mono text-sm text-olive-800 space-y-2">
+                            <p class="font-bold">Internet →</p>
+                            <p>↓</p>
+                            <p><strong>Modem → UCG-Ultra (Firewall/Router)</strong></p>
+                            <p>↓ (WAN)</p>
+                            <p><strong>USW-Flex-2.5G-8-PoE (Main Switch)</strong></p>
+                            <p>├─→ Devices (2.5GbE ports)</p>
+                            <p>├─→ U7-LR AP (PoE, Main Building WiFi)</p>
+                            <p>├─→ Building 2 (Ethernet/Fiber run)</p>
+                            <p>│   └─→ USW-Flex-2.5G + U7-LR</p>
+                            <p>└─→ Building 3 (Ethernet/Fiber run)</p>
+                            <p>&nbsp;&nbsp;&nbsp;└─→ USW-Flex-2.5G + U7-LR</p>
+                        </div>
+                    </div>
+
+                    <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-olive-100 p-4 rounded-xl">
+                            <h4 class="font-medium text-olive-950">🌿 Ethernet vs. Fiber</h4>
+                            <ul class="text-sm text-olive-700 mt-2 space-y-1">
+                                <li><strong>&lt; 300ft:</strong> Cat6a Ethernet ($30-50/100ft)</li>
+                                <li><strong>&gt; 300ft:</strong> Fiber (single mode)</li>
+                                <li><strong>Fiber media converters:</strong> ~$20-40 each</li>
+                                <li><strong>Direct attach:</strong> SFP+ DAC cables work too</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-xl">
+                            <h4 class="font-medium text-amber-800">⚡ PoE Considerations</h4>
+                            <ul class="text-sm text-amber-700 mt-2 space-y-1">
+                                <li>• Flex Switch 2.5G provides PoE+ (30W/port)</li>
+                                <li>• U7-LR needs 802.3af PoE</li>
+                                <li>• 210W adapter powers all 8 ports</li>
+                                <li>• Total budget: 30W × 8 = 240W max (adapter limited)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">💰 Cost Summary</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-olive-200">
+                                    <th class="text-left py-2">Configuration</th>
+                                    <th class="text-right py-2">Main Building</th>
+                                    <th class="text-right py-2">+1 Building</th>
+                                    <th class="text-right py-2">+2 Buildings</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-olive-100">
+                                <tr>
+                                    <td class="py-2">Gateway + Switch + AP</td>
+                                    <td class="py-2 text-right">$566</td>
+                                    <td class="py-2 text-right">$566</td>
+                                    <td class="py-2 text-right">$566</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">UPS</td>
+                                    <td class="py-2 text-right">$185</td>
+                                    <td class="py-2 text-right">$185</td>
+                                    <td class="py-2 text-right">$185</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Building Add-ons</td>
+                                    <td class="py-2 text-right">—</td>
+                                    <td class="py-2 text-right">~$400</td>
+                                    <td class="py-2 text-right">~$800</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Cabling (est.)</td>
+                                    <td class="py-2 text-right">$50</td>
+                                    <td class="py-2 text-right">$100</td>
+                                    <td class="py-2 text-right">$150</td>
+                                </tr>
+                                <tr class="border-t-2 border-olive-300 bg-green-50">
+                                    <td class="py-3 font-bold">Total</td>
+                                    <td class="py-3 font-bold text-right">~$800</td>
+                                    <td class="py-3 font-bold text-right">~$1,250</td>
+                                    <td class="py-3 font-bold text-right">~$1,700</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr class="border-olive-200">
+
+                    <h3 class="text-2xl text-olive-950">📋 Specs Breakdown</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                        <table class="w-full">
+                            <tbody class="divide-y divide-olive-100">
+                                <tr>
+                                    <td class="py-2 font-medium">UCG-Ultra</td>
+                                    <td class="py-2 text-right">Up to 1 Gbps routing, 5 VLANs, UniFi OS</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">USW-Flex-2.5G</td>
+                                    <td class="py-2 text-right">8 × 2.5GbE ports, 6 × PoE+ (120W budget)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">U7-LR</td>
+                                    <td class="py-2 text-right">WiFi 7, 4×4 MU-MIMO, 802.3af PoE, 1.3 Gbps</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 font-medium">UPS</td>
+                                    <td class="py-2 text-right">1500VA/900W, 10 outlets, 2 USB charging</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 mt-6">
+                        <h4 class="font-medium text-blue-800 mb-2">💡 Pro Tip</h4>
+                        <p class="text-blue-700">The UCG-Ultra handles up to 1 Gbps routing. If you have multi-gig internet (like Verizon Fios 500+), consider the UCG-Max or Dream Machine Pro SE for higher throughput.</p>
+                    </div>
+
+                    <p class="mt-6 text-olive-600 italic">This setup gives you a solid, expandable UniFi network with 2.5GbE throughout, dedicated firewall protection, and the ability to add buildings as needed. The UPS keeps you online during power outages — critical when you rely on internet for work.</p>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-olive-200">
+                    <div class="flex gap-4">
+                        <a href="unifi-firewall-comparison.html" class="px-4 py-2 bg-olive-200 text-olive-800 rounded-lg hover:bg-olive-300 transition-colors">← Firewall Comparison</a>
+                        <a href="unifi-switch-comparison.html" class="px-4 py-2 bg-olive-200 text-olive-800 rounded-lg hover:bg-olive-300 transition-colors">Switch Comparison →</a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-olive-950 py-20 text-center border-t border-olive-800">
+        <p class="text-olive-600 text-sm font-mono tracking-tighter uppercase opacity-50">© Techmore 2026. Built with OKLCH Olive.</p>
+    </footer>
+</body>
+</html>
