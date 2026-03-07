@@ -878,13 +878,119 @@
                         <div class="bg-green-50 p-4 rounded-xl border border-green-200 mt-4">
                             <p class="text-green-800"><strong>💡 Key Takeaway:</strong> With heat pump being 55% of usage, the most cost-effective approach is to either: (1) get a heat-pump water heater that runs on solar schedule, or (2) accept that full off-grid with heat pump requires a massive system. A 6kWh/day solar with 24hr backup covers everything except heat pump — realistic for ~$8-12K.</p>
                         </div>
-                    </div>
 
-                    <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
-                        <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Electrical</div>
-                        <a href="#electrical" class="text-olive-600 hover:text-olive-800">↑ Top</a>
+                        <h4 class="text-xl text-olive-800 mt-6">🔮 Cost Projections (2026-2030)</h4>
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mt-4">
+                            <p class="text-amber-800 mb-2"><strong>📌 Note:</strong> These are projections based on current trends. The Emporia Energy monitor in the panel tracks real-time usage to help optimize.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4 overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Year</th>
+                                        <th class="text-right py-2">Est. Rate ($/kWh)</th>
+                                        <th class="text-right py-2">Est. Monthly</th>
+                                        <th class="text-right py-2">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">2026 (current)</td>
+                                        <td class="py-2 text-right">$0.12-0.15</td>
+                                        <td class="py-2 text-right">$312-480</td>
+                                        <td class="py-2 text-right">With supplier</td>
+                                    </tr>
+                                    <tr class="bg-amber-50">
+                                        <td class="py-2">2027 <span class="text-xs bg-amber-200 text-amber-800 px-1 rounded">PROJECTED</span></td>
+                                        <td class="py-2 text-right">$0.13-0.16</td>
+                                        <td class="py-2 text-right">$338-512</td>
+                                        <td class="py-2 text-right">+5-8% inflation</td>
+                                    </tr>
+                                    <tr class="bg-amber-50">
+                                        <td class="py-2">2028 <span class="text-xs bg-amber-200 text-amber-800 px-1 rounded">PROJECTED</span></td>
+                                        <td class="py-2 text-right">$0.14-0.17</td>
+                                        <td class="py-2 text-right">$364-544</td>
+                                        <td class="py-2 text-right">Infrastructure costs</td>
+                                    </tr>
+                                    <tr class="bg-amber-50">
+                                        <td class="py-2">2029 <span class="text-xs bg-amber-200 text-amber-800 px-1 rounded">PROJECTED</span></td>
+                                        <td class="py-2 text-right">$0.14-0.18</td>
+                                        <td class="py-2 text-right">$364-576</td>
+                                        <td class="py-2 text-right">Possible rate hikes</td>
+                                    </tr>
+                                    <tr class="bg-amber-50">
+                                        <td class="py-2">2030 <span class="text-xs bg-amber-200 text-amber-800 px-1 rounded">PROJECTED</span></td>
+                                        <td class="py-2 text-right">$0.15-0.19</td>
+                                        <td class="py-2 text-right">$390-608</td>
+                                        <td class="py-2 text-right">Grid costs rising</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">🆓 Free Temperature Control Strategy</h4>
+                        <p class="text-olive-700 mt-2">With IoT monitoring (Emporia Energy), we can optimize for "free" temperature control:</p>
+
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2 font-medium">Strategy</td>
+                                        <td class="py-2 font-medium">How It Works</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Pre-heat/cool with solar</td>
+                                        <td class="py-2">Run heat pump when solar is producing (daytime)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Thermal mass</td>
+                                        <td class="py-2">Heat water/thermal mass during day, coast at night</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Outdoor temp triggers</td>
+                                        <td class="py-2">Set thermostat to activate at certain temp thresholds</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Real-time optimization</td>
+                                        <td class="py-2">Use Emporia data to see what's running and when</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-200 mt-4">
+                            <p class="text-green-800"><strong>🎯 The 80% Goal:</strong> Instead of 100% off-grid, target covering 80% of daily power needs (~50-70 kWh) with solar. The remaining 20% is grid backup. With smart scheduling:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Run heat pump during peak solar hours (10am-4pm)</li>
+                                <li>Schedule water heater for midday</li>
+                                <li>Use thermal mass (hot water tank) as a "battery"</li>
+                                <li>Let the grid handle overnight base load</li>
+                            </ul>
+                            This approach reduces solar requirements by ~40% while still achieving ~80% grid independence.</p>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">📡 Emporia Energy Monitor</h4>
+                        <div class="bg-olive-100 p-4 rounded-xl border border-olive-200 mt-4">
+                            <p class="text-olive-800">The Emporia Energy monitor is installed in the panel and provides:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Real-time circuit-level monitoring</li>
+                                    <li>Historical usage patterns</li>
+                                    <li>Peak usage identification</li>
+                                    <li>Per-circuit costs</li>
+                                    <li>Grid vs solar comparison (when solar is added)</li>
+                                </ul>
+                            </p>
+                            <p class="text-olive-700 mt-2">This data is crucial for optimizing when to run high-draw appliances like heat pump and water heater.</p>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                            <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Electrical</div>
+                            <a href="#electrical" class="text-olive-600 hover:text-olive-800">↑ Top</a>
+                        </div>
                     </div>
                 </div>
+
             </article>
 
             <!-- Septic Post -->
