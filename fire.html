@@ -2346,6 +2346,118 @@
 
                         <hr class="border-olive-200">
 
+                        <h3 class="text-2xl text-olive-950">🔧 Technical Analysis: Grid-Tie vs Off-Grid</h3>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Feature</th>
+                                        <th class="text-right py-2">EG4 6000XP</th>
+                                        <th class="text-right py-2">Growatt 11.4kW</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">Type</td>
+                                        <td class="py-2 text-right">Hybrid / Off-grid capable</td>
+                                        <td class="py-2 text-right">Grid-tie</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Works without grid</td>
+                                        <td class="py-2 text-right text-green-600">✅ Yes</td>
+                                        <td class="py-2 text-right text-red-600">❌ No (anti-islanding)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">When grid goes down</td>
+                                        <td class="py-2 text-right">Keeps running</td>
+                                        <td class="py-2 text-right">Shuts off</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Primary use</td>
+                                        <td class="py-2 text-right">Off-grid / backup first</td>
+                                        <td class="py-2 text-right">Grid export / time-of-use</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200 mt-4">
+                            <p class="text-red-800"><strong>⚠️ Critical:</strong> The Growatt grid-tie inverter requires the grid to operate by code/design. When the grid goes down, it disconnects. That's not a flaw — it's what grid-tie inverters do — but it means the batteries are for grid arbitrage and limited backup, not true independence.</p>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🔋 Battery Comparison</h3>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Spec</th>
+                                        <th class="text-right py-2">EG4 2×314Ah</th>
+                                        <th class="text-right py-2">LG 16H Prime 2×</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">Total gross</td>
+                                        <td class="py-2 text-right">30.2 kWh</td>
+                                        <td class="py-2 text-right">32 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Usable</td>
+                                        <td class="py-2 text-right">~24 kWh</td>
+                                        <td class="py-2 text-right">~28-29 kWh (90%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Chemistry</td>
+                                        <td class="py-2 text-right">LiFePO4</td>
+                                        <td class="py-2 text-right">Li-NMC</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Voltage</td>
+                                        <td class="py-2 text-right">48V low voltage</td>
+                                        <td class="py-2 text-right">High voltage (~400V)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Cycle life</td>
+                                        <td class="py-2 text-right text-green-600">~6,000 cycles</td>
+                                        <td class="py-2 text-right">~3,000-4,000 cycles</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-green-50 p-4 rounded-xl border border-green-200">
+                                <h4 class="font-medium text-green-800">EG4 Battery Wins</h4>
+                                <ul class="text-sm text-green-700 mt-2 space-y-1">
+                                    <li>• LiFePO4 = safer, more thermally stable</li>
+                                    <li>• 6,000 cycle lifespan</li>
+                                    <li>• Lower cost</li>
+                                </ul>
+                            </div>
+                            <div class="bg-olive-100 p-4 rounded-xl">
+                                <h4 class="font-medium text-olive-950">LG Battery Wins</h4>
+                                <ul class="text-sm text-olive-700 mt-2 space-y-1">
+                                    <li>• More usable capacity (90%)</li>
+                                    <li>• Premium brand / warranty</li>
+                                    <li>• Higher energy density</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">⚡ Inverter Sizing</h3>
+                        
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mt-4">
+                            <p class="text-amber-800"><strong>Important:</strong> The 11.4kW Growatt is significantly oversized for 6 kWh/day average — that's a utility-scale residential inverter designed for large arrays and grid export. At 6 kWh/day you'd never use its capacity. The EG4 6000XP (6kW) is much better matched to the use case.</p>
+                        </div>
+
+                        <hr class="border-olive-200">
+
                         <h3 class="text-2xl text-olive-950">🎯 Decision Factors</h3>
                         
                         <div class="not-prose grid md:grid-cols-2 gap-4 mt-4">
