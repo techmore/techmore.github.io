@@ -671,6 +671,213 @@
                         </div>
 
                         <p class="mt-6 text-olive-600 italic">The biggest win was realizing I was even on AEP Energy in the first place. If you're on a third-party supplier, check your rate against your utility's Price to Compare. You might be leaving hundreds of dollars on the table.</p>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">📊 Addendum: Historical Data & Circuit Analysis</h3>
+
+                        <h4 class="text-xl text-olive-800 mt-6">PA Historical Electricity Costs (Bucks County)</h4>
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Year</th>
+                                        <th class="text-right py-2">Avg $/kWh (PA)</th>
+                                        <th class="text-right py-2">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">2005</td>
+                                        <td class="py-2 text-right">~$0.08</td>
+                                        <td class="py-2 text-right">Pre-fracking boom</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2010</td>
+                                        <td class="py-2 text-right">~$0.11</td>
+                                        <td class="py-2 text-right">Natural gas expansion</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2015</td>
+                                        <td class="py-2 text-right">~$0.13</td>
+                                        <td class="py-2 text-right">Rate increases begin</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2020</td>
+                                        <td class="py-2 text-right">~$0.13</td>
+                                        <td class="py-2 text-right">Stable</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2022</td>
+                                        <td class="py-2 text-right">~$0.17</td>
+                                        <td class="py-2 text-right">Energy crisis</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2024</td>
+                                        <td class="py-2 text-right">~$0.14-0.16</td>
+                                        <td class="py-2 text-right">Current range</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2026</td>
+                                        <td class="py-2 text-right">~$0.12-0.15</td>
+                                        <td class="py-2 text-right">With supplier switch</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">PA Average Monthly Home Usage</h4>
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">PA Average (2023)</td>
+                                        <td class="py-2 text-right font-medium">~886 kWh/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">US Average (2023)</td>
+                                        <td class="py-2 text-right font-medium">~886 kWh/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">My Usage (Winter 2026)</td>
+                                        <td class="py-2 text-right font-medium text-red-600">~2,600-3,200 kWh/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">My Usage vs Average</td>
+                                        <td class="py-2 text-right font-bold text-red-600">3-3.6x higher!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">📈 My Actual Usage Data</h4>
+                        <div class="bg-red-50 p-6 rounded-xl border border-red-200 mt-4">
+                            <table class="w-full">
+                                <tbody class="divide-y divide-red-100">
+                                    <tr>
+                                        <td class="py-2">Peak Daily Usage</td>
+                                        <td class="py-2 text-right font-bold">~150 kWh/day</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Monthly Peak</td>
+                                        <td class="py-2 text-right font-bold">~3,200 kWh/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Winter Average</td>
+                                        <td class="py-2 text-right font-bold">~87 kWh/day</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Summer Estimate</td>
+                                        <td class="py-2 text-right font-bold">~30-50 kWh/day</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">🔌 Circuit Analysis (Feb 2026 Data)</h4>
+                        <p class="text-olive-700 mt-2">Based on IoTaWatt circuit monitoring data from the Barn panel:</p>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4 overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Circuit</th>
+                                        <th class="text-right py-2">Daily Avg (kWh)</th>
+                                        <th class="text-right py-2">Peak Day (kWh)</th>
+                                        <th class="text-right py-2">% of Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">Heat Pump</td>
+                                        <td class="py-2 text-right">~45-50</td>
+                                        <td class="py-2 text-right">~142</td>
+                                        <td class="py-2 text-right">~55%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Water Heater</td>
+                                        <td class="py-2 text-right">~12-15</td>
+                                        <td class="py-2 text-right">~22</td>
+                                        <td class="py-2 text-right">~15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Mains A + B</td>
+                                        <td class="py-2 text-right">~40-50</td>
+                                        <td class="py-2 text-right">~90</td>
+                                        <td class="py-2 text-right">~50%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Dryer</td>
+                                        <td class="py-2 text-right">~1-11</td>
+                                        <td class="py-2 text-right">~11</td>
+                                        <td class="py-2 text-right">~5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Kitchen</td>
+                                        <td class="py-2 text-right">~2-3</td>
+                                        <td class="py-2 text-right">~5</td>
+                                        <td class="py-2 text-right">~3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Well Pump</td>
+                                        <td class="py-2 text-right">~0.5-1</td>
+                                        <td class="py-2 text-right">~1.5</td>
+                                        <td class="py-2 text-right">~1%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mt-4">
+                            <p class="text-amber-800"><strong>🔋 Solar Sizing Implications:</strong> The heat pump is the dominant load (~55% of total). This is good news for solar because:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Heat pump runs mostly during day — direct solar offset possible</li>
+                                <li>At ~45-50 kWh/day average, it's predictable</li>
+                                <li>Water heater is also daytime-loadable with scheduling</li>
+                                <li>If we target 6 kWh/day solar + 24hr backup, we cover baseline — heat pump becomes the variable</li>
+                            </ul>
+                            </p>
+                        </div>
+
+                        <h4 class="text-xl text-olive-800 mt-6">🎯 Minimum Viable Solar for Off-Grid</h4>
+                        <p class="text-olive-700 mt-2">Based on circuit analysis, here's what we'd need to cover essentials:</p>
+
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Scenario</th>
+                                        <th class="text-right py-2">Daily Target</th>
+                                        <th class="text-right py-2">Battery</th>
+                                        <th class="text-right py-2">Est. Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">Absolute minimum (kitchen + well + basics)</td>
+                                        <td class="py-2 text-right">~5 kWh</td>
+                                        <td class="py-2 text-right">10 kWh</td>
+                                        <td class="py-2 text-right">~$5-8K</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Comfort (add water heater + some HVAC)</td>
+                                        <td class="py-2 text-right">~15 kWh</td>
+                                        <td class="py-2 text-right">24 kWh</td>
+                                        <td class="py-2 text-right">~$12-15K</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Full coverage (including heat pump)</td>
+                                        <td class="py-2 text-right">~50+ kWh</td>
+                                        <td class="py-2 text-right">50+ kWh</td>
+                                        <td class="py-2 text-right">~$30K+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-200 mt-4">
+                            <p class="text-green-800"><strong>💡 Key Takeaway:</strong> With heat pump being 55% of usage, the most cost-effective approach is to either: (1) get a heat-pump water heater that runs on solar schedule, or (2) accept that full off-grid with heat pump requires a massive system. A 6kWh/day solar with 24hr backup covers everything except heat pump — realistic for ~$8-12K.</p>
+                        </div>
                     </div>
 
                     <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
