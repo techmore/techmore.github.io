@@ -1855,11 +1855,188 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mt-8 pt-8 border-t border-t border-olive-200 flex justify-between items-center">
-                        <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Solar Update 2</div>
-                        <a href="#solar" class="text-olive-600 hover:text-olive-800">↑ Top</a>
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">🛠️ DIY Build Analysis: EG4 Benchmark Comparison</h3>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4 overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Component</th>
+                                        <th class="text-left py-2">Spec</th>
+                                        <th class="text-right py-2">Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">EG4 6000XP</td>
+                                        <td class="py-2">6kW inverter</td>
+                                        <td class="py-2 text-right">$1,629.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">12 × BlueSun 460W</td>
+                                        <td class="py-2">5.52 kW array</td>
+                                        <td class="py-2 text-right">$2,042.40</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">2 × JK BMS + EVE 314Ah</td>
+                                        <td class="py-2">2 × 15.1 kWh</td>
+                                        <td class="py-2 text-right">$4,598.00</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300 bg-olive-50">
+                                        <td class="py-2 font-bold">2-battery total</td>
+                                        <td class="py-2"></td>
+                                        <td class="py-2 font-bold text-right">$8,270.39</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">+ 3rd battery pack</td>
+                                        <td class="py-2">+15.1 kWh</td>
+                                        <td class="py-2 text-right">+$2,299.00</td>
+                                    </tr>
+                                    <tr class="border-t-2 border-olive-300 bg-green-50">
+                                        <td class="py-2 font-bold">3-battery total</td>
+                                        <td class="py-2"></td>
+                                        <td class="py-2 font-bold text-right">$10,569.39</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">📊 Three-Way Comparison</h3>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4 overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Feature</th>
+                                        <th class="text-right py-2">DIY 2-Battery</th>
+                                        <th class="text-right py-2">DIY 3-Battery</th>
+                                        <th class="text-right py-2">EG4 Kit</th>
+                                        <th class="text-right py-2">Growatt/LG</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">Price</td>
+                                        <td class="py-2 text-right">$8,270</td>
+                                        <td class="py-2 text-right">$10,569</td>
+                                        <td class="py-2 text-right">$11,609</td>
+                                        <td class="py-2 text-right">~$23,495</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Inverter</td>
+                                        <td class="py-2 text-right">EG4 6000XP</td>
+                                        <td class="py-2 text-right">EG4 6000XP</td>
+                                        <td class="py-2 text-right">EG4 6000XP</td>
+                                        <td class="py-2 text-right">Growatt 11.4kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Array</td>
+                                        <td class="py-2 text-right">5.52 kW</td>
+                                        <td class="py-2 text-right">5.52 kW</td>
+                                        <td class="py-2 text-right">5.28 kW</td>
+                                        <td class="py-2 text-right">16.56 kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Battery gross</td>
+                                        <td class="py-2 text-right">30.2 kWh</td>
+                                        <td class="py-2 text-right">45.3 kWh</td>
+                                        <td class="py-2 text-right">30.2 kWh</td>
+                                        <td class="py-2 text-right">32 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Battery usable</td>
+                                        <td class="py-2 text-right">~24 kWh</td>
+                                        <td class="py-2 text-right">~36 kWh</td>
+                                        <td class="py-2 text-right">~24 kWh</td>
+                                        <td class="py-2 text-right">~29 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Days reserve @ 6kWh</td>
+                                        <td class="py-2 text-right">~4 days</td>
+                                        <td class="py-2 text-right">~6 days</td>
+                                        <td class="py-2 text-right">~4 days</td>
+                                        <td class="py-2 text-right">~4.8 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Off-grid capable</td>
+                                        <td class="py-2 text-right text-green-600">✅</td>
+                                        <td class="py-2 text-right text-green-600">✅</td>
+                                        <td class="py-2 text-right text-green-600">✅</td>
+                                        <td class="py-2 text-right text-red-600">❌</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Battery chemistry</td>
+                                        <td class="py-2 text-right">LiFePO4</td>
+                                        <td class="py-2 text-right">LiFePO4</td>
+                                        <td class="py-2 text-right">LiFePO4</td>
+                                        <td class="py-2 text-right">Li-NMC</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr class="border-olive-200">
+
+                        <h3 class="text-2xl text-olive-950">⏱️ Runtime at 15 kWh Peak</h3>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-olive-200 mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-olive-200">
+                                        <th class="text-left py-2">Config</th>
+                                        <th class="text-right py-2">Usable</th>
+                                        <th class="text-right py-2">Hours</th>
+                                        <th class="text-right py-2">Days</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-olive-100">
+                                    <tr>
+                                        <td class="py-2">2-battery DIY</td>
+                                        <td class="py-2 text-right">~24 kWh</td>
+                                        <td class="py-2 text-right">~38 hrs</td>
+                                        <td class="py-2 text-right">~1.6 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">3-battery DIY</td>
+                                        <td class="py-2 text-right">~36 kWh</td>
+                                        <td class="py-2 text-right">~57 hrs</td>
+                                        <td class="py-2 text-right">~2.4 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">EG4 kit 2×314Ah</td>
+                                        <td class="py-2 text-right">~24 kWh</td>
+                                        <td class="py-2 text-right">~38 hrs</td>
+                                        <td class="py-2 text-right">~1.6 days</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-200 mt-4">
+                            <p class="text-green-800"><strong>💡 The Key Insight:</strong> 15 kWh is your peak winter day. But even a weak winter day with 1.5 PSH still puts 7-8 kWh back in, extending runtime significantly. True zero-solar days (heavy snow) are the real scenario to design against.</p>
+                            <p class="text-green-700 mt-2">The 3-battery DIY build adds ~19 hours of buffer for $2,299 more — still cheaper than the pre-built EG4 kit. You're essentially buying resilience at a discount.</p>
+                        </div>
+
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 mt-4">
+                            <p class="text-amber-800"><strong>⚠️ DIY Caveat:</strong> The EVE 314Ah cells are Grade A and well-regarded (same cells inside many pre-built packs including EG4). But you're assembling them yourself with the JK BMS, which means:
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>Cell balancing during initial charge-up</li>
+                                <li>Busbar torquing</li>
+                                <li>BMS configuration</li>
+                                <li>No single-vendor warranty on the pack</li>
+                            </ul>
+                            For someone comfortable with that, it's a clear value win. For someone who wants to bolt it on and forget it, the EG4 kit premium is justified.</p>
+                        </div>
+
+                        <div class="mt-8 pt-8 border-t border-t border-olive-200 flex justify-between items-center">
+                            <div class="text-sm font-bold uppercase tracking-widest text-olive-400">F.I.R.E. • Solar</div>
+                            <a href="#solar" class="text-olive-600 hover:text-olive-800">↑ Top</a>
+                        </div>
                     </div>
                 </div>
             </article>
