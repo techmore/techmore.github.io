@@ -119,6 +119,9 @@
                     </div>
                 </a>
             </div>
+            <div class="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
+                <p class="text-sm text-green-800"><strong>💰 Payback Target:</strong> Aim for 2-year payback (interest-free financing) for maximum value. 5-7 year payback with standard loan is acceptable. 10+ years = questionable ROI given system degradation, squirrel damage, storm risks, and equipment failure possibilities.</p>
+            </div>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8 mb-12">
@@ -132,8 +135,34 @@
                 <div class="p-4 bg-olive-100 border-t border-olive-200">
                     <div class="flex items-center justify-between">
                         <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$201</span>
+                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$346</span>
                     </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-olive-800">Upfront Cost:</span>
+                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Spreadsheet -->
+            <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
+                <div class="p-4 bg-olive-800 text-olive-50 border-b border-olive-700">
+                    <h2 class="text-2xl">Your Values</h2>
+                    <p class="text-sm text-olive-200">Edit cells to calculate your own payback</p>
+                </div>
+                <div id="interactive-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-olive-100 border-t border-olive-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-olive-800">Monthly Cost:</span>
+                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$346</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-olive-800">Upfront Cost:</span>
+                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
+                    </div>
+                </div>
+            </div>
+        </div>
                     <div class="flex items-center justify-between mt-2">
                         <span class="font-medium text-olive-800">Upfront Cost:</span>
                         <span id="demo-upfront" class="text-lg font-bold text-olive-950">$21,121</span>
@@ -165,29 +194,29 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Current Monthly</h3>
-                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$201</p>
+                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$346</p>
                 <p class="text-sm text-olive-500 mt-1">Electric bill</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Upfront Cost</h3>
-                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$21,121</p>
+                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$25,121</p>
                 <p class="text-sm text-olive-500 mt-1">Hardware + wiring + labor</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">30% Tax Credit</h3>
-                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$6,336</p>
+                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$7,536</p>
                 <p class="text-sm text-olive-500 mt-1">Potential rebate (claim later)</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Annual Savings</h3>
-                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$2,412</p>
+                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$2,076</p>
                 <p class="text-sm text-olive-500 mt-1">Offset %</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Payback</h3>
-                <p id="result-payback" class="text-3xl font-bold text-olive-950">8.8 yrs</p>
-                <p id="result-payback-credit" class="text-sm text-green-600">6.1 yrs w/ credit</p>
-                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">⚠️ Consider</p>
+                <p id="result-payback" class="text-3xl font-bold text-olive-950">12.1 yrs</p>
+                <p id="result-payback-credit" class="text-sm text-green-600">8.5 yrs w/ credit</p>
+                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">❌ Reconsider</p>
             </div>
         </div>
 
@@ -210,10 +239,10 @@
                     <div class="p-3 bg-olive-50 rounded-lg border border-olive-200">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-olive-800">Phase 1 (Current)</span>
-                            <span class="font-bold text-olive-950">$20,121</span>
+                            <span class="font-bold text-olive-950">$23,621</span>
                         </div>
                         <p class="text-xs text-olive-600">16.56 kW panels + EG4 14.34kWh battery</p>
-                        <p class="text-xs text-green-600">~$2,412/yr savings → ~50% offset</p>
+                        <p class="text-xs text-green-600">~$2,076/yr savings → ~50% offset</p>
                     </div>
                     
                     <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
@@ -237,7 +266,7 @@
                     <div class="p-3 bg-green-50 rounded-lg border border-green-200">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-green-800">Full Independence</span>
-                            <span class="font-bold text-green-800">$34,734</span>
+                            <span class="font-bold text-green-800">$38,234</span>
                         </div>
                         <p class="text-xs text-green-700">Complete system worst-case coverage</p>
                         <p class="text-xs font-medium">~95%+ offset</p>
@@ -246,7 +275,7 @@
                     <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
                         <div class="flex justify-between items-center">
                             <span class="font-medium text-blue-800">Years to Full System</span>
-                            <span class="font-bold text-blue-800">~5-7 years</span>
+                            <span class="font-bold text-blue-800">~8-10 years</span>
                         </div>
                         <p class="text-xs text-blue-700">Reinvest annual savings into expansion</p>
                     </div>
@@ -305,15 +334,15 @@
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">Annual Replacement Reserve</span>
-                        <span id="metric-replacement-annual" class="font-medium">$781/yr</span>
+                        <span id="metric-replacement-annual" class="font-medium">$655/yr</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">25-Year Savings (no credit)</span>
-                        <span id="metric-lifetime" class="font-medium text-green-600">$42,000</span>
+                        <span id="metric-lifetime" class="font-medium text-green-600">$26,779</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">25-Year Savings (w/ 30% credit)</span>
-                        <span class="font-bold text-green-600">$48,000</span>
+                        <span class="font-bold text-green-600">$34,315</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">Summer Free Power (est.)</span>
@@ -321,7 +350,7 @@
                     </div>
                     <div class="flex justify-between items-center py-2">
                         <span class="text-olive-700">ROI (upfront cost)</span>
-                        <span id="metric-roi" class="font-bold text-green-600">184%</span>
+                        <span id="metric-roi" class="font-bold text-green-600">107%</span>
                     </div>
                 </div>
             </div>
@@ -387,8 +416,8 @@
                         <span class="font-medium">$1,500</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
-                        <span class="text-olive-700">Labor</span>
-                        <span class="font-medium">$1,500</span>
+                        <span class="text-olive-700">Labor (estimated)</span>
+                        <span class="font-medium">$5,000</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">Permits</span>
@@ -396,9 +425,34 @@
                     </div>
                     <div class="flex justify-between items-center py-2 bg-olive-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
                         <span class="font-bold text-olive-800">Total Upfront</span>
-                        <span class="font-bold text-olive-950" id="breakdown-total">$21,121</span>
+                        <span class="font-bold text-olive-950" id="breakdown-total">$23,621</span>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Financing & Payback Analysis -->
+        <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
+            <h2 class="text-2xl text-olive-950 mb-4">💳 Financing & Payback Analysis</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                    <h4 class="font-medium text-green-800 mb-2">✅ Great (2 years or less)</h4>
+                    <p class="text-sm text-green-700">Interest-free financing available. Many installers offer 24 months 0% APR. Monthly savings exceed payment = pure profit from day one.</p>
+                    <p class="text-lg font-bold text-green-800 mt-2">Ideal scenario</p>
+                </div>
+                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <h4 class="font-medium text-amber-800 mb-2">⚠️ Acceptable (5-7 years)</h4>
+                    <p class="text-sm text-amber-700">Standard solar loans at 5-8% APR. Payback within system life leaves ~15+ years of free power. Still a solid investment.</p>
+                    <p class="text-lg font-bold text-amber-800 mt-2">Reasonable</p>
+                </div>
+                <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                    <h4 class="font-medium text-red-800 mb-2">❌ Questionable (10+ years)</h4>
+                    <p class="text-sm text-red-700">Long loan terms = interest eats gains. Plus: panel degradation (~0.5%/yr), inverter/battery replacement (10-15 yrs), storm damage, squirrel damage, equipment failures.</p>
+                    <p class="text-lg font-bold text-red-800 mt-2">High risk</p>
+                </div>
+            </div>
+            <div class="mt-4 p-3 bg-olive-50 rounded-lg border border-olive-200">
+                <p class="text-sm text-olive-700"><strong>⚡ System Lifespan:</strong> Solar panels rated for 25-30 years, but inverters typically last 10-15 years and batteries 10-15 years. Budget for replacement costs over the system's life.</p>
             </div>
         </div>
 
@@ -408,13 +462,13 @@
             <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm">
                 <li><strong>Upfront cost</strong> = hardware + wiring + labor + permits (what you pay today)</li>
                 <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
-                <li>Monthly usage based on actual kWh consumed (1,800 kWh/mo = ~60 kWh/day average)</li>
-                <li>80% solar offset assumed — you won't be 100% off-grid in most scenarios</li>
+                <li>Monthly usage: 3,100 kWh (peak winter usage) — average ~60-90 kWh/day depending on season</li>
+                <li>50% solar offset assumed — you won't be 100% off-grid in most scenarios</li>
                 <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
-                <li>System life: 25 years (panels degrade ~0.5%/year)</li>
+                <li><strong>System lifespan:</strong> Panels 25-30 yrs, inverters 10-15 yrs, batteries 10-15 yrs — plan for replacements</li>
                 <li>Replacement reserve: hardware cost ÷ system life (save monthly for future replacement)</li>
                 <li>Green light: payback &lt; 7 years AND system life &gt; payback × 1.5</li>
-                <li>Investment returns assume monthly contribution of replacement reserve amount</li>
+                <li><strong>Risks not included:</strong> Storm damage, squirrel/rodent damage, equipment failure, grid changes, utility rate hikes</li>
             </ul>
         </div>
     </main>
@@ -429,12 +483,12 @@
         // Demo data - Phase 1 with correct numbers from FIRE post
         const demoData = [
             ['Power Cost ($/kWh)', 0.1117],
-            ['Monthly Usage (kWh)', 1800],
+            ['Monthly Usage (kWh)', 3100],
             ['Peak Day Usage (kWh)', 150],
             ['System Size (kW)', 16.56],
             ['Hardware Cost ($)', 16371],
             ['Wiring & Misc ($)', 1500],
-            ['Labor Cost ($)', 1500],
+            ['Labor Cost ($)', 5000],
             ['Permits ($)', 750],
             ['Solar Offset (%)', 50],
             ['System Life (years)', 25]
