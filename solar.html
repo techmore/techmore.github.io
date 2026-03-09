@@ -829,10 +829,10 @@
             document.getElementById('generator-break-even').className = 'text-lg font-bold ' + (user.breakEvenGasPrice < 3 ? 'text-amber-700' : 'text-green-700');
             
             const genVerdictEl = document.getElementById('generator-verdict');
-            if (user.generatorCostPerKwhAt3 < gridCostPerKwh) {
-                genVerdictEl.textContent = `Generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal) beats grid ($${gridCostPerKwh.toFixed(4)}/kWh)! Worth running generator during outages.`;
+            if (user.generatorCostPerKwhAt3 < user.gridCostPerKwh) {
+                genVerdictEl.textContent = `Generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal) beats grid ($${user.gridCostPerKwh.toFixed(4)}/kWh)! Worth running generator during outages.`;
             } else {
-                genVerdictEl.textContent = `Grid ($${gridCostPerKwh.toFixed(4)}/kWh) is much cheaper than generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal). Generator only worth it if gas drops below $${user.breakEvenGasPrice.toFixed(2)}/gal.`;
+                genVerdictEl.textContent = `Grid ($${user.gridCostPerKwh.toFixed(4)}/kWh) is much cheaper than generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal). Generator only worth it if gas drops below $${user.breakEvenGasPrice.toFixed(2)}/gal.`;
             }
 
             // Update metrics
