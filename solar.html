@@ -124,12 +124,12 @@
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8 mb-12">
-            <!-- Demo Spreadsheet - My Values -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Minimal Deployment Spreadsheet -->
             <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
                 <div class="p-4 bg-olive-200 border-b border-olive-300">
-                    <h2 class="text-2xl text-olive-950">My Values</h2>
-                    <p class="text-sm text-olive-700">Phase 1: EG4 12K + 14.34kWh battery + 36 panels</p>
+                    <h2 class="text-2xl text-olive-950">Minimal Deployment</h2>
+                    <p class="text-sm text-olive-700">Entry system: EG4 12K + 14.34kWh battery + 36 panels</p>
                 </div>
                 <div id="demo-spreadsheet" class="p-4"></div>
                 <div class="p-4 bg-olive-100 border-t border-olive-200">
@@ -141,33 +141,18 @@
                         <span class="font-medium text-olive-800">Upfront Cost:</span>
                         <span id="demo-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Phase 1 Offset Spreadsheet -->
-            <div class="bg-amber-50 rounded-xl border border-amber-200 overflow-hidden">
-                <div class="p-4 bg-amber-200 border-b border-amber-300">
-                    <h2 class="text-2xl text-amber-900">Phase 1 Offset</h2>
-                    <p class="text-sm text-amber-700">Current system: 50% offset target</p>
-                </div>
-                <div id="phase1-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-amber-100 border-t border-amber-200">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-amber-800">Monthly Cost:</span>
-                        <span id="phase1-monthly-cost" class="text-lg font-bold text-amber-900">$346</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-amber-800">Upfront Cost:</span>
-                        <span id="phase1-upfront" class="text-lg font-bold text-amber-900">$25,121</span>
+                    <div class="mt-3 pt-3 border-t border-olive-200 text-xs text-olive-600">
+                        <p><strong>Daily Generation:</strong> ~66 kWh/day | <strong>Battery:</strong> 14.3 kWh = ~4-6 hrs backup</p>
+                        <p class="mt-1 text-amber-600">⚠️ <strong>Peak Usage Warning:</strong> Not designed for sustained 150 kWh/day peak — covers ~50% of average winter usage</p>
                     </div>
                 </div>
             </div>
 
             <!-- Complete Offset Spreadsheet -->
             <div class="bg-green-50 rounded-xl border border-green-200 overflow-hidden">
-                <div class="p-4 bg-green-200 border-b border-green-300">
-                    <h2 class="text-2xl text-green-900">Complete Offset</h2>
-                    <p class="text-sm text-green-700">Full independence: 3200 kWh/mo + 3-day backup</p>
+                <div class="p-4 bg-green-600 text-white border-b border-green-500">
+                    <h2 class="text-2xl">🚀 Complete Offset</h2>
+                    <p class="text-sm text-green-100">Over-produces & over-deploys: 3200 kWh/mo + 3-day backup</p>
                 </div>
                 <div id="complete-spreadsheet" class="p-4"></div>
                 <div class="p-4 bg-green-100 border-t border-green-200">
@@ -179,15 +164,11 @@
                         <span class="font-medium text-green-800">Upfront Cost:</span>
                         <span id="complete-upfront" class="text-lg font-bold text-green-900">$148,225</span>
                     </div>
+                    <div class="mt-3 pt-3 border-t border-green-200 text-xs text-green-700">
+                        <p><strong>Daily Generation:</strong> ~140 kWh/day | <strong>Battery:</strong> 458 kWh = 3+ days backup</p>
+                        <p class="mt-1 font-medium text-green-800">✅ Handles worst-case: 150 kWh/day for 3+ days</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Over-produce banner -->
-        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-6 mb-8">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold mb-2">🚀 Complete Offset System</h2>
-                <p class="text-lg">This system <strong>over-produces</strong> and <strong>over-deploys</strong> batteries — designed to handle 150 kWh/day worst-case winter usage with 3 days of battery backup at full capacity.</p>
             </div>
         </div>
 
@@ -556,12 +537,19 @@
 
         <!-- Notes -->
         <div class="mt-8 bg-amber-50 rounded-xl p-6 border border-amber-200">
-            <h3 class="text-xl text-amber-800 mb-3">📝 Assumptions & Notes</h3>
+            <h3 class="text-xl text-amber-800 mb-3">📝 Understanding Solar Offset %</h3>
+            <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm mb-4">
+                <li><strong>Solar Offset %</strong> = what percentage of your electricity use is covered by solar generation</li>
+                <li><strong>50% offset</strong> = solar covers half your bill, you still pay the rest to the grid</li>
+                <li><strong>Daily Generation</strong> = how much power your panels produce per day (varies by season)</li>
+                <li><strong>Battery Storage</strong> = how much you can store for night/use during outages</li>
+                <li><strong>Backup Hours</strong> = battery capacity ÷ your nightly usage (typically 30-40 kWh/night)</li>
+            </ul>
+            <h3 class="text-xl text-amber-800 mb-3">Other Notes</h3>
             <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm">
                 <li><strong>Upfront cost</strong> = hardware + wiring + labor + permits (what you pay today)</li>
                 <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
-                <li>Monthly usage: 3,100 kWh (peak winter usage) — average ~60-90 kWh/day depending on season</li>
-                <li>50% solar offset assumed for Phase 1, 100% for Complete system</li>
+                <li>Monthly usage: 3,100 kWh (peak winter) — average ~60-90 kWh/day depending on season</li>
                 <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
                 <li><strong>System lifespan:</strong> Panels 25-30 yrs, inverters 10-15 yrs, batteries 10-15 yrs — plan for replacements</li>
                 <li>Replacement reserve: hardware cost ÷ system life (save monthly for future replacement)</li>
@@ -578,7 +566,7 @@
     </footer>
 
     <script>
-        // Demo data - Phase 1 with correct numbers from FIRE post
+        // Demo data - Minimal Deployment with correct numbers from FIRE post
         const demoData = [
             ['Power Cost ($/kWh)', 0.1117],
             ['Monthly Usage (kWh)', 3100],
@@ -588,12 +576,11 @@
             ['Wiring & Misc ($)', 1500],
             ['Labor Cost ($)', 5000],
             ['Permits ($)', 750],
+            ['Daily Generation (kWh)', 66],
+            ['Battery Storage (kWh)', 14.34],
             ['Solar Offset (%)', 50],
             ['System Life (years)', 25]
         ];
-
-        // Phase 1 Offset - same as demo
-        const phase1Data = JSON.parse(JSON.stringify(demoData));
 
         // Complete Offset - Full system for 3200 kWh/mo + 3-day backup at 150 kWh/day
         // Battery: 450 kWh needed / 14.34 kWh = 32 batteries = 458 kWh
@@ -608,6 +595,8 @@
             ['Wiring & Misc ($)', 4000],
             ['Labor Cost ($)', 12000],
             ['Permits ($)', 1500],
+            ['Daily Generation (kWh)', 140],
+            ['Battery Storage (kWh)', 458],
             ['Solar Offset (%)', 100],
             ['System Life (years)', 25]
         ];
@@ -656,20 +645,9 @@
             return numberColumns;
         }
 
-        // Initialize demo spreadsheet
+        // Initialize demo spreadsheet (Minimal Deployment)
         const demoHot = new Handsontable(document.getElementById('demo-spreadsheet'), {
             data: demoData,
-            columns: (col, row) => getColumnConfig(row),
-            rowHeaders: false,
-            colHeaders: ['Parameter', 'Value'],
-            height: 'auto',
-            licenseKey: 'non-commercial-and-evaluation',
-            readOnly: true
-        });
-
-        // Initialize Phase 1 Offset spreadsheet
-        const phase1Hot = new Handsontable(document.getElementById('phase1-spreadsheet'), {
-            data: phase1Data,
             columns: (col, row) => getColumnConfig(row),
             rowHeaders: false,
             colHeaders: ['Parameter', 'Value'],
@@ -714,8 +692,10 @@
             const wiringCost = data[5][1];
             const laborCost = data[6][1];
             const permitsCost = data[7][1];
-            const offsetPercent = data[8][1];
-            const systemLife = data[9][1];
+            const dailyGeneration = data[8][1];
+            const batteryStorage = data[9][1];
+            const offsetPercent = data[10][1];
+            const systemLife = data[11][1];
 
             const monthlyCost = monthlyUsage * powerCost;
             const annualCost = monthlyCost * 12;
@@ -797,17 +777,12 @@
         let chart = null;
 
         function calculateAll() {
-            // Calculate demo
+            // Calculate demo (Minimal Deployment)
             const demo = calculateFromData(demoData);
             
             // Update demo display
             document.getElementById('demo-monthly-cost').textContent = '$' + demo.monthlyCost.toFixed(0);
             document.getElementById('demo-upfront').textContent = '$' + demo.totalUpfrontCost.toLocaleString();
-
-            // Calculate Phase 1
-            const phase1 = calculateFromData(phase1Data);
-            document.getElementById('phase1-monthly-cost').textContent = '$' + phase1.monthlyCost.toFixed(0);
-            document.getElementById('phase1-upfront').textContent = '$' + phase1.totalUpfrontCost.toLocaleString();
 
             // Calculate Complete Offset
             const complete = calculateFromData(completeData);
