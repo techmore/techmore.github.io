@@ -51,8 +51,6 @@
         .handsontable {
             font-family: 'Inter', system-ui, sans-serif;
         }
-        .htCenter { text-align: center; }
-        .htRight { text-align: right; }
     </style>
 </head>
 <body class="min-h-screen">
@@ -62,6 +60,7 @@
                 <div class="flex items-center gap-8 w-full justify-center md:justify-start">
                     <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
                     <a href="fire.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">F.I.R.E.</a>
+                    <a href="solar.html" class="px-4 py-2 rounded-lg bg-olive-800 transition-colors font-medium">Solar</a>
                     <a href="books.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Books</a>
                     <a href="taxes.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">PA Taxes</a>
                     <a href="writingprompts.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
@@ -79,22 +78,65 @@
             <p class="mt-4 text-olive-700 max-w-2xl mx-auto">Based on my F.I.R.E. journey. Edit the values below to see your own payback analysis.</p>
         </div>
 
+        <!-- Equipment Links -->
+        <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
+            <h2 class="text-2xl text-olive-950 mb-4">🔗 Recommended Equipment (EG4 & BlueSun)</h2>
+            <div class="grid md:grid-cols-4 gap-4">
+                <a href="https://www.signaturesolar.com/eg4-12k-xp-off-grid-inverter-v2-12kw-24kw-pv-48v-split-phase" target="_blank" class="p-4 bg-olive-50 rounded-lg border border-olive-200 hover:bg-olive-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">⚡</span>
+                        <div>
+                            <h4 class="font-medium text-olive-800">EG4 12K XP Inverter</h4>
+                            <p class="text-sm text-olive-600">12kW / 24kW PV + generator input</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.signaturesolar.com/blue-sun-460w-bifacial-solar-panel" target="_blank" class="p-4 bg-olive-50 rounded-lg border border-olive-200 hover:bg-olive-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">☀️</span>
+                        <div>
+                            <h4 class="font-medium text-olive-800">BlueSun 460W Bifacial</h4>
+                            <p class="text-sm text-olive-600">High-efficiency panel</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.signaturesolar.com/ruixu-lithi2-16-51-2v-314ah-16kwh-lifepo4-battery" target="_blank" class="p-4 bg-olive-50 rounded-lg border border-olive-200 hover:bg-olive-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🔋</span>
+                        <div>
+                            <h4 class="font-medium text-olive-800">RUiXU Lithi2-16 Battery</h4>
+                            <p class="text-sm text-olive-600">16kWh LiFePO4</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.amazon.com/GENMAX-Generator-Compliant-Ultra-Portable-GM2200i/dp/B0CQHS9D3M" target="_blank" class="p-4 bg-amber-50 rounded-lg border border-amber-200 hover:bg-amber-100 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">⛽</span>
+                        <div>
+                            <h4 class="font-medium text-amber-800">GENMAX GM2200i</h4>
+                            <p class="text-sm text-amber-700">2200W portable generator</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <div class="grid lg:grid-cols-2 gap-8 mb-12">
             <!-- Demo Spreadsheet -->
             <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
                 <div class="p-4 bg-olive-200 border-b border-olive-300">
                     <h2 class="text-2xl text-olive-950">My Values (Demo)</h2>
-                    <p class="text-sm text-olive-700">Based on my FIRE post: Phase 1 system with 6kW panels + 16kWh battery</p>
+                    <p class="text-sm text-olive-700">Phase 1: EG4 12K + 16kWh battery + 36 panels</p>
                 </div>
                 <div id="demo-spreadsheet" class="p-4"></div>
                 <div class="p-4 bg-olive-100 border-t border-olive-200">
                     <div class="flex items-center justify-between">
                         <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$585</span>
+                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$216</span>
                     </div>
                     <div class="flex items-center justify-between mt-2">
                         <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$21,789</span>
+                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$22,800</span>
                     </div>
                 </div>
             </div>
@@ -109,11 +151,11 @@
                 <div class="p-4 bg-olive-100 border-t border-olive-200">
                     <div class="flex items-center justify-between">
                         <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$585</span>
+                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$216</span>
                     </div>
                     <div class="flex items-center justify-between mt-2">
                         <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$21,789</span>
+                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$22,800</span>
                     </div>
                 </div>
             </div>
@@ -123,29 +165,29 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Current Monthly</h3>
-                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$585</p>
+                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$201</p>
                 <p class="text-sm text-olive-500 mt-1">Electric bill</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Upfront Cost</h3>
-                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$21,789</p>
-                <p class="text-sm text-olive-500 mt-1">Hardware + labor + permits</p>
+                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$20,310</p>
+                <p class="text-sm text-olive-500 mt-1">Hardware + wiring + labor</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">30% Tax Credit</h3>
-                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$5,861</p>
+                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$6,093</p>
                 <p class="text-sm text-olive-500 mt-1">Potential rebate (claim later)</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Annual Savings</h3>
-                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$3,510</p>
-                <p class="text-sm text-olive-500 mt-1">80% offset</p>
+                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$2,412</p>
+                <p class="text-sm text-olive-500 mt-1">Offset %</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
                 <h3 class="text-lg text-olive-600 mb-2">Payback</h3>
-                <p id="result-payback" class="text-3xl font-bold text-olive-950">6.2 yrs</p>
-                <p id="result-payback-credit" class="text-sm text-green-600">4.2 yrs w/ credit</p>
-                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">✅ Great investment!</p>
+                <p id="result-payback" class="text-3xl font-bold text-olive-950">8.4 yrs</p>
+                <p id="result-payback-credit" class="text-sm text-green-600">5.9 yrs w/ credit</p>
+                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">⚠️ Consider</p>
             </div>
         </div>
 
@@ -157,51 +199,204 @@
             </div>
         </div>
 
-            <!-- Additional Metrics -->
-            <div class="grid md:grid-cols-2 gap-8">
+        <!-- Kaizen Expansion & Investment Comparison -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Phase Roadmap -->
             <div class="bg-white rounded-xl p-6 border border-olive-200">
-                <h2 class="text-2xl text-olive-950 mb-4">💰 Financial Metrics</h2>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
-                        <span class="text-olive-700">Annual Replacement Reserve</span>
-                        <span id="metric-replacement" class="font-medium">$781/yr</span>
+                <h2 class="text-2xl text-olive-950 mb-4">🚀 Kaizen Expansion Plan</h2>
+                <p class="text-sm text-olive-600 mb-4">Use annual savings to expand system toward complete independence</p>
+                
+                <div class="space-y-3">
+                    <div class="p-3 bg-olive-50 rounded-lg border border-olive-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-olive-800">Phase 1 (Current)</span>
+                            <span class="font-bold text-olive-950">$22,800</span>
+                        </div>
+                        <p class="text-xs text-olive-600">16.56 kW panels + 16kWh battery</p>
+                        <p class="text-xs text-green-600">~$2,592/yr savings → ~50% offset</p>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
-                        <span class="text-olive-700">25-Year Savings (no credit)</span>
-                        <span id="metric-lifetime" class="font-medium text-green-600">$66,481</span>
+                    
+                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-amber-800">+4 Batteries (Year 2)</span>
+                            <span class="font-bold text-amber-800">$13,196</span>
+                        </div>
+                        <p class="text-xs text-amber-700">80kWh total storage → covers winter</p>
+                        <p class="text-xs text-green-600">80% offset → +$1,000/yr more</p>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
-                        <span class="text-olive-700">25-Year Savings (w/ 30% credit)</span>
-                        <span class="font-bold text-green-600">$72,343</span>
+                    
+                    <div class="p-3 bg-orange-50 rounded-lg border border-orange-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-orange-800">+16 Panels (Year 3)</span>
+                            <span class="font-bold text-orange-800">$5,283</span>
+                        </div>
+                        <p class="text-xs text-orange-700">24kW array → max inverter capacity</p>
+                        <p class="text-xs text-green-600">~85% offset → +$500/yr more</p>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
-                        <span class="text-olive-700">Summer Free Power (est.)</span>
-                        <span id="metric-summer" class="font-medium">$243/season</span>
+                    
+                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-green-800">Full Independence</span>
+                            <span class="font-bold text-green-800">$41,279</span>
+                        </div>
+                        <p class="text-xs text-green-700">Complete system worst-case coverage</p>
+                        <p class="text-xs font-medium">~95%+ offset</p>
                     </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-olive-700">ROI (upfront cost)</span>
-                        <span id="metric-roi" class="font-bold text-green-600">305%</span>
+                    
+                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-blue-800">Years to Full System</span>
+                            <span class="font-bold text-blue-800">~5-7 years</span>
+                        </div>
+                        <p class="text-xs text-blue-700">Reinvest annual savings into expansion</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Investment Comparison -->
             <div class="bg-white rounded-xl p-6 border border-olive-200">
-                <h2 class="text-2xl text-olive-950 mb-4">🔋 Battery Rollout Options</h2>
+                <h2 class="text-2xl text-olive-950 mb-4">📊 Save vs. Invest Comparison</h2>
+                <p class="text-sm text-olive-600 mb-4">If you invest the replacement reserve monthly instead</p>
+                
                 <div class="space-y-4">
                     <div class="p-4 bg-olive-50 rounded-lg border border-olive-200">
-                        <h4 class="font-medium text-olive-800">Phase 1 (Current)</h4>
-                        <p class="text-sm text-olive-600">1 battery (16kWh) — covers average day</p>
-                        <p class="text-lg font-bold text-olive-950 mt-1">$19,539</p>
+                        <h4 class="font-medium text-olive-800 mb-2">Monthly Replacement Reserve</h4>
+                        <p class="text-2xl font-bold text-olive-950" id="monthly-replacement">$65/mo</p>
+                        <p class="text-xs text-olive-600">Set aside for future system replacement</p>
                     </div>
-                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
-                        <h4 class="font-medium text-amber-800">Phase 2 (+1 year)</h4>
-                        <p class="text-sm text-amber-700">4 batteries (80kWh) — covers winter</p>
-                        <p class="text-lg font-bold text-amber-800 mt-1">$13,196</p>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                            <h4 class="text-sm font-medium text-blue-800">Betterment (3.75%)</h4>
+                            <p class="text-xl font-bold text-blue-700" id="investment-betterment">$14,200</p>
+                            <p class="text-xs text-blue-600">25 years</p>
+                        </div>
+                        <div class="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                            <h4 class="text-sm font-medium text-purple-800">Mutual Fund (11%)</h4>
+                            <p class="text-xl font-bold text-purple-700" id="investment-mutual">$58,900</p>
+                            <p class="text-xs text-purple-600">25 years (taxed)</p>
+                        </div>
                     </div>
-                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
-                        <h4 class="font-medium text-green-800">Full System</h4>
-                        <p class="text-sm text-green-700">5 batteries + 24 panels — worst case</p>
-                        <p class="text-lg font-bold text-green-800 mt-1">$49,814</p>
+                    
+                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+                        <h4 class="font-medium text-green-800">Solar Savings (25 years)</h4>
+                        <p class="text-xl font-bold text-green-700" id="savings-total">$64,800</p>
+                        <p class="text-xs text-green-600">$2,592/yr × 25 years - upfront</p>
+                    </div>
+                    
+                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                        <h4 class="font-medium text-amber-800">💡 Recommendation</h4>
+                        <p class="text-sm text-amber-700" id="investment-recommendation">
+                            Solar wins! 11% mutual fund beats solar ROI, but after 30% tax credit solar pays back in 6 years. Invest the difference after payback for max returns.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Financial Metrics -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h2 class="text-2xl text-olive-950 mb-4">💰 Financial Metrics</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Monthly Replacement Reserve</span>
+                        <span id="metric-replacement" class="font-medium">$65/mo</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Annual Replacement Reserve</span>
+                        <span id="metric-replacement-annual" class="font-medium">$781/yr</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">25-Year Savings (no credit)</span>
+                        <span id="metric-lifetime" class="font-medium text-green-600">$42,000</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">25-Year Savings (w/ 30% credit)</span>
+                        <span class="font-bold text-green-600">$48,000</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Summer Free Power (est.)</span>
+                        <span id="metric-summer" class="font-medium">$179/season</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-olive-700">ROI (upfront cost)</span>
+                        <span id="metric-roi" class="font-bold text-green-600">184%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generator Section -->
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h2 class="text-2xl text-olive-950 mb-4">⛽ Generator Backup (EG4 Compatible)</h2>
+                <p class="text-sm text-olive-600 mb-4">EG4 12K XP supports generator input for backup charging</p>
+                
+                <div class="space-y-3">
+                    <div class="p-3 bg-olive-50 rounded-lg border border-olive-200">
+                        <h4 class="font-medium text-olive-800">Recommended: GENMAX GM2200i</h4>
+                        <p class="text-xs text-olive-600">2200W start / 1800W running • 1.1 gal tank • 10.5hr @ 25% load</p>
+                        <p class="text-xs text-olive-600 mt-1"><a href="https://www.amazon.com/GENMAX-Generator-Compliant-Ultra-Portable-GM2200i/dp/B0CQHS9D3M" target="_blank" class="underline">View on Amazon</a></p>
+                    </div>
+                    
+                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
+                        <h4 class="font-medium text-amber-800">Generator Cost</h4>
+                        <p class="text-xl font-bold text-amber-700">~$700-900</p>
+                    </div>
+                    
+                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                        <h4 class="font-medium text-blue-800">Generator Power Cost</h4>
+                        <p class="text-sm text-blue-700">Fuel: ~0.23 gal/kWh • Run time: 2.6hr @ full load</p>
+                        <p class="text-sm text-blue-700 mt-1">Cost per kWh (at $3/gal): <strong>$0.69/kWh</strong></p>
+                    </div>
+                    
+                    <div class="p-3 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-medium text-red-800">Grid vs Generator Break-even</h4>
+                        <p id="generator-break-even" class="text-lg font-bold text-red-700">$0.49/gal</p>
+                        <p class="text-xs text-red-600">Gasoline must be cheaper than this to beat grid power</p>
+                    </div>
+                    
+                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+                        <h4 class="font-medium text-green-800">Verdict</h4>
+                        <p id="generator-verdict" class="text-sm text-green-700">Grid ($0.11/kWh) is much cheaper than generator ($0.69/kWh). Generator only worth it during prolonged outages or if gas drops below $0.49/gal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h2 class="text-2xl text-olive-950 mb-4">🔋 Battery & Panel Breakdown</h2>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">EG4 12K XP Inverter</span>
+                        <span class="font-medium">$1,899</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">RUiXU Lithi2-16 Battery</span>
+                        <span class="font-medium">$3,299</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">BlueSun 460W Panels (×36)</span>
+                        <span class="font-medium">$5,962</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Mounting Hardware</span>
+                        <span class="font-medium">$5,400</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Wiring, MC4, Conduit</span>
+                        <span class="font-medium">$1,500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Labor</span>
+                        <span class="font-medium">$1,500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Permits</span>
+                        <span class="font-medium">$750</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 bg-olive-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
+                        <span class="font-bold text-olive-800">Total Upfront</span>
+                        <span class="font-bold text-olive-950" id="breakdown-total">$20,310</span>
                     </div>
                 </div>
             </div>
@@ -211,14 +406,15 @@
         <div class="mt-8 bg-amber-50 rounded-xl p-6 border border-amber-200">
             <h3 class="text-xl text-amber-800 mb-3">📝 Assumptions & Notes</h3>
             <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm">
-                <li><strong>Upfront cost</strong> = hardware + labor + permits (what you pay today)</li>
+                <li><strong>Upfront cost</strong> = hardware + wiring + labor + permits (what you pay today)</li>
                 <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
+                <li>Monthly usage based on actual kWh consumed (1,800 kWh/mo = ~60 kWh/day average)</li>
                 <li>80% solar offset assumed — you won't be 100% off-grid in most scenarios</li>
                 <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
                 <li>System life: 25 years (panels degrade ~0.5%/year)</li>
-                <li>Labor estimated at $1,500, permits at $750 (adjustable)</li>
-                <li>Replacement reserve: hardware cost ÷ system life</li>
+                <li>Replacement reserve: hardware cost ÷ system life (save monthly for future replacement)</li>
                 <li>Green light: payback &lt; 7 years AND system life &gt; payback × 1.5</li>
+                <li>Investment returns assume monthly contribution of replacement reserve amount</li>
             </ul>
         </div>
     </main>
@@ -230,31 +426,68 @@
     </footer>
 
     <script>
-        // Demo data (from FIRE post)
+        // Demo data - Phase 1 with correct numbers from FIRE post
         const demoData = [
-            ['Power Cost ($/kWh)', 0.12],
+            ['Power Cost ($/kWh)', 0.1117],
             ['Monthly Usage (kWh)', 1800],
+            ['Peak Day Usage (kWh)', 150],
             ['System Size (kW)', 16.56],
-            ['Hardware Cost ($)', 19539],
+            ['Hardware Cost ($)', 16560],
+            ['Wiring & Misc ($)', 1500],
             ['Labor Cost ($)', 1500],
             ['Permits ($)', 750],
-            ['Solar Offset (%)', 80],
+            ['Solar Offset (%)', 50],
             ['System Life (years)', 25]
         ];
+
+        // Column configs for different row types
+        const currencyColumns = [
+            { type: 'text', readOnly: true },
+            { type: 'numeric', numericFormat: { pattern: '$0,0.00' } }
+        ];
+        
+        const numberColumns = [
+            { type: 'text', readOnly: true },
+            { type: 'numeric', numericFormat: { pattern: '0,0.00' } }
+        ];
+
+        // Small number columns (for power cost - up to 4 decimals)
+        const smallNumberColumns = [
+            { type: 'text', readOnly: true },
+            { type: 'numeric', numericFormat: { pattern: '0.0000' } }
+        ];
+
+        // Create custom renderer for mixed formats
+        function getColumnsForRow(row) {
+            const currencyRows = [0, 4, 5, 6, 7]; // Power Cost, Hardware, Wiring, Labor, Permits
+            if (currencyRows.includes(row)) {
+                return currencyColumns;
+            }
+            return numberColumns;
+        }
 
         // Interactive data (starts same as demo)
         const userData = JSON.parse(JSON.stringify(demoData));
 
-        // Column config
-        const columns = [
-            { type: 'text', readOnly: true },
-            { type: 'numeric', numericFormat: { pattern: '$0,0.00' } }
-        ];
+        // Column function to handle different formats per row
+        function getColumnConfig(row, source) {
+            // Row 0 is Power Cost - needs 4 decimal places
+            if (row === 0) {
+                return smallNumberColumns;
+            }
+            // Currency rows: Hardware, Wiring, Labor, Permits
+            const currencyRows = [4, 5, 6, 7];
+            if (currencyRows.includes(row)) {
+                return currencyColumns;
+            }
+            // Everything else: regular numbers
+            return numberColumns;
+        }
 
         // Initialize demo spreadsheet
         const demoHot = new Handsontable(document.getElementById('demo-spreadsheet'), {
             data: demoData,
-            columns: columns,
+            columns: (col, row) => getColumnConfig(row),
             rowHeaders: false,
             colHeaders: ['Parameter', 'Value'],
             height: 'auto',
@@ -265,7 +498,7 @@
         // Initialize interactive spreadsheet
         const userHot = new Handsontable(document.getElementById('interactive-spreadsheet'), {
             data: userData,
-            columns: columns,
+            columns: (col, row) => getColumnConfig(row),
             rowHeaders: false,
             colHeaders: ['Parameter', 'Value'],
             height: 'auto',
@@ -281,27 +514,53 @@
         function calculateFromData(data) {
             const powerCost = data[0][1];
             const monthlyUsage = data[1][1];
-            const systemSize = data[2][1];
-            const hardwareCost = data[3][1];
-            const laborCost = data[4][1];
-            const permitsCost = data[5][1];
-            const offsetPercent = data[6][1];
-            const systemLife = data[7][1];
+            const peakDayUsage = data[2][1];
+            const systemSize = data[3][1];
+            const hardwareCost = data[4][1];
+            const wiringCost = data[5][1];
+            const laborCost = data[6][1];
+            const permitsCost = data[7][1];
+            const offsetPercent = data[8][1];
+            const systemLife = data[9][1];
 
             const monthlyCost = monthlyUsage * powerCost;
             const annualCost = monthlyCost * 12;
             const annualSavings = annualCost * (offsetPercent / 100);
-            const totalUpfrontCost = hardwareCost + laborCost + permitsCost;
-            const taxCredit = totalUpfrontCost * 0.30; // 30% federal
+            const totalUpfrontCost = hardwareCost + wiringCost + laborCost + permitsCost;
+            const taxCredit = totalUpfrontCost * 0.30;
             const netCostAfterCredit = totalUpfrontCost - taxCredit;
             const paybackYears = totalUpfrontCost / annualSavings;
             const paybackYearsWithCredit = netCostAfterCredit / annualSavings;
             const replacementReserve = hardwareCost / systemLife;
+            const monthlyReplacement = replacementReserve / 12;
             const summerFreePower = (systemSize * 0.12 * 90) * (offsetPercent / 100);
             const lifetimeSavingsNoCredit = (annualSavings * systemLife) - totalUpfrontCost;
             const lifetimeSavingsWithCredit = (annualSavings * systemLife) - netCostAfterCredit;
             const roiNoCredit = ((annualSavings * systemLife - totalUpfrontCost) / totalUpfrontCost) * 100;
-            const roiWithCredit = ((annualSavings * systemLife - netCostAfterCredit) / netCostAfterCredit) * 100;
+
+            // Investment calculations (monthly contribution = replacement reserve / 12)
+            const monthlyInvest = monthlyReplacement;
+            const years = systemLife;
+            
+            // Betterment at 3.75% APY
+            const bettermentRate = 0.0375 / 12;
+            const bettermentFuture = monthlyInvest * ((Math.pow(1 + bettermentRate, years * 12) - 1) / bettermentRate);
+            
+            // Mutual fund at 11% (assumed 15% capital gains tax on gains)
+            const mutualRate = 0.11 / 12;
+            const mutualFuture = monthlyInvest * ((Math.pow(1 + mutualRate, years * 12) - 1) / mutualRate);
+            const mutualAfterTax = mutualFuture * 0.85; // 15% tax on gains
+
+            // Generator calculations
+            // GM2200i: 1800W running, 1.1 gal tank, 10.5hr @ 25% load = 2.625hr @ full load
+            const generatorWatts = 1800; // running watts
+            const generatorFuelCapacity = 1.1; // gallons
+            const generatorRuntimeFullLoad = 2.625; // hours @ full load
+            const generatorKwhPerGallon = (generatorWatts * generatorRuntimeFullLoad) / 1000 / generatorFuelCapacity; // kWh per gallon
+            const generatorCostPerKwh = 1 / generatorKwhPerGallon; // $/kWh at $1/gallon
+            const generatorCostPerKwhAt3 = generatorCostPerKwh * 3; // $/kWh at $3/gallon
+            const gridCostPerKwh = powerCost;
+            const breakEvenGasPrice = gridCostPerKwh / generatorKwhPerGallon; // $/gallon where generator = grid
 
             return {
                 monthlyCost,
@@ -313,11 +572,15 @@
                 paybackYears,
                 paybackYearsWithCredit,
                 replacementReserve,
+                monthlyReplacement,
                 summerFreePower,
                 lifetimeSavingsNoCredit,
                 lifetimeSavingsWithCredit,
                 roiNoCredit,
-                roiWithCredit
+                bettermentFuture,
+                mutualAfterTax,
+                generatorCostPerKwhAt3,
+                breakEvenGasPrice
             };
         }
 
@@ -362,13 +625,42 @@
             document.getElementById('result-payback').textContent = user.paybackYears.toFixed(1) + ' yrs';
             document.getElementById('result-payback-credit').textContent = user.paybackYearsWithCredit.toFixed(1) + ' yrs w/ credit';
 
-            const isGreen = updateVerdict(user.paybackYears, userData[7][1]);
+            const isGreen = updateVerdict(user.paybackYears, userData[9][1]);
+
+            // Update investment comparison
+            document.getElementById('monthly-replacement').textContent = '$' + user.monthlyReplacement.toFixed(0) + '/mo';
+            document.getElementById('investment-betterment').textContent = '$' + user.bettermentFuture.toLocaleString();
+            document.getElementById('investment-mutual').textContent = '$' + user.mutualAfterTax.toLocaleString();
+            document.getElementById('savings-total').textContent = '$' + user.lifetimeSavingsNoCredit.toLocaleString();
+
+            // Update recommendation
+            const recEl = document.getElementById('investment-recommendation');
+            if (user.paybackYearsWithCredit < 7) {
+                recEl.textContent = `Solar wins! With ${user.paybackYearsWithCredit.toFixed(1)}yr payback (after credit), solar beats Betterment. Invest the savings difference after payback for maximum returns.`;
+            } else if (user.mutualAfterTax > user.lifetimeSavingsNoCredit) {
+                recEl.textContent = `Mutual fund may win long-term (${user.mutualAfterTax.toLocaleString()} vs ${user.lifetimeSavingsNoCredit.toLocaleString()}). But solar provides predictable returns and energy independence.`;
+            } else {
+                recEl.textContent = `Solar savings beat both investment options! Get the 30% tax credit to improve payback.`;
+            }
+
+            // Update generator section
+            document.getElementById('generator-break-even').textContent = '$' + user.breakEvenGasPrice.toFixed(2) + '/gal';
+            document.getElementById('generator-break-even').className = 'text-lg font-bold ' + (user.breakEvenGasPrice < 3 ? 'text-amber-700' : 'text-green-700');
+            
+            const genVerdictEl = document.getElementById('generator-verdict');
+            if (user.generatorCostPerKwhAt3 < gridCostPerKwh) {
+                genVerdictEl.textContent = `Generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal) beats grid ($${gridCostPerKwh.toFixed(4)}/kWh)! Worth running generator during outages.`;
+            } else {
+                genVerdictEl.textContent = `Grid ($${gridCostPerKwh.toFixed(4)}/kWh) is much cheaper than generator ($${user.generatorCostPerKwhAt3.toFixed(2)}/kWh @ $3/gal). Generator only worth it if gas drops below $${user.breakEvenGasPrice.toFixed(2)}/gal.`;
+            }
 
             // Update metrics
-            document.getElementById('metric-replacement').textContent = '$' + user.replacementReserve.toFixed(0) + '/yr';
+            document.getElementById('metric-replacement').textContent = '$' + user.monthlyReplacement.toFixed(0) + '/mo';
+            document.getElementById('metric-replacement-annual').textContent = '$' + user.replacementReserve.toFixed(0) + '/yr';
             document.getElementById('metric-lifetime').textContent = '$' + user.lifetimeSavingsNoCredit.toLocaleString();
             document.getElementById('metric-summer').textContent = '$' + user.summerFreePower.toFixed(0) + '/season';
             document.getElementById('metric-roi').textContent = user.roiNoCredit.toFixed(0) + '%';
+            document.getElementById('breakdown-total').textContent = '$' + user.totalUpfrontCost.toLocaleString();
 
             // Update chart
             updateChart(user);
