@@ -124,12 +124,12 @@
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <!-- Demo Spreadsheet -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <!-- Demo Spreadsheet - My Values -->
             <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
                 <div class="p-4 bg-olive-200 border-b border-olive-300">
-                    <h2 class="text-2xl text-olive-950">My Values (Demo)</h2>
-                    <p class="text-sm text-olive-700">Phase 1: EG4 12K + 16kWh battery + 36 panels</p>
+                    <h2 class="text-2xl text-olive-950">My Values</h2>
+                    <p class="text-sm text-olive-700">Phase 1: EG4 12K + 14.34kWh battery + 36 panels</p>
                 </div>
                 <div id="demo-spreadsheet" class="p-4"></div>
                 <div class="p-4 bg-olive-100 border-t border-olive-200">
@@ -144,7 +144,55 @@
                 </div>
             </div>
 
-            <!-- Interactive Spreadsheet -->
+            <!-- Phase 1 Offset Spreadsheet -->
+            <div class="bg-amber-50 rounded-xl border border-amber-200 overflow-hidden">
+                <div class="p-4 bg-amber-200 border-b border-amber-300">
+                    <h2 class="text-2xl text-amber-900">Phase 1 Offset</h2>
+                    <p class="text-sm text-amber-700">Current system: 50% offset target</p>
+                </div>
+                <div id="phase1-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-amber-100 border-t border-amber-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-amber-800">Monthly Cost:</span>
+                        <span id="phase1-monthly-cost" class="text-lg font-bold text-amber-900">$346</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-amber-800">Upfront Cost:</span>
+                        <span id="phase1-upfront" class="text-lg font-bold text-amber-900">$25,121</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Offset Spreadsheet -->
+            <div class="bg-green-50 rounded-xl border border-green-200 overflow-hidden">
+                <div class="p-4 bg-green-200 border-b border-green-300">
+                    <h2 class="text-2xl text-green-900">Complete Offset</h2>
+                    <p class="text-sm text-green-700">Full independence: 3200 kWh/mo + 3-day backup</p>
+                </div>
+                <div id="complete-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-green-100 border-t border-green-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-green-800">Monthly Cost:</span>
+                        <span id="complete-monthly-cost" class="text-lg font-bold text-green-900">$0</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-green-800">Upfront Cost:</span>
+                        <span id="complete-upfront" class="text-lg font-bold text-green-900">$148,225</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Over-produce banner -->
+        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-6 mb-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-2">🚀 Complete Offset System</h2>
+                <p class="text-lg">This system <strong>over-produces</strong> and <strong>over-deploys</strong> batteries — designed to handle 150 kWh/day worst-case winter usage with 3 days of battery backup at full capacity.</p>
+            </div>
+        </div>
+
+        <!-- Interactive Spreadsheet -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
             <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
                 <div class="p-4 bg-olive-800 text-olive-50 border-b border-olive-700">
                     <h2 class="text-2xl">Your Values</h2>
@@ -159,32 +207,6 @@
                     <div class="flex items-center justify-between mt-2">
                         <span class="font-medium text-olive-800">Upfront Cost:</span>
                         <span id="user-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$21,121</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactive Spreadsheet -->
-            <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
-                <div class="p-4 bg-olive-800 text-olive-50 border-b border-olive-700">
-                    <h2 class="text-2xl">Your Values</h2>
-                    <p class="text-sm text-olive-200">Edit cells to calculate your own payback</p>
-                </div>
-                <div id="interactive-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-olive-100 border-t border-olive-200">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$201</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$21,121</span>
                     </div>
                 </div>
             </div>
@@ -393,7 +415,7 @@
         </div>
 
             <div class="bg-white rounded-xl p-6 border border-olive-200">
-                <h2 class="text-2xl text-olive-950 mb-4">🔋 Battery & Panel Breakdown</h2>
+                <h2 class="text-2xl text-olive-950 mb-4">🔋 Phase 1 Breakdown</h2>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center py-2 border-b border-olive-100">
                         <span class="text-olive-700">EG4 12K XP Inverter</span>
@@ -424,8 +446,46 @@
                         <span class="font-medium">$750</span>
                     </div>
                     <div class="flex justify-between items-center py-2 bg-olive-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
-                        <span class="font-bold text-olive-800">Total Upfront</span>
+                        <span class="font-bold text-olive-800">Phase 1 Total</span>
                         <span class="font-bold text-olive-950" id="breakdown-total">$23,621</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 border border-green-200">
+                <h2 class="text-2xl text-green-900 mb-4">🔋 Complete Offset Breakdown</h2>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">EG4 12K XP Inverter ×2</span>
+                        <span class="font-medium">$3,798</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">EG4 Indoor Battery ×32 (458 kWh)</span>
+                        <span class="font-medium">$99,520</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">BlueSun 460W Panels ×87 (40 kW)</span>
+                        <span class="font-medium">$14,407</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">Mounting Hardware</span>
+                        <span class="font-medium">$13,000</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">Wiring, MC4, Conduit</span>
+                        <span class="font-medium">$4,000</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">Labor (estimated)</span>
+                        <span class="font-medium">$12,000</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-green-100">
+                        <span class="text-green-700">Permits</span>
+                        <span class="font-medium">$1,500</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 bg-green-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
+                        <span class="font-bold text-green-800">Complete Total</span>
+                        <span class="font-bold text-green-900" id="complete-total">$148,225</span>
                     </div>
                 </div>
             </div>
@@ -456,6 +516,44 @@
             </div>
         </div>
 
+        <!-- Space Requirements -->
+        <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
+            <h2 class="text-2xl text-olive-950 mb-4">🏠 Space Requirements</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <h4 class="font-medium text-amber-800 mb-3">☀️ Solar Panel Space</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-amber-700">Phase 1 (16.56 kW)</span>
+                            <span class="font-medium">~400 sq ft (36 panels)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-amber-700">Complete (40 kW)</span>
+                            <span class="font-medium">~1,000 sq ft (87 panels)</span>
+                        </div>
+                        <p class="text-xs text-amber-600 mt-2">Each 460W panel: ~21 sq ft (3.5' × 6'). Panels need clear south-facing roof or ground mount with no shading.</p>
+                    </div>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <h4 class="font-medium text-blue-800 mb-3">🔋 Battery Space</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-blue-700">Phase 1 (14.34 kWh)</span>
+                            <span class="font-medium">~6 sq ft (wall-mounted)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-blue-700">Complete (458 kWh)</span>
+                            <span class="font-medium">~100+ sq ft (32 batteries)</span>
+                        </div>
+                        <p class="text-xs text-blue-600 mt-2">Each EG4 battery: 36"×18"×10" = ~18 sq ft floor space when floor-mounted. Requires indoor, climate-controlled space (garage or basement).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 p-3 bg-olive-50 rounded-lg border border-olive-200">
+                <p class="text-sm text-olive-700"><strong>⚠️ Important:</strong> Complete offset system requires significant space. 32 batteries at ~100+ sq ft plus 1,000 sq ft of panels. Most homes don't have room for full deployment — consider phased approach or accept partial grid dependence.</p>
+            </div>
+        </div>
+
         <!-- Notes -->
         <div class="mt-8 bg-amber-50 rounded-xl p-6 border border-amber-200">
             <h3 class="text-xl text-amber-800 mb-3">📝 Assumptions & Notes</h3>
@@ -463,7 +561,7 @@
                 <li><strong>Upfront cost</strong> = hardware + wiring + labor + permits (what you pay today)</li>
                 <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
                 <li>Monthly usage: 3,100 kWh (peak winter usage) — average ~60-90 kWh/day depending on season</li>
-                <li>50% solar offset assumed — you won't be 100% off-grid in most scenarios</li>
+                <li>50% solar offset assumed for Phase 1, 100% for Complete system</li>
                 <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
                 <li><strong>System lifespan:</strong> Panels 25-30 yrs, inverters 10-15 yrs, batteries 10-15 yrs — plan for replacements</li>
                 <li>Replacement reserve: hardware cost ÷ system life (save monthly for future replacement)</li>
@@ -491,6 +589,26 @@
             ['Labor Cost ($)', 5000],
             ['Permits ($)', 750],
             ['Solar Offset (%)', 50],
+            ['System Life (years)', 25]
+        ];
+
+        // Phase 1 Offset - same as demo
+        const phase1Data = JSON.parse(JSON.stringify(demoData));
+
+        // Complete Offset - Full system for 3200 kWh/mo + 3-day backup at 150 kWh/day
+        // Battery: 450 kWh needed / 14.34 kWh = 32 batteries = 458 kWh
+        // Panels: Need ~40 kW to generate 150 kWh/day in winter = 87 panels
+        // Hardware: 32 batteries ($99,520) + 2 inverters ($3,798) + 87 panels ($14,407) + mounting ($13,000) = $130,725
+        const completeData = [
+            ['Power Cost ($/kWh)', 0.1117],
+            ['Monthly Usage (kWh)', 3200],
+            ['Peak Day Usage (kWh)', 150],
+            ['System Size (kW)', 40.02],
+            ['Hardware Cost ($)', 130725],
+            ['Wiring & Misc ($)', 4000],
+            ['Labor Cost ($)', 12000],
+            ['Permits ($)', 1500],
+            ['Solar Offset (%)', 100],
             ['System Life (years)', 25]
         ];
 
@@ -541,6 +659,28 @@
         // Initialize demo spreadsheet
         const demoHot = new Handsontable(document.getElementById('demo-spreadsheet'), {
             data: demoData,
+            columns: (col, row) => getColumnConfig(row),
+            rowHeaders: false,
+            colHeaders: ['Parameter', 'Value'],
+            height: 'auto',
+            licenseKey: 'non-commercial-and-evaluation',
+            readOnly: true
+        });
+
+        // Initialize Phase 1 Offset spreadsheet
+        const phase1Hot = new Handsontable(document.getElementById('phase1-spreadsheet'), {
+            data: phase1Data,
+            columns: (col, row) => getColumnConfig(row),
+            rowHeaders: false,
+            colHeaders: ['Parameter', 'Value'],
+            height: 'auto',
+            licenseKey: 'non-commercial-and-evaluation',
+            readOnly: true
+        });
+
+        // Initialize Complete Offset spreadsheet
+        const completeHot = new Handsontable(document.getElementById('complete-spreadsheet'), {
+            data: completeData,
             columns: (col, row) => getColumnConfig(row),
             rowHeaders: false,
             colHeaders: ['Parameter', 'Value'],
@@ -663,6 +803,17 @@
             // Update demo display
             document.getElementById('demo-monthly-cost').textContent = '$' + demo.monthlyCost.toFixed(0);
             document.getElementById('demo-upfront').textContent = '$' + demo.totalUpfrontCost.toLocaleString();
+
+            // Calculate Phase 1
+            const phase1 = calculateFromData(phase1Data);
+            document.getElementById('phase1-monthly-cost').textContent = '$' + phase1.monthlyCost.toFixed(0);
+            document.getElementById('phase1-upfront').textContent = '$' + phase1.totalUpfrontCost.toLocaleString();
+
+            // Calculate Complete Offset
+            const complete = calculateFromData(completeData);
+            const completeMonthly = complete.monthlyCost - complete.annualSavings / 12;
+            document.getElementById('complete-monthly-cost').textContent = completeMonthly > 0 ? '$' + completeMonthly.toFixed(0) : '$0';
+            document.getElementById('complete-upfront').textContent = '$' + complete.totalUpfrontCost.toLocaleString();
 
             // Calculate user
             const user = calculateFromData(userData);
