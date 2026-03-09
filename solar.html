@@ -124,7 +124,7 @@
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
             <!-- Minimal Deployment Spreadsheet -->
             <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
                 <div class="p-4 bg-olive-200 border-b border-olive-300">
@@ -148,6 +148,25 @@
                 </div>
             </div>
 
+            <!-- Your Values Spreadsheet -->
+            <div class="bg-blue-50 rounded-xl border border-blue-200 overflow-hidden">
+                <div class="p-4 bg-blue-600 text-white border-b border-blue-500">
+                    <h2 class="text-2xl">Your Values</h2>
+                    <p class="text-sm text-blue-100">Edit cells to calculate your own payback</p>
+                </div>
+                <div id="interactive-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-blue-100 border-t border-blue-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-blue-800">Monthly Cost:</span>
+                        <span id="user-monthly-cost" class="text-lg font-bold text-blue-900">$346</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-blue-800">Upfront Cost:</span>
+                        <span id="user-upfront" class="text-lg font-bold text-blue-900">$25,121</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Complete Offset Spreadsheet -->
             <div class="bg-green-50 rounded-xl border border-green-200 overflow-hidden">
                 <div class="p-4 bg-green-600 text-white border-b border-green-500">
@@ -167,27 +186,6 @@
                     <div class="mt-3 pt-3 border-t border-green-200 text-xs text-green-700">
                         <p><strong>Daily Generation:</strong> ~140 kWh/day | <strong>Battery:</strong> 458 kWh = 3+ days backup</p>
                         <p class="mt-1 font-medium text-green-800">✅ Handles worst-case: 150 kWh/day for 3+ days</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Spreadsheet -->
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
-                <div class="p-4 bg-olive-800 text-olive-50 border-b border-olive-700">
-                    <h2 class="text-2xl">Your Values</h2>
-                    <p class="text-sm text-olive-200">Edit cells to calculate your own payback</p>
-                </div>
-                <div id="interactive-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-olive-100 border-t border-olive-200">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$346</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
                     </div>
                 </div>
             </div>
