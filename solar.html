@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Calculator - Techmore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+        .handsontable {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .htCenter { text-align: center; }
+        .htRight { text-align: right; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
+                    <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Blog</a>
+                    <a href="fire.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">F.I.R.E.</a>
+                    <a href="books.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Books</a>
+                    <a href="taxes.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">PA Taxes</a>
+                    <a href="writingprompts.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Writing Prompts</a>
+                    <a href="guitar.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">Guitar</a>
+                    <a href="dnd.html" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium">DnD 5e</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">☀️ Solar</h1>
+            <p class="text-xl text-olive-600 italic">Interactive Payback Calculator</p>
+            <p class="mt-4 text-olive-700 max-w-2xl mx-auto">Based on my F.I.R.E. journey. Edit the values below to see your own payback analysis.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Demo Spreadsheet -->
+            <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
+                <div class="p-4 bg-olive-200 border-b border-olive-300">
+                    <h2 class="text-2xl text-olive-950">My Values (Demo)</h2>
+                    <p class="text-sm text-olive-700">Based on my FIRE post: Phase 1 system with 6kW panels + 16kWh battery</p>
+                </div>
+                <div id="demo-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-olive-100 border-t border-olive-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-olive-800">Monthly Cost:</span>
+                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$585</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-olive-800">Upfront Cost:</span>
+                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$21,789</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Spreadsheet -->
+            <div class="bg-olive-50 rounded-xl border border-olive-200 overflow-hidden">
+                <div class="p-4 bg-olive-800 text-olive-50 border-b border-olive-700">
+                    <h2 class="text-2xl">Your Values</h2>
+                    <p class="text-sm text-olive-200">Edit cells to calculate your own payback</p>
+                </div>
+                <div id="interactive-spreadsheet" class="p-4"></div>
+                <div class="p-4 bg-olive-100 border-t border-olive-200">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium text-olive-800">Monthly Cost:</span>
+                        <span id="user-monthly-cost" class="text-lg font-bold text-olive-950">$585</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <span class="font-medium text-olive-800">Upfront Cost:</span>
+                        <span id="user-upfront" class="text-lg font-bold text-olive-950">$21,789</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h3 class="text-lg text-olive-600 mb-2">Current Monthly</h3>
+                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$585</p>
+                <p class="text-sm text-olive-500 mt-1">Electric bill</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h3 class="text-lg text-olive-600 mb-2">Upfront Cost</h3>
+                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$21,789</p>
+                <p class="text-sm text-olive-500 mt-1">Hardware + labor + permits</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h3 class="text-lg text-olive-600 mb-2">30% Tax Credit</h3>
+                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$5,861</p>
+                <p class="text-sm text-olive-500 mt-1">Potential rebate (claim later)</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h3 class="text-lg text-olive-600 mb-2">Annual Savings</h3>
+                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$3,510</p>
+                <p class="text-sm text-olive-500 mt-1">80% offset</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h3 class="text-lg text-olive-600 mb-2">Payback</h3>
+                <p id="result-payback" class="text-3xl font-bold text-olive-950">6.2 yrs</p>
+                <p id="result-payback-credit" class="text-sm text-green-600">4.2 yrs w/ credit</p>
+                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">✅ Great investment!</p>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
+            <h2 class="text-2xl text-olive-950 mb-4">Payback Timeline</h2>
+            <div class="h-80">
+                <canvas id="paybackChart"></canvas>
+            </div>
+        </div>
+
+            <!-- Additional Metrics -->
+            <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h2 class="text-2xl text-olive-950 mb-4">💰 Financial Metrics</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Annual Replacement Reserve</span>
+                        <span id="metric-replacement" class="font-medium">$781/yr</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">25-Year Savings (no credit)</span>
+                        <span id="metric-lifetime" class="font-medium text-green-600">$66,481</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">25-Year Savings (w/ 30% credit)</span>
+                        <span class="font-bold text-green-600">$72,343</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-olive-100">
+                        <span class="text-olive-700">Summer Free Power (est.)</span>
+                        <span id="metric-summer" class="font-medium">$243/season</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-olive-700">ROI (upfront cost)</span>
+                        <span id="metric-roi" class="font-bold text-green-600">305%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 border border-olive-200">
+                <h2 class="text-2xl text-olive-950 mb-4">🔋 Battery Rollout Options</h2>
+                <div class="space-y-4">
+                    <div class="p-4 bg-olive-50 rounded-lg border border-olive-200">
+                        <h4 class="font-medium text-olive-800">Phase 1 (Current)</h4>
+                        <p class="text-sm text-olive-600">1 battery (16kWh) — covers average day</p>
+                        <p class="text-lg font-bold text-olive-950 mt-1">$19,539</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                        <h4 class="font-medium text-amber-800">Phase 2 (+1 year)</h4>
+                        <p class="text-sm text-amber-700">4 batteries (80kWh) — covers winter</p>
+                        <p class="text-lg font-bold text-amber-800 mt-1">$13,196</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <h4 class="font-medium text-green-800">Full System</h4>
+                        <p class="text-sm text-green-700">5 batteries + 24 panels — worst case</p>
+                        <p class="text-lg font-bold text-green-800 mt-1">$49,814</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="mt-8 bg-amber-50 rounded-xl p-6 border border-amber-200">
+            <h3 class="text-xl text-amber-800 mb-3">📝 Assumptions & Notes</h3>
+            <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm">
+                <li><strong>Upfront cost</strong> = hardware + labor + permits (what you pay today)</li>
+                <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
+                <li>80% solar offset assumed — you won't be 100% off-grid in most scenarios</li>
+                <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
+                <li>System life: 25 years (panels degrade ~0.5%/year)</li>
+                <li>Labor estimated at $1,500, permits at $750 (adjustable)</li>
+                <li>Replacement reserve: hardware cost ÷ system life</li>
+                <li>Green light: payback &lt; 7 years AND system life &gt; payback × 1.5</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="bg-olive-950 text-olive-400 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Techmore. Built for F.I.R.E. journey.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Demo data (from FIRE post)
+        const demoData = [
+            ['Power Cost ($/kWh)', 0.12],
+            ['Monthly Usage (kWh)', 1800],
+            ['System Size (kW)', 16.56],
+            ['Hardware Cost ($)', 19539],
+            ['Labor Cost ($)', 1500],
+            ['Permits ($)', 750],
+            ['Solar Offset (%)', 80],
+            ['System Life (years)', 25]
+        ];
+
+        // Interactive data (starts same as demo)
+        const userData = JSON.parse(JSON.stringify(demoData));
+
+        // Column config
+        const columns = [
+            { type: 'text', readOnly: true },
+            { type: 'numeric', numericFormat: { pattern: '$0,0.00' } }
+        ];
+
+        // Initialize demo spreadsheet
+        const demoHot = new Handsontable(document.getElementById('demo-spreadsheet'), {
+            data: demoData,
+            columns: columns,
+            rowHeaders: false,
+            colHeaders: ['Parameter', 'Value'],
+            height: 'auto',
+            licenseKey: 'non-commercial-and-evaluation',
+            readOnly: true
+        });
+
+        // Initialize interactive spreadsheet
+        const userHot = new Handsontable(document.getElementById('interactive-spreadsheet'), {
+            data: userData,
+            columns: columns,
+            rowHeaders: false,
+            colHeaders: ['Parameter', 'Value'],
+            height: 'auto',
+            licenseKey: 'non-commercial-and-evaluation',
+            afterChange: function(changes, source) {
+                if (source === 'edit') {
+                    calculateAll();
+                }
+            }
+        });
+
+        // Calculation function
+        function calculateFromData(data) {
+            const powerCost = data[0][1];
+            const monthlyUsage = data[1][1];
+            const systemSize = data[2][1];
+            const hardwareCost = data[3][1];
+            const laborCost = data[4][1];
+            const permitsCost = data[5][1];
+            const offsetPercent = data[6][1];
+            const systemLife = data[7][1];
+
+            const monthlyCost = monthlyUsage * powerCost;
+            const annualCost = monthlyCost * 12;
+            const annualSavings = annualCost * (offsetPercent / 100);
+            const totalUpfrontCost = hardwareCost + laborCost + permitsCost;
+            const taxCredit = totalUpfrontCost * 0.30; // 30% federal
+            const netCostAfterCredit = totalUpfrontCost - taxCredit;
+            const paybackYears = totalUpfrontCost / annualSavings;
+            const paybackYearsWithCredit = netCostAfterCredit / annualSavings;
+            const replacementReserve = hardwareCost / systemLife;
+            const summerFreePower = (systemSize * 0.12 * 90) * (offsetPercent / 100);
+            const lifetimeSavingsNoCredit = (annualSavings * systemLife) - totalUpfrontCost;
+            const lifetimeSavingsWithCredit = (annualSavings * systemLife) - netCostAfterCredit;
+            const roiNoCredit = ((annualSavings * systemLife - totalUpfrontCost) / totalUpfrontCost) * 100;
+            const roiWithCredit = ((annualSavings * systemLife - netCostAfterCredit) / netCostAfterCredit) * 100;
+
+            return {
+                monthlyCost,
+                annualCost,
+                annualSavings,
+                totalUpfrontCost,
+                taxCredit,
+                netCostAfterCredit,
+                paybackYears,
+                paybackYearsWithCredit,
+                replacementReserve,
+                summerFreePower,
+                lifetimeSavingsNoCredit,
+                lifetimeSavingsWithCredit,
+                roiNoCredit,
+                roiWithCredit
+            };
+        }
+
+        function updateVerdict(paybackYears, systemLife) {
+            const isGreen = paybackYears < 7 && systemLife > paybackYears * 1.5;
+            const el = document.getElementById('result-verdict');
+            if (isGreen) {
+                el.textContent = '✅ Worth it!';
+                el.className = 'text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block bg-green-100 text-green-800';
+            } else if (paybackYears < 10) {
+                el.textContent = '⚠️ Consider';
+                el.className = 'text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block bg-amber-100 text-amber-800';
+            } else {
+                el.textContent = '❌ Reconsider';
+                el.className = 'text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block bg-red-100 text-red-800';
+            }
+            return isGreen;
+        }
+
+        let chart = null;
+
+        function calculateAll() {
+            // Calculate demo
+            const demo = calculateFromData(demoData);
+            
+            // Update demo display
+            document.getElementById('demo-monthly-cost').textContent = '$' + demo.monthlyCost.toFixed(0);
+            document.getElementById('demo-upfront').textContent = '$' + demo.totalUpfrontCost.toLocaleString();
+
+            // Calculate user
+            const user = calculateFromData(userData);
+            
+            // Update user display
+            document.getElementById('user-monthly-cost').textContent = '$' + user.monthlyCost.toFixed(0);
+            document.getElementById('user-upfront').textContent = '$' + user.totalUpfrontCost.toLocaleString();
+
+            // Update results
+            document.getElementById('result-monthly-cost').textContent = '$' + user.monthlyCost.toFixed(0);
+            document.getElementById('result-upfront-cost').textContent = '$' + user.totalUpfrontCost.toLocaleString();
+            document.getElementById('result-tax-credit').textContent = '$' + user.taxCredit.toLocaleString();
+            document.getElementById('result-annual-savings').textContent = '$' + user.annualSavings.toFixed(0);
+            document.getElementById('result-payback').textContent = user.paybackYears.toFixed(1) + ' yrs';
+            document.getElementById('result-payback-credit').textContent = user.paybackYearsWithCredit.toFixed(1) + ' yrs w/ credit';
+
+            const isGreen = updateVerdict(user.paybackYears, userData[7][1]);
+
+            // Update metrics
+            document.getElementById('metric-replacement').textContent = '$' + user.replacementReserve.toFixed(0) + '/yr';
+            document.getElementById('metric-lifetime').textContent = '$' + user.lifetimeSavingsNoCredit.toLocaleString();
+            document.getElementById('metric-summer').textContent = '$' + user.summerFreePower.toFixed(0) + '/season';
+            document.getElementById('metric-roi').textContent = user.roiNoCredit.toFixed(0) + '%';
+
+            // Update chart
+            updateChart(user);
+        }
+
+        function updateChart(data) {
+            const ctx = document.getElementById('paybackChart').getContext('2d');
+            
+            const years = [];
+            const cumulativeSavings = [];
+            const upfrontCost = [];
+            const costAfterCredit = [];
+            let cumulative = 0;
+            
+            const maxYears = Math.min(30, Math.ceil(data.paybackYears * 2));
+            
+            for (let i = 0; i <= maxYears; i++) {
+                years.push(i);
+                cumulative += data.annualSavings;
+                cumulativeSavings.push(cumulative);
+                upfrontCost.push(data.totalUpfrontCost);
+                costAfterCredit.push(data.netCostAfterCredit);
+            }
+
+            const paybackIndex = cumulativeSavings.findIndex(s => s >= data.totalUpfrontCost);
+            const paybackIndexWithCredit = cumulativeSavings.findIndex(s => s >= data.netCostAfterCredit);
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Cumulative Savings',
+                            data: cumulativeSavings,
+                            borderColor: 'rgb(34, 197, 94)',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Upfront Cost',
+                            data: upfrontCost,
+                            borderColor: 'rgb(146, 64, 14)',
+                            borderDash: [5, 5],
+                            fill: false,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Cost After 30% Credit',
+                            data: costAfterCredit,
+                            borderColor: 'rgb(34, 197, 94)',
+                            borderDash: [2, 2],
+                            fill: false,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: paybackIndex !== -1 
+                                ? `Payback: ${paybackIndex} years (${paybackIndexWithCredit} years w/ 30% credit)` 
+                                : 'No payback in 30 years'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.parsed.y.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Years'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial calculation
+        calculateAll();
+    </script>
+</body>
+</html>
