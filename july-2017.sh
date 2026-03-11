@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # IMAGE TO REPLACE
+mkdir -p assets/images
 #blog.jpg
-wget https://raw.githubusercontent.com/techmore/blog/master/blog.jpg
-wget https://raw.githubusercontent.com/techmore/blog/master/july-10-2017.png
+wget -O assets/images/blog.jpg https://raw.githubusercontent.com/techmore/blog/master/blog.jpg
+wget -O assets/images/july-10-2017.png https://raw.githubusercontent.com/techmore/blog/master/july-10-2017.png
 
-sed -i.bak s=/w3images/woods.jpg=blog.jpg=g index.html
+sed -i.bak s=/w3images/woods.jpg=/assets/images/blog.jpg=g index.html
 
-cp index.html July-9-2017.html
+cp index.html legacy/July-9-2017.html
 
 cat <<EOF >> index.html
 
@@ -53,7 +54,7 @@ cat <<EOF >> index.html
   <hr>
   
  <div class="w3-card-4 w3-margin w3-white">
-    <img src="july-10-2017.png" alt="Nature" style="width:50%">
+    <img src="/assets/images/july-10-2017.png" alt="Nature" style="width:50%">
     <div class="w3-container">
       <h3><b>Creating a post</b></h3>
       <h5>Finally putting in content, <span class="w3-opacity">July 10, 2017</span></h5>
@@ -74,7 +75,7 @@ cat <<EOF >> index.html
   <hr>
   
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="blog.jpg" alt="Nature" style="width:20%">
+    <img src="/assets/images/blog.jpg" alt="Nature" style="width:20%">
     <div class="w3-container">
       <h3><b>Day 1 Blogging</b></h3>
       <h5>Creation of a reuseable blog, <span class="w3-opacity">July 9, 2017</span></h5>
@@ -84,7 +85,7 @@ cat <<EOF >> index.html
       <p>I Hate Macish</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <a href="July-9-2017.html" class="button"> READ MORE </a>
+          <a href="legacy/July-9-2017.html" class="button"> READ MORE </a>
 
         </div>
         <div class="w3-col m4 w3-hide-small">
@@ -102,13 +103,13 @@ cat <<EOF >> index.html
 
 EOF
 
-cat <<EOF-july >> July-9-2017.html
+cat <<EOF-july >> legacy/July-9-2017.html
 
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
 
 <div class="w3-card-4 w3-margin w3-white">
-    <img src="blog.jpg" alt="Nature" style="width:20%">
+    <img src="/assets/images/blog.jpg" alt="Nature" style="width:20%">
     <div class="w3-container">
       <h3><b>Day 1 Blogging</b></h3>
       <h5>Creation of a reuseable blog, <span class="w3-opacity">July 9, 2017</span></h5>
@@ -131,4 +132,3 @@ cat <<EOF-july >> July-9-2017.html
 </div>
 
 EOF-july
-
