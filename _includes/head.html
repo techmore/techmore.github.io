@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Techmore" }}</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117161742-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-117161742-1');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50: 'oklch(96% 0.015 110)',
+                            100: 'oklch(91% 0.020 110)',
+                            200: 'oklch(85% 0.028 110)',
+                            300: 'oklch(75% 0.040 110)',
+                            400: 'oklch(62% 0.055 110)',
+                            500: 'oklch(50% 0.065 110)',
+                            600: 'oklch(42% 0.055 110)',
+                            700: 'oklch(35% 0.045 110)',
+                            800: 'oklch(28% 0.035 110)',
+                            900: 'oklch(22% 0.025 110)',
+                            950: 'oklch(16% 0.015 110)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: oklch(91% 0.012 106.5);
+            color: oklch(15.3% 0.006 107.1);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
