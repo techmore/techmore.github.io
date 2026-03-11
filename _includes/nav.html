@@ -3,16 +3,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-8 w-full justify-center md:justify-start">
-                    <a href="/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-800{% endif %}">Blog</a>
-                    <a href="/fire/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/fire/' %} bg-olive-800{% endif %}">F.I.R.E.</a>
+                    <a href="/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-800{% endif %}">F.I.R.E.</a>
                     <a href="/solar/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/solar/' %} bg-olive-800{% endif %}">Solar</a>
                     <a href="/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/books' %} bg-olive-800{% endif %}">Books</a>
                     <a href="/taxes/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/taxes/' %} bg-olive-800{% endif %}">PA Taxes</a>
+                    <a href="/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/energy-monitoring/' %} bg-olive-800{% endif %}">Energy</a>
                     
                     <!-- Misc Dropdown -->
                     <div class="relative group">
-                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/writingprompts' or page.url contains '/guitar' or page.url contains '/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
+                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/writingprompts' or page.url contains '/guitar' or page.url contains '/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
                         <div class="absolute left-0 mt-0 w-48 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/' %} bg-olive-700{% endif %}">Blog</a>
                             <a href="/writingprompts/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/writingprompts/' %} bg-olive-700{% endif %}">Writing Prompts</a>
                             <a href="/guitar/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/guitar/' %} bg-olive-700{% endif %}">Guitar</a>
                             <a href="/dnd/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/dnd/' %} bg-olive-700{% endif %}">DnD 5e</a>
