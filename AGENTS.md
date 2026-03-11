@@ -51,7 +51,7 @@ index.html                # Main F.I.R.E. blog page
 energy-monitoring.html    # HVAC project hub — project overview + guide cards
 phase1_erv_guide.html     # Phase 1 ERV guide — Jekyll layout + inline CSS
 phase2_heatpump_guide.html# Phase 2 heat pump guide — Jekyll layout + inline CSS
-solar.html                # Interactive solar payback calculator
+energy-monitoring/solar.html # Interactive solar payback calculator
 ```
 
 Pages using `layout: default` get the site nav and footer automatically.
@@ -76,7 +76,7 @@ title: Page Title - Techmore
 - No `permalink`, `date`, `description`, `tags`, or other keys
 
 `_config.yml` uses `permalink: pretty` so pages are served at `/page-name/`
-(directory-style URLs). Nav links must match: `/energy-monitoring/`, `/solar/`, etc.
+(directory-style URLs). Nav links must match: `/energy-monitoring/`, `/energy-monitoring/solar/`, etc.
 
 ---
 
