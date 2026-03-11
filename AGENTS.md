@@ -52,6 +52,8 @@ energy-monitoring.html    # HVAC project hub — project overview + guide cards
 phase1_erv_guide.html     # Phase 1 ERV guide — Jekyll layout + inline CSS
 phase2_heatpump_guide.html# Phase 2 heat pump guide — Jekyll layout + inline CSS
 energy-monitoring/solar.html # Interactive solar payback calculator
+books.html                # Main reading list / book notes
+modern-western.html       # Modern Western reading pathway
 ```
 
 Pages using `layout: default` get the site nav and footer automatically.
