@@ -1,0 +1,624 @@
+---
+layout: default
+title: Phase 2 — Heat Pump Intelligence & Power Validation - Techmore
+---
+<style>
+:root {
+  --bg:        oklch(91% 0.012 106.5);
+  --bg2:       oklch(93% 0.016 110);
+  --ink:       oklch(22% 0.025 110);
+  --ink2:      oklch(35% 0.040 110);
+  --muted:     oklch(55% 0.040 110);
+  --border:    oklch(85% 0.028 110);
+  --border2:   oklch(80% 0.035 110);
+  --amber:     oklch(52% 0.130 75);
+  --amber-bg:  oklch(95% 0.040 85);
+  --amber-bdr: oklch(80% 0.090 82);
+  --blue:      oklch(40% 0.090 240);
+  --blue-bg:   oklch(95% 0.025 240);
+  --blue-bdr:  oklch(78% 0.060 240);
+  --green:     oklch(38% 0.090 145);
+  --green-bg:  oklch(95% 0.035 145);
+  --green-bdr: oklch(78% 0.080 145);
+  --red:       oklch(45% 0.160 25);
+  --red-bg:    oklch(95% 0.040 25);
+  --red-bdr:   oklch(78% 0.090 25);
+  --purple:    oklch(42% 0.120 290);
+  --purple-bg: oklch(95% 0.025 290);
+  --purple-bdr:oklch(78% 0.070 290);
+  --mono: 'Inter', ui-monospace, monospace;
+  --head: 'Instrument Serif', serif;
+  --body: 'Inter', system-ui, sans-serif;
+}
+
+.guide-topbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; max-width:900px; margin:0 auto; padding:1.25rem 2rem 0; }
+.guide-back { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; color:var(--muted); text-decoration:none; }
+.guide-back:hover { color:var(--ink); }
+.guide-dl { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; font-family:var(--mono); padding:0.35rem 0.85rem; border-radius:6px; background:var(--bg2); border:1px solid var(--border); color:var(--muted); cursor:pointer; }
+.guide-dl:hover { background:var(--border); color:var(--ink); }
+
+.cover { background: oklch(16% 0.015 110); color: oklch(91% 0.012 106.5); padding: 3rem 3rem 2.5rem; position: relative; overflow: hidden; max-width: 900px; margin: 0.75rem auto 0; border-radius: 16px; }
+.cover::after { content: 'PHASE 2'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: var(--head); font-style:italic; font-size: 7rem; font-weight: 400; color: oklch(91% 0.012 106.5 / 0.04); letter-spacing: 0.1em; pointer-events: none; white-space: nowrap; }
+.cover-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(65% 0.090 75); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.cover-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: oklch(65% 0.090 75); }
+.cover h1 { font-family: var(--head); font-style: italic; font-size: clamp(1.8rem, 4.5vw, 3.2rem); font-weight: 400; line-height: 1.1; max-width: 700px; margin-bottom: 1rem; color: oklch(96% 0.012 110); }
+.cover h1 em { font-style: normal; color: oklch(75% 0.040 110); }
+.cover-sub { color: oklch(62% 0.025 110); font-size: 14px; max-width: 560px; line-height: 1.6; margin-bottom: 2rem; }
+.system-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill { font-family: var(--mono); font-size: 11px; padding: 0.35rem 0.75rem; border-radius: 4px; letter-spacing: 0.05em; }
+.pill-amber { background: oklch(22% 0.025 75);  color: oklch(68% 0.100 75);  border: 1px solid oklch(32% 0.060 75); }
+.pill-blue  { background: oklch(22% 0.025 240); color: oklch(68% 0.080 240); border: 1px solid oklch(32% 0.060 240); }
+.pill-green { background: oklch(22% 0.025 145); color: oklch(68% 0.100 145); border: 1px solid oklch(32% 0.060 145); }
+
+.page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+.section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 3.5rem 0 2rem; }
+h2 { font-family: var(--head); font-size: 1.7rem; font-weight: 400; color: var(--ink); margin-bottom: 0.4rem; line-height: 1.2; }
+h3 { font-family: var(--head); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin: 1.5rem 0 0.4rem; }
+p { margin-bottom: 0.75rem; color: var(--ink2); }
+
+.alert { display: flex; gap: 1rem; padding: 1rem 1.25rem; border-radius: 8px; margin: 1.25rem 0; font-size: 14px; }
+.alert-icon { font-size: 18px; flex-shrink: 0; line-height: 1.5; }
+.alert b { display: block; font-weight: 600; margin-bottom: 0.2rem; font-size: 13px; letter-spacing: 0.02em; }
+.alert.amber  { background: var(--amber-bg);  border: 1px solid var(--amber-bdr);  color: oklch(35% 0.090 75); }
+.alert.amber b { color: var(--amber); }
+.alert.blue   { background: var(--blue-bg);   border: 1px solid var(--blue-bdr);   color: oklch(30% 0.060 240); }
+.alert.blue b  { color: var(--blue); }
+.alert.green  { background: var(--green-bg);  border: 1px solid var(--green-bdr);  color: oklch(28% 0.070 145); }
+.alert.green b { color: var(--green); }
+.alert.red    { background: var(--red-bg);    border: 1px solid var(--red-bdr);    color: oklch(32% 0.110 25); }
+.alert.red b   { color: var(--red); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+.card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.card-title { font-family: var(--head); font-size: 0.95rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--ink); }
+.card-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.card-tag { display: inline-block; font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-top: 0.5rem; }
+.tag-green  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-bdr); }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-bdr); }
+.tag-blue   { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-bdr); }
+.tag-red    { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-bdr); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1rem 0; }
+.data-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border2); background: var(--bg2); }
+.data-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--ink2); vertical-align: top; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td strong { color: var(--ink); font-weight: 600; }
+.status-good { color: var(--green);  font-family: var(--mono); font-size: 11px; }
+.status-warn { color: var(--amber);  font-family: var(--mono); font-size: 11px; }
+.status-need { color: var(--red);    font-family: var(--mono); font-size: 11px; }
+
+pre { background: oklch(16% 0.015 110); color: oklch(80% 0.020 110); border-radius: 6px; padding: 1.25rem 1.5rem; font-family: var(--mono); font-size: 12px; line-height: 1.7; overflow-x: auto; margin: 1rem 0; }
+pre .c  { color: oklch(40% 0.020 110); }
+pre .k  { color: oklch(72% 0.100 75); }
+pre .s  { color: oklch(68% 0.110 145); }
+pre .v  { color: oklch(68% 0.090 240); }
+pre .fn { color: oklch(68% 0.100 290); }
+code { font-family: var(--mono); font-size: 12px; background: var(--bg2); border: 1px solid var(--border); color: var(--amber); padding: 1px 5px; border-radius: 3px; }
+
+.arch-wrap { background: oklch(16% 0.015 110); border-radius: 8px; padding: 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
+
+.rule-matrix { margin: 1rem 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.rule-row { display: grid; grid-template-columns: 2fr 0.5fr 2fr 1.5fr; gap: 0.5rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); font-size: 12px; align-items: center; }
+.rule-row.head { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--bg2); border-bottom: 2px solid var(--border2); }
+.rule-row:last-child { border-bottom: none; }
+.rule-cond { font-family: var(--mono); color: var(--ink2); font-size: 11px; }
+.rule-op   { font-family: var(--mono); color: var(--muted); text-align: center; }
+.action-on   { padding: 3px 8px; background: var(--green-bg); border: 1px solid var(--green-bdr); color: var(--green); border-radius: 4px; font-weight: 600; }
+.action-off  { padding: 3px 8px; background: var(--red-bg);   border: 1px solid var(--red-bdr);   color: var(--red);   border-radius: 4px; font-weight: 600; }
+.action-up   { padding: 3px 8px; background: var(--amber-bg); border: 1px solid var(--amber-bdr); color: var(--amber); border-radius: 4px; font-weight: 600; }
+.action-hold { padding: 3px 8px; background: var(--blue-bg);  border: 1px solid var(--blue-bdr);  color: var(--blue);  border-radius: 4px; font-weight: 600; }
+.action-alrt { padding: 3px 8px; background: var(--red-bg);   border: 1px solid var(--red-bdr);   color: var(--red);   border-radius: 4px; font-weight: 600; font-size: 11px; }
+
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 0.4rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, var(--amber), var(--border)); }
+.tl-item { position: relative; padding: 0 0 1.5rem 1rem; }
+.tl-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--amber); border: 2px solid var(--bg); box-shadow: 0 0 0 2px var(--amber); }
+.tl-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.2rem; }
+.tl-title { font-family: var(--head); font-size: 1rem; font-weight: 400; margin-bottom: 0.3rem; }
+.tl-body { font-size: 13px; color: var(--muted); }
+
+@media print { .guide-topbar { display: none; } .cover { border-radius: 0; margin: 0; } }
+@media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } .rule-row { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<div class="guide-topbar">
+  <a href="/energy-monitoring/" class="guide-back">
+    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    Back to Energy Monitoring
+  </a>
+  <button onclick="window.print()" class="guide-dl">
+    <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Home Intelligence — Phase 2 of 2</div>
+  <h1>Heat Pump Intelligence<br><em>&amp; Power Validation</em></h1>
+  <div class="cover-sub">
+    Prerequisite: Phase 1 complete. This phase adds Mitsubishi Hyper Heat control via CN105, Emporia Vue as an independent power-truth validator, temperature-aware pre-heat planning from Open-Meteo forecasts, and a watchdog enforcement loop. Goal: meaningful, measurable reduction in heating costs through forecast-driven decisions rather than reactive setpoint chasing.
+  </div>
+  <div class="system-pills">
+    <span class="pill pill-amber">Phase 1 ERV + Weather ✓</span>
+    <span class="pill pill-blue">Mitsubishi Hyper Heat CN105</span>
+    <span class="pill pill-green">Emporia Vue Power Monitor</span>
+    <span class="pill pill-amber">COP-Aware Scheduler</span>
+    <span class="pill pill-blue">Watchdog + Enforcement</span>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ── PREREQUISITE ── -->
+<div class="section-label">Prerequisites</div>
+<h2>Phase 1 Must Be Complete</h2>
+<table class="data-table">
+  <thead><tr><th>Phase 1 Component</th><th>Why Phase 2 Depends on It</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td><strong>ERV on MQTT + SQLite logging</strong></td><td>Phase 2 automation coordinates ERV and heat pump together</td><td class="status-good">REQUIRED</td></tr>
+    <tr><td><strong>Aqara indoor sensors on MQTT</strong></td><td>Indoor temps drive pre-heat decisions and setpoint targets</td><td class="status-good">REQUIRED</td></tr>
+    <tr><td><strong>Open-Meteo polling running</strong></td><td>Forecast data is the core input to pre-heat scheduling</td><td class="status-good">REQUIRED</td></tr>
+    <tr><td><strong>FastAPI backend running</strong></td><td>Phase 2 adds modules to the same service — not a separate app</td><td class="status-good">REQUIRED</td></tr>
+  </tbody>
+</table>
+
+<!-- ── CRITICAL ALERT ── -->
+<div class="section-label">Read First</div>
+
+<div class="alert red">
+  <div class="alert-icon">🚨</div>
+  <div>
+    <b>Mitsubishi Kumo Cloud is broken — do not disturb it</b>
+    As of early 2025 Mitsubishi migrated to a new "Comfort" app and the Kumo Cloud V3 API broke all third-party integrations. If your current Kumo Cloud setup is working, leave it completely alone — do not uninstall, do not update to the Comfort app. The replacement for Phase 2 is an ESPHome CN105 adapter which provides fully local control with more data than Kumo ever exposed. Once CN105 is live, Kumo Cloud access is no longer needed.
+  </div>
+</div>
+
+<!-- ── WHAT PHASE 2 DELIVERS ── -->
+<div class="section-label">What Phase 2 Delivers</div>
+<h2>New Capabilities on Top of Phase 1</h2>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">🌡️</div>
+    <div class="card-title">True outdoor temp from the heat pump</div>
+    <div class="card-body">The CN105 adapter exposes the Hyper Heat's own outdoor sensor — more accurate than Open-Meteo for the exact conditions the compressor is operating in.</div>
+    <div class="card-tag tag-blue">CN105 → MQTT</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">⚡</div>
+    <div class="card-title">Actual $/hour cost curve</div>
+    <div class="card-body">Emporia Vue per-circuit wattage × your electricity rate = real cost per hour at any outdoor temperature. Not spec sheet estimates — your actual unit, your actual house.</div>
+    <div class="card-tag tag-green">Emporia + SQLite</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">📅</div>
+    <div class="card-title">Pre-heat scheduling</div>
+    <div class="card-body">When forecast shows conditions will get significantly worse, the system pre-warms the house during the current high-COP window rather than fighting low COP all night.</div>
+    <div class="card-tag tag-amber">Open-Meteo forecast</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔍</div>
+    <div class="card-title">Power validation watchdog</div>
+    <div class="card-body">Emporia is the independent truth source. If the heat pump draws power when it shouldn't, or fails to respond to a command, the system detects it from the wire — not from what the unit says it's doing.</div>
+    <div class="card-tag tag-red">Ground truth enforcement</div>
+  </div>
+</div>
+
+<!-- ── MITSUBISHI CN105 ── -->
+<div class="section-label">Step 1 — Mitsubishi Hyper Heat Hardware</div>
+<h2>CN105 Adapter — ESPHome Local Control</h2>
+
+<p>The CN105 port is a 5-pin JST connector on every Mitsubishi mini-split — it's the same port the Kumo Cloud WiFi adapter uses. An ESP32 running the SwiCago HeatPump ESPHome component replaces it entirely, giving fully local control with zero cloud dependency.</p>
+
+<h3>Hardware options</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">🛒</div>
+    <div class="card-title">Pre-built adapter board</div>
+    <div class="card-body">Search Etsy or GitHub for "mahtanar ESP32 CN105" or "SwiCago Mitsubishi ESPHome". Pre-wired JST connector, just flash ESPHome and plug in. May have limited stock.</div>
+    <div class="card-tag tag-green">Easiest — ~$25</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔧</div>
+    <div class="card-title">DIY with spare ESP32-S3</div>
+    <div class="card-body">You already have extra ESP32-S3 DevKitC boards and MP1584 buck converters from Phase 1. Add a JST PAP-5V-S connector (~$2). Wire it the same way as the ERV boards.</div>
+    <div class="card-tag tag-amber">~$5 parts if you DIY</div>
+  </div>
+</div>
+
+<h3>CN105 pinout</h3>
+<table class="data-table">
+  <thead><tr><th>Pin</th><th>Signal</th><th>Connect to</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>12V</td><td>MP1584 IN+</td><td>Power for ESP32 via buck converter</td></tr>
+    <tr><td>2</td><td>GND</td><td>MP1584 IN−, ESP GND</td><td>Common ground</td></tr>
+    <tr><td>3</td><td>5V</td><td>Skip — use buck output</td><td>Limited current — use the buck converter output instead</td></tr>
+    <tr><td>4</td><td>TX (unit → ESP)</td><td>ESP32 GPIO18 (RX)</td><td>2400 baud, 8E1</td></tr>
+    <tr><td>5</td><td>RX (ESP → unit)</td><td>ESP32 GPIO17 (TX)</td><td>Commands sent to unit</td></tr>
+  </tbody>
+</table>
+
+<h3>ESPHome config for CN105</h3>
+<pre><span class="c"># Add to a new yaml file: mitsubishi_hp.yaml</span>
+<span class="c"># Same secrets.yaml, same MQTT broker as Phase 1</span>
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/SwiCago/HeatPump
+    components: [mitsubishi_heatpump]
+
+uart:
+  id: hp_uart
+  tx_pin: GPIO17
+  rx_pin: GPIO18
+  baud_rate: <span class="v">2400</span>
+
+climate:
+  - platform: mitsubishi_heatpump
+    name: <span class="s">"Hyper Heat"</span>
+    uart_id: hp_uart
+
+sensor:
+  - platform: template
+    name: <span class="s">"HP Outdoor Temp"</span>         <span class="c"># exposed by component</span>
+  - platform: template
+    name: <span class="s">"HP Compressor Frequency"</span>    <span class="c"># 0 = off, &gt;0 = running</span>
+
+mqtt:
+  broker: <span class="v">192.168.1.XXX</span>
+  topic_prefix: <span class="s">"heatpump/unit1"</span></pre>
+
+<div class="alert green">
+  <div class="alert-icon">✅</div>
+  <div>
+    <b>What CN105 exposes that Kumo Cloud never did</b>
+    True outdoor temperature from the heat pump's own sensors, compressor operating frequency (tells you actual load), defrost cycle status, actual vs. requested operating mode, and filter reminder state. Compressor frequency is especially useful — it's how you verify the unit is genuinely running vs. just in fan mode.
+  </div>
+</div>
+
+<!-- ── EMPORIA VUE ── -->
+<div class="section-label">Step 2 — Emporia Vue Power Monitoring</div>
+<h2>Per-Circuit Watts as Ground Truth</h2>
+
+<p>The Emporia Vue doesn't care what the CN105 says. It sees electrons on the wire. This is what makes it the right validation layer — it's completely independent of the heat pump's self-reported state.</p>
+
+<div class="alert amber">
+  <div class="alert-icon">🏷️</div>
+  <div>
+    <b>Label these circuits in the Emporia app before starting</b>
+    Heat Pump — Compressor, Heat Pump — Air Handler, ERV Unit 1, ERV Unit 2. Accurate labeling is what makes the validation logic unambiguous. If the compressor and air handler are on the same circuit, label it as one.
+  </div>
+</div>
+
+<h3>Emporia polling — add to erv_monitor.py</h3>
+<pre><span class="c"># pip install pyemvue</span>
+<span class="k">import</span> pyemvue
+<span class="k">from</span> pyemvue.enums <span class="k">import</span> Scale, Unit
+
+HP_IDLE_WATTS   = <span class="v">50</span>    <span class="c"># fan only / standby</span>
+HP_ACTIVE_WATTS = <span class="v">800</span>   <span class="c"># compressor running threshold</span>
+
+<span class="k">async def</span> <span class="fn">poll_emporia_loop</span>(mqtt_client):
+    vue = pyemvue.PyEmVue()
+    vue.login(username=<span class="s">'you@email.com'</span>, password=<span class="s">'yourpassword'</span>,
+              token_storage_file=<span class="s">'emporia_keys.json'</span>)
+
+    <span class="k">while True</span>:
+        channels = vue.get_recent_usage(
+            scale=Scale.MINUTE.value, unit=Unit.WATTS.value
+        )
+        <span class="k">for</span> ch <span class="k">in</span> channels:
+            mqtt_client.publish(
+                <span class="s">f"power/{ch.name.lower().replace(' ','_')}/watts"</span>,
+                ch.usage, qos=<span class="v">1</span>
+            )
+        <span class="k">await</span> asyncio.sleep(<span class="v">60</span>)  <span class="c"># Emporia API: max 1/min</span></pre>
+
+<!-- ── VALIDATION + WATCHDOG ── -->
+<div class="section-label">Step 3 — Validation Loop &amp; Watchdog</div>
+<h2>Emporia as the Independent Enforcer</h2>
+
+<p>The full control + validation flow for every heat pump command. The CN105 tells you what the unit thinks it's doing. The Emporia tells you what it's actually drawing. The gap between those two is where failures live.</p>
+
+<div class="arch-wrap">
+<svg viewBox="0 0 700 320" width="100%" style="display:block;margin:0 auto;max-width:700px;">
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5a5248"/>
+    </marker>
+  </defs>
+
+  <!-- Decision engine -->
+  <rect x="230" y="10" width="240" height="40" rx="3" fill="#2a2420" stroke="#c47c1a" stroke-width="1.5"/>
+  <text x="350" y="28" fill="#c47c1a" font-family="Syne,sans-serif" font-size="10" text-anchor="middle" font-weight="800">Automation Engine Decision</text>
+  <text x="350" y="42" fill="#5a5248" font-family="DM Mono,monospace" font-size="8" text-anchor="middle">HP should be: OFF / ON / setpoint X°F</text>
+
+  <!-- CN105 command -->
+  <line x1="350" y1="50" x2="350" y2="90" stroke="#5a5248" stroke-width="1.2" marker-end="url(#arr2)"/>
+  <rect x="240" y="90" width="220" height="35" rx="3" fill="#1a1714" stroke="#1a5c8a" stroke-width="1.5"/>
+  <text x="350" y="108" fill="#7ab8e8" font-family="Syne,sans-serif" font-size="10" text-anchor="middle" font-weight="700">Send command via CN105 → MQTT</text>
+  <text x="350" y="120" fill="#5a5248" font-family="DM Mono,monospace" font-size="7" text-anchor="middle">climate/set: mode=off  OR  temperature=68</text>
+
+  <!-- Wait -->
+  <line x1="350" y1="125" x2="350" y2="155" stroke="#5a5248" stroke-width="1.2" marker-end="url(#arr2)"/>
+  <rect x="265" y="155" width="170" height="28" rx="3" fill="#2a2420" stroke="#5a5248" stroke-width="1"/>
+  <text x="350" y="172" fill="#8a8278" font-family="DM Mono,monospace" font-size="9" text-anchor="middle">wait 90 seconds</text>
+
+  <!-- Dual validation -->
+  <line x1="350" y1="183" x2="350" y2="210" stroke="#5a5248" stroke-width="1.2" marker-end="url(#arr2)"/>
+  <text x="350" y="205" fill="#5a5248" font-family="DM Mono,monospace" font-size="8" text-anchor="middle">validate with both sources</text>
+
+  <!-- CN105 check -->
+  <rect x="60" y="215" width="200" height="40" rx="3" fill="#1a1714" stroke="#1a5c8a" stroke-width="1.5"/>
+  <text x="160" y="232" fill="#7ab8e8" font-family="Syne,sans-serif" font-size="9" text-anchor="middle" font-weight="700">CN105 State Check</text>
+  <text x="160" y="246" fill="#5a5248" font-family="DM Mono,monospace" font-size="7" text-anchor="middle">mode = off / compressor_hz = 0</text>
+  <line x1="265" y1="215" x2="220" y2="215" stroke="#5a5248" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- Emporia check -->
+  <rect x="440" y="215" width="200" height="40" rx="3" fill="#1a1714" stroke="#2d6e4a" stroke-width="1.5"/>
+  <text x="540" y="232" fill="#7ac4a0" font-family="Syne,sans-serif" font-size="9" text-anchor="middle" font-weight="700">Emporia Power Check</text>
+  <text x="540" y="246" fill="#5a5248" font-family="DM Mono,monospace" font-size="7" text-anchor="middle">hp_circuit_watts &lt; 50W</text>
+  <line x1="435" y1="215" x2="440" y2="215" stroke="#5a5248" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- Pass -->
+  <line x1="160" y1="255" x2="160" y2="285" stroke="#2d6e4a" stroke-width="1.2" marker-end="url(#arr2)"/>
+  <line x1="540" y1="255" x2="540" y2="285" stroke="#2d6e4a" stroke-width="1.2" marker-end="url(#arr2)"/>
+  <rect x="90" y="285" width="140" height="28" rx="3" fill="#1a2a1a" stroke="#2d6e4a" stroke-width="1.5"/>
+  <text x="160" y="303" fill="#7ac4a0" font-family="DM Mono,monospace" font-size="9" text-anchor="middle">✓ CONFIRMED</text>
+  <rect x="470" y="285" width="140" height="28" rx="3" fill="#2a1a1a" stroke="#8a2020" stroke-width="1.5"/>
+  <text x="540" y="303" fill="#e87a7a" font-family="DM Mono,monospace" font-size="9" text-anchor="middle">⚠ MISMATCH → retry</text>
+</svg>
+</div>
+
+<h3>Validation implementation</h3>
+<pre><span class="c"># In erv_monitor.py — add to automation engine</span>
+
+<span class="k">async def</span> <span class="fn">enforce_hp_command</span>(unit_id: str, mode: str, setpoint: float = <span class="k">None</span>):
+    <span class="k">for</span> attempt <span class="k">in</span> range(<span class="v">3</span>):
+        <span class="c"># Send command via CN105 MQTT topic</span>
+        payload = {<span class="s">"mode"</span>: mode}
+        <span class="k">if</span> setpoint: payload[<span class="s">"temperature"</span>] = setpoint
+        mqtt.publish(<span class="s">f"heatpump/{unit_id}/climate/set"</span>, json.dumps(payload))
+
+        <span class="k">await</span> asyncio.sleep(<span class="v">90</span>)  <span class="c"># wait for compressor ramp-down</span>
+
+        cn105_mode  = <span class="k">await</span> get_mqtt_state(<span class="s">f"heatpump/{unit_id}/mode"</span>)
+        emporia_w   = <span class="k">await</span> get_latest_watts(<span class="s">"heat_pump_compressor"</span>)
+
+        <span class="k">if</span> mode == <span class="s">"off"</span>:
+            confirmed = (cn105_mode <span class="k">in</span> (<span class="s">"off"</span>, <span class="s">"fan_only"</span>)) \
+                        <span class="k">and</span> (emporia_w < HP_IDLE_WATTS)
+        <span class="k">else</span>:
+            confirmed = cn105_mode == mode \
+                        <span class="k">and</span> emporia_w > HP_IDLE_WATTS
+
+        <span class="k">if</span> confirmed:
+            <span class="k">await</span> log_event(<span class="s">"HP_COMMAND_CONFIRMED"</span>,
+                            {<span class="s">"mode"</span>: mode, <span class="s">"attempts"</span>: attempt+<span class="v">1</span>,
+                             <span class="s">"watts"</span>: emporia_w})
+            <span class="k">return True</span>
+
+        <span class="k">await</span> log_event(<span class="s">"HP_COMMAND_RETRY"</span>,
+                        {<span class="s">"attempt"</span>: attempt+<span class="v">1</span>, <span class="s">"cn105"</span>: cn105_mode,
+                         <span class="s">"emporia_w"</span>: emporia_w})
+
+    <span class="c"># Three attempts failed — alert and log</span>
+    <span class="k">await</span> send_alert(<span class="s">f"HP {unit_id} not responding to {mode} after 3 attempts"</span>)
+    <span class="k">return False</span>
+
+
+<span class="k">async def</span> <span class="fn">watchdog_loop</span>():
+    <span class="s">"""60-second loop: if state drifts from intended, re-issue command."""</span>
+    <span class="k">while True</span>:
+        <span class="k">for</span> unit_id <span class="k">in</span> HP_UNITS:
+            intended = INTENDED_STATE.get(unit_id)
+            <span class="k">if not</span> intended: <span class="k">continue</span>
+
+            cn105_mode = <span class="k">await</span> get_mqtt_state(<span class="s">f"heatpump/{unit_id}/mode"</span>)
+            emporia_w  = <span class="k">await</span> get_latest_watts(<span class="s">"heat_pump_compressor"</span>)
+
+            <span class="c"># Detect unexpected power draw</span>
+            hp_should_be_off = intended[<span class="s">"mode"</span>] == <span class="s">"off"</span>
+            hp_drawing_power = emporia_w > HP_ACTIVE_WATTS
+
+            <span class="k">if</span> hp_should_be_off <span class="k">and</span> hp_drawing_power:
+                <span class="k">await</span> log_event(<span class="s">"HP_UNEXPECTED_POWER"</span>,
+                                {<span class="s">"watts"</span>: emporia_w, <span class="s">"cn105"</span>: cn105_mode})
+                <span class="k">await</span> enforce_hp_command(unit_id, <span class="s">"off"</span>)
+
+            <span class="c"># Detect state drift from external input</span>
+            <span class="k">elif</span> cn105_mode != intended[<span class="s">"mode"</span>]:
+                <span class="k">await</span> log_event(<span class="s">"HP_STATE_DRIFT"</span>,
+                                {<span class="s">"actual"</span>: cn105_mode, <span class="s">"intended"</span>: intended})
+                <span class="k">await</span> enforce_hp_command(unit_id, **intended)
+
+        <span class="k">await</span> asyncio.sleep(<span class="v">60</span>)</pre>
+
+<!-- ── PLANNING ENGINE ── -->
+<div class="section-label">Step 4 — Pre-Heat Planning Engine</div>
+<h2>Forecast-Driven COP Scheduling</h2>
+
+<p>This is the highest-value part of Phase 2. The Hyper Heat's efficiency (COP) drops significantly as outdoor temperature falls. A pre-heat decision made 6–12 hours in advance — based on the Open-Meteo forecast already running from Phase 1 — can shift expensive low-COP runtime to cheap high-COP windows without reducing comfort at all.</p>
+
+<div class="alert blue">
+  <div class="alert-icon">💡</div>
+  <div>
+    <b>The fundamental insight</b>
+    Your house stores heat. Running the heat pump harder at 40°F (COP ~3.5) and letting the house coast through a predicted 15°F night (COP ~1.5) costs significantly less than maintaining temperature reactively through that cold night. The Emporia data builds your real COP curve — not spec sheet estimates.
+  </div>
+</div>
+
+<h3>Hyper Heat approximate COP by outdoor temperature</h3>
+<table class="data-table">
+  <thead><tr><th>Outdoor Temp</th><th>Approx. COP</th><th>$/hr at 1.5kW draw (example)</th><th>Automation stance</th></tr></thead>
+  <tbody>
+    <tr><td><strong>47°F</strong></td><td>3.5 – 4.0</td><td>~$0.14 effective</td><td>Run freely — excellent efficiency</td></tr>
+    <tr><td><strong>35°F</strong></td><td>2.5 – 3.0</td><td>~$0.19 effective</td><td>Normal operation, good window</td></tr>
+    <tr><td><strong>17°F</strong></td><td>1.8 – 2.2</td><td>~$0.26 effective</td><td>Maintain, avoid extra cycling</td></tr>
+    <tr><td><strong>5°F</strong></td><td>1.2 – 1.5</td><td>~$0.38 effective</td><td>Reduce setpoint slightly, let thermal mass work</td></tr>
+    <tr><td><strong>−13°F</strong></td><td>~1.0</td><td>~$0.50 effective</td><td>Minimum effective — hold, don't chase</td></tr>
+  </tbody>
+</table>
+
+<div class="alert amber">
+  <div class="alert-icon">📊</div>
+  <div>
+    <b>After ~2 weeks of data, replace the table above with your real curve</b>
+    Query SQLite: average heat pump watts grouped by 5°F outdoor temp buckets × Emporia circuit data. Your actual COP curve for your specific unit, your specific house, your specific electrical rate. This is what makes the scheduler genuinely accurate rather than spec-sheet theoretical.
+  </div>
+</div>
+
+<pre><span class="c"># Real COP curve query — run after 2+ weeks of data</span>
+SELECT
+  ROUND(hp_outdoor_temp / <span class="v">5</span>) * <span class="v">5</span>     AS temp_bucket_f,
+  AVG(hp_power_watts)                AS avg_watts,
+  AVG(hp_power_watts) / <span class="v">1000.0</span>
+    * <span class="v">0.14</span>                            AS cost_per_hour,
+  <span class="c">-- replace 0.14 with your actual $/kWh</span>
+  COUNT(*)                            AS samples
+FROM hp_readings h
+JOIN power_readings p ON h.ts = p.ts
+WHERE hp_mode = <span class="s">'heat'</span>
+  AND hp_outdoor_temp IS NOT NULL
+GROUP BY temp_bucket_f
+ORDER BY temp_bucket_f DESC;</pre>
+
+<h3>Pre-heat scheduling logic</h3>
+<div class="rule-matrix">
+  <div class="rule-row head"><span>Forecast Condition</span><span></span><span>Action</span><span>Reason</span></div>
+  <div class="rule-row">
+    <span class="rule-cond">now &gt; 40°F AND forecast shows &lt; 20°F within 8h</span>
+    <span class="rule-op">→</span>
+    <span class="action-up">Raise setpoint +2°F now</span>
+    <span style="font-size:11px;color:var(--muted)">Pre-load thermal mass at high COP before cold arrives</span>
+  </div>
+  <div class="rule-row">
+    <span class="rule-cond">20°F &lt; outdoor &lt; 45°F, steady for next 6h</span>
+    <span class="rule-op">→</span>
+    <span class="action-hold">Normal setpoint, run continuously</span>
+    <span style="font-size:11px;color:var(--muted)">Hyper Heat sweet spot — steady low-load is most efficient</span>
+  </div>
+  <div class="rule-row">
+    <span class="rule-cond">outdoor &lt; 5°F AND house within 1°F of setpoint</span>
+    <span class="rule-op">→</span>
+    <span class="action-hold">Drop setpoint −1°F</span>
+    <span style="font-size:11px;color:var(--muted)">Lowest COP window — let stored heat carry, reduce compressor demand</span>
+  </div>
+  <div class="rule-row">
+    <span class="rule-cond">forecast shows warming &gt; 15°F rise within 4h</span>
+    <span class="rule-op">→</span>
+    <span class="action-hold">Hold current setpoint — don't pre-heat</span>
+    <span style="font-size:11px;color:var(--muted)">Better conditions coming — inefficient to push heat in now</span>
+  </div>
+  <div class="rule-row">
+    <span class="rule-cond">Emporia shows &gt; 150% expected watts for outdoor temp</span>
+    <span class="rule-op">→</span>
+    <span class="action-alrt">Alert: efficiency anomaly</span>
+    <span style="font-size:11px;color:var(--muted)">Unit working harder than COP curve predicts — possible coil/refrigerant issue</span>
+  </div>
+</div>
+
+<pre><span class="c"># Pre-heat scheduler — runs every 5 minutes</span>
+<span class="k">async def</span> <span class="fn">hp_scheduling_loop</span>():
+    <span class="k">while True</span>:
+        weather      = <span class="k">await</span> get_latest_weather()
+        indoor_temps = <span class="k">await</span> get_indoor_temps()   <span class="c"># from Aqara via MQTT</span>
+        avg_indoor   = sum(indoor_temps.values()) / len(indoor_temps)
+
+        now_f        = weather[<span class="s">"outdoor_temp_f"</span>]
+        forecast_8h  = weather[<span class="s">"temp_in_8h"</span>]           <span class="c"># from Open-Meteo (Phase 1)</span>
+        forecast_4h  = weather[<span class="s">"temp_in_4h"</span>]
+
+        current_sp   = <span class="k">await</span> get_hp_setpoint(<span class="s">"unit1"</span>)
+        base_sp      = <span class="v">68.0</span>  <span class="c"># your normal setpoint</span>
+
+        <span class="k">if</span> now_f > <span class="v">40</span> <span class="k">and</span> forecast_8h < <span class="v">20</span>:
+            target_sp = base_sp + <span class="v">2.0</span>
+            reason    = <span class="s">f"pre-heat: {now_f}°F now → {forecast_8h}°F in 8h"</span>
+
+        <span class="k">elif</span> now_f < <span class="v">5</span> <span class="k">and</span> avg_indoor >= base_sp - <span class="v">1</span>:
+            target_sp = base_sp - <span class="v">1.0</span>
+            reason    = <span class="s">"extreme cold: drop setpoint, use stored heat"</span>
+
+        <span class="k">elif</span> forecast_4h > now_f + <span class="v">15</span>:
+            target_sp = base_sp
+            reason    = <span class="s">"warming coming — hold normal setpoint"</span>
+
+        <span class="k">else</span>:
+            target_sp = base_sp
+            reason    = <span class="s">"normal operation"</span>
+
+        <span class="k">if</span> target_sp != current_sp:
+            <span class="k">await</span> enforce_hp_command(<span class="s">"unit1"</span>, <span class="s">"heat"</span>, setpoint=target_sp)
+            <span class="k">await</span> log_event(<span class="s">"HP_SETPOINT_CHANGE"</span>,
+                            {<span class="s">"from"</span>: current_sp, <span class="s">"to"</span>: target_sp, <span class="s">"reason"</span>: reason})
+
+        <span class="k">await</span> asyncio.sleep(<span class="v">300</span>)  <span class="c"># 5 minutes</span></pre>
+
+<!-- ── WEB UI ADDITIONS ── -->
+<div class="section-label">Step 5 — Web UI Phase 2 Additions</div>
+<h2>New Dashboard Panels</h2>
+
+<table class="data-table">
+  <thead><tr><th>New Panel</th><th>Content</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Heat Pump Status</strong></td><td>Current mode, setpoint, actual indoor temp, compressor frequency, outdoor temp (from HP sensor), run hours today</td></tr>
+    <tr><td><strong>Power &amp; Cost</strong></td><td>Live Watts per circuit (HP compressor, HP air handler, ERV ×2), $/hour at current draw, today's total kWh and cost estimate</td></tr>
+    <tr><td><strong>Planning Horizon</strong></td><td>12-hour forecast with overlaid COP estimate and scheduled setpoint changes. Shows why the current decision was made.</td></tr>
+    <tr><td><strong>Automation Log</strong></td><td>Last 20 decisions across both ERV and heat pump: timestamp, action taken, reason, outcome (confirmed/retry/failed)</td></tr>
+    <tr><td><strong>Override Control</strong></td><td>Single toggle: pause all automation for 1h / 2h / 4h. During pause the watchdog suspends. Manual setpoint entry for heat pump. ERV manual mode select. All logged with timestamp.</td></tr>
+    <tr><td><strong>Efficiency Trend</strong></td><td>30-day chart of actual $/day heating cost. Makes seasonal improvement and the impact of automation visible.</td></tr>
+  </tbody>
+</table>
+
+<!-- ── ROLLOUT ── -->
+<div class="section-label">Rollout Sequence</div>
+<h2>Recommended Order</h2>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-label">Phase 1 — Complete first</div>
+    <div class="tl-title">ERV + Aqara + Open-Meteo + Web UI</div>
+    <div class="tl-body">Both ERVs logging. Indoor sensors on MQTT. Weather-driven ERV automation running. Dashboard live. This baseline data is what makes Phase 2 scheduling accurate.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 1–2</div>
+    <div class="tl-title">Emporia Vue integration</div>
+    <div class="tl-body">Add pyemvue polling to the Python backend. Label circuits. Verify per-circuit wattage is flowing into SQLite. No automation yet — just data collection.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 2–3</div>
+    <div class="tl-title">CN105 adapter for Mitsubishi</div>
+    <div class="tl-body">Order or build the adapter. Flash ESPHome. Connect to MQTT. Verify HP state reporting — mode, setpoint, outdoor temp, compressor frequency all visible on dashboard. Still no automated control yet.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 3–5</div>
+    <div class="tl-title">Baseline data collection</div>
+    <div class="tl-body">Let the system log without issuing HP commands for 2 weeks. Build your real COP curve from Emporia + HP outdoor sensor data. Understand your house's thermal decay rate (how fast it cools per degree of outdoor temp). This shapes all future scheduling.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 5–6</div>
+    <div class="tl-title">Enable watchdog and validation</div>
+    <div class="tl-body">Turn on the enforcement loop. The system now monitors HP state against intended state and validates every commanded change against Emporia. No proactive scheduling yet — just ensuring commands are obeyed.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 6–8</div>
+    <div class="tl-title">Pre-heat scheduling live</div>
+    <div class="tl-body">Enable the forecast-driven scheduler with conservative rules tuned to your observed cost curve. Review the automation log daily for the first two weeks. Adjust thresholds based on what you see.</div>
+  </div>
+</div>
+
+  <div style="padding-top:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:1rem;">
+    <a href="/phase1_erv_guide/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;color:var(--muted);text-decoration:none;">
+      <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Phase 1: ERV Integration
+    </a>
+    <a href="/energy-monitoring/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;color:var(--muted);text-decoration:none;">
+      Back to Energy Monitoring
+      <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</div>

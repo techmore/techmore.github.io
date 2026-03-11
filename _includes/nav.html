@@ -5,7 +5,15 @@
                 <div class="flex items-center gap-8 w-full justify-center md:justify-start">
                     <a href="/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-800{% endif %}">F.I.R.E.</a>
                     <a href="/solar/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/solar/' %} bg-olive-800{% endif %}">Solar</a>
-                    <a href="/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/energy-monitoring/' %} bg-olive-800{% endif %}">Energy</a>
+                    <!-- Energy Dropdown -->
+                    <div class="relative group">
+                        <a href="/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/energy-monitoring/' or page.url contains '/phase1_erv_guide' or page.url contains '/phase2_heatpump_guide' %} bg-olive-800{% endif %}">Energy ▾</a>
+                        <div class="absolute left-0 mt-0 w-56 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="/energy-monitoring/" class="block px-4 py-2 hover:bg-olive-700 rounded-t-lg text-sm{% if page.url == '/energy-monitoring/' %} bg-olive-700{% endif %}">Overview</a>
+                            <a href="/phase1_erv_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/phase1_erv_guide' %} bg-olive-700{% endif %}">Phase 1 — ERV Guide</a>
+                            <a href="/phase2_heatpump_guide/" class="block px-4 py-2 hover:bg-olive-700 rounded-b-lg text-sm{% if page.url contains '/phase2_heatpump_guide' %} bg-olive-700{% endif %}">Phase 2 — Heat Pump Guide</a>
+                        </div>
+                    </div>
                     <a href="/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/books' %} bg-olive-800{% endif %}">Books</a>
                     <a href="/taxes/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/taxes/' %} bg-olive-800{% endif %}">PA Taxes</a>
                     
