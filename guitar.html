@@ -3,121 +3,347 @@ layout: default
 title: Guitar - Techmore
 ---
 
+<main class="bg-olive-50">
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-olive-700 rounded-xl flex items-center justify-center text-olive-50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a4 4 0 00-6 5.5V16a3 3 0 006 0v-3.5A4 4 0 0015 7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-display italic text-olive-950">Guitar</h1>
+                        <p class="text-sm text-olive-700">Practice routines, setlists, and tone references.</p>
+                    </div>
+                </div>
 
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-olive-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.2a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input
+                            type="text"
+                            id="global-search"
+                            placeholder="Search riffs, drills, and sets..."
+                            class="w-full pl-10 pr-16 py-2.5 bg-white border border-olive-200 rounded-xl text-sm text-olive-900 placeholder-olive-400 focus:outline-none focus:border-olive-400 focus:ring-2 focus:ring-olive-100 transition-colors"
+                        >
+                        <div class="absolute inset-y-0 right-2 flex items-center">
+                            <kbd class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 bg-olive-50 border border-olive-200 rounded text-[10px] text-olive-500 font-mono">
+                                <span>⌘</span><span>K</span>
+                            </kbd>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Header -->
-    <header class="max-w-7xl mx-auto pt-16 pb-12 px-4 text-center">
-        <h1 class="text-7xl font-display italic text-olive-950 mb-4">Guitar</h1>
-        <span class="inline-block px-4 py-1 bg-olive-800 text-olive-50 rounded-full text-sm font-medium tracking-wide">Exercises & Resources</span>
-    </header>
+                <div class="flex items-center gap-2">
+                    <a href="/" class="p-2 bg-olive-900 rounded-lg text-olive-50 hover:bg-olive-800 transition-colors" aria-label="Home">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M4 10v10h6v-6h4v6h6V10" />
+                        </svg>
+                    </a>
+                    <a href="/writingprompts/" class="p-2 bg-white border border-olive-200 rounded-lg text-olive-600 hover:bg-olive-100 transition-colors" aria-label="Writing Prompts">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
 
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        
-        <!-- Picking Hand Exercises -->
-        <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
-            <div class="p-8">
-                <h2 class="text-4xl text-olive-950 mb-6">Picking Hand Exercises</h2>
-                
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Right Hand Syllabus v.6-14-14</p>
+            <div class="mt-4 flex flex-wrap items-center gap-2">
+                <button class="filter-pill px-3 py-1.5 bg-olive-700 rounded-md text-[11px] text-olive-50 font-medium transition-colors" data-filter="all">All</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="practice">Practice</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="sets">Setlists</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="gear">Gear</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-olive-100 border-y border-olive-200 py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex items-center gap-4 text-olive-700">
+                    <span class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-olive-600 rounded-full"></span>
+                        Updated March 2026
+                    </span>
+                    <span class="text-olive-300">|</span>
+                    <span>Practice plans and music notes</span>
+                </div>
+                <div class="flex items-center gap-4 text-olive-600">
+                    <a href="#browse" class="hover:text-olive-800 transition-colors">Browse</a>
+                    <a href="#collections" class="hover:text-olive-800 transition-colors">Collections</a>
+                    <a href="#research" class="hover:text-olive-800 transition-colors">Research</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="browse" class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl text-olive-950">Practice Deck</h2>
+                    <p class="text-sm text-olive-700">Warmups, drills, and reference sets.</p>
+                </div>
+                <a href="/books/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">Open Books</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="content-grid">
+                <a href="/guitar/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="practice" data-search="Guitar Practice">
+                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
+                        <span class="text-3xl">🎸</span>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Picking Exercise Worksheet</p>
+                    <div class="p-3">
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Practice Routine</h3>
+                        <p class="text-xs text-olive-600 truncate">Daily reps + drills</p>
+                        <div class="flex items-center gap-2 mt-2 text-[10px]">
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Practice</span>
+                            <span class="text-olive-400">Updated March 2026</span>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Alternate Picking Exercises</p>
+                </a>
+
+                <a href="/writingprompts/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="sets" data-search="Writing Prompts">
+                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
+                        <span class="text-3xl">✍️</span>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Classical Guitar Right Hand Exercises</p>
+                    <div class="p-3">
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Setlist Ideas</h3>
+                        <p class="text-xs text-olive-600 truncate">Creative prompts for music</p>
+                        <div class="flex items-center gap-2 mt-2 text-[10px]">
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Sets</span>
+                            <span class="text-olive-400">Creative</span>
+                        </div>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">NeoClassical Picking Exercises</p>
+                </a>
+
+                <a href="/books/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="gear" data-search="Books">
+                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
+                        <span class="text-3xl">📚</span>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Mauro Guiliani 120 Right Hand Studies</p>
+                    <div class="p-3">
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Reference Notes</h3>
+                        <p class="text-xs text-olive-600 truncate">Theory and study notes</p>
+                        <div class="flex items-center gap-2 mt-2 text-[10px]">
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Notes</span>
+                            <span class="text-olive-400">Reading</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/dnd/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="sets" data-search="DnD 5e">
+                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
+                        <span class="text-3xl">🐉</span>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Story Hooks</h3>
+                        <p class="text-xs text-olive-600 truncate">Narrative inspiration</p>
+                        <div class="flex items-center gap-2 mt-2 text-[10px]">
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Ideas</span>
+                            <span class="text-olive-400">DnD</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="py-6 bg-white border-y border-olive-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center gap-3">
+                <span class="text-xs text-olive-500 font-semibold uppercase tracking-widest">Collections</span>
+                <a href="/guitar/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Practice</a>
+                <a href="/writingprompts/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Creative</a>
+                <a href="/books/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Notes</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-olive-200 rounded-full text-sm text-olive-700 font-medium">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.2l5-.7L12 3z" />
+                        </svg>
+                        Practice Strategy
+                    </div>
+                    <h2 class="mt-4 text-4xl text-olive-950">Daily Reps</h2>
+                    <p class="mt-4 text-lg text-olive-700">Stack warmups, theory, and setlist review into a repeatable loop.</p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base text-olive-900 font-semibold">Warmup order</h3>
+                                <p class="text-sm text-olive-600">Keep technique consistent and efficient.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l-9 9h7v7l9-9h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base text-olive-900 font-semibold">Setlist rotation</h3>
+                                <p class="text-sm text-olive-600">Keep songs fresh and stage-ready.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base text-olive-900 font-semibold">Gear baselines</h3>
+                                <p class="text-sm text-olive-600">Record settings that work for repeatable tones.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/guitar/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-olive-700 rounded-xl text-sm text-olive-50 font-semibold hover:bg-olive-800 transition-colors">
+                        Open Guitar Notes
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5l5 5-5 5" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-olive-200/60 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-white border border-olive-100 rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg text-olive-900 font-semibold">Recent Updates</h3>
+                            <a href="/" class="text-sm text-olive-600 font-medium hover:text-olive-800 transition-colors">View All</a>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-4 bg-olive-50 rounded-xl">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">🎸</div>
+                                    <div>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Daily practice loop</h4>
+                                        <p class="text-xs text-olive-600">Updated March 2026 • Guitar</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-olive-50 rounded-xl">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">✍️</div>
+                                    <div>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Creative prompt updates</h4>
+                                        <p class="text-xs text-olive-600">Updated March 2026 • Writing</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-olive-50 rounded-xl">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">📚</div>
+                                    <div>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Theory notes refresh</h4>
+                                        <p class="text-xs text-olive-600">Updated March 2026 • Books</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </article>
+        </div>
+    </section>
 
-        <!-- Neck Hand Exercises class="bg- -->
-        <articleolive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
-            <div class="p-8">
-                <h2 class="text-4xl text-olive-950 mb-6">Neck Hand Exercises</h2>
-                
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">The Ladder Exercise</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">The Spider Exercise</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">X-Pattern Exercises</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Classical Form on all Strings</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Trill Exercises</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">2 Finger Ladder Exercises</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">3 Finger Ladder Exercises</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">4 Finger Ladder Exercises</p>
-                    </div>
-                </div>
+    <section class="py-16 bg-olive-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl text-olive-50">Play Every Day</h2>
+            <p class="mt-4 text-lg text-olive-200">Stay consistent with practice and tone checklists.</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <a href="/guitar/" class="px-6 py-3 bg-white rounded-xl text-sm text-olive-900 font-semibold hover:bg-olive-50 transition-colors">Open Guitar Notes</a>
+                <a href="/writingprompts/" class="px-6 py-3 bg-transparent border border-olive-400 rounded-xl text-sm text-olive-100 font-semibold hover:bg-olive-800 transition-colors">Open Prompts</a>
             </div>
-        </article>
+            <p class="mt-4 text-xs text-olive-400">Updated March 2026 • Guitar hub</p>
+        </div>
+    </section>
 
-        <!-- Scales & Modes -->
-        <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
-            <div class="p-8">
-                <h2 class="text-4xl text-olive-950 mb-6">Scales & Modes</h2>
-                
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Major Scale · Pebber Brown 14 Position System</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Greek Modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian)</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">14 Position Major Pentatonic Scale Patterns</p>
-                    </div>
-                </div>
-            </div>
-        </article>
+    <script>
+        (function() {
+            var searchInput = document.getElementById('global-search');
+            var cards = document.querySelectorAll('.compact-card');
+            var filterPills = document.querySelectorAll('.filter-pill');
+            var activeFilter = 'all';
 
-        <!-- Arpeggios -->
-        <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
-            <div class="p-8">
-                <h2 class="text-4xl text-olive-950 mb-6">Arpeggios</h2>
-                
-                <div class="bg-olive-100 p-6 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">A type of "broken chord" where the notes that compose a chord are played in a rising or descending order.</p>
-                </div>
-                
-                <div class="mt-6 space-y-4">
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Major Arpeggios</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">Minor Arpeggios</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-olive-200">
-                        <p class="text-lg text-olive-900">7th Chord Arpeggios</p>
-                    </div>
-                </div>
-            </div>
-        </article>
+            function cardMatchesFilter(card) {
+                if (activeFilter === 'all') return true;
+                var category = card.getAttribute('data-category') || '';
+                return category.indexOf(activeFilter) !== -1;
+            }
 
-    </main>
+            function cardMatchesSearch(card, term) {
+                if (!term) return true;
+                var haystack = card.getAttribute('data-search') || card.textContent || '';
+                return haystack.toLowerCase().indexOf(term) !== -1;
+            }
 
-    <!-- Footer -->
-    
+            function applyFilters() {
+                var term = searchInput ? searchInput.value.toLowerCase().trim() : '';
+                cards.forEach(function(card) {
+                    var matches = cardMatchesFilter(card) && cardMatchesSearch(card, term);
+                    if (matches) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            }
+
+            filterPills.forEach(function(pill) {
+                pill.addEventListener('click', function() {
+                    filterPills.forEach(function(other) {
+                        other.classList.remove('bg-olive-700', 'text-olive-50');
+                        if (!other.classList.contains('bg-white')) {
+                            other.classList.add('bg-white');
+                        }
+                        if (!other.classList.contains('border')) {
+                            other.classList.add('border', 'border-olive-200');
+                        }
+                        other.classList.add('text-olive-700');
+                    });
+
+                    pill.classList.add('bg-olive-700', 'text-olive-50');
+                    pill.classList.remove('bg-white', 'text-olive-700');
+
+                    activeFilter = pill.getAttribute('data-filter') || 'all';
+                    applyFilters();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', applyFilters);
+                document.addEventListener('keydown', function(event) {
+                    if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+                        event.preventDefault();
+                        searchInput.focus();
+                        searchInput.select();
+                    }
+                    if (event.key === 'Escape') {
+                        searchInput.blur();
+                    }
+                });
+            }
+        })();
+    </script>
+</main>
