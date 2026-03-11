@@ -6,27 +6,27 @@
                     <a href="/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-800{% endif %}">F.I.R.E.</a>
                     <!-- Energy Dropdown -->
                     <div class="relative group">
-                        <a href="/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/energy-monitoring/' or page.url contains '/phase1_erv_guide' or page.url contains '/phase2_heatpump_guide' or page.url contains '/phase3_visual_dashboard' or page.url contains '/energy-monitoring/solar' %} bg-olive-800{% endif %}">Energy ▾</a>
+                        <a href="/pages/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/pages/energy-monitoring/' or page.url contains '/pages/phase1_erv_guide' or page.url contains '/pages/phase2_heatpump_guide' or page.url contains '/pages/phase3_visual_dashboard' or page.url contains '/pages/energy-monitoring/solar' %} bg-olive-800{% endif %}">Energy ▾</a>
                         <div class="absolute left-0 mt-0 w-56 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                            <a href="/energy-monitoring/" class="block px-4 py-2 hover:bg-olive-700 rounded-t-lg text-sm{% if page.url == '/energy-monitoring/' %} bg-olive-700{% endif %}">Overview</a>
-                            <a href="/phase1_erv_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/phase1_erv_guide' %} bg-olive-700{% endif %}">Phase 1 — ERV Guide</a>
-                            <a href="/phase2_heatpump_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/phase2_heatpump_guide' %} bg-olive-700{% endif %}">Phase 2 — Heat Pump Guide</a>
-                            <a href="/phase3_visual_dashboard/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/phase3_visual_dashboard' %} bg-olive-700{% endif %}">Phase 3 — Visual Dashboard</a>
-                            <a href="/energy-monitoring/solar/" class="block px-4 py-2 hover:bg-olive-700 rounded-b-lg text-sm{% if page.url contains '/energy-monitoring/solar' %} bg-olive-700{% endif %}">Bonus — Solar Payback</a>
+                            <a href="/pages/energy-monitoring/" class="block px-4 py-2 hover:bg-olive-700 rounded-t-lg text-sm{% if page.url == '/pages/energy-monitoring/' %} bg-olive-700{% endif %}">Overview</a>
+                            <a href="/pages/phase1_erv_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase1_erv_guide' %} bg-olive-700{% endif %}">Phase 1 — ERV Guide</a>
+                            <a href="/pages/phase2_heatpump_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase2_heatpump_guide' %} bg-olive-700{% endif %}">Phase 2 — Heat Pump Guide</a>
+                            <a href="/pages/phase3_visual_dashboard/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase3_visual_dashboard' %} bg-olive-700{% endif %}">Phase 3 — Visual Dashboard</a>
+                            <a href="/pages/energy-monitoring/solar/" class="block px-4 py-2 hover:bg-olive-700 rounded-b-lg text-sm{% if page.url contains '/pages/energy-monitoring/solar' %} bg-olive-700{% endif %}">Bonus — Solar Payback</a>
                         </div>
                     </div>
-                    <a href="/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/books' %} bg-olive-800{% endif %}">Books</a>
+                    <a href="/pages/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/pages/books' %} bg-olive-800{% endif %}">Books</a>
                     <a href="/pages/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/pages' %} bg-olive-800{% endif %}">Pages</a>
                     
                     <!-- Misc Dropdown -->
                     <div class="relative group">
-                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/writingprompts' or page.url contains '/guitar' or page.url contains '/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
+                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/pages/writingprompts' or page.url contains '/pages/guitar' or page.url contains '/pages/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
                         <div class="absolute left-0 mt-0 w-56 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                             <a href="/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/' %} bg-olive-700{% endif %}">Blog</a>
-                            <a href="/writingprompts/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/writingprompts/' %} bg-olive-700{% endif %}">Writing Prompts</a>
-                            <a href="/guitar/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/guitar/' %} bg-olive-700{% endif %}">Guitar</a>
-                            <a href="/dnd/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/dnd/' %} bg-olive-700{% endif %}">DnD 5e</a>
-                            <a href="/misc/taxes/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/misc/taxes/' %} bg-olive-700{% endif %}">PA Taxes</a>
+                            <a href="/pages/writingprompts/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/writingprompts/' %} bg-olive-700{% endif %}">Writing Prompts</a>
+                            <a href="/pages/guitar/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/guitar/' %} bg-olive-700{% endif %}">Guitar</a>
+                            <a href="/pages/dnd/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/dnd/' %} bg-olive-700{% endif %}">DnD 5e</a>
+                            <a href="/pages/misc/taxes/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/misc/taxes/' %} bg-olive-700{% endif %}">PA Taxes</a>
                         </div>
                     </div>
                 </div>

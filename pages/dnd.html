@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Guitar - Techmore
+title: DnD 5e - Techmore
 ---
 
 <main class="bg-olive-50">
@@ -10,12 +10,12 @@ title: Guitar - Techmore
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-olive-700 rounded-xl flex items-center justify-center text-olive-50">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a4 4 0 00-6 5.5V16a3 3 0 006 0v-3.5A4 4 0 0015 7z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 4v10l-7 4-7-4V7l7-4z" />
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-3xl font-display italic text-olive-950">Guitar</h1>
-                        <p class="text-sm text-olive-700">Practice routines, setlists, and tone references.</p>
+                        <h1 class="text-3xl font-display italic text-olive-950">DnD 5e</h1>
+                        <p class="text-sm text-olive-700">Campaign hooks, session prep, and encounter notes.</p>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@ title: Guitar - Techmore
                         <input
                             type="text"
                             id="global-search"
-                            placeholder="Search riffs, drills, and sets..."
+                            placeholder="Search campaigns, hooks, NPCs..."
                             class="w-full pl-10 pr-16 py-2.5 bg-white border border-olive-200 rounded-xl text-sm text-olive-900 placeholder-olive-400 focus:outline-none focus:border-olive-400 focus:ring-2 focus:ring-olive-100 transition-colors"
                         >
                         <div class="absolute inset-y-0 right-2 flex items-center">
@@ -46,7 +46,7 @@ title: Guitar - Techmore
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M4 10v10h6v-6h4v6h6V10" />
                         </svg>
                     </a>
-                    <a href="/writingprompts/" class="p-2 bg-white border border-olive-200 rounded-lg text-olive-600 hover:bg-olive-100 transition-colors" aria-label="Writing Prompts">
+                    <a href="/pages/writingprompts/" class="p-2 bg-white border border-olive-200 rounded-lg text-olive-600 hover:bg-olive-100 transition-colors" aria-label="Writing Prompts">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z" />
@@ -57,9 +57,9 @@ title: Guitar - Techmore
 
             <div class="mt-4 flex flex-wrap items-center gap-2">
                 <button class="filter-pill px-3 py-1.5 bg-olive-700 rounded-md text-[11px] text-olive-50 font-medium transition-colors" data-filter="all">All</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="practice">Practice</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="sets">Setlists</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="gear">Gear</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="campaigns">Campaigns</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="prep">Prep</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="hooks">Hooks</button>
             </div>
         </div>
     </section>
@@ -73,7 +73,7 @@ title: Guitar - Techmore
                         Updated March 2026
                     </span>
                     <span class="text-olive-300">|</span>
-                    <span>Practice plans and music notes</span>
+                    <span>Session prep and campaign planning</span>
                 </div>
                 <div class="flex items-center gap-4 text-olive-600">
                     <a href="#browse" class="hover:text-olive-800 transition-colors">Browse</a>
@@ -88,65 +88,65 @@ title: Guitar - Techmore
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h2 class="text-2xl text-olive-950">Practice Deck</h2>
-                    <p class="text-sm text-olive-700">Warmups, drills, and reference sets.</p>
+                    <h2 class="text-2xl text-olive-950">Campaign Desk</h2>
+                    <p class="text-sm text-olive-700">Hooks, prep checklists, and world notes.</p>
                 </div>
-                <a href="/books/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">Open Books</a>
+                <a href="/pages/writingprompts/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">Open Prompts</a>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="content-grid">
-                <a href="/guitar/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="practice" data-search="Guitar Practice">
+                <a href="/pages/dnd/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="campaigns" data-search="DnD 5e">
                     <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🎸</span>
+                        <span class="text-3xl">🐉</span>
                     </div>
                     <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Practice Routine</h3>
-                        <p class="text-xs text-olive-600 truncate">Daily reps + drills</p>
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Campaign Notes</h3>
+                        <p class="text-xs text-olive-600 truncate">Core lore and arcs</p>
                         <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Practice</span>
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Campaigns</span>
                             <span class="text-olive-400">Updated March 2026</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="/writingprompts/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="sets" data-search="Writing Prompts">
+                <a href="/pages/writingprompts/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="hooks" data-search="Writing Prompts">
                     <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
                         <span class="text-3xl">✍️</span>
                     </div>
                     <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Setlist Ideas</h3>
-                        <p class="text-xs text-olive-600 truncate">Creative prompts for music</p>
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Plot Hooks</h3>
+                        <p class="text-xs text-olive-600 truncate">Prompt-driven hooks</p>
                         <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Sets</span>
-                            <span class="text-olive-400">Creative</span>
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Hooks</span>
+                            <span class="text-olive-400">Prompts</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="/books/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="gear" data-search="Books">
+                <a href="/pages/books/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="prep" data-search="Books">
                     <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
                         <span class="text-3xl">📚</span>
                     </div>
                     <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Reference Notes</h3>
-                        <p class="text-xs text-olive-600 truncate">Theory and study notes</p>
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Lore References</h3>
+                        <p class="text-xs text-olive-600 truncate">Reading notes</p>
                         <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Notes</span>
-                            <span class="text-olive-400">Reading</span>
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Prep</span>
+                            <span class="text-olive-400">Books</span>
                         </div>
                     </div>
                 </a>
 
-                <a href="/dnd/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="sets" data-search="DnD 5e">
+                <a href="/pages/guitar/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="prep" data-search="Guitar">
                     <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🐉</span>
+                        <span class="text-3xl">🎸</span>
                     </div>
                     <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Story Hooks</h3>
-                        <p class="text-xs text-olive-600 truncate">Narrative inspiration</p>
+                        <h3 class="text-sm text-olive-900 font-semibold truncate">Theme Soundtrack</h3>
+                        <p class="text-xs text-olive-600 truncate">Playlist inspiration</p>
                         <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Ideas</span>
-                            <span class="text-olive-400">DnD</span>
+                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Prep</span>
+                            <span class="text-olive-400">Music</span>
                         </div>
                     </div>
                 </a>
@@ -158,9 +158,9 @@ title: Guitar - Techmore
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap items-center gap-3">
                 <span class="text-xs text-olive-500 font-semibold uppercase tracking-widest">Collections</span>
-                <a href="/guitar/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Practice</a>
-                <a href="/writingprompts/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Creative</a>
-                <a href="/books/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Notes</a>
+                <a href="/pages/dnd/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Campaign Notes</a>
+                <a href="/pages/writingprompts/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Plot Hooks</a>
+                <a href="/pages/books/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Lore Notes</a>
             </div>
         </div>
     </section>
@@ -173,10 +173,10 @@ title: Guitar - Techmore
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.2l5-.7L12 3z" />
                         </svg>
-                        Practice Strategy
+                        Worldbuilding Strategy
                     </div>
-                    <h2 class="mt-4 text-4xl text-olive-950">Daily Reps</h2>
-                    <p class="mt-4 text-lg text-olive-700">Stack warmups, theory, and setlist review into a repeatable loop.</p>
+                    <h2 class="mt-4 text-4xl text-olive-950">Plan the Next Session</h2>
+                    <p class="mt-4 text-lg text-olive-700">Keep prep lightweight, repeatable, and focused on player choices.</p>
 
                     <div class="mt-8 space-y-4">
                         <div class="flex items-start gap-4">
@@ -186,8 +186,8 @@ title: Guitar - Techmore
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Warmup order</h3>
-                                <p class="text-sm text-olive-600">Keep technique consistent and efficient.</p>
+                                <h3 class="text-base text-olive-900 font-semibold">Session beats</h3>
+                                <p class="text-sm text-olive-600">Map out key moments without overplanning.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -197,8 +197,8 @@ title: Guitar - Techmore
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Setlist rotation</h3>
-                                <p class="text-sm text-olive-600">Keep songs fresh and stage-ready.</p>
+                                <h3 class="text-base text-olive-900 font-semibold">Encounter toolkit</h3>
+                                <p class="text-sm text-olive-600">Reusable templates for balanced encounters.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -208,14 +208,14 @@ title: Guitar - Techmore
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Gear baselines</h3>
-                                <p class="text-sm text-olive-600">Record settings that work for repeatable tones.</p>
+                                <h3 class="text-base text-olive-900 font-semibold">NPC roster</h3>
+                                <p class="text-sm text-olive-600">Keep recurring NPCs consistent.</p>
                             </div>
                         </div>
                     </div>
 
-                    <a href="/guitar/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-olive-700 rounded-xl text-sm text-olive-50 font-semibold hover:bg-olive-800 transition-colors">
-                        Open Guitar Notes
+                    <a href="/pages/dnd/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-olive-700 rounded-xl text-sm text-olive-50 font-semibold hover:bg-olive-800 transition-colors">
+                        Open Campaign Notes
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5l5 5-5 5" />
                         </svg>
@@ -233,10 +233,10 @@ title: Guitar - Techmore
                         <div class="space-y-4">
                             <div class="p-4 bg-olive-50 rounded-xl">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">🎸</div>
+                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">🐉</div>
                                     <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Daily practice loop</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Guitar</p>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Campaign planner refresh</h4>
+                                        <p class="text-xs text-olive-600">Updated March 2026 • DnD</p>
                                     </div>
                                 </div>
                             </div>
@@ -245,7 +245,7 @@ title: Guitar - Techmore
                                 <div class="flex items-start gap-3">
                                     <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">✍️</div>
                                     <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Creative prompt updates</h4>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Prompt-driven hooks</h4>
                                         <p class="text-xs text-olive-600">Updated March 2026 • Writing</p>
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@ title: Guitar - Techmore
                                 <div class="flex items-start gap-3">
                                     <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">📚</div>
                                     <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Theory notes refresh</h4>
+                                        <h4 class="text-sm text-olive-900 font-semibold">Lore reading notes</h4>
                                         <p class="text-xs text-olive-600">Updated March 2026 • Books</p>
                                     </div>
                                 </div>
@@ -269,13 +269,13 @@ title: Guitar - Techmore
 
     <section class="py-16 bg-olive-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl text-olive-50">Play Every Day</h2>
-            <p class="mt-4 text-lg text-olive-200">Stay consistent with practice and tone checklists.</p>
+            <h2 class="text-4xl text-olive-50">Launch the Next Session</h2>
+            <p class="mt-4 text-lg text-olive-200">Organize notes and prep in one place.</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a href="/guitar/" class="px-6 py-3 bg-white rounded-xl text-sm text-olive-900 font-semibold hover:bg-olive-50 transition-colors">Open Guitar Notes</a>
-                <a href="/writingprompts/" class="px-6 py-3 bg-transparent border border-olive-400 rounded-xl text-sm text-olive-100 font-semibold hover:bg-olive-800 transition-colors">Open Prompts</a>
+                <a href="/pages/dnd/" class="px-6 py-3 bg-white rounded-xl text-sm text-olive-900 font-semibold hover:bg-olive-50 transition-colors">Open Campaign Notes</a>
+                <a href="/pages/writingprompts/" class="px-6 py-3 bg-transparent border border-olive-400 rounded-xl text-sm text-olive-100 font-semibold hover:bg-olive-800 transition-colors">Open Prompts</a>
             </div>
-            <p class="mt-4 text-xs text-olive-400">Updated March 2026 • Guitar hub</p>
+            <p class="mt-4 text-xs text-olive-400">Updated March 2026 • DnD hub</p>
         </div>
     </section>
 
@@ -357,107 +357,116 @@ title: Guitar - Techmore
         </div>
         <div class="legacy-content">
 
+    <div class="text-center mb-12">
+        <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">DnD 5e</h1>
+        <p class="text-xl text-olive-600 italic">Resources, tools, and references for Dungeons & Dragons 5th Edition</p>
+    </div>
 
-    <!-- Picking Hand Exercises -->
-    <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
+    <!-- Index -->
+    <div class="bg-olive-100 rounded-xl p-6 mb-12 border border-olive-200">
+        <h2 class="text-2xl text-olive-950 mb-4">Quick Index</h2>
+        <div class="grid md:grid-cols-2 gap-2">
+            <a href="#character-sheets" class="p-3 bg-white rounded-lg hover:bg-olive-50 transition-colors border border-olive-200">
+                <span class="font-medium text-olive-950">1. Character Sheets</span>
+            </a>
+            <a href="#references" class="p-3 bg-white rounded-lg hover:bg-olive-50 transition-colors border border-olive-200">
+                <span class="font-medium text-olive-950">2. Quick References</span>
+            </a>
+            <a href="#tools" class="p-3 bg-white rounded-lg hover:bg-olive-50 transition-colors border border-olive-200">
+                <span class="font-medium text-olive-950">3. Encounter Tools</span>
+            </a>
+            <a href="#rules" class="p-3 bg-white rounded-lg hover:bg-olive-50 transition-colors border border-olive-200">
+                <span class="font-medium text-olive-950">4. Rules & Pre-gens</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Character Sheets -->
+    <article id="character-sheets" class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
         <div class="p-8">
-            <h2 class="text-4xl text-olive-950 mb-6">Picking Hand Exercises</h2>
+            <h2 class="text-4xl text-olive-950 mb-6">1. Character Sheets</h2>
 
-            <div class="space-y-4">
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Right Hand Syllabus v.6-14-14</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Picking Exercise Worksheet</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Alternate Picking Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Classical Guitar Right Hand Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">NeoClassical Picking Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Mauro Guiliani 120 Right Hand Studies</p>
-                </div>
+            <div class="not-prose grid md:grid-cols-2 gap-4">
+                <a href="https://character-sheet-dnd5.appspot.com/" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">Real Time Character Sheet</h3>
+                    <p class="text-olive-700 mt-2">Online character sheet with real-time sharing. Supports all classes, spells, and features.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">character-sheet-dnd5.appspot.com →</span>
+                </a>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                <div class="text-sm font-bold uppercase tracking-widest text-olive-400">DnD 5e</div>
+                <a href="#character-sheets" class="text-olive-600 hover:text-olive-800">↑ Top</a>
             </div>
         </div>
     </article>
 
-    <!-- Neck Hand Exercises class="bg- -->
-    <articleolive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
+    <!-- Quick References -->
+    <article id="references" class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
         <div class="p-8">
-            <h2 class="text-4xl text-olive-950 mb-6">Neck Hand Exercises</h2>
+            <h2 class="text-4xl text-olive-950 mb-6">2. Quick References</h2>
 
-            <div class="space-y-4">
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">The Ladder Exercise</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">The Spider Exercise</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">X-Pattern Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Classical Form on all Strings</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Trill Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">2 Finger Ladder Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">3 Finger Ladder Exercises</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">4 Finger Ladder Exercises</p>
-                </div>
+            <div class="not-prose grid md:grid-cols-2 gap-4">
+                <a href="https://crobi.github.io/dnd5e-quickref/preview/quickref.html" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">D&D 5e Quick Reference</h3>
+                    <p class="text-olive-700 mt-2">Comprehensive reference for actions, conditions, spells, and mechanics at a glance.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">crobi.github.io/dnd5e-quickref →</span>
+                </a>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                <div class="text-sm font-bold uppercase tracking-widest text-olive-400">DnD 5e</div>
+                <a href="#references" class="text-olive-600 hover:text-olive-800">↑ Top</a>
             </div>
         </div>
     </article>
 
-    <!-- Scales & Modes -->
-    <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
+    <!-- Encounter Tools -->
+    <article id="tools" class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
         <div class="p-8">
-            <h2 class="text-4xl text-olive-950 mb-6">Scales & Modes</h2>
+            <h2 class="text-4xl text-olive-950 mb-6">3. Encounter Tools</h2>
 
-            <div class="space-y-4">
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Major Scale · Pebber Brown 14 Position System</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Greek Modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian)</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">14 Position Major Pentatonic Scale Patterns</p>
-                </div>
+            <div class="not-prose grid md:grid-cols-2 gap-4">
+                <a href="http://tools.goblinist.com/5enc" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">Random Encounter Generator</h3>
+                    <p class="text-olive-700 mt-2">Generate random encounters with enemies, terrain, and complications.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">tools.goblinist.com/5enc →</span>
+                </a>
+                <a href="http://kobold.club/fight/#/encounter-builder" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">Encounter Builder</h3>
+                    <p class="text-olive-700 mt-2">Build balanced encounters by calculating XP and difficulty ratings.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">kobold.club/fight →</span>
+                </a>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                <div class="text-sm font-bold uppercase tracking-widest text-olive-400">DnD 5e</div>
+                <a href="#tools" class="text-olive-600 hover:text-olive-800">↑ Top</a>
             </div>
         </div>
     </article>
 
-    <!-- Arpeggios -->
-    <article class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
+    <!-- Rules & Pre-gens -->
+    <article id="rules" class="bg-olive-50 rounded-2xl shadow-sm border border-olive-200 overflow-hidden mb-8">
         <div class="p-8">
-            <h2 class="text-4xl text-olive-950 mb-6">Arpeggios</h2>
+            <h2 class="text-4xl text-olive-950 mb-6">4. Rules & Pre-generated Characters</h2>
 
-            <div class="bg-olive-100 p-6 rounded-xl border border-olive-200">
-                <p class="text-lg text-olive-900">A type of "broken chord" where the notes that compose a chord are played in a rising or descending order.</p>
+            <div class="not-prose grid md:grid-cols-2 gap-4">
+                <a href="https://media.wizards.com/2015/downloads/dnd/BasicRules_Playerv3.4_PF.pdf" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">Basic Rules (PDF)</h3>
+                    <p class="text-olive-700 mt-2">Official WotC basic rules for players and DMs. Everything you need to play.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">Download PDF →</span>
+                </a>
+                <a href="https://media.wizards.com/2015/downloads/dnd/PreGens_Level1.zip" target="_blank" class="bg-white p-6 rounded-xl border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <h3 class="font-medium text-olive-950 text-lg">Pre-generated Characters</h3>
+                    <p class="text-olive-700 mt-2">16 level 1 characters ready to play. Great for one-shots or introducing new players.</p>
+                    <span class="inline-block mt-3 text-sm text-olive-600 underline">Download ZIP →</span>
+                </a>
             </div>
 
-            <div class="mt-6 space-y-4">
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Major Arpeggios</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">Minor Arpeggios</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-olive-200">
-                    <p class="text-lg text-olive-900">7th Chord Arpeggios</p>
-                </div>
+            <div class="mt-8 pt-8 border-t border-olive-200 flex justify-between items-center">
+                <div class="text-sm font-bold uppercase tracking-widest text-olive-400">DnD 5e</div>
+                <a href="#rules" class="text-olive-600 hover:text-olive-800">↑ Top</a>
             </div>
         </div>
     </article>
