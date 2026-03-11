@@ -195,22 +195,22 @@ title: Energy Monitoring - Techmore
             </div>
         </section>
 
-        <!-- ── TWO-PHASE GUIDE CARDS ── -->
+        <!-- ── THREE-PHASE GUIDE CARDS ── -->
         <section class="mb-16">
             <h2 class="text-3xl text-olive-950 mb-2">Implementation guides</h2>
             <p class="text-olive-500 font-mono text-xs tracking-widest uppercase mb-8">Phase-by-phase documentation</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
                 <!-- Phase 1 -->
-                <div class="bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden flex flex-col">
-                    <div class="bg-olive-950 px-6 pt-6 pb-8">
-                        <p class="font-mono text-xs tracking-widest text-olive-400 uppercase mb-3">Phase 1 of 2</p>
+                <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+                    <div class="px-6 pt-6 pb-8 bg-olive-950">
+                        <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-400">Phase 1 of 3</p>
                         <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">ERV Integration,<br>Monitoring &amp;<br>Weather Automation</h3>
                         <p class="text-olive-400 text-sm leading-relaxed">Hardware to fully-automated air quality system. Both Broan units on MQTT, Aqara sensors feeding the pipeline, Open-Meteo forecasts driving ERV decisions, everything logged and dashboarded.</p>
                     </div>
-                    <div class="px-6 py-4 flex flex-col gap-2 flex-1">
-                        <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-1">Covers</p>
+                    <div class="flex flex-col flex-1 gap-2 px-6 py-4">
+                        <p class="mb-1 font-mono text-xs tracking-widest uppercase text-olive-500">Covers</p>
                         <ul class="text-sm text-olive-700 space-y-1">
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>RS-485 wiring and ESP32 firmware (ESPHome)</li>
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Mosquitto MQTT broker setup</li>
@@ -221,21 +221,21 @@ title: Energy Monitoring - Techmore
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Web dashboard and REST API</li>
                         </ul>
                     </div>
-                    <div class="px-6 pb-6 pt-2 flex gap-3">
+                    <div class="flex gap-3 px-6 pt-2 pb-6">
                         <a href="/phase1_erv_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
                         <button onclick="printGuide('/phase1_erv_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                     </div>
                 </div>
 
                 <!-- Phase 2 -->
-                <div class="bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden flex flex-col">
-                    <div class="bg-olive-900 px-6 pt-6 pb-8">
-                        <p class="font-mono text-xs tracking-widest text-olive-400 uppercase mb-3">Phase 2 of 2</p>
+                <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+                    <div class="px-6 pt-6 pb-8 bg-olive-900">
+                        <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-400">Phase 2 of 3</p>
                         <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Heat Pump Intelligence<br>&amp; Power<br>Validation</h3>
                         <p class="text-olive-400 text-sm leading-relaxed">CN105 local control of the Mitsubishi Hyper Heat, Emporia Vue as independent power validator, real COP curve from your actual data, and forecast-driven pre-heat scheduling.</p>
                     </div>
-                    <div class="px-6 py-4 flex flex-col gap-2 flex-1">
-                        <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-1">Covers</p>
+                    <div class="flex flex-col flex-1 gap-2 px-6 py-4">
+                        <p class="mb-1 font-mono text-xs tracking-widest uppercase text-olive-500">Covers</p>
                         <ul class="text-sm text-olive-700 space-y-1">
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>CN105 adapter wiring + ESPHome config</li>
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Emporia Vue per-circuit polling</li>
@@ -246,9 +246,33 @@ title: Energy Monitoring - Techmore
                             <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>8-week rollout sequence</li>
                         </ul>
                     </div>
-                    <div class="px-6 pb-6 pt-2 flex gap-3">
+                    <div class="flex gap-3 px-6 pt-2 pb-6">
                         <a href="/phase2_heatpump_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
                         <button onclick="printGuide('/phase2_heatpump_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+                    <div class="px-6 pt-6 pb-8 bg-olive-800">
+                        <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-200">Phase 3 of 3</p>
+                        <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Visual House Model<br>&amp; Unified<br>Dashboard</h3>
+                        <p class="text-olive-200 text-sm leading-relaxed">Floor-plan-first interface with live sensors, heat map overlays, equipment markers, and a single navigation system that surfaces Phase 1 and 2 data on demand.</p>
+                    </div>
+                    <div class="flex flex-col flex-1 gap-2 px-6 py-4">
+                        <p class="mb-1 font-mono text-xs tracking-widest uppercase text-olive-500">Covers</p>
+                        <ul class="text-sm text-olive-700 space-y-1">
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>RoomSketcher floor plan export workflow</li>
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Floor plan config JSON and sensor placement</li>
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Heat map overlay with IDW interpolation</li>
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Live equipment markers and popovers</li>
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Unified navigation structure</li>
+                            <li class="flex items-start gap-2"><span class="text-olive-400 mt-0.5">→</span>Phase 3 rollout sequence</li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-3 px-6 pt-2 pb-6">
+                        <a href="/phase3_visual_dashboard/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
+                        <button onclick="printGuide('/phase3_visual_dashboard/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                     </div>
                 </div>
 

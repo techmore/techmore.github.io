@@ -1,0 +1,855 @@
+---
+layout: default
+title: Phase 3 — Visual House Model & Unified Dashboard - Techmore
+---
+<style>
+:root {
+  --bg:        oklch(91% 0.012 106.5);
+  --bg2:       oklch(93% 0.016 110);
+  --ink:       oklch(22% 0.025 110);
+  --ink2:      oklch(35% 0.040 110);
+  --muted:     oklch(55% 0.040 110);
+  --border:    oklch(85% 0.028 110);
+  --border2:   oklch(80% 0.035 110);
+  --amber:     oklch(52% 0.130 75);
+  --amber-bg:  oklch(95% 0.040 85);
+  --amber-bdr: oklch(80% 0.090 82);
+  --blue:      oklch(40% 0.090 240);
+  --blue-bg:   oklch(95% 0.025 240);
+  --blue-bdr:  oklch(78% 0.060 240);
+  --green:     oklch(38% 0.090 145);
+  --green-bg:  oklch(95% 0.035 145);
+  --green-bdr: oklch(78% 0.080 145);
+  --red:       oklch(45% 0.160 25);
+  --red-bg:    oklch(95% 0.040 25);
+  --red-bdr:   oklch(78% 0.090 25);
+  --purple:    oklch(42% 0.120 290);
+  --purple-bg: oklch(95% 0.025 290);
+  --purple-bdr:oklch(78% 0.070 290);
+  --mono: 'Inter', ui-monospace, monospace;
+  --head: 'Instrument Serif', serif;
+  --body: 'Inter', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.7; }
+
+.guide-topbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem; max-width:900px; margin:0 auto; padding:1.25rem 2rem 0; }
+.guide-back { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; color:var(--muted); text-decoration:none; }
+.guide-back:hover { color:var(--ink); }
+.guide-dl { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; font-family:var(--mono); padding:0.35rem 0.85rem; border-radius:6px; background:var(--bg2); border:1px solid var(--border); color:var(--muted); cursor:pointer; }
+.guide-dl:hover { background:var(--border); color:var(--ink); }
+
+.cover { background: oklch(16% 0.015 110); color: var(--bg); padding: 3rem 3rem 2.5rem; position: relative; overflow: hidden; max-width: 900px; margin: 0.75rem auto 0; border-radius: 16px; }
+.cover::after { content: 'PHASE 3'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: var(--head); font-style: italic; font-size: 7rem; font-weight: 400; color: oklch(91% 0.012 106.5 / 0.04); letter-spacing: 0.1em; pointer-events: none; white-space: nowrap; }
+.cover-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(65% 0.090 75); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.cover-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: oklch(65% 0.090 75); }
+.cover h1 { font-family: var(--head); font-style: italic; font-size: clamp(1.8rem, 4.5vw, 3.2rem); font-weight: 400; line-height: 1.1; max-width: 700px; margin-bottom: 1rem; color: oklch(96% 0.012 110); }
+.cover h1 em { font-style: normal; color: oklch(75% 0.040 110); }
+.cover-sub { color: oklch(62% 0.025 110); font-size: 14px; max-width: 580px; line-height: 1.6; margin-bottom: 2rem; }
+.system-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill { font-family: var(--mono); font-size: 11px; padding: 0.35rem 0.75rem; border-radius: 4px; letter-spacing: 0.05em; }
+.pill-amber  { background: oklch(22% 0.025 75);  color: oklch(68% 0.100 75);  border: 1px solid oklch(32% 0.060 75); }
+.pill-blue   { background: oklch(22% 0.025 240); color: oklch(68% 0.080 240); border: 1px solid oklch(32% 0.060 240); }
+.pill-green  { background: oklch(22% 0.025 145); color: oklch(68% 0.100 145); border: 1px solid oklch(32% 0.060 145); }
+.pill-purple { background: oklch(22% 0.025 290); color: oklch(68% 0.100 290); border: 1px solid oklch(32% 0.060 290); }
+
+.page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+.section-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin: 3.5rem 0 2rem; }
+h2 { font-family: var(--head); font-size: 1.7rem; font-weight: 400; color: var(--ink); margin-bottom: 0.4rem; line-height: 1.2; }
+h3 { font-family: var(--head); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin: 1.5rem 0 0.4rem; }
+p { margin-bottom: 0.75rem; color: var(--ink2); }
+
+.alert { display: flex; gap: 1rem; padding: 1rem 1.25rem; border-radius: 8px; margin: 1.25rem 0; font-size: 14px; }
+.alert-icon { font-size: 18px; flex-shrink: 0; line-height: 1.5; }
+.alert b { display: block; font-weight: 600; margin-bottom: 0.2rem; font-size: 13px; letter-spacing: 0.02em; }
+.alert.amber  { background: var(--amber-bg);  border: 1px solid var(--amber-bdr);  color: oklch(35% 0.090 75); }
+.alert.amber b { color: var(--amber); }
+.alert.blue   { background: var(--blue-bg);   border: 1px solid var(--blue-bdr);   color: oklch(30% 0.060 240); }
+.alert.blue b  { color: var(--blue); }
+.alert.green  { background: var(--green-bg);  border: 1px solid var(--green-bdr);  color: oklch(28% 0.070 145); }
+.alert.green b { color: var(--green); }
+.alert.purple { background: var(--purple-bg); border: 1px solid var(--purple-bdr); color: oklch(32% 0.080 290); }
+.alert.purple b{ color: var(--purple); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+.card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.card-title { font-family: var(--head); font-size: 0.95rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--ink); }
+.card-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.card-tag { display: inline-block; font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-top: 0.5rem; }
+.tag-green  { background: var(--green-bg);  color: var(--green);  border: 1px solid var(--green-bdr); }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-bdr); }
+.tag-blue   { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-bdr); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bdr); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1rem 0; }
+.data-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border2); background: var(--bg2); }
+.data-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--ink2); vertical-align: top; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td strong { color: var(--ink); font-weight: 600; }
+.table-scroll { overflow: auto; }
+
+pre { background: oklch(16% 0.015 110); color: oklch(80% 0.020 110); border-radius: 6px; padding: 1.25rem 1.5rem; font-family: var(--mono); font-size: 12px; line-height: 1.7; overflow-x: auto; margin: 1rem 0; }
+pre .c  { color: oklch(40% 0.020 110); }
+pre .k  { color: oklch(72% 0.100 75); }
+pre .s  { color: oklch(68% 0.110 145); }
+pre .v  { color: oklch(68% 0.090 240); }
+pre .fn { color: oklch(68% 0.100 290); }
+code { font-family: var(--mono); font-size: 12px; background: var(--bg2); border: 1px solid var(--border); color: var(--amber); padding: 1px 5px; border-radius: 3px; }
+
+.arch-wrap { background: oklch(16% 0.015 110); border-radius: 8px; padding: 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
+
+/* ── Floorplan mockup ── */
+.fp-mockup {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+  font-family: var(--mono);
+}
+.fp-nav {
+  background: oklch(95% 0.010 110);
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.fp-tab {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+.fp-tab.active {
+  background: oklch(16% 0.015 110);
+  color: oklch(70% 0.100 75);
+  border-color: oklch(16% 0.015 110);
+}
+.fp-body {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  min-height: 360px;
+}
+.fp-canvas {
+  position: relative;
+  background: oklch(97% 0.008 110);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+.fp-sidebar {
+  padding: 1rem;
+  background: var(--bg2);
+}
+.fp-sidebar-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.fp-sidebar-title.spaced { margin-top: 1rem; }
+.sensor-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+  font-size: 12px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+}
+.sensor-chip.warm { background: var(--amber-bg); border-color: var(--amber-bdr); }
+.sensor-chip.cool { background: var(--blue-bg); border-color: var(--blue-bdr); }
+.sensor-chip.mid  { background: var(--green-bg); border-color: var(--green-bdr); }
+.sensor-chip.equip { background: var(--bg); }
+.sensor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-warm   { background: oklch(62% 0.130 60); }
+.dot-cool   { background: oklch(60% 0.100 240); }
+.dot-mid    { background: oklch(70% 0.100 145); }
+.dot-erv    { background: var(--amber); }
+.dot-hp     { background: oklch(58% 0.080 240); }
+.sensor-info { flex: 1; }
+.sensor-name { font-weight: 600; font-size: 11px; }
+.sensor-meta { font-size: 11px; color: var(--muted); }
+.sensor-meta.warm { color: var(--amber); }
+.sensor-meta.cool { color: var(--blue); }
+.sensor-meta.mid  { color: var(--green); }
+
+.automation-box {
+  margin-top: 1rem;
+  padding: 0.6rem;
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-bdr);
+  border-radius: 6px;
+  font-size: 11px;
+  color: oklch(35% 0.090 75);
+}
+.automation-box strong {
+  display: block;
+  color: var(--amber);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+/* Floor plan SVG rooms */
+.room-label { font-family: var(--mono); font-size: 9px; fill: oklch(55% 0.040 110); letter-spacing: 0.1em; text-transform: uppercase; }
+.temp-label { font-family: var(--body); font-size: 11px; font-weight: 600; }
+
+/* ── Nav structure diagram ── */
+.nav-structure {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+}
+.nav-structure-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.nav-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.nav-item {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border);
+  color: var(--ink2);
+}
+.nav-item.primary { background: oklch(16% 0.015 110); color: oklch(70% 0.100 75); border-color: oklch(16% 0.015 110); }
+.nav-item.secondary { background: var(--bg); }
+.nav-arrow { color: var(--muted); font-size: 14px; display: flex; align-items: center; }
+.nav-desc { font-size: 12px; color: var(--muted); align-self: center; }
+
+/* ── Config diagram ── */
+.config-diagram {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  font-size: 13px;
+}
+
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 0.4rem; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, var(--amber), var(--border)); }
+.tl-item { position: relative; padding: 0 0 1.5rem 1rem; }
+.tl-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--amber); border: 2px solid var(--bg); box-shadow: 0 0 0 2px var(--amber); }
+.tl-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.2rem; }
+.tl-title { font-family: var(--head); font-size: 1rem; font-weight: 400; margin-bottom: 0.3rem; }
+.tl-body { font-size: 13px; color: var(--muted); }
+
+@media print { .guide-topbar { display: none; } .cover { border-radius: 0; margin: 0; } }
+@media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } .fp-body { grid-template-columns: 1fr; } .fp-sidebar { border-top: 1px solid var(--border); } }
+</style>
+
+<div class="guide-topbar">
+  <a href="/energy-monitoring/" class="guide-back">
+    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    Back to Energy Monitoring
+  </a>
+  <button onclick="window.print()" class="guide-dl">
+    <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Home Intelligence — Phase 3 of 3</div>
+  <h1>Visual House Model<br><em>&amp; Unified Dashboard</em></h1>
+  <div class="cover-sub">
+    Prerequisite: Phases 1 &amp; 2 complete. This phase adds a floor-plan-based visual interface as the primary dashboard view — imported from RoomSketcher screenshots, annotated with sensor and equipment positions, and overlaid with live temperature, humidity, and system status data. All Phase 1 and Phase 2 data panels become secondary views accessible from a unified navigation bar.
+  </div>
+  <div class="system-pills">
+    <span class="pill pill-amber">Phase 1 ERV + Weather ✓</span>
+    <span class="pill pill-blue">Phase 2 Heat Pump + Power ✓</span>
+    <span class="pill pill-green">RoomSketcher Floor Plans</span>
+    <span class="pill pill-purple">Canvas Heat Map Overlay</span>
+    <span class="pill pill-amber">Unified Navigation</span>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ── WHAT PHASE 3 DELIVERS ── -->
+<div class="section-label">What Phase 3 Delivers</div>
+<h2>The House Becomes the Interface</h2>
+
+<p>Phases 1 and 2 give you excellent data — but it lives in tables, charts, and log entries. Phase 3 maps all of that data onto a spatial model of your actual house so the question "which room is cold right now and why?" can be answered by looking at the screen rather than reading numbers.</p>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">🗺️</div>
+    <div class="card-title">Floor plan as the default view</div>
+    <div class="card-body">The first thing you see when you open the dashboard. Each floor rendered as an importable image layer with live sensor data overlaid directly onto room locations.</div>
+    <div class="card-tag tag-amber">Primary view</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🌡️</div>
+    <div class="card-title">Temperature heat map</div>
+    <div class="card-body">A color gradient computed from your Aqara sensor readings using inverse distance weighting. Warm rooms glow amber. Cool areas shift blue. The gradient between sensors is interpolated — not estimated.</div>
+    <div class="card-tag tag-amber">IDW interpolation</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">📍</div>
+    <div class="card-title">Equipment markers with live status</div>
+    <div class="card-body">ERV units, heat pump zones, and every Aqara sensor shown as clickable markers at their real positions on the floor plan. Click any marker to see full current readings.</div>
+    <div class="card-tag tag-blue">Interactive markers</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🧭</div>
+    <div class="card-title">Unified navigation</div>
+    <div class="card-body">Floor plan is the home view. One click to Energy, Planning, History, and Controls. All Phase 1 and Phase 2 data panels are still fully accessible — just no longer the first thing you see.</div>
+    <div class="card-tag tag-green">All views preserved</div>
+  </div>
+</div>
+
+<!-- ── MOCKUP ── -->
+<div class="section-label">UI Concept</div>
+<h2>What the Dashboard Looks Like</h2>
+
+<div class="fp-mockup">
+  <div class="fp-nav">
+    <span class="fp-tab active">🏠 Floor Plan</span>
+    <span class="fp-tab">⚡ Energy</span>
+    <span class="fp-tab">📅 Planning</span>
+    <span class="fp-tab">📈 History</span>
+    <span class="fp-tab">⚙️ Controls</span>
+  </div>
+  <div class="fp-body">
+    <!-- SVG floor plan canvas -->
+    <div class="fp-canvas">
+      <svg viewBox="0 0 480 340" width="100%" style="display:block;">
+        <defs>
+          <!-- Warm room gradient (living room) -->
+          <radialGradient id="warm1" cx="35%" cy="60%" r="35%">
+            <stop offset="0%" stop-color="oklch(62% 0.130 60)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="oklch(62% 0.130 60)" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Cool room gradient (bedroom) -->
+          <radialGradient id="cool1" cx="78%" cy="25%" r="28%">
+            <stop offset="0%" stop-color="oklch(60% 0.100 240)" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="oklch(60% 0.100 240)" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Comfortable gradient (kitchen) -->
+          <radialGradient id="mid1" cx="72%" cy="68%" r="22%">
+            <stop offset="0%" stop-color="oklch(70% 0.100 145)" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="oklch(70% 0.100 145)" stop-opacity="0"/>
+          </radialGradient>
+          <!-- Basement cool -->
+          <radialGradient id="cool2" cx="50%" cy="50%" r="45%">
+            <stop offset="0%" stop-color="oklch(60% 0.100 240)" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="oklch(60% 0.100 240)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Floor background -->
+        <rect x="0" y="0" width="480" height="340" fill="oklch(97% 0.008 110)"/>
+
+        <!-- ── FLOOR 1 ── -->
+        <!-- Exterior walls -->
+        <rect x="20" y="20" width="440" height="300" rx="2" fill="none" stroke="oklch(80% 0.035 110)" stroke-width="2"/>
+
+        <!-- Room partitions -->
+        <!-- Living room | hallway split -->
+        <line x1="200" y1="20" x2="200" y2="200" stroke="oklch(80% 0.035 110)" stroke-width="1.5"/>
+        <!-- Kitchen lower right -->
+        <line x1="200" y1="200" x2="460" y2="200" stroke="oklch(80% 0.035 110)" stroke-width="1.5"/>
+        <!-- Upstairs rooms -->
+        <line x1="200" y1="20" x2="200" y2="20" stroke="none"/>
+        <!-- Bedroom wall -->
+        <line x1="330" y1="20" x2="330" y2="130" stroke="oklch(80% 0.035 110)" stroke-width="1.5"/>
+        <!-- Hallway top -->
+        <line x1="200" y1="130" x2="460" y2="130" stroke="oklch(80% 0.035 110)" stroke-width="1.5"/>
+        <!-- Bathroom -->
+        <line x1="390" y1="130" x2="390" y2="200" stroke="oklch(80% 0.035 110)" stroke-width="1.5"/>
+
+        <!-- Heat map overlays -->
+        <rect x="20" y="130" width="180" height="190" fill="url(#warm1)"/>
+        <rect x="330" y="20" width="130" height="110" fill="url(#cool1)"/>
+        <rect x="200" y="200" width="260" height="120" fill="url(#mid1)"/>
+
+        <!-- Room labels -->
+        <text x="110" y="230" class="room-label" text-anchor="middle">Living Room</text>
+        <text x="265" y="75" class="room-label" text-anchor="middle">Bedroom 1</text>
+        <text x="395" y="75" class="room-label" text-anchor="middle">Bed 2</text>
+        <text x="295" y="165" class="room-label" text-anchor="middle">Hallway</text>
+        <text x="430" y="168" class="room-label" text-anchor="middle">Bath</text>
+        <text x="350" y="270" class="room-label" text-anchor="middle">Kitchen / Dining</text>
+
+        <!-- ── SENSOR MARKERS ── -->
+        <!-- Living room sensor - warm -->
+        <circle cx="110" cy="210" r="10" fill="oklch(95% 0.040 85)" stroke="oklch(52% 0.130 75)" stroke-width="1.5"/>
+        <text x="110" y="214" class="temp-label" text-anchor="middle" fill="oklch(52% 0.130 75)">72°</text>
+        <text x="110" y="228" style="font-family:var(--mono);font-size:8px;fill:oklch(55% 0.040 110)" text-anchor="middle">38%rh</text>
+
+        <!-- Bedroom 1 - cool -->
+        <circle cx="265" cy="65" r="10" fill="oklch(95% 0.025 240)" stroke="oklch(40% 0.090 240)" stroke-width="1.5"/>
+        <text x="265" y="69" class="temp-label" text-anchor="middle" fill="oklch(40% 0.090 240)">64°</text>
+        <text x="265" y="82" style="font-family:var(--mono);font-size:8px;fill:oklch(55% 0.040 110)" text-anchor="middle">45%rh</text>
+
+        <!-- Bedroom 2 - cool -->
+        <circle cx="393" cy="65" r="10" fill="oklch(95% 0.025 240)" stroke="oklch(40% 0.090 240)" stroke-width="1.5"/>
+        <text x="393" y="69" class="temp-label" text-anchor="middle" fill="oklch(40% 0.090 240)">66°</text>
+        <text x="393" y="82" style="font-family:var(--mono);font-size:8px;fill:oklch(55% 0.040 110)" text-anchor="middle">43%rh</text>
+
+        <!-- Kitchen - comfortable -->
+        <circle cx="340" cy="255" r="10" fill="oklch(95% 0.035 145)" stroke="oklch(38% 0.090 145)" stroke-width="1.5"/>
+        <text x="340" y="259" class="temp-label" text-anchor="middle" fill="oklch(38% 0.090 145)">69°</text>
+        <text x="340" y="272" style="font-family:var(--mono);font-size:8px;fill:oklch(55% 0.040 110)" text-anchor="middle">41%rh</text>
+
+        <!-- ERV marker - unit 1 -->
+        <rect x="22" y="150" width="24" height="16" rx="2" fill="oklch(52% 0.130 75)" opacity="0.9"/>
+        <text x="34" y="162" style="font-family:var(--mono);font-size:7px;fill:oklch(98% 0 0);font-weight:bold" text-anchor="middle">ERV1</text>
+        <!-- ERV marker - unit 2 -->
+        <rect x="22" y="172" width="24" height="16" rx="2" fill="oklch(52% 0.130 75)" opacity="0.9"/>
+        <text x="34" y="184" style="font-family:var(--mono);font-size:7px;fill:oklch(98% 0 0);font-weight:bold" text-anchor="middle">ERV2</text>
+
+        <!-- Heat pump zone indicator -->
+        <rect x="195" y="195" width="30" height="14" rx="2" fill="oklch(40% 0.090 240)" opacity="0.85"/>
+        <text x="210" y="205" style="font-family:var(--mono);font-size:6px;fill:oklch(98% 0 0);font-weight:bold" text-anchor="middle">HP ZONE</text>
+
+        <!-- Outdoor temp chip - top right -->
+        <rect x="370" y="22" width="88" height="22" rx="3" fill="oklch(18% 0.015 110)" opacity="0.85"/>
+        <text x="382" y="36" style="font-family:var(--mono);font-size:8px;fill:oklch(70% 0.080 240)">outdoor</text>
+        <text x="430" y="36" style="font-family:var(--mono);font-size:10px;fill:oklch(62% 0.130 60);font-weight:bold" text-anchor="end">32°F</text>
+
+        <!-- Floor label -->
+        <text x="28" y="36" style="font-family:var(--mono);font-size:9px;fill:oklch(55% 0.040 110);letter-spacing:0.1em">FLOOR 1</text>
+
+        <!-- Floor switcher hint -->
+        <rect x="430" y="300" width="26" height="26" rx="3" fill="oklch(95% 0.010 110)" stroke="oklch(85% 0.028 110)"/>
+        <text x="443" y="316" style="font-family:var(--mono);font-size:8px;fill:oklch(55% 0.040 110)" text-anchor="middle">B1</text>
+        <rect x="456" y="300" width="26" height="26" rx="3" fill="oklch(16% 0.015 110)" stroke="oklch(16% 0.015 110)"/>
+        <text x="469" y="316" style="font-family:var(--mono);font-size:8px;fill:oklch(70% 0.100 75)" text-anchor="middle">F1</text>
+
+        <!-- Legend -->
+        <rect x="20" y="300" width="130" height="22" rx="3" fill="oklch(98% 0 0)" stroke="oklch(85% 0.028 110)"/>
+        <circle cx="32" cy="311" r="5" fill="oklch(62% 0.130 60)" opacity="0.5"/>
+        <text x="40" y="315" style="font-family:var(--mono);font-size:7px;fill:oklch(55% 0.040 110)">warm</text>
+        <circle cx="72" cy="311" r="5" fill="oklch(70% 0.100 145)" opacity="0.5"/>
+        <text x="80" y="315" style="font-family:var(--mono);font-size:7px;fill:oklch(55% 0.040 110)">ideal</text>
+        <circle cx="110" cy="311" r="5" fill="oklch(60% 0.100 240)" opacity="0.5"/>
+        <text x="118" y="315" style="font-family:var(--mono);font-size:7px;fill:oklch(55% 0.040 110)">cool</text>
+      </svg>
+    </div>
+    <!-- Sidebar -->
+    <div class="fp-sidebar">
+      <div class="fp-sidebar-title">Live Conditions</div>
+      <div class="sensor-chip warm">
+        <div class="sensor-dot dot-warm"></div>
+        <div class="sensor-info"><div class="sensor-name">Living Room</div><div class="sensor-meta warm">72°F · 38% rh</div></div>
+      </div>
+      <div class="sensor-chip cool">
+        <div class="sensor-dot dot-cool"></div>
+        <div class="sensor-info"><div class="sensor-name">Bedroom 1</div><div class="sensor-meta cool">64°F · 45% rh</div></div>
+      </div>
+      <div class="sensor-chip cool">
+        <div class="sensor-dot dot-cool"></div>
+        <div class="sensor-info"><div class="sensor-name">Bedroom 2</div><div class="sensor-meta cool">66°F · 43% rh</div></div>
+      </div>
+      <div class="sensor-chip mid">
+        <div class="sensor-dot dot-mid"></div>
+        <div class="sensor-info"><div class="sensor-name">Kitchen</div><div class="sensor-meta mid">69°F · 41% rh</div></div>
+      </div>
+
+      <div class="fp-sidebar-title spaced">Equipment</div>
+      <div class="sensor-chip equip">
+        <div class="sensor-dot dot-erv"></div>
+        <div class="sensor-info"><div class="sensor-name">ERV Unit 1</div><div class="sensor-meta">Med · 42W</div></div>
+      </div>
+      <div class="sensor-chip equip">
+        <div class="sensor-dot dot-erv"></div>
+        <div class="sensor-info"><div class="sensor-name">ERV Unit 2</div><div class="sensor-meta">Med · 40W</div></div>
+      </div>
+      <div class="sensor-chip equip">
+        <div class="sensor-dot dot-hp"></div>
+        <div class="sensor-info"><div class="sensor-name">Heat Pump</div><div class="sensor-meta cool">Heat · 68°F SP</div></div>
+      </div>
+
+      <div class="automation-box">
+        <strong>AUTOMATION</strong>
+        ERV: Med — balanced<br>HP: pre-heat in 3h
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FLOOR PLAN SOURCE ── -->
+<div class="section-label">Step 1 — Preparing Your Floor Plan</div>
+<h2>Getting a Clean Plan from RoomSketcher</h2>
+
+<p>RoomSketcher (and similar tools like Planner 5D, Floorplanner, or even a hand-drawn plan scanned flat) produces the background image layer. The web UI doesn't need a special format — a clean PNG screenshot is all it needs. The sensor positions are stored separately in a JSON config file, so the image never needs to be re-exported when sensors are added or moved.</p>
+
+<div class="alert blue">
+  <div class="alert-icon">📐</div>
+  <div>
+    <b>What makes a good source floor plan</b>
+    Draw one floor at a time in RoomSketcher. Use 2D top-down view — not 3D. Remove furniture if it makes room boundaries harder to see. Export at 1200–2000px wide minimum for crisp rendering on high-DPI screens. Name each exported PNG by floor: <code>floor_basement.png</code>, <code>floor_1.png</code>, <code>floor_2.png</code>.
+  </div>
+</div>
+
+<div class="alert amber">
+  <div class="alert-icon">📏</div>
+  <div>
+    <b>The most important step: consistent dimensions</b>
+    Before marking any sensor positions, decide on a final crop and resolution for each floor plan image and stick to it. Sensor positions are stored as percentages of image width and height — if you re-export the image at a different crop, all positions shift. Export once, save the original, use that file as-is forever.
+  </div>
+</div>
+
+<h3>Recommended RoomSketcher export settings</h3>
+<div class="table-scroll">
+<table class="data-table">
+  <thead><tr><th>Setting</th><th>Value</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td><strong>View</strong></td><td>2D Floor Plan</td><td>Clean top-down — no perspective distortion</td></tr>
+    <tr><td><strong>Resolution</strong></td><td>1600 × 1200px minimum</td><td>Sharp on retina/4K screens when scaled down in the UI</td></tr>
+    <tr><td><strong>Background</strong></td><td>White or very light gray</td><td>Heat map overlay colors need light background to show clearly</td></tr>
+    <tr><td><strong>Walls</strong></td><td>Medium weight, dark gray</td><td>Visible through semi-transparent overlay</td></tr>
+    <tr><td><strong>Furniture</strong></td><td>Remove or keep minimal</td><td>Equipment markers get confused with furniture symbols</td></tr>
+    <tr><td><strong>Labels</strong></td><td>Room names on — measurements off</td><td>Room names help at-a-glance orientation</td></tr>
+    <tr><td><strong>Format</strong></td><td>PNG</td><td>Lossless — no JPEG compression artifacts around wall edges</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ── JSON CONFIG ── -->
+<div class="section-label">Step 2 — Sensor Position Config</div>
+<h2>floor_plan_config.json — Mapping Sensors to Space</h2>
+
+<p>This is the bridge between your floor plan images and your live MQTT data. Every sensor and piece of equipment gets a position expressed as a percentage of the image's width and height. Percentages means the config works regardless of what screen size or zoom level the dashboard is viewed at.</p>
+
+<pre><span class="c">// floor_plan_config.json
+// Run the position editor tool (see Step 4) to set x/y values
+// x: 0 = left edge, 100 = right edge of the floor plan image
+// y: 0 = top edge, 100 = bottom edge</span>
+{
+  <span class="s">"floors"</span>: [
+    {
+      <span class="s">"id"</span>:    <span class="s">"floor_1"</span>,
+      <span class="s">"label"</span>: <span class="s">"Main Floor"</span>,
+      <span class="s">"image"</span>: <span class="s">"static/floor_1.png"</span>,
+      <span class="s">"sensors"</span>: [
+        {
+          <span class="s">"id"</span>:         <span class="s">"aqara_living_room"</span>,
+          <span class="s">"label"</span>:      <span class="s">"Living Room"</span>,
+          <span class="s">"mqtt_temp"</span>:  <span class="s">"aqara/living_room/temperature"</span>,
+          <span class="s">"mqtt_humid"</span>: <span class="s">"aqara/living_room/humidity"</span>,
+          <span class="s">"x"</span>: <span class="v">22.5</span>,  <span class="c">// percent of image width</span>
+          <span class="s">"y"</span>: <span class="v">61.0</span>   <span class="c">// percent of image height</span>
+        },
+        {
+          <span class="s">"id"</span>:         <span class="s">"aqara_bedroom_1"</span>,
+          <span class="s">"label"</span>:      <span class="s">"Bedroom 1"</span>,
+          <span class="s">"mqtt_temp"</span>:  <span class="s">"aqara/bedroom_1/temperature"</span>,
+          <span class="s">"mqtt_humid"</span>: <span class="s">"aqara/bedroom_1/humidity"</span>,
+          <span class="s">"x"</span>: <span class="v">55.2</span>, <span class="s">"y"</span>: <span class="v">19.0</span>
+        }
+      ],
+      <span class="s">"equipment"</span>: [
+        {
+          <span class="s">"id"</span>:    <span class="s">"erv_unit_1"</span>,
+          <span class="s">"type"</span>:  <span class="s">"erv"</span>,
+          <span class="s">"label"</span>: <span class="s">"ERV 1"</span>,
+          <span class="s">"mqtt_state"</span>: <span class="s">"erv/unit1/sensor/fan_mode/state"</span>,
+          <span class="s">"mqtt_power"</span>: <span class="s">"erv/unit1/sensor/power_draw"</span>,
+          <span class="s">"x"</span>: <span class="v">4.5</span>, <span class="s">"y"</span>: <span class="v">44.0</span>
+        },
+        {
+          <span class="s">"id"</span>:    <span class="s">"hp_zone_1"</span>,
+          <span class="s">"type"</span>:  <span class="s">"heatpump"</span>,
+          <span class="s">"label"</span>: <span class="s">"HP Zone"</span>,
+          <span class="s">"mqtt_state"</span>: <span class="s">"heatpump/unit1/mode"</span>,
+          <span class="s">"mqtt_setpoint"</span>: <span class="s">"heatpump/unit1/target_temperature"</span>,
+          <span class="s">"x"</span>: <span class="v">41.0</span>, <span class="s">"y"</span>: <span class="v">57.5</span>
+        }
+      ]
+    },
+    {
+      <span class="s">"id"</span>:    <span class="s">"basement"</span>,
+      <span class="s">"label"</span>: <span class="s">"Basement"</span>,
+      <span class="s">"image"</span>: <span class="s">"static/floor_basement.png"</span>,
+      <span class="s">"sensors"</span>: [
+        {
+          <span class="s">"id"</span>:         <span class="s">"aqara_basement"</span>,
+          <span class="s">"label"</span>:      <span class="s">"Mechanical Room"</span>,
+          <span class="s">"mqtt_temp"</span>:  <span class="s">"aqara/basement/temperature"</span>,
+          <span class="s">"mqtt_humid"</span>: <span class="s">"aqara/basement/humidity"</span>,
+          <span class="s">"x"</span>: <span class="v">50.0</span>, <span class="s">"y"</span>: <span class="v">50.0</span>
+        }
+      ],
+      <span class="s">"equipment"</span>: [
+        {
+          <span class="s">"id"</span>:    <span class="s">"erv_unit_2"</span>,
+          <span class="s">"type"</span>:  <span class="s">"erv"</span>,
+          <span class="s">"label"</span>: <span class="s">"ERV 2"</span>,
+          <span class="s">"mqtt_state"</span>: <span class="s">"erv/unit2/sensor/fan_mode/state"</span>,
+          <span class="s">"mqtt_power"</span>: <span class="s">"erv/unit2/sensor/power_draw"</span>,
+          <span class="s">"x"</span>: <span class="v">12.0</span>, <span class="s">"y"</span>: <span class="v">35.0</span>
+        }
+      ]
+    }
+  ]
+}</pre>
+
+<!-- ── HEATMAP TECH ── -->
+<div class="section-label">Step 3 — Heat Map Rendering</div>
+<h2>How the Temperature Overlay Works</h2>
+
+<p>The heat map is rendered in real time on an HTML5 Canvas element that sits directly on top of your floor plan image. It uses Inverse Distance Weighting (IDW) — a simple algorithm that interpolates the temperature at any pixel based on its distance from all known sensor readings. Sensors closer to a pixel have more influence than sensors further away.</p>
+
+<div class="alert green">
+  <div class="alert-icon">🧮</div>
+  <div>
+    <b>Why IDW is the right algorithm here</b>
+    It doesn't require training data, it uses every sensor you have regardless of count, new sensors automatically integrate, and you can tune one parameter (the power factor) to control how sharply the gradient transitions between sensor readings. A power of 2 gives smooth, natural-looking gradients. A power of 3–4 makes each sensor more "local," which is physically more accurate for separate rooms.
+  </div>
+</div>
+
+<pre><span class="c">// JavaScript — floor plan canvas renderer
+// Runs in the browser as part of the FastAPI-served web UI</span>
+
+<span class="k">const</span> COLOR_SCALE = [
+  { temp: <span class="v">55</span>, color: [<span class="v">70</span>, <span class="v">130</span>, <span class="v">200</span>] },   <span class="c">// cold blue</span>
+  { temp: <span class="v">65</span>, color: [<span class="v">100</span>, <span class="v">180</span>, <span class="v">150</span>] },  <span class="c">// teal — comfortable cool</span>
+  { temp: <span class="v">70</span>, color: [<span class="v">122</span>, <span class="v">196</span>, <span class="v">160</span>] },  <span class="c">// green — ideal</span>
+  { temp: <span class="v">74</span>, color: [<span class="v">220</span>, <span class="v">160</span>,  <span class="v">80</span>] },  <span class="c">// amber — warm</span>
+  { temp: <span class="v">80</span>, color: [<span class="v">220</span>,  <span class="v">90</span>,  <span class="v">50</span>] },  <span class="c">// orange — hot</span>
+];
+
+<span class="k">function</span> <span class="fn">tempToColor</span>(tempF) {
+  <span class="k">for</span> (<span class="k">let</span> i = <span class="v">0</span>; i < COLOR_SCALE.length - <span class="v">1</span>; i++) {
+    <span class="k">const</span> lo = COLOR_SCALE[i], hi = COLOR_SCALE[i+<span class="v">1</span>];
+    <span class="k">if</span> (tempF >= lo.temp && tempF <= hi.temp) {
+      <span class="k">const</span> t = (tempF - lo.temp) / (hi.temp - lo.temp);
+      <span class="k">return</span> lo.color.map((c, j) => Math.round(c + t * (hi.color[j] - c)));
+    }
+  }
+  <span class="k">return</span> COLOR_SCALE[COLOR_SCALE.length - <span class="v">1</span>].color;
+}
+
+<span class="k">function</span> <span class="fn">idwInterpolate</span>(px, py, sensors, power = <span class="v">2</span>) {
+  <span class="c">// px, py: pixel position as fraction of canvas width/height</span>
+  <span class="k">let</span> weightedSum = <span class="v">0</span>, totalWeight = <span class="v">0</span>;
+  <span class="k">for</span> (<span class="k">const</span> s <span class="k">of</span> sensors) {
+    <span class="k">const</span> dx = px - s.x / <span class="v">100</span>;
+    <span class="k">const</span> dy = py - s.y / <span class="v">100</span>;
+    <span class="k">const</span> dist = Math.sqrt(dx*dx + dy*dy);
+    <span class="k">if</span> (dist < <span class="v">0.001</span>) <span class="k">return</span> s.temp; <span class="c">// at the sensor itself</span>
+    <span class="k">const</span> w = <span class="v">1</span> / Math.pow(dist, power);
+    weightedSum += w * s.temp;
+    totalWeight += w;
+  }
+  <span class="k">return</span> weightedSum / totalWeight;
+}
+
+<span class="k">function</span> <span class="fn">renderHeatmap</span>(canvas, sensors, alpha = <span class="v">0.45</span>) {
+  <span class="k">const</span> ctx = canvas.getContext(<span class="s">'2d'</span>);
+  <span class="k">const</span> { width, height } = canvas;
+  <span class="k">const</span> step = <span class="v">6</span>;  <span class="c">// pixel step — lower = smoother but slower</span>
+  <span class="k">const</span> imgData = ctx.createImageData(width, height);
+
+  <span class="k">for</span> (<span class="k">let</span> y = <span class="v">0</span>; y < height; y += step) {
+    <span class="k">for</span> (<span class="k">let</span> x = <span class="v">0</span>; x < width; x += step) {
+      <span class="k">const</span> temp  = <span class="fn">idwInterpolate</span>(x/width, y/height, sensors);
+      <span class="k">const</span> [r,g,b] = <span class="fn">tempToColor</span>(temp);
+      <span class="c">// Fill a step×step block for performance</span>
+      <span class="k">for</span> (<span class="k">let</span> dy = <span class="v">0</span>; dy < step && y+dy < height; dy++) {
+        <span class="k">for</span> (<span class="k">let</span> dx = <span class="v">0</span>; dx < step && x+dx < width; dx++) {
+          <span class="k">const</span> idx = ((y+dy) * width + (x+dx)) * <span class="v">4</span>;
+          imgData.data[idx]   = r;
+          imgData.data[idx+<span class="v">1</span>] = g;
+          imgData.data[idx+<span class="v">2</span>] = b;
+          imgData.data[idx+<span class="v">3</span>] = Math.round(alpha * <span class="v">255</span>);
+        }
+      }
+    }
+  }
+  ctx.putImageData(imgData, <span class="v">0</span>, <span class="v">0</span>);
+}
+
+<span class="c">// Refresh every 30 seconds when sensor data updates via MQTT</span>
+<span class="k">async function</span> <span class="fn">refreshFloorPlan</span>() {
+  <span class="k">const</span> data    = <span class="k">await</span> fetch(<span class="s">'/api/indoor'</span>).then(r => r.json());
+  <span class="k">const</span> config  = <span class="k">await</span> fetch(<span class="s">'/api/floor_plan_config'</span>).then(r => r.json());
+  <span class="k">const</span> floor   = config.floors.find(f => f.id === currentFloor);
+
+  <span class="k">const</span> sensors = floor.sensors.map(s => ({
+    x: s.x, y: s.y,
+    temp: data[s.id]?.temperature ?? <span class="v">68</span>
+  }));
+
+  <span class="fn">renderHeatmap</span>(document.getElementById(<span class="s">'heatmap-canvas'</span>), sensors);
+  <span class="fn">updateMarkers</span>(floor, data);
+}</pre>
+
+<!-- ── POSITION EDITOR ── -->
+<div class="section-label">Step 4 — Placing Sensors on the Map</div>
+<h2>Built-in Position Editor</h2>
+
+<p>Rather than manually measuring pixel coordinates, the dashboard includes a one-time setup tool that lets you click directly on the floor plan image to place each sensor. It writes the percentages back to <code>floor_plan_config.json</code> automatically.</p>
+
+<pre><span class="c"># Access the position editor at:</span>
+http://your-server:8080/setup/floor-plan
+
+<span class="c"># Editor workflow:
+# 1. Select a floor from the dropdown
+# 2. Select a sensor or equipment item from the sidebar list
+# 3. Click its location on the floor plan image
+# 4. x/y percentages are calculated and saved automatically
+# 5. Repeat for all sensors and equipment
+# 6. Toggle "Edit Mode" off to switch back to live view</span></pre>
+
+<div class="alert purple">
+  <div class="alert-icon">🖱️</div>
+  <div>
+    <b>Position editor is only needed once per sensor</b>
+    Once you've placed a sensor it stays put in the config file. If you move a physical sensor to a new room, open the editor, select it, and click the new location. Nothing else needs to change — the MQTT topic stays the same.
+  </div>
+</div>
+
+<!-- ── NAVIGATION REDESIGN ── -->
+<div class="section-label">Step 5 — Unified Dashboard Navigation</div>
+<h2>All Views Under One Roof</h2>
+
+<p>Phase 3 replaces the existing Phase 1/2 dashboard with a single unified application. The floor plan is the default landing view. All existing data panels from Phases 1 and 2 become tabs in the navigation bar — nothing is removed, just reorganized spatially.</p>
+
+<div class="nav-structure">
+  <div class="nav-structure-title">Navigation Structure</div>
+
+  <div class="nav-row">
+    <div class="nav-item primary">🏠 Floor Plan</div>
+    <div class="nav-arrow">—</div>
+    <div class="nav-desc">Default view. Multi-floor selector. Heat map + equipment markers. Click any sensor for detail popover.</div>
+  </div>
+  <div class="nav-row">
+    <div class="nav-item secondary">⚡ Energy</div>
+    <div class="nav-arrow">—</div>
+    <div class="nav-desc">Emporia Vue live circuit watts. $/hour at current draw. Today's total kWh + estimated cost. ERV and HP power comparison.</div>
+  </div>
+  <div class="nav-row">
+    <div class="nav-item secondary">📅 Planning</div>
+    <div class="nav-arrow">—</div>
+    <div class="nav-desc">48-hour forecast with COP overlay. Scheduled setpoint changes. Pre-heat windows visualized. Next automation actions.</div>
+  </div>
+  <div class="nav-row">
+    <div class="nav-item secondary">📈 History</div>
+    <div class="nav-arrow">—</div>
+    <div class="nav-desc">Per-sensor temp/humidity trends. ERV runtime and mode history. Daily heating cost chart. Filter life tracking.</div>
+  </div>
+  <div class="nav-row">
+    <div class="nav-item secondary">⚙️ Controls</div>
+    <div class="nav-arrow">—</div>
+    <div class="nav-desc">Manual overrides: ERV mode per unit, HP setpoint. Automation pause timer. Alert thresholds. Floor plan editor toggle.</div>
+  </div>
+</div>
+
+<div class="alert blue">
+  <div class="alert-icon">📱</div>
+  <div>
+    <b>The floor plan view scales to phone screens</b>
+    On a small screen the floor plan fills the viewport and the sidebar collapses to a bottom drawer. The nav bar shrinks to icons only. This is the most valuable screen for walking around the house with your phone — you see what every room is doing at a glance without opening a single menu.
+  </div>
+</div>
+
+<!-- ── SENSOR POPOVER ── -->
+<h3>What appears when you click a sensor marker</h3>
+<table class="data-table">
+  <thead><tr><th>Sensor type</th><th>Popover shows</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Aqara temp/humidity</strong></td><td>Current temp, humidity, dewpoint. 24h sparkline for both. Time since last reading. Battery level if applicable.</td></tr>
+    <tr><td><strong>ERV unit</strong></td><td>Current fan mode and speed. Intake temp, exhaust temp, CFM. Power draw now and today's total. Filter life remaining. One-click mode override (Min/Med/Max).</td></tr>
+    <tr><td><strong>Heat pump zone</strong></td><td>Current mode and setpoint. Actual room temp. Compressor state and outdoor temp (from CN105). Current watts from Emporia. Active automation reason.</td></tr>
+  </tbody>
+</table>
+
+<!-- ── ROLLOUT ── -->
+<div class="section-label">Rollout Sequence</div>
+<h2>Implementation Order</h2>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-label">Phases 1 &amp; 2 — Complete</div>
+    <div class="tl-title">All data must be flowing before the visual layer is built</div>
+    <div class="tl-body">Phase 3 is purely a presentation layer on top of the existing data pipeline. Every MQTT topic, every SQLite table, and every API endpoint from Phases 1 and 2 is used as-is. Nothing in the backend changes.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 1</div>
+    <div class="tl-title">Create and export floor plan images</div>
+    <div class="tl-body">Build each floor in RoomSketcher (or your preferred tool). Export as PNG at consistent dimensions. Copy to the <code>static/</code> directory of the FastAPI backend. Confirm images load at the right path.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 1–2</div>
+    <div class="tl-title">Build the floor plan viewer + position editor</div>
+    <div class="tl-body">Add the canvas-based floor plan page to the FastAPI app. Implement the position editor. Work through each floor placing all sensors and equipment. Verify the config JSON looks right.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 2</div>
+    <div class="tl-title">Wire live MQTT data to the canvas overlay</div>
+    <div class="tl-body">Connect the <code>/api/indoor</code> endpoint to the heat map renderer. Add the equipment marker status layer. Test that clicking a marker shows correct live data. Tune the IDW power factor to taste — start at 2, increase if the gradient looks too smeared.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Week 2–3</div>
+    <div class="tl-title">Migrate to unified navigation</div>
+    <div class="tl-body">Replace the existing dashboard HTML with the unified single-page layout. Move Energy, Planning, History, and Controls into their respective tab panels. Make floor plan the default. Test on phone screen.</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-label">Ongoing</div>
+    <div class="tl-title">Expand overlays over time</div>
+    <div class="tl-body">Once the base view is working, additional overlays are straightforward to add: a humidity mode, an air quality mode (if CO₂ sensors are added in future), a power consumption mode that colors rooms by their contribution to current energy draw.</div>
+  </div>
+</div>
+
+<!-- ── FUTURE OVERLAYS ── -->
+<div class="section-label">Future Overlay Modes</div>
+<h2>What Can Be Added Later</h2>
+
+<div class="card-grid">
+  <div class="card">
+    <div class="card-icon">💧</div>
+    <div class="card-title">Humidity mode</div>
+    <div class="card-body">Same IDW gradient but driven by humidity readings instead of temperature. Immediately shows which room is at risk of mold or condensation without reading a single number.</div>
+    <div class="card-tag tag-blue">Aqara data already available</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔥</div>
+    <div class="card-title">Heat delta mode</div>
+    <div class="card-body">Shows change in temperature since last hour rather than absolute temperature. Makes stratification, cold drafts, and ERV effects visible as movement rather than state.</div>
+    <div class="card-tag tag-amber">SQLite history query</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">⚡</div>
+    <div class="card-title">Power density mode</div>
+    <div class="card-body">Colors rooms by their associated equipment energy draw — mechanical room glows brighter when the heat pump is working hard. Intuitive cost visualization without reading a watt meter.</div>
+    <div class="card-tag tag-green">Emporia data already available</div>
+  </div>
+  <div class="card">
+    <div class="card-icon">🌬️</div>
+    <div class="card-title">Air flow mode</div>
+    <div class="card-body">Animate directional arrows showing which way air is moving based on ERV intake/exhaust positions and fan mode. Shows whether fresh air is reaching every room or short-circuiting.</div>
+    <div class="card-tag tag-purple">ERV data already available</div>
+  </div>
+</div>
+
+</div>
