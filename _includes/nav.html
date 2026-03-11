@@ -8,10 +8,16 @@
                     <a href="/solar/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/solar/' %} bg-olive-800{% endif %}">Solar</a>
                     <a href="/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/books' %} bg-olive-800{% endif %}">Books</a>
                     <a href="/taxes/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/taxes/' %} bg-olive-800{% endif %}">PA Taxes</a>
-                    <a href="/writingprompts/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/writingprompts/' %} bg-olive-800{% endif %}">Writing Prompts</a>
-                    <a href="/guitar/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/guitar/' %} bg-olive-800{% endif %}">Guitar</a>
-                    <a href="/dnd/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/dnd/' %} bg-olive-800{% endif %}">DnD 5e</a>
-                    <a href="/wp/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/wp/' %} bg-olive-800{% endif %}">WP</a>
+                    
+                    <!-- Misc Dropdown -->
+                    <div class="relative group">
+                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/writingprompts' or page.url contains '/guitar' or page.url contains '/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="/writingprompts/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/writingprompts/' %} bg-olive-700{% endif %}">Writing Prompts</a>
+                            <a href="/guitar/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/guitar/' %} bg-olive-700{% endif %}">Guitar</a>
+                            <a href="/dnd/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/dnd/' %} bg-olive-700{% endif %}">DnD 5e</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
