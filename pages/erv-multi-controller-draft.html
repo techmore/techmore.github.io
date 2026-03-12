@@ -37,15 +37,44 @@ title: ERV Multi-Controller Draft - Techmore
         </div>
       </div>
 
-      <div class="mt-10 bg-olive-100 rounded-2xl border border-olive-200 p-6">
-        <h2 class="text-2xl text-olive-950 mb-3">High-Level Architecture</h2>
-        <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[Client A: VTTOUCH Panel]      [Client B: ESP32-S3 Buttons]     [Client C: Web UI]
+      <div class="mt-10 bg-olive-950 rounded-2xl border border-olive-800 p-6">
+        <h2 class="text-2xl text-olive-50 mb-3">High-Level Architecture</h2>
+        <div class="bg-olive-900/70 rounded-xl border border-olive-800 p-4 mb-6">
+          <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap">[Client A: VTTOUCH Panel]      [Client B: ESP32-S3 Buttons]     [Client C: Web UI]
               │                            │                             │
               └─────────────── MQTT (commands + state + audit log) ───────┘
                                              │
                                    [Controller: ESP32-S3 or Pi]
                                              │
                                       RS-485 to ERV</pre>
+        </div>
+        <div class="bg-olive-900 rounded-xl border border-olive-800 p-4 overflow-x-auto">
+          <svg viewBox="0 0 720 220" width="100%" style="display:block;max-width:720px;margin:0 auto;">
+            <rect x="20" y="24" width="160" height="40" rx="6" fill="oklch(22% 0.02 110)" stroke="oklch(42% 0.04 110)" stroke-width="1.5"/>
+            <text x="100" y="48" fill="oklch(80% 0.03 110)" font-size="10" text-anchor="middle" font-family="monospace">VTTOUCH Panel</text>
+
+            <rect x="200" y="24" width="160" height="40" rx="6" fill="oklch(22% 0.02 110)" stroke="oklch(42% 0.04 110)" stroke-width="1.5"/>
+            <text x="280" y="48" fill="oklch(80% 0.03 110)" font-size="10" text-anchor="middle" font-family="monospace">ESP32 Remote</text>
+
+            <rect x="380" y="24" width="160" height="40" rx="6" fill="oklch(22% 0.02 110)" stroke="oklch(42% 0.04 110)" stroke-width="1.5"/>
+            <text x="460" y="48" fill="oklch(80% 0.03 110)" font-size="10" text-anchor="middle" font-family="monospace">Web UI</text>
+
+            <rect x="150" y="90" width="420" height="36" rx="6" fill="oklch(24% 0.02 110)" stroke="oklch(50% 0.05 110)" stroke-width="1.5"/>
+            <text x="360" y="113" fill="oklch(84% 0.03 110)" font-size="10" text-anchor="middle" font-family="monospace">MQTT: commands • state • audit</text>
+
+            <rect x="260" y="150" width="200" height="40" rx="6" fill="oklch(20% 0.02 110)" stroke="oklch(50% 0.05 110)" stroke-width="1.5"/>
+            <text x="360" y="174" fill="oklch(85% 0.03 110)" font-size="10" text-anchor="middle" font-family="monospace">Controller (RS-485 Master)</text>
+
+            <rect x="290" y="200" width="140" height="28" rx="6" fill="oklch(18% 0.02 110)" stroke="oklch(42% 0.04 110)" stroke-width="1.5"/>
+            <text x="360" y="218" fill="oklch(75% 0.03 110)" font-size="9" text-anchor="middle" font-family="monospace">ERV RS-485</text>
+
+            <line x1="100" y1="64" x2="220" y2="90" stroke="oklch(55% 0.04 110)" stroke-width="1.2"/>
+            <line x1="280" y1="64" x2="300" y2="90" stroke="oklch(55% 0.04 110)" stroke-width="1.2"/>
+            <line x1="460" y1="64" x2="440" y2="90" stroke="oklch(55% 0.04 110)" stroke-width="1.2"/>
+            <line x1="360" y1="126" x2="360" y2="150" stroke="oklch(55% 0.04 110)" stroke-width="1.2"/>
+            <line x1="360" y1="190" x2="360" y2="200" stroke="oklch(55% 0.04 110)" stroke-width="1.2"/>
+          </svg>
+        </div>
       </div>
 
       <div class="mt-10">
@@ -111,10 +140,11 @@ title: ERV Multi-Controller Draft - Techmore
 
       <div class="mt-10">
         <h2 class="text-2xl text-olive-950 mb-3">Payload Schemas</h2>
-        <div class="grid gap-6">
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
-            <h3 class="text-lg text-olive-900 mb-2">Command Request (<code>erv/command/request</code>)</h3>
-            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Command Request</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/command/request</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "client_id": "esp32-remote-01",
   "request_id": "a3f9c1",
   "timestamp": 1749500000,
@@ -126,19 +156,21 @@ title: ERV Multi-Controller Draft - Techmore
   "priority": 1
 }</pre>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
-            <h3 class="text-lg text-olive-900 mb-2">Command ACK (<code>erv/command/ack/{client_id}</code>)</h3>
-            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Command ACK</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/command/ack/{client_id}</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "request_id": "a3f9c1",
   "status": "accepted",
   "queued_position": 1,
   "reason": null
 }</pre>
-            <p class="text-xs text-olive-600 mt-2">Status values: <code>accepted</code>, <code>rejected</code>, <code>superseded</code>, <code>expired</code>.</p>
+            <p class="text-xs text-olive-300 mt-3">Status values: <code>accepted</code>, <code>rejected</code>, <code>superseded</code>, <code>expired</code>.</p>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
-            <h3 class="text-lg text-olive-900 mb-2">ERV State (<code>erv/state</code>)</h3>
-            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">ERV State</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/state</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "timestamp": 1749500005,
   "mode": "boost",
   "fan_speed": 3,
@@ -151,9 +183,10 @@ title: ERV Multi-Controller Draft - Techmore
   "last_command_source": "esp32-remote-01"
 }</pre>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
-            <h3 class="text-lg text-olive-900 mb-2">Audit Entry (<code>erv/audit</code>)</h3>
-            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Audit Entry</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/audit</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "timestamp": 1749500000,
   "client_id": "esp32-remote-01",
   "request_id": "a3f9c1",
