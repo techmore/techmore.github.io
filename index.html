@@ -15,8 +15,8 @@ title: F.I.R.E. - Techmore
                         </svg>
                     </div>
                     <div>
-                        <h1 class="text-3xl font-display italic text-olive-950">Techmore Library</h1>
-                        <p class="text-sm text-olive-700">Guides, calculators, and deep dives for the F.I.R.E. journey.</p>
+                        <h1 class="text-3xl font-display italic text-olive-950">F.I.R.E. Blog</h1>
+                        <p class="text-sm text-olive-700">Real-world savings breakdowns, upgrades, and project logs.</p>
                     </div>
                 </div>
 
@@ -57,295 +57,110 @@ title: F.I.R.E. - Techmore
 
             <div class="mt-4 flex flex-wrap items-center gap-2">
                 <button class="filter-pill px-3 py-1.5 bg-olive-700 rounded-md text-[11px] text-olive-50 font-medium transition-colors" data-filter="all">All</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="energy">Energy</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="guides">Guides</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="network">Network</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="books">Books</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="tools">Tools</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="electrical">Electrical</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="septic">Septic</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="costco">Costco</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="cellphone">Cell Phone</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="internet">Internet</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="betterment">Betterment</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="unifi">UniFi</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="heatpump">Heat Pump</button>
+                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="solar">Solar</button>
             </div>
         </div>
     </section>
-
-    <!-- Status Bar -->
-    <section class="bg-olive-100 border-y border-olive-200 py-2">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
-                <div class="flex items-center gap-4 text-olive-700">
-                    <span class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-olive-600 rounded-full"></span>
-                        12 updates this month
-                    </span>
-                    <span class="text-olive-300">|</span>
-                    <span>Energy, network, and planning guides</span>
-                </div>
-                <div class="flex items-center gap-4 text-olive-600">
-                    <a href="#browse" class="hover:text-olive-800 transition-colors">Browse</a>
-                    <a href="#collections" class="hover:text-olive-800 transition-colors">Collections</a>
-                    <a href="#research" class="hover:text-olive-800 transition-colors">Research</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Browse Section -->
-    <section id="browse" class="py-8">
+    <!-- Blog Posts -->
+    <section id="blog-posts" class="pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h2 class="text-2xl text-olive-950">Recommended for You</h2>
-                    <p class="text-sm text-olive-700">Jump into the newest builds, comparisons, and calculators.</p>
-                </div>
-                <a href="/pages/energy-monitoring/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">View Energy Hub</a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="content-grid">
-                <a href="/pages/energy-monitoring/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="energy guides" data-search="Energy Monitoring Overview">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">⚡</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Energy Monitoring Overview</h3>
-                        <p class="text-xs text-olive-600 truncate">Project hub + guides</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Energy</span>
-                            <span class="text-olive-400">Updated March 2026</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/energy-monitoring/solar/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="energy tools" data-search="Solar Payback Calculator">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">☀️</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Solar Payback Calculator</h3>
-                        <p class="text-xs text-olive-600 truncate">Interactive savings model</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Tool</span>
-                            <span class="text-olive-400">Energy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/phase1_erv_guide/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="energy guides" data-search="Phase 1 ERV Guide">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🌬️</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Phase 1 — ERV Guide</h3>
-                        <p class="text-xs text-olive-600 truncate">Scope, specs, and install notes</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Guide</span>
-                            <span class="text-olive-400">Energy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/phase2_heatpump_guide/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="energy guides" data-search="Phase 2 Heat Pump Guide">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🔥</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Phase 2 — Heat Pump Guide</h3>
-                        <p class="text-xs text-olive-600 truncate">Sizing, incentives, and costs</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Guide</span>
-                            <span class="text-olive-400">Energy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/phase3_visual_dashboard/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="energy tools" data-search="Phase 3 Visual Dashboard">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">📊</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Phase 3 — Visual Dashboard</h3>
-                        <p class="text-xs text-olive-600 truncate">Dashboards + monitoring stack</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Tooling</span>
-                            <span class="text-olive-400">Energy</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/unifi-network-project/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="network guides" data-search="UniFi Network Project">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">📡</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">UniFi Network Project</h3>
-                        <p class="text-xs text-olive-600 truncate">Core network architecture</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Network</span>
-                            <span class="text-olive-400">Project</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/unifi-switch-comparison/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="network tools" data-search="UniFi Switch Comparison">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🔀</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">UniFi Switch Comparison</h3>
-                        <p class="text-xs text-olive-600 truncate">2.5GbE focus guide</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Network</span>
-                            <span class="text-olive-400">Comparison</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/books/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="books" data-search="Books and Reading List">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">📚</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Books & Reading List</h3>
-                        <p class="text-xs text-olive-600 truncate">Modern Western + notes</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Books</span>
-                            <span class="text-olive-400">Collections</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="mt-8 text-center">
-                <button id="load-more" class="px-6 py-2.5 bg-white border border-olive-300 rounded-lg text-sm text-olive-800 font-medium hover:bg-olive-50 hover:border-olive-400 transition-colors">Load More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collections -->
-    <section id="collections" class="py-6 bg-white border-y border-olive-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xs text-olive-500 font-semibold uppercase tracking-widest">Collections</span>
-                <a href="/pages/energy-monitoring/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Energy Projects</a>
-                <a href="/pages/energy-monitoring/solar/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Solar Models</a>
-                <a href="/pages/unifi-network-project/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Network Builds</a>
-                <a href="/pages/books/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Reading Notes</a>
-                <a href="/pages/modern-western/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Modern Western</a>
-                <a href="/pages/misc/taxes/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">PA Taxes</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-olive-200 rounded-full text-sm text-olive-700 font-medium">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.2l5-.7L12 3z" />
-                        </svg>
-                        Planning + Research
-                    </div>
-                    <h2 class="mt-4 text-4xl text-olive-950">Decision Support for High-Impact Projects</h2>
-                    <p class="mt-4 text-lg text-olive-700">Keep everything in one place: comparison tables, payoff models, and implementation checklists for each major upgrade.</p>
-
-                    <div class="mt-8 space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h7" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Side-by-side comparisons</h3>
-                                <p class="text-sm text-olive-600">Quickly evaluate equipment options, upgrades, and service plans.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l-9 9h7v7l9-9h-7z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Actionable roadmaps</h3>
-                                <p class="text-sm text-olive-600">Scope, budgets, and milestones so every project ships on time.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Printable checklists</h3>
-                                <p class="text-sm text-olive-600">Keep the field checklist on hand during installs and audits.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="/pages/energy-monitoring/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-olive-700 rounded-xl text-sm text-olive-50 font-semibold hover:bg-olive-800 transition-colors">
-                        Explore Research Tools
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5l5 5-5 5" />
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-olive-200/60 rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-white border border-olive-100 rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-lg text-olive-900 font-semibold">Recent Updates</h3>
-                            <a href="/" class="text-sm text-olive-600 font-medium hover:text-olive-800 transition-colors">View All</a>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">⚡</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Met-Ed cost review + supplier swap</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Energy</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">📡</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">UniFi network buildout refresh</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Network</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">📚</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Modern Western reading pathway</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Books</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="text-2xl text-olive-950">Blog Posts</h2>
+                    <p class="text-sm text-olive-700">Savings wins and project upgrades in chronological order.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="py-16 bg-olive-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl text-olive-50">Build Your Next Upgrade</h2>
-            <p class="mt-4 text-lg text-olive-200">Use the Techmore playbooks to model savings, plan installs, and document what works.</p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a href="/pages/energy-monitoring/" class="px-6 py-3 bg-white rounded-xl text-sm text-olive-900 font-semibold hover:bg-olive-50 transition-colors">Start with Energy</a>
-                <a href="/pages/unifi-network-project/" class="px-6 py-3 bg-transparent border border-olive-400 rounded-xl text-sm text-olive-100 font-semibold hover:bg-olive-800 transition-colors">Explore Network Builds</a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="content-grid">
+                <a href="#electrical" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="electrical" data-search="Electrical Cut Electric Bill">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">⚡</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Electrical</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Cutting My Electric Bill by $700/Year</h3>
+                    <p class="text-sm text-olive-600 mt-2">$15/mo • $180/yr after supplier swap.</p>
+                </a>
+
+                <a href="#septic" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="septic" data-search="Septic Service Plan">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🚽</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Septic</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Septic Service Plan Review</h3>
+                    <p class="text-sm text-olive-600 mt-2">Annual maintenance cadence and costs.</p>
+                </a>
+
+                <a href="#costco" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="costco" data-search="Costco Membership">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🛒</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Costco</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Costco Membership ROI</h3>
+                    <p class="text-sm text-olive-600 mt-2">Break-even analysis and key wins.</p>
+                </a>
+
+                <a href="#cellphone" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="cellphone" data-search="Cell Phone Plan">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📱</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Cell Phone</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Cell Phone Plan Optimization</h3>
+                    <p class="text-sm text-olive-600 mt-2">$70/mo • $840/yr baseline.</p>
+                </a>
+
+                <a href="#internet" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="internet" data-search="Internet Plan">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📶</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Internet</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Internet Plan Downgrade</h3>
+                    <p class="text-sm text-olive-600 mt-2">$40/mo • $480/yr with backup.</p>
+                </a>
+
+                <a href="#betterment" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="betterment" data-search="Betterment High Yield Savings">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🏦</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Betterment</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Betterment High-Yield Savings</h3>
+                    <p class="text-sm text-olive-600 mt-2">$30-50/mo • $360-600/yr.</p>
+                </a>
+
+                <a href="#unifi" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="unifi" data-search="UniFi Network Build">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📡</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">UniFi</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">UniFi Network Build</h3>
+                    <p class="text-sm text-olive-600 mt-2">~$800-1,700 projected.</p>
+                </a>
+
+                <a href="#heatpump" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="heatpump" data-search="Heat Pump Water Heater">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🔥</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Heat Pump</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Heat Pump Water Heater</h3>
+                    <p class="text-sm text-olive-600 mt-2">~$48/mo • ~$575/yr projected.</p>
+                </a>
+
+                <a href="#solar" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="solar" data-search="Solar Backup Goal">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">☀️</span>
+                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Solar</span>
+                    </div>
+                    <h3 class="text-lg text-olive-900 font-semibold">Solar: 6kWh Goal + 24hr Backup</h3>
+                    <p class="text-sm text-olive-600 mt-2">$8-16k net projected.</p>
+                </a>
             </div>
-            <p class="mt-4 text-xs text-olive-400">Updated March 2026 • Continuous improvements underway</p>
         </div>
     </section>
 
@@ -415,18 +230,6 @@ title: F.I.R.E. - Techmore
                 });
             }
 
-            var loadMore = document.getElementById('load-more');
-            if (loadMore) {
-                loadMore.addEventListener('click', function() {
-                    var originalText = loadMore.textContent;
-                    loadMore.textContent = 'Loading...';
-                    loadMore.disabled = true;
-                    setTimeout(function() {
-                        loadMore.textContent = originalText;
-                        loadMore.disabled = false;
-                    }, 800);
-                });
-            }
         })();
     </script>
 
