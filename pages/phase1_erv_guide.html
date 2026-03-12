@@ -200,18 +200,111 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   <!-- ── PARTS ── -->
   <div class="section-head">Parts &amp; Tools — Per ERV Unit</div>
   <div class="panel">
-    <div class="panel-title">Hardware checklist</div>
-    <ul class="checklist">
-      <li><div class="check-icon">✓</div><div><div class="item-name">ESP32-S3-DevKitC-1-N16R8</div><div class="item-note">Already have these — one per ERV unit</div></div><span class="item-qty">1× per unit</span></li>
-      <li><div class="check-icon">✓</div><div><div class="item-name">MAX485 TTL-to-RS485 module</div><div class="item-note">From the 15-pack — translates ESP32 UART to RS-485 bus</div></div><span class="item-qty">1× per unit</span></li>
-      <li><div class="check-icon">✓</div><div><div class="item-name">MP1584EN buck converter (pre-set to 5V)</div><div class="item-note">From the 6-pack — powers ESP32 from ERV 12V terminal</div></div><span class="item-qty">1× per unit</span></li>
-      <li><div class="check-icon">✓</div><div><div class="item-name">Aqara Hub V3 + existing Aqara sensors</div><div class="item-note">Already installed — indoor temp/humidity throughout house</div></div><span class="item-qty">existing</span></li>
-      <li><div class="check-icon need">!</div><div><div class="item-name">Multimeter</div><div class="item-note">Mandatory — must verify buck output at 5V before connecting ESP32</div></div><span class="item-qty">1×</span></li>
-      <li><div class="check-icon need">!</div><div><div class="item-name">24 AWG 2-conductor twisted pair</div><div class="item-note">For D+/D− RS-485 run from MAX485 to ERV terminal block</div></div><span class="item-qty">~3 ft/unit</span></li>
-      <li><div class="check-icon need">!</div><div><div class="item-name">Female-to-female Dupont jumper wires</div><div class="item-note">MAX485 pins to ESP32 header — no soldering</div></div><span class="item-qty">8× per unit</span></li>
-      <li><div class="check-icon need">!</div><div><div class="item-name">Soldering iron + solder</div><div class="item-note">Attach wires to MP1584 pads</div></div><span class="item-qty">1×</span></li>
-      <li><div class="check-icon need">!</div><div><div class="item-name">USB-C cable + laptop</div><div class="item-note">Initial ESP32 flash only — OTA for all future updates</div></div><span class="item-qty">1×</span></li>
-    </ul>
+    <div class="panel-title">Hardware checklist (Amazon links + estimated costs)</div>
+    <table class="pin-table" style="font-family:var(--body)">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Amazon</th>
+          <th>Est. Cost</th>
+          <th>Qty</th>
+          <th>Est. Total</th>
+          <th class="green">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Broan AI Series ERV (small unit)</td>
+          <td><a href="https://www.amazon.com/s?k=Broan+ERV70S+Energy+Recovery+Ventilator" target="_blank" rel="noopener">Search</a></td>
+          <td>$1,075.58</td>
+          <td>1×</td>
+          <td>$1,075.58</td>
+          <td class="note">Comparable ERV70S pricing baseline</td>
+        </tr>
+        <tr>
+          <td>ESP32-S3-DevKitC-1-N16R8</td>
+          <td><a href="https://www.amazon.com/s?k=ESP32-S3-DevKitC-1-N16R8" target="_blank" rel="noopener">Search</a></td>
+          <td>$12.29</td>
+          <td>1×</td>
+          <td>$12.29</td>
+          <td class="note">One per ERV unit</td>
+        </tr>
+        <tr>
+          <td>MAX485 TTL-to-RS485 module</td>
+          <td><a href="https://www.amazon.com/s?k=MAX485+RS485+module" target="_blank" rel="noopener">Search</a></td>
+          <td>$6.59</td>
+          <td>1×</td>
+          <td>$6.59</td>
+          <td class="note">Per ERV unit</td>
+        </tr>
+        <tr>
+          <td>MP1584EN buck converter (6-pack)</td>
+          <td><a href="https://www.amazon.com/s?k=MP1584EN+buck+converter" target="_blank" rel="noopener">Search</a></td>
+          <td>$4.03</td>
+          <td>1×</td>
+          <td>$4.03</td>
+          <td class="note">$24.19 / 6-pack</td>
+        </tr>
+        <tr>
+          <td>Aqara Hub V3 + sensors</td>
+          <td><a href="https://www.amazon.com/s?k=Aqara+Hub+V3" target="_blank" rel="noopener">Search</a></td>
+          <td>$0</td>
+          <td>existing</td>
+          <td>$0</td>
+          <td class="note">Already installed</td>
+        </tr>
+        <tr>
+          <td>Multimeter</td>
+          <td><a href="https://www.amazon.com/s?k=AstroAI+digital+multimeter" target="_blank" rel="noopener">Search</a></td>
+          <td>$36.54</td>
+          <td>shared</td>
+          <td>$36.54</td>
+          <td class="note">Verify buck output at 5V</td>
+        </tr>
+        <tr>
+          <td>24 AWG 2-conductor wire (33 ft)</td>
+          <td><a href="https://www.amazon.com/s?k=24+AWG+2+conductor+wire" target="_blank" rel="noopener">Search</a></td>
+          <td>$7.22</td>
+          <td>shared</td>
+          <td>$7.22</td>
+          <td class="note">~3 ft per ERV run</td>
+        </tr>
+        <tr>
+          <td>Female-to-female Dupont jumper wires (40-pin)</td>
+          <td><a href="https://www.amazon.com/s?k=female+to+female+dupont+jumper+wires+40+pin" target="_blank" rel="noopener">Search</a></td>
+          <td>$4.20</td>
+          <td>shared</td>
+          <td>$4.20</td>
+          <td class="note">Ribbon can be split into singles</td>
+        </tr>
+        <tr>
+          <td>Soldering iron kit</td>
+          <td><a href="https://www.amazon.com/s?k=60W+soldering+iron+kit" target="_blank" rel="noopener">Search</a></td>
+          <td>$11.98</td>
+          <td>shared</td>
+          <td>$11.98</td>
+          <td class="note">Attach wires to MP1584 pads</td>
+        </tr>
+        <tr>
+          <td>USB-C data cable</td>
+          <td><a href="https://www.amazon.com/s?k=USB-C+data+cable+3ft" target="_blank" rel="noopener">Search</a></td>
+          <td>$9.88</td>
+          <td>shared</td>
+          <td>$9.88</td>
+          <td class="note">Initial ESP32 flash only</td>
+        </tr>
+        <tr>
+          <td colspan="4"><b>Total (per ERV unit)</b></td>
+          <td><b>$1,098.49</b></td>
+          <td class="note">Includes ERV unit + per-ERV electronics</td>
+        </tr>
+        <tr>
+          <td colspan="4"><b>Total (shared tools + consumables)</b></td>
+          <td><b>$69.82</b></td>
+          <td class="note">One-time tools used across all ERVs</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- ── PHASE 1A: HARDWARE ── -->
