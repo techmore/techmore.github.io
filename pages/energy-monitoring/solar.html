@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Solar Calculator - Techmore
+title: Solar Offset - Techmore
 ---
 
 
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="text-center mb-12">
-            <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">☀️ Solar</h1>
-            <p class="text-xl text-olive-600 italic">Interactive Payback Calculator</p>
-            <p class="mt-4 text-olive-700 max-w-2xl mx-auto">Based on my F.I.R.E. journey. Edit the values below to see your own payback analysis.</p>
+            <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">☀️ Solar Offset</h1>
+            <p class="text-xl text-olive-600 italic">Phase 5 • Offset Planning Calculator</p>
+            <p class="mt-4 text-olive-700 max-w-2xl mx-auto">Based on my F.I.R.E. journey. Edit the values below to see your own offset planning analysis.</p>
         </div>
 
         <!-- Equipment Links -->
@@ -54,7 +54,7 @@ title: Solar Calculator - Techmore
                 </a>
             </div>
             <div class="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
-                <p class="text-sm text-green-800"><strong>💰 Payback Target:</strong> Aim for 2-year payback (interest-free financing) for maximum value. 5-7 year payback with standard loan is acceptable. 10+ years = questionable ROI given system degradation, squirrel damage, storm risks, and equipment failure possibilities.</p>
+                <p class="text-sm text-green-800"><strong>💰 Offset + Payback Target:</strong> Aim for 2-year payback (interest-free financing) for maximum value. 5-7 year payback with standard loan is acceptable. 10+ years = questionable ROI given system degradation, squirrel damage, storm risks, and equipment failure possibilities.</p>
             </div>
         </div>
 
@@ -109,7 +109,7 @@ title: Solar Calculator - Techmore
             <div class="bg-slate-50 rounded-xl border border-slate-300 overflow-hidden">
                 <div class="p-4 bg-slate-600 text-white border-b border-slate-500">
                     <h2 class="text-2xl">Your Values</h2>
-                    <p class="text-sm text-slate-200">Edit cells to calculate your own payback</p>
+                    <p class="text-sm text-slate-200">Edit cells to calculate your own offset + payback</p>
                 </div>
                 <div id="interactive-spreadsheet" class="p-4"></div>
                 <div class="p-4 bg-slate-100 border-t border-slate-200">
@@ -148,7 +148,7 @@ title: Solar Calculator - Techmore
                 <p class="text-sm text-olive-500 mt-1">Offset %</p>
             </div>
             <div class="bg-white rounded-xl p-6 border border-olive-200">
-                <h3 class="text-lg text-olive-600 mb-2">Payback</h3>
+                <h3 class="text-lg text-olive-600 mb-2">Offset Payback</h3>
                 <p id="result-payback" class="text-3xl font-bold text-olive-950">12.1 yrs</p>
                 <p id="result-payback-credit" class="text-sm text-green-600">8.5 yrs w/ credit</p>
                 <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">❌ Reconsider</p>
@@ -157,7 +157,7 @@ title: Solar Calculator - Techmore
 
         <!-- Chart -->
         <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">Payback Timeline</h2>
+            <h2 class="text-2xl text-olive-950 mb-4">Offset Timeline</h2>
             <div class="h-80">
                 <canvas id="paybackChart"></canvas>
             </div>
@@ -406,7 +406,7 @@ title: Solar Calculator - Techmore
 
         <!-- Financing & Payback Analysis -->
         <div class="bg-white rounded-xl p-6 border border-olive-200 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">💳 Financing & Payback Analysis</h2>
+            <h2 class="text-2xl text-olive-950 mb-4">💳 Financing & Offset Analysis</h2>
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="p-4 bg-green-50 rounded-lg border border-green-200">
                     <h4 class="font-medium text-green-800 mb-2">✅ Great (2 years or less)</h4>
