@@ -354,8 +354,48 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
     </table>
   </div>
 
+  <!-- ── PHASE 1 TOC ── -->
+  <div class="section-head">Phase 1 Table of Contents</div>
+  <div class="panel">
+    <div class="panel-title">Jump to a section</div>
+    <table class="pin-table" style="font-family:var(--body)">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th class="green">What to Expect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#phase-1a">Phase 1A — Hardware Assembly</a></td>
+          <td class="note">Buck converter calibration, MAX485 wiring, RS-485 line checks.</td>
+        </tr>
+        <tr>
+          <td><a href="#phase-1b">Phase 1B — ESPHome Firmware</a></td>
+          <td class="note">Flash ESP32-S3, validate MQTT publishing, verify ERV sensor reads.</td>
+        </tr>
+        <tr>
+          <td><a href="#phase-1c">Phase 1C — MQTT Broker + Python Backend</a></td>
+          <td class="note">Mosquitto, SQLite logging, and the FastAPI dashboard backbone.</td>
+        </tr>
+        <tr>
+          <td><a href="#phase-1d">Phase 1D — Aqara Indoor Sensor Integration</a></td>
+          <td class="note">Bridge Aqara sensors into MQTT and confirm room-level data flow.</td>
+        </tr>
+        <tr>
+          <td><a href="#phase-1e">Phase 1E — Open-Meteo Weather Integration</a></td>
+          <td class="note">Forecast polling, outdoor conditions, and scheduler inputs.</td>
+        </tr>
+        <tr>
+          <td><a href="#phase-1f">Phase 1F — ERV Automation Rules</a></td>
+          <td class="note">Define the decision logic and validate automated ERV actions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- ── PHASE 1A: HARDWARE ── -->
-  <div class="section-head">Phase 1A — Hardware Assembly</div>
+  <div class="section-head" id="phase-1a">Phase 1A — Hardware Assembly</div>
 
   <div class="step">
     <div class="step-num">1</div>
@@ -516,7 +556,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   </div>
 
   <!-- ── PHASE 1B: SOFTWARE ── -->
-  <div class="section-head">Phase 1B — ESPHome Firmware</div>
+  <div class="section-head" id="phase-1b">Phase 1B — ESPHome Firmware</div>
 
   <div class="step">
     <div class="step-num">4</div>
@@ -566,7 +606,7 @@ esphome run broan_erv_esphome.yaml
   </div>
 
   <!-- ── PHASE 1C: BACKEND ── -->
-  <div class="section-head">Phase 1C — MQTT Broker + Python Backend</div>
+  <div class="section-head" id="phase-1c">Phase 1C — MQTT Broker + Python Backend</div>
 
   <div class="step">
     <div class="step-num">5</div>
@@ -640,7 +680,7 @@ systemctl daemon-reload && systemctl enable --now erv-monitor</pre>
   </div>
 
   <!-- ── PHASE 1D: AQARA ── -->
-  <div class="section-head">Phase 1D — Aqara Indoor Sensor Integration</div>
+  <div class="section-head" id="phase-1d">Phase 1D — Aqara Indoor Sensor Integration</div>
 
   <div class="step">
     <div class="step-num green">A</div>
@@ -715,7 +755,7 @@ systemctl daemon-reload && systemctl enable --now erv-monitor</pre>
   </div>
 
   <!-- ── PHASE 1E: WEATHER ── -->
-  <div class="section-head">Phase 1E — Open-Meteo Weather Integration</div>
+  <div class="section-head" id="phase-1e">Phase 1E — Open-Meteo Weather Integration</div>
 
   <div class="step">
     <div class="step-num green">B</div>
@@ -772,7 +812,7 @@ FORECAST_URL = (
   </div>
 
   <!-- ── PHASE 1F: AUTOMATION ── -->
-  <div class="section-head">Phase 1F — ERV Automation Rules</div>
+  <div class="section-head" id="phase-1f">Phase 1F — ERV Automation Rules</div>
 
   <div class="step">
     <div class="step-num green">C</div>
