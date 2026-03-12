@@ -55,18 +55,6 @@ title: F.I.R.E. - Techmore
                 </div>
             </div>
 
-            <div class="mt-4 flex flex-wrap items-center gap-2">
-                <button class="filter-pill px-3 py-1.5 bg-olive-700 rounded-md text-[11px] text-olive-50 font-medium transition-colors" data-filter="all">All</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="electrical">Electrical</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="septic">Septic</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="costco">Costco</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="cellphone">Cell Phone</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="internet">Internet</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="betterment">Betterment</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="unifi">UniFi</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="heatpump">Heat Pump</button>
-                <button class="filter-pill px-3 py-1.5 bg-white border border-olive-200 rounded-md text-[11px] text-olive-700 font-medium hover:border-olive-400 transition-colors" data-filter="solar">Solar</button>
-            </div>
         </div>
     </section>
     <!-- Blog Posts -->
@@ -79,88 +67,80 @@ title: F.I.R.E. - Techmore
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="content-grid">
-                <a href="#electrical" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="electrical" data-search="Electrical Cut Electric Bill">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">⚡</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Electrical</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Cutting My Electric Bill by $700/Year</h3>
-                    <p class="text-sm text-olive-600 mt-2">$15/mo • $180/yr after supplier swap.</p>
+            <dl class="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-12 sm:grid-cols-2 sm:gap-y-16 lg:mt-16 lg:grid-cols-4">
+                <a href="#electrical" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="electrical" data-search="Electrical Cut Electric Bill">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Electrical</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Cutting My Electric Bill by $700/Year</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#septic" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="septic" data-search="Septic Service Plan">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">🚽</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Septic</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Septic Service Plan Review</h3>
-                    <p class="text-sm text-olive-600 mt-2">Annual maintenance cadence and costs.</p>
+                <a href="#septic" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="septic" data-search="Septic Service Plan">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Septic</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Septic Service Plan Review</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#costco" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="costco" data-search="Costco Membership">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">🛒</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Costco</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Costco Membership ROI</h3>
-                    <p class="text-sm text-olive-600 mt-2">Break-even analysis and key wins.</p>
+                <a href="#costco" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="costco" data-search="Costco Membership">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Costco</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Costco Membership ROI</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#cellphone" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="cellphone" data-search="Cell Phone Plan">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">📱</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Cell Phone</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Cell Phone Plan Optimization</h3>
-                    <p class="text-sm text-olive-600 mt-2">$70/mo • $840/yr baseline.</p>
+                <a href="#cellphone" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="cellphone" data-search="Cell Phone Plan">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Cell Phone</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Cell Phone Plan Optimization</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#internet" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="internet" data-search="Internet Plan">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">📶</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Internet</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Internet Plan Downgrade</h3>
-                    <p class="text-sm text-olive-600 mt-2">$40/mo • $480/yr with backup.</p>
+                <a href="#internet" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="internet" data-search="Internet Plan">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Internet</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Internet Plan Downgrade</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#betterment" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="betterment" data-search="Betterment High Yield Savings">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">🏦</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Betterment</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Betterment High-Yield Savings</h3>
-                    <p class="text-sm text-olive-600 mt-2">$30-50/mo • $360-600/yr.</p>
+                <a href="#betterment" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="betterment" data-search="Betterment High Yield Savings">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Betterment</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Betterment High-Yield Savings</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#unifi" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="unifi" data-search="UniFi Network Build">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">📡</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">UniFi</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">UniFi Network Build</h3>
-                    <p class="text-sm text-olive-600 mt-2">~$800-1,700 projected.</p>
+                <a href="#unifi" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="unifi" data-search="UniFi Network Build">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">UniFi</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">UniFi Network Build</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#heatpump" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="heatpump" data-search="Heat Pump Water Heater">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">🔥</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Heat Pump</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Heat Pump Water Heater</h3>
-                    <p class="text-sm text-olive-600 mt-2">~$48/mo • ~$575/yr projected.</p>
+                <a href="#heatpump" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="heatpump" data-search="Heat Pump Water Heater">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Heat Pump</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Heat Pump Water Heater</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-
-                <a href="#solar" class="content-card compact-card bg-white rounded-2xl border border-olive-100 p-5 hover:border-olive-300 hover:shadow-md transition-all" data-category="solar" data-search="Solar Backup Goal">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="text-2xl">☀️</span>
-                        <span class="text-xs text-olive-500 font-mono tracking-widest uppercase">Solar</span>
-                    </div>
-                    <h3 class="text-lg text-olive-900 font-semibold">Solar: 6kWh Goal + 24hr Backup</h3>
-                    <p class="text-sm text-olive-600 mt-2">$8-16k net projected.</p>
+                <a href="#solar" class="content-card compact-card group flex flex-col-reverse gap-y-2 border-l border-olive-200 pl-6 text-olive-900 hover:border-olive-500 transition-colors" data-category="solar" data-search="Solar Backup Goal">
+                    <dt class="text-xs text-olive-500 font-mono tracking-widest uppercase">Solar</dt>
+                    <dd class="text-xl text-olive-900 font-semibold tracking-tight">Solar: 6kWh Goal + 24hr Backup</dd>
+                    <span class="mt-2 text-xs text-olive-500">View post</span>
+                    <svg class="w-4 h-4 text-olive-400 group-hover:text-olive-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M10 7h7v7" />
+                    </svg>
                 </a>
-            </div>
+            </dl>
         </div>
     </section>
 
