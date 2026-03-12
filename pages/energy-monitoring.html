@@ -193,20 +193,6 @@ title: Energy Monitoring - Techmore
         </div>
         <div class="legacy-content">
 
-
-    <!-- ── PROJECT DESCRIPTION ── -->
-    <section class="mb-16">
-        <div class="bg-olive-50 rounded-2xl border border-olive-200 p-8 md:p-10">
-            <h2 class="text-3xl text-olive-950 mb-2">What this project is</h2>
-            <p class="text-olive-500 font-mono text-xs tracking-widest uppercase mb-6">Project Description</p>
-            <div class="space-y-4 text-olive-800 leading-relaxed">
-                <p>This is a fully local, open-source home intelligence system built around two goals: <strong class="text-olive-950">minimize heating and cooling costs</strong> while <strong class="text-olive-950">maintaining measurable comfort</strong>. It integrates every layer of the home's HVAC stack — ventilation, heat pump, indoor air quality, and whole-home power monitoring — into a single data pipeline with a unified web dashboard.</p>
-                <p>The system uses two Broan ERV units connected via RS-485 to ESP32 microcontrollers running ESPHome, feeding ventilation metrics into an MQTT broker. Aqara temperature and humidity sensors provide per-room indoor conditions. A Mitsubishi Hyper Heat mini-split is controlled via its CN105 serial port, bypassing cloud dependencies entirely. Emporia Vue monitors per-circuit power consumption as an independent ground-truth validator. Open-Meteo provides free, no-key 48-hour weather forecasts used for proactive scheduling — pre-cooling before a heat wave, pre-heating before a cold front.</p>
-                <p>Everything is logged to SQLite, exposed through a Python FastAPI backend, and viewable through a local web dashboard. No subscriptions, no cloud accounts required after initial setup.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- ── SYSTEM OVERVIEW ── -->
     <section class="mb-16">
         <h2 class="text-3xl text-olive-950 mb-2">System overview</h2>
