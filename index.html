@@ -20,39 +20,6 @@ title: F.I.R.E. - Techmore
                     </div>
                 </div>
 
-                <div class="flex-1">
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-olive-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.3-4.3m1.8-4.2a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
-                        <input
-                            type="text"
-                            id="global-search"
-                            placeholder="Search guides, calculators, notes..."
-                            class="w-full pl-10 pr-16 py-2.5 bg-white border border-olive-200 rounded-xl text-sm text-olive-900 placeholder-olive-400 focus:outline-none focus:border-olive-400 focus:ring-2 focus:ring-olive-100 transition-colors"
-                        >
-                        <div class="absolute inset-y-0 right-2 flex items-center">
-                            <kbd class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 bg-olive-50 border border-olive-200 rounded text-[10px] text-olive-500 font-mono">
-                                <span>⌘</span><span>K</span>
-                            </kbd>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <button class="p-2 bg-white border border-olive-200 rounded-lg text-olive-600 hover:bg-olive-100 transition-colors" aria-label="Notifications">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2a2 2 0 01-.6 1.4L4 17h5m6 0a3 3 0 01-6 0" />
-                        </svg>
-                    </button>
-                    <button class="p-2 bg-olive-900 rounded-lg text-olive-50 hover:bg-olive-800 transition-colors" aria-label="Quick menu">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
             </div>
 
         </div>
@@ -172,69 +139,10 @@ title: F.I.R.E. - Techmore
 
     <script>
         (function() {
-            var searchInput = document.getElementById('global-search');
             var cards = document.querySelectorAll('.compact-card');
-            var filterPills = document.querySelectorAll('.filter-pill');
-            var activeFilter = 'all';
-
-            function cardMatchesFilter(card) {
-                if (activeFilter === 'all') return true;
-                var category = card.getAttribute('data-category') || '';
-                return category.indexOf(activeFilter) !== -1;
-            }
-
-            function cardMatchesSearch(card, term) {
-                if (!term) return true;
-                var haystack = card.getAttribute('data-search') || card.textContent || '';
-                return haystack.toLowerCase().indexOf(term) !== -1;
-            }
-
-            function applyFilters() {
-                var term = searchInput ? searchInput.value.toLowerCase().trim() : '';
-                cards.forEach(function(card) {
-                    var matches = cardMatchesFilter(card) && cardMatchesSearch(card, term);
-                    if (matches) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            }
-
-            filterPills.forEach(function(pill) {
-                pill.addEventListener('click', function() {
-                    filterPills.forEach(function(other) {
-                        other.classList.remove('bg-olive-700', 'text-olive-50');
-                        if (!other.classList.contains('bg-white')) {
-                            other.classList.add('bg-white');
-                        }
-                        if (!other.classList.contains('border')) {
-                            other.classList.add('border', 'border-olive-200');
-                        }
-                        other.classList.add('text-olive-700');
-                    });
-
-                    pill.classList.add('bg-olive-700', 'text-olive-50');
-                    pill.classList.remove('bg-white', 'text-olive-700');
-
-                    activeFilter = pill.getAttribute('data-filter') || 'all';
-                    applyFilters();
-                });
+            cards.forEach(function(card) {
+                card.classList.remove('hidden');
             });
-
-            if (searchInput) {
-                searchInput.addEventListener('input', applyFilters);
-                document.addEventListener('keydown', function(event) {
-                    if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-                        event.preventDefault();
-                        searchInput.focus();
-                        searchInput.select();
-                    }
-                    if (event.key === 'Escape') {
-                        searchInput.blur();
-                    }
-                });
-            }
 
         })();
     </script>
