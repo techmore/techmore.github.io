@@ -8,30 +8,31 @@ title: ERV Multi-Controller Draft - Techmore
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-10">
         <p class="text-xs font-mono tracking-widest uppercase text-olive-500">Draft Document</p>
-        <h1 class="text-4xl font-display italic text-olive-950 mt-2">Multi-Controller for a Single ERV</h1>
-        <p class="text-base text-olive-700 mt-3">A draft plan to support multiple remotes (VTTOUCH panel + dedicated ESP32-S3 hardware controller) while keeping a single RS-485 master on the ERV bus.</p>
+        <h1 class="text-4xl font-display italic text-olive-950 mt-2">Multi-Controller for a Single Broan ERV</h1>
+        <p class="text-base text-olive-700 mt-3">A hub-and-spoke MQTT architecture that enables multiple control surfaces to command a single Broan ERV without violating the RS-485 single-master constraint.</p>
       </div>
 
       <div class="bg-olive-100 rounded-2xl border border-olive-200 p-6 mb-10">
-        <h2 class="text-2xl text-olive-950 mb-3">Core Idea</h2>
-        <p class="text-olive-700">The ERV RS-485 bus must be mastered by exactly one device at a time. We keep a single “controller node” (ESP32-S3 or a small Pi) on the RS-485 bus, then let all other devices talk to the controller over MQTT. This preserves the single-bus requirement while enabling multiple UIs and control surfaces.</p>
+        <h2 class="text-2xl text-olive-950 mb-3">Overview</h2>
+        <p class="text-olive-700">The controller node is the only RS-485 master. All other devices are MQTT clients. The controller validates, queues, and serializes commands, then publishes authoritative state and audit logs so every client stays synchronized.</p>
       </div>
 
       <div class="grid gap-6 lg:grid-cols-2">
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <h3 class="text-xl text-olive-950 mb-2">Roles</h3>
+          <h3 class="text-xl text-olive-950 mb-2">Roles & Responsibilities</h3>
           <ul class="text-sm text-olive-700 space-y-2">
-            <li><b>Controller (RS-485 Master):</b> ESP32-S3 or Pi with RS-485 adapter, owns the ERV bus.</li>
-            <li><b>Clients:</b> VTTOUCH panel, web UI, or a dedicated ESP32-S3 button/display device.</li>
-            <li><b>Broker:</b> MQTT acts as the shared state and command bus.</li>
+            <li><b>Controller Node (ESP32-S3 or Pi Zero 2W):</b> Sole RS-485 master. Polls ERV, validates/queues commands, publishes state, logs audit trail.</li>
+            <li><b>Hardware Remote Client (ESP32-S3):</b> Buttons + OLED/TFT, publishes commands, mirrors state.</li>
+            <li><b>VTTOUCH Panel Client:</b> Command-capable by default, can be flipped to read-only via retained MQTT config.</li>
+            <li><b>Web UI / Webserver:</b> REST + WebSocket surface for browser UI and automation clients.</li>
           </ul>
         </div>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
           <h3 class="text-xl text-olive-950 mb-2">Why This Works</h3>
           <ul class="text-sm text-olive-700 space-y-2">
-            <li>Single RS-485 master avoids firmware lockouts.</li>
-            <li>All commands are logged and replayable via MQTT.</li>
-            <li>Clients stay in sync by subscribing to the same state topics.</li>
+            <li>Single RS-485 master preserves ERV firmware constraints.</li>
+            <li>MQTT gives shared state, command logging, and multi-client sync.</li>
+            <li>Command arbitration prevents conflicts while keeping UI responsive.</li>
           </ul>
         </div>
       </div>
@@ -42,60 +43,207 @@ title: ERV Multi-Controller Draft - Techmore
               │                            │                             │
               └─────────────── MQTT (commands + state + audit log) ───────┘
                                              │
-                                   [Controller: ESP32-S3]
+                                   [Controller: ESP32-S3 or Pi]
                                              │
                                       RS-485 to ERV</pre>
       </div>
 
       <div class="mt-10">
-        <h2 class="text-2xl text-olive-950 mb-3">Command + State Topics (Draft)</h2>
+        <h2 class="text-2xl text-olive-950 mb-3">MQTT Topic Schema</h2>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <ul class="text-sm text-olive-700 space-y-2">
-            <li><code>erv/command/request</code> — client publishes desired change (mode, speed, boost, etc.)</li>
-            <li><code>erv/command/ack</code> — controller acknowledges command receipt + validation</li>
-            <li><code>erv/state</code> — controller publishes authoritative ERV state</li>
-            <li><code>erv/audit</code> — append-only log of every command + source client</li>
-            <li><code>erv/errors</code> — controller reports bus faults or rejected commands</li>
-          </ul>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-olive-100 border-b border-olive-200">
+                <th class="text-left py-2 px-3 text-olive-900">Topic</th>
+                <th class="text-left py-2 px-3 text-olive-900">Direction</th>
+                <th class="text-left py-2 px-3 text-olive-900">Retained</th>
+                <th class="text-left py-2 px-3 text-olive-900">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/command/request</code></td>
+                <td class="py-2 px-3">Client → Controller</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Command payload from any client</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/command/ack/{client_id}</code></td>
+                <td class="py-2 px-3">Controller → Client</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Per-client ACK with status</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/state</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Authoritative ERV state snapshot</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/audit</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Append-only event log</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/errors</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Bus faults, rejected commands</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/config/clients/{client_id}</code></td>
+                <td class="py-2 px-3">Admin → Controller</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Per-client config (read-only flag, priority)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3"><code>erv/controller/status</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Controller heartbeat + uptime</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-xs text-olive-600 mt-3">Retained <code>erv/state</code> lets new clients instantly sync without waiting for the next poll.</p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl text-olive-950 mb-3">Payload Schemas</h2>
+        <div class="grid gap-6">
+          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+            <h3 class="text-lg text-olive-900 mb-2">Command Request (<code>erv/command/request</code>)</h3>
+            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+  "client_id": "esp32-remote-01",
+  "request_id": "a3f9c1",
+  "timestamp": 1749500000,
+  "command": "set_mode",
+  "params": {
+    "mode": "boost",
+    "duration_minutes": 20
+  },
+  "priority": 1
+}</pre>
+          </div>
+          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+            <h3 class="text-lg text-olive-900 mb-2">Command ACK (<code>erv/command/ack/{client_id}</code>)</h3>
+            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+  "request_id": "a3f9c1",
+  "status": "accepted",
+  "queued_position": 1,
+  "reason": null
+}</pre>
+            <p class="text-xs text-olive-600 mt-2">Status values: <code>accepted</code>, <code>rejected</code>, <code>superseded</code>, <code>expired</code>.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+            <h3 class="text-lg text-olive-900 mb-2">ERV State (<code>erv/state</code>)</h3>
+            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+  "timestamp": 1749500005,
+  "mode": "boost",
+  "fan_speed": 3,
+  "supply_temp_f": 68,
+  "exhaust_temp_f": 71,
+  "humidity_pct": 52,
+  "boost_remaining_min": 19,
+  "filter_status": "ok",
+  "bus_ok": true,
+  "last_command_source": "esp32-remote-01"
+}</pre>
+          </div>
+          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+            <h3 class="text-lg text-olive-900 mb-2">Audit Entry (<code>erv/audit</code>)</h3>
+            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">{
+  "timestamp": 1749500000,
+  "client_id": "esp32-remote-01",
+  "request_id": "a3f9c1",
+  "command": "set_mode",
+  "params": { "mode": "boost", "duration_minutes": 20 },
+  "outcome": "executed",
+  "rs485_raw": "0x02 0x06 0x00 0x01 0x00 0x03"
+}</pre>
+          </div>
         </div>
       </div>
 
       <div class="mt-10 grid gap-6 lg:grid-cols-2">
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <h3 class="text-xl text-olive-950 mb-2">Client Requirements</h3>
-          <ul class="text-sm text-olive-700 space-y-2">
-            <li>Publish commands with a unique <code>client_id</code>.</li>
-            <li>Subscribe to <code>erv/state</code> for UI sync.</li>
-            <li>Listen for <code>erv/command/ack</code> to confirm actions.</li>
-          </ul>
+          <h3 class="text-xl text-olive-950 mb-2">Conflict Resolution</h3>
+          <ol class="text-sm text-olive-700 space-y-2">
+            <li><b>Priority wins:</b> lower number beats higher number.</li>
+            <li><b>Recency wins:</b> if priority matches, later timestamp wins.</li>
+            <li><b>Safety wins:</b> invalid or unsafe commands are rejected outright.</li>
+          </ol>
+          <p class="text-xs text-olive-600 mt-3">Superseded commands receive an ACK with <code>status</code> = <code>superseded</code>.</p>
         </div>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <h3 class="text-xl text-olive-950 mb-2">Controller Responsibilities</h3>
+          <h3 class="text-xl text-olive-950 mb-2">Command Queue</h3>
           <ul class="text-sm text-olive-700 space-y-2">
-            <li>Validate command payloads (range, mode safety).</li>
-            <li>Serialize commands to RS-485 (one at a time).</li>
-            <li>Publish authoritative state after every change.</li>
-            <li>Write every command to the audit topic.</li>
+            <li>FIFO queue, suggested depth: 5</li>
+            <li>Per-entry TTL: 10 seconds</li>
+            <li>Commands expire if not executed in time</li>
+            <li>One RS-485 transaction at a time</li>
           </ul>
         </div>
       </div>
 
       <div class="mt-10 bg-olive-100 rounded-2xl border border-olive-200 p-6">
-        <h2 class="text-2xl text-olive-950 mb-3">Draft: Dedicated ESP32-S3 Remote</h2>
-        <ul class="text-sm text-olive-700 space-y-2">
-          <li>Hardware: ESP32-S3 + small OLED/LCD + 3-5 buttons (Mode, Speed, Boost, Power).</li>
-          <li>Publishes commands to <code>erv/command/request</code>.</li>
-          <li>Subscribes to <code>erv/state</code> to display live ERV values.</li>
-          <li>Shows last command source from <code>erv/audit</code> (optional).</li>
-        </ul>
+        <h2 class="text-2xl text-olive-950 mb-3">Webserver Layer</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="bg-white rounded-2xl border border-olive-200 p-5">
+            <h3 class="text-lg text-olive-900 mb-2">REST Endpoints</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li><code>GET /api/state</code> — current <code>erv/state</code></li>
+              <li><code>POST /api/command</code> — same schema as MQTT command request</li>
+              <li><code>GET /api/audit?limit=50</code> — recent audit entries from SQLite</li>
+              <li><code>GET /api/config</code> — client configuration snapshot</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl border border-olive-200 p-5">
+            <h3 class="text-lg text-olive-900 mb-2">WebSocket</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li><code>/ws/state</code> — pushes state updates on every poll or command execution</li>
+              <li>Browser UI stays live without polling</li>
+              <li>Serve UI directly from controller storage for a local-only stack</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div class="mt-10 bg-white rounded-2xl border border-olive-200 p-6">
-        <h2 class="text-2xl text-olive-950 mb-3">Open Questions</h2>
+        <h2 class="text-2xl text-olive-950 mb-3">Dedicated ESP32-S3 Remote</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 class="text-lg text-olive-900 mb-2">Suggested BOM</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li>ESP32-S3 dev board (FeatherS3 or XIAO ESP32-S3)</li>
+              <li>0.96" or 1.3" OLED (SSD1306/SH1106)</li>
+              <li>4–5 tactile buttons</li>
+              <li>Optional WS2812B status LED</li>
+              <li>USB-C power or LiPo + TP4056</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg text-olive-900 mb-2">Firmware Behavior</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li>Boot: Wi-Fi → MQTT → subscribe to state + ACK</li>
+              <li>Button press: debounce, publish command, await ACK</li>
+              <li>Offline mode: show banner, queue up to 3 commands</li>
+              <li>Display: mode + speed, temps + humidity, last command source</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-olive-100 rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">Open Questions & Decisions</h2>
         <ul class="text-sm text-olive-700 space-y-2">
-          <li>Do we allow VTTOUCH to publish commands, or run it in read-only mirror mode?</li>
-          <li>Should commands require confirmation if they conflict with ERV rules?</li>
-          <li>Do we store audit logs in SQLite (recommended) or only MQTT?</li>
+          <li><b>VTTOUCH control mode:</b> Default to command-capable, allow read-only via <code>erv/config/clients/vttouch</code>.</li>
+          <li><b>Conflict handling:</b> Reject unsafe commands with explicit reasons (avoid silent coercion).</li>
+          <li><b>Audit logging:</b> MQTT for live stream + SQLite for durable history.</li>
+          <li><b>Poll interval:</b> Suggested 5–10 seconds; confirm ERV firmware tolerances.</li>
+          <li><b>Broker location:</b> On controller (standalone) vs LAN broker (shared infra).</li>
+          <li><b>OTA:</b> Controller + remotes should support OTA for maintenance.</li>
         </ul>
       </div>
     </div>
