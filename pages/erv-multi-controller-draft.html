@@ -9,12 +9,12 @@ title: ERV Multi-Controller Draft - Techmore
       <div class="mb-10">
         <p class="text-xs font-mono tracking-widest uppercase text-olive-500">Draft Document</p>
         <h1 class="text-4xl font-display italic text-olive-950 mt-2">Multi-Controller for a Single Broan ERV</h1>
-        <p class="text-base text-olive-700 mt-3">A hub-and-spoke MQTT architecture that enables multiple control surfaces to command a single Broan ERV while keeping a strict single RS-485 master.</p>
+        <p class="text-base text-olive-700 mt-3">Smart sequencing — the VTouch bridge as a reverse-engineering tool first. Capture the full register map before writing controller firmware, then graduate the same hardware into a permanent proxy.</p>
       </div>
 
       <div class="bg-olive-100 rounded-2xl border border-olive-200 p-6 mb-10">
         <h2 class="text-2xl text-olive-950 mb-3">Updated System — 3 Panels + Web UI</h2>
-        <p class="text-olive-700">The controller node is the only RS-485 master. All other devices are MQTT clients. The controller validates, queues, and serializes commands, then publishes authoritative state and an audit log so every client stays synchronized.</p>
+        <p class="text-olive-700">The controller node is the only RS-485 master. All other devices are MQTT clients. The controller validates, queues, and serializes commands, then publishes authoritative state and a full audit log so every client stays synchronized.</p>
       </div>
 
       <div class="mt-10 bg-olive-950 rounded-2xl border border-olive-800 p-6">
@@ -59,7 +59,7 @@ title: ERV Multi-Controller Draft - Techmore
 
       <div class="mt-12">
         <h2 class="text-2xl text-olive-950 mb-3">Phase 1: VTouch Bridge as Clean-Room Reverse Engineering Tool</h2>
-        <p class="text-olive-700">Build this before anything else. It serves as a protocol capture device while the VTouch is still the ERV master, and later becomes the permanent VTouch proxy. Same hardware, firmware evolves in place.</p>
+        <p class="text-olive-700">Build this before anything else. It serves two purposes: protocol capture while the VTouch is still the ERV master, and a permanent VTouch proxy once the register map is validated.</p>
       </div>
 
       <div class="mt-6 grid gap-6 lg:grid-cols-2">
@@ -68,15 +68,14 @@ title: ERV Multi-Controller Draft - Techmore
           <ul class="text-sm text-olive-700 space-y-2">
             <li>Baud rate + framing</li>
             <li>Modbus function codes</li>
-            <li>Register addresses tied to each control function</li>
+            <li>Register addresses tied to control functions</li>
             <li>Timing: poll interval, response time, inter-frame gaps</li>
           </ul>
         </div>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
           <h3 class="text-xl text-olive-950 mb-2">Hardware Wiring</h3>
-          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[VTouch] ──A/B/GND──> [ESP32-S3 #2, UART0]
-                     └─A/B/GND──> [MAX3485, UART1] ──A/B/GND──> [ERV]</pre>
-          <p class="text-xs text-olive-600 mt-3">Two RS-485 transceivers on one ESP32-S3. UART0 faces VTouch, UART1 faces ERV.</p>
+          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[VTouch] ──A/B/GND──> [ESP32-S3 #2, UART0] ──A/B/GND──> [MAX3485, UART1] ──A/B/GND──> [ERV]</pre>
+          <p class="text-xs text-olive-600 mt-3">UART0 faces VTouch, UART1 faces ERV. Capture mode is listen-only on both sides.</p>
         </div>
       </div>
 
@@ -98,7 +97,7 @@ title: ERV Multi-Controller Draft - Techmore
             </tr>
             <tr class="border-b border-olive-200">
               <td class="py-2 px-3">2× MAX3485 or SP3485 breakout</td>
-              <td class="py-2 px-3">One per RS-485 side</td>
+              <td class="py-2 px-3">One per RS-485 side — 3.3V compatible</td>
               <td class="py-2 px-3">$5–8</td>
             </tr>
             <tr class="border-b border-olive-200">
@@ -108,12 +107,16 @@ title: ERV Multi-Controller Draft - Techmore
             </tr>
             <tr>
               <td class="py-2 px-3">USB-C for power + serial debug</td>
-              <td class="py-2 px-3">Can power from VTouch 12V line via buck</td>
+              <td class="py-2 px-3">Can power from VTouch 12V line via buck converter</td>
               <td class="py-2 px-3">—</td>
             </tr>
           </tbody>
         </table>
         <p class="text-xs text-olive-600 mt-3"><b>Total:</b> ~$15–22</p>
+      </div>
+
+      <div class="mt-6 bg-white rounded-2xl border border-olive-200 p-6">
+        <p class="text-sm text-olive-700">Wire the DE/RE pins on each transceiver to separate GPIO so you can control direction independently. UART0 faces VTouch (listen-only in Phase 1 — tie DE low, RE low). UART1 faces ERV (also listen-only initially — you are just observing, not injecting anything yet).</p>
       </div>
 
       <div class="mt-6 bg-olive-950 rounded-2xl border border-olive-800 p-6">
@@ -137,13 +140,15 @@ void publishFrame(Frame& f) {
   // JSON: {"ts":12345,"src":"V","hex":"02 03 00 01 00 06 xx xx"}
   // Publish to erv/raw/vtx or erv/raw/erv
 }</pre>
-        <p class="text-xs text-olive-400 mt-3">3.5 character gap rule is standard Modbus RTU frame detection.</p>
+        <p class="text-xs text-olive-400 mt-3">The 3.5 character gap rule is standard Modbus RTU frame detection. At 9600 baud that is ~4ms of silence.</p>
       </div>
 
       <div class="mt-8 bg-white rounded-2xl border border-olive-200 p-6">
-        <h3 class="text-xl text-olive-950 mb-2">Capture Session Checklist</h3>
-        <ul class="text-sm text-olive-700 space-y-2">
-          <li>Idle for 2 minutes (captures poll cycle)</li>
+        <h3 class="text-xl text-olive-950 mb-2">The Capture Session</h3>
+        <p class="text-sm text-olive-700">Connect the bridge between VTouch and ERV. Open MQTT Explorer and watch <code>erv/raw/#</code>. Then operate the VTouch through every function you care about.</p>
+        <p class="text-sm text-olive-700 mt-3"><b>Session checklist — do each action several times:</b></p>
+        <ul class="text-sm text-olive-700 space-y-2 mt-2">
+          <li>Idle for 2 minutes (poll cycle + heartbeat)</li>
           <li>Mode: Off → Low → Med → High → Off</li>
           <li>Trigger Boost, let run, cancel manually</li>
           <li>Observe supply/exhaust temperature views</li>
@@ -157,14 +162,14 @@ void publishFrame(Frame& f) {
         <h3 class="text-xl text-olive-950 mb-2">Decoding the Capture</h3>
         <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[Addr][FuncCode][RegHi][RegLo][CountHi][CountLo][CRC_Lo][CRC_Hi]
   01     03       00     01     00        06       XX       XX</pre>
-        <p class="text-sm text-olive-700 mt-3">ERV response to read:</p>
+        <p class="text-sm text-olive-700 mt-3">ERV response to a read:</p>
         <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[Addr][FuncCode][ByteCount][Data...][CRC_Lo][CRC_Hi]
   01     03        0C        [12 bytes of data]  XX XX</pre>
-        <p class="text-sm text-olive-700 mt-3">Build a register map as you decode. Write commands (0x06) map to control registers. Changing sensor values map to read registers.</p>
+        <p class="text-sm text-olive-700 mt-3">Write operations (0x06) map to control registers. Read responses that change with sensor values map to sensor registers.</p>
       </div>
 
       <div class="mt-8 bg-olive-950 rounded-2xl border border-olive-800 p-6">
-        <h3 class="text-xl text-olive-50 mb-3">Decoded Publish (Optional)</h3>
+        <h3 class="text-xl text-olive-50 mb-3">Publish Decoded Frames (Parallel)</h3>
         <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{"ts":12340,"src":"V","fn":"read","reg":"0x0003","count":6}
 {"ts":12345,"src":"E","fn":"read_resp","reg":"0x0003",
  "values":{"0x0003":682,"0x0004":712,"0x0005":52}}</pre>
@@ -172,7 +177,7 @@ void publishFrame(Frame& f) {
       </div>
 
       <div class="mt-8 bg-white rounded-2xl border border-olive-200 p-6">
-        <h3 class="text-xl text-olive-950 mb-2">Register Map Document (Example)</h3>
+        <h3 class="text-xl text-olive-950 mb-2">Register Map Document</h3>
         <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">Broan B210E75RT Register Map (field-verified [date])
 Baud: 9600  Framing: 8N1  Slave addr: 0x01  Protocol: Modbus RTU
 
@@ -190,42 +195,52 @@ Coil / Holding Registers:
 VTouch poll interval: ~5s (field measured)
 ERV response time: <30ms (field measured)
 Max inter-frame gap tolerance: TBD</pre>
+        <p class="text-xs text-olive-600 mt-3">Mark every register as field-verified with a date. Inferred values should be tagged.</p>
       </div>
 
       <div class="mt-10">
         <h2 class="text-2xl text-olive-950 mb-3">Phase 1.5: Active Proxy</h2>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">VTouch READ  → Bridge forwards → ERV responds → Bridge forwards to VTouch
-VTouch WRITE → Bridge forwards → ERV ACK → Bridge forwards to VTouch
-             → Bridge also publishes decoded command to MQTT</pre>
+          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">VTouch READ  → Bridge forwards to ERV → ERV responds → Bridge forwards to VTouch
+VTouch WRITE → Bridge:
+  1. Forwards to ERV (executes immediately)
+  2. Publishes to erv/command/request with decoded payload
+  3. Forwards ERV's WRITE ACK back to VTouch</pre>
         </div>
       </div>
 
       <div class="mt-8">
         <h2 class="text-2xl text-olive-950 mb-3">Phase 2: Full Proxy (Controller Takes Over)</h2>
         <div class="bg-white rounded-2xl border border-olive-200 p-6">
-          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">VTouch READ  → Bridge answers from local erv/state cache
-VTouch WRITE → Bridge publishes erv/command/request → Controller executes
-Controller publishes erv/state → Bridge updates cache → VTouch stays synced</pre>
+          <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">VTouch READ  → Bridge answers from local erv/state cache (not forwarded to real ERV)
+VTouch WRITE → Bridge publishes to erv/command/request → Controller executes
+Controller publishes erv/state → Bridge updates cache → satisfies VTouch's next READ</pre>
         </div>
       </div>
 
       <div class="mt-12">
         <h2 class="text-2xl text-olive-950 mb-3">Web UI Hosted on ESP32-S3 #1</h2>
-        <div class="grid gap-6 lg:grid-cols-2">
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <p class="text-sm text-olive-700">Stack: ESPAsyncWebServer (HTTP + WebSocket) + LittleFS (static UI). WebSocket pushes state updates with no polling.</p>
+        </div>
+
+        <div class="mt-6 grid gap-6 lg:grid-cols-2">
           <div class="bg-white rounded-2xl border border-olive-200 p-6">
             <h3 class="text-lg text-olive-900 mb-2">UI Surface</h3>
             <ul class="text-sm text-olive-700 space-y-2">
-              <li>Live status panel</li>
-              <li>Control panel with mode + boost</li>
-              <li>Audit log panel (last 50 commands)</li>
-              <li>Client status panel</li>
-              <li>Admin panel (poll interval, client read-only)</li>
+              <li>Live status panel: mode, fan speed, temps, humidity, filter status</li>
+              <li>Control panel: mode buttons + boost duration</li>
+              <li>Audit log: last 50 commands with outcome</li>
+              <li>Client status: online panels, last seen, broker count</li>
+              <li>Admin panel: poll interval, read-only toggles, export CSV</li>
             </ul>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
-            <h3 class="text-lg text-olive-900 mb-2">WebSocket Live Update</h3>
-            <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">const ws = new WebSocket(`ws://${location.host}/ws/state`);
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <h3 class="text-lg text-olive-50 mb-2">WebSocket Live Update</h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">// In controller firmware, after every state publish:
+String stateJson = buildStateJson();
+ws.textAll(stateJson);</pre>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4 mt-4">const ws = new WebSocket(`ws://${location.host}/ws/state`);
 ws.onmessage = (e) => {
   const state = JSON.parse(e.data);
   updateDisplay(state);
@@ -235,7 +250,7 @@ ws.onmessage = (e) => {
       </div>
 
       <div class="mt-8 bg-white rounded-2xl border border-olive-200 p-6">
-        <h3 class="text-xl text-olive-950 mb-2">mDNS Convenience</h3>
+        <h3 class="text-xl text-olive-950 mb-2">mDNS — No IP Address Needed</h3>
         <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">#include <ESPmDNS.h>
 MDNS.begin("erv"); // → http://erv.local</pre>
         <p class="text-sm text-olive-700 mt-2">Use a static DHCP assignment as backup.</p>
@@ -243,7 +258,7 @@ MDNS.begin("erv"); // → http://erv.local</pre>
 
       <div class="mt-8 bg-white rounded-2xl border border-olive-200 p-6">
         <h3 class="text-xl text-olive-950 mb-2">Multi-House Note</h3>
-        <p class="text-sm text-olive-700">Same firmware + UI bundle can be reused at a second house. Only Wi-Fi credentials and static IP change.</p>
+        <p class="text-sm text-olive-700">Same firmware + UI bundle works for house two. Only Wi-Fi credentials and static IP change. Use a captive-portal first-boot config to avoid reflashing.</p>
       </div>
 
       <div class="mt-12">
