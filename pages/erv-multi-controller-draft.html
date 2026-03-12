@@ -58,6 +58,209 @@ title: ERV Multi-Controller Draft - Techmore
       </div>
 
       <div class="mt-12">
+        <h2 class="text-2xl text-olive-950 mb-3">MQTT Topic Schema</h2>
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-olive-100 border-b border-olive-200">
+                <th class="text-left py-2 px-3 text-olive-900">Topic</th>
+                <th class="text-left py-2 px-3 text-olive-900">Direction</th>
+                <th class="text-left py-2 px-3 text-olive-900">Retained</th>
+                <th class="text-left py-2 px-3 text-olive-900">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/command/request</code></td>
+                <td class="py-2 px-3">Client → Controller</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Command payload from any client</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/command/ack/{client_id}</code></td>
+                <td class="py-2 px-3">Controller → Client</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Per-client ACK with status</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/state</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Authoritative ERV state snapshot</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/audit</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Append-only event log</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/errors</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">No</td>
+                <td class="py-2 px-3">Bus faults, rejected commands</td>
+              </tr>
+              <tr class="border-b border-olive-200">
+                <td class="py-2 px-3"><code>erv/config/clients/{client_id}</code></td>
+                <td class="py-2 px-3">Admin → Controller</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Per-client config (read-only flag, priority)</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3"><code>erv/controller/status</code></td>
+                <td class="py-2 px-3">Controller → All</td>
+                <td class="py-2 px-3">Yes</td>
+                <td class="py-2 px-3">Controller heartbeat + uptime</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-xs text-olive-600 mt-3">Retained <code>erv/state</code> lets clients sync instantly on reconnect.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="text-2xl text-olive-950 mb-3">Payload Schemas</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Command Request</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/command/request</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
+  "client_id": "esp32-remote-01",
+  "request_id": "a3f9c1",
+  "timestamp": 1749500000,
+  "command": "set_mode",
+  "params": {
+    "mode": "boost",
+    "duration_minutes": 20
+  },
+  "priority": 1
+}</pre>
+          </div>
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Command ACK</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/command/ack/{client_id}</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
+  "request_id": "a3f9c1",
+  "status": "accepted",
+  "queued_position": 1,
+  "reason": null
+}</pre>
+            <p class="text-xs text-olive-300 mt-3">Status: <code>accepted</code>, <code>rejected</code>, <code>superseded</code>, <code>expired</code>.</p>
+          </div>
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">ERV State</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/state</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
+  "timestamp": 1749500005,
+  "mode": "boost",
+  "fan_speed": 3,
+  "supply_temp_f": 68,
+  "exhaust_temp_f": 71,
+  "humidity_pct": 52,
+  "boost_remaining_min": 19,
+  "filter_status": "ok",
+  "bus_ok": true,
+  "last_command_source": "esp32-remote-01"
+}</pre>
+          </div>
+          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+            <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-2">Audit Entry</p>
+            <h3 class="text-lg text-olive-50 mb-3"><code>erv/audit</code></h3>
+            <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
+  "timestamp": 1749500000,
+  "client_id": "esp32-remote-01",
+  "request_id": "a3f9c1",
+  "command": "set_mode",
+  "params": { "mode": "boost", "duration_minutes": 20 },
+  "outcome": "executed",
+  "rs485_raw": "0x02 0x06 0x00 0x01 0x00 0x03"
+}</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 grid gap-6 lg:grid-cols-2">
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Conflict Resolution</h3>
+          <ol class="text-sm text-olive-700 space-y-2">
+            <li><b>Priority wins:</b> lower number beats higher number.</li>
+            <li><b>Recency wins:</b> if priority matches, later timestamp wins.</li>
+            <li><b>Safety wins:</b> invalid commands are rejected outright.</li>
+          </ol>
+          <p class="text-xs text-olive-600 mt-3">Superseded commands receive an ACK with <code>status</code> = <code>superseded</code>.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Command Queue</h3>
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li>FIFO queue, suggested depth: 5</li>
+            <li>Per-entry TTL: 10 seconds</li>
+            <li>Expired commands are dropped with <code>expired</code> ACK</li>
+            <li>One RS-485 transaction at a time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-olive-950 rounded-2xl border border-olive-800 p-6">
+        <h2 class="text-2xl text-olive-50 mb-3">Webserver Layer</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="bg-olive-900/70 rounded-xl border border-olive-800 p-4">
+            <h3 class="text-lg text-olive-50 mb-2">REST Endpoints</h3>
+            <ul class="text-sm text-olive-200 space-y-2">
+              <li><code>GET /api/state</code> — current <code>erv/state</code></li>
+              <li><code>POST /api/command</code> — same schema as MQTT command request</li>
+              <li><code>GET /api/audit?limit=50</code> — recent audit from SQLite</li>
+              <li><code>GET /api/config</code> — client configuration snapshot</li>
+            </ul>
+          </div>
+          <div class="bg-olive-900/70 rounded-xl border border-olive-800 p-4">
+            <h3 class="text-lg text-olive-50 mb-2">WebSocket</h3>
+            <ul class="text-sm text-olive-200 space-y-2">
+              <li><code>/ws/state</code> — push on every poll or command execution</li>
+              <li>Browser UI stays live without polling</li>
+              <li>Host UI directly from controller storage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-white rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">Dedicated ESP32-S3 Remote</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 class="text-lg text-olive-900 mb-2">Suggested BOM</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li>ESP32-S3 dev board (FeatherS3 or XIAO ESP32-S3)</li>
+              <li>0.96\" or 1.3\" OLED (SSD1306/SH1106)</li>
+              <li>4–5 tactile buttons</li>
+              <li>Optional WS2812B status LED</li>
+              <li>USB-C power or LiPo + TP4056</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg text-olive-900 mb-2">Firmware Behavior</h3>
+            <ul class="text-sm text-olive-700 space-y-2">
+              <li>Boot: Wi-Fi → MQTT → subscribe to state + ACK</li>
+              <li>Button press: debounce, publish command, await ACK</li>
+              <li>Offline mode: show banner, queue up to 3 commands</li>
+              <li>Display: mode + speed, temps + humidity, last source</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-white rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">Open Questions & Decisions</h2>
+        <ul class="text-sm text-olive-700 space-y-2">
+          <li><b>VTTOUCH control mode:</b> Default to command-capable, allow read-only via <code>erv/config/clients/vttouch</code>.</li>
+          <li><b>Conflict handling:</b> Reject unsafe commands with explicit reasons.</li>
+          <li><b>Audit logging:</b> MQTT for live stream + SQLite for durable history.</li>
+          <li><b>Poll interval:</b> Suggested 5–10 seconds; confirm ERV firmware tolerance.</li>
+          <li><b>Broker location:</b> On controller (standalone) vs LAN broker (shared infra).</li>
+          <li><b>OTA updates:</b> Controller + remotes should support OTA.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12">
         <h2 class="text-2xl text-olive-950 mb-3">Phase 1: VTouch Bridge as Clean-Room Reverse Engineering Tool</h2>
         <p class="text-olive-700">Build this before anything else. It serves two purposes: protocol capture while the VTouch is still the ERV master, and a permanent VTouch proxy once the register map is validated.</p>
       </div>
