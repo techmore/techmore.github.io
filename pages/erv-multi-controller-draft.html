@@ -1,0 +1,103 @@
+---
+layout: default
+title: ERV Multi-Controller Draft - Techmore
+---
+
+<main class="bg-olive-50">
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="text-xs font-mono tracking-widest uppercase text-olive-500">Draft Document</p>
+        <h1 class="text-4xl font-display italic text-olive-950 mt-2">Multi-Controller for a Single ERV</h1>
+        <p class="text-base text-olive-700 mt-3">A draft plan to support multiple remotes (VTTOUCH panel + dedicated ESP32-S3 hardware controller) while keeping a single RS-485 master on the ERV bus.</p>
+      </div>
+
+      <div class="bg-olive-100 rounded-2xl border border-olive-200 p-6 mb-10">
+        <h2 class="text-2xl text-olive-950 mb-3">Core Idea</h2>
+        <p class="text-olive-700">The ERV RS-485 bus must be mastered by exactly one device at a time. We keep a single “controller node” (ESP32-S3 or a small Pi) on the RS-485 bus, then let all other devices talk to the controller over MQTT. This preserves the single-bus requirement while enabling multiple UIs and control surfaces.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Roles</h3>
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li><b>Controller (RS-485 Master):</b> ESP32-S3 or Pi with RS-485 adapter, owns the ERV bus.</li>
+            <li><b>Clients:</b> VTTOUCH panel, web UI, or a dedicated ESP32-S3 button/display device.</li>
+            <li><b>Broker:</b> MQTT acts as the shared state and command bus.</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Why This Works</h3>
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li>Single RS-485 master avoids firmware lockouts.</li>
+            <li>All commands are logged and replayable via MQTT.</li>
+            <li>Clients stay in sync by subscribing to the same state topics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-olive-100 rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">High-Level Architecture</h2>
+        <pre class="text-sm text-olive-800 font-mono whitespace-pre-wrap">[Client A: VTTOUCH Panel]      [Client B: ESP32-S3 Buttons]     [Client C: Web UI]
+              │                            │                             │
+              └─────────────── MQTT (commands + state + audit log) ───────┘
+                                             │
+                                   [Controller: ESP32-S3]
+                                             │
+                                      RS-485 to ERV</pre>
+      </div>
+
+      <div class="mt-10">
+        <h2 class="text-2xl text-olive-950 mb-3">Command + State Topics (Draft)</h2>
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li><code>erv/command/request</code> — client publishes desired change (mode, speed, boost, etc.)</li>
+            <li><code>erv/command/ack</code> — controller acknowledges command receipt + validation</li>
+            <li><code>erv/state</code> — controller publishes authoritative ERV state</li>
+            <li><code>erv/audit</code> — append-only log of every command + source client</li>
+            <li><code>erv/errors</code> — controller reports bus faults or rejected commands</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Client Requirements</h3>
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li>Publish commands with a unique <code>client_id</code>.</li>
+            <li>Subscribe to <code>erv/state</code> for UI sync.</li>
+            <li>Listen for <code>erv/command/ack</code> to confirm actions.</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <h3 class="text-xl text-olive-950 mb-2">Controller Responsibilities</h3>
+          <ul class="text-sm text-olive-700 space-y-2">
+            <li>Validate command payloads (range, mode safety).</li>
+            <li>Serialize commands to RS-485 (one at a time).</li>
+            <li>Publish authoritative state after every change.</li>
+            <li>Write every command to the audit topic.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-olive-100 rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">Draft: Dedicated ESP32-S3 Remote</h2>
+        <ul class="text-sm text-olive-700 space-y-2">
+          <li>Hardware: ESP32-S3 + small OLED/LCD + 3-5 buttons (Mode, Speed, Boost, Power).</li>
+          <li>Publishes commands to <code>erv/command/request</code>.</li>
+          <li>Subscribes to <code>erv/state</code> to display live ERV values.</li>
+          <li>Shows last command source from <code>erv/audit</code> (optional).</li>
+        </ul>
+      </div>
+
+      <div class="mt-10 bg-white rounded-2xl border border-olive-200 p-6">
+        <h2 class="text-2xl text-olive-950 mb-3">Open Questions</h2>
+        <ul class="text-sm text-olive-700 space-y-2">
+          <li>Do we allow VTTOUCH to publish commands, or run it in read-only mirror mode?</li>
+          <li>Should commands require confirmation if they conflict with ERV rules?</li>
+          <li>Do we store audit logs in SQLite (recommended) or only MQTT?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
