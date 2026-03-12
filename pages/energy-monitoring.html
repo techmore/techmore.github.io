@@ -61,50 +61,86 @@ title: Energy Monitoring - Techmore
     <!-- Browse Section -->
     <section id="browse" class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-olive-200/80 rounded-3xl border border-olive-300 p-6 shadow-sm" id="content-grid">
-                <div class="space-y-4">
-                    <a href="/pages/energy-monitoring/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">⚡</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Overview</h3>
-                            <p class="text-sm text-olive-700">System summary + goals • Stack map</p>
+            <div class="grid gap-6 lg:grid-cols-3">
+                <div class="bg-olive-200/80 rounded-3xl border border-olive-300 p-6 shadow-sm" id="content-grid">
+                    <div class="space-y-4">
+                        <a href="/pages/energy-monitoring/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">⚡</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Overview</h3>
+                                <p class="text-sm text-olive-700">System summary + goals • Stack map</p>
+                            </div>
+                        </a>
+                        <a href="/pages/phase1_erv_guide/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🌬️</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Phase 1 — ERV Guide</h3>
+                                <p class="text-sm text-olive-700">Ventilation scope + wiring • Guide</p>
+                            </div>
+                        </a>
+                        <a href="/pages/phase2_heatpump_guide/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🔥</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Phase 2 — Heat Pump Guide</h3>
+                                <p class="text-sm text-olive-700">Sizing, incentives, ROI • Guide</p>
+                            </div>
+                        </a>
+                        <a href="/pages/phase3_visual_dashboard/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">📊</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Phase 3 — Visual Dashboard</h3>
+                                <p class="text-sm text-olive-700">Dashboards + telemetry • Tooling</p>
+                            </div>
+                        </a>
+                        <a href="/pages/energy-monitoring/solar/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">☀️</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Solar Payback</h3>
+                                <p class="text-sm text-olive-700">Savings + storage model • Calculator</p>
+                            </div>
+                        </a>
+                        <a href="/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🏠</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Techmore Home</h3>
+                                <p class="text-sm text-olive-700">Main F.I.R.E. feed • Overview</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 bg-olive-200/70 rounded-3xl border border-olive-300 p-6 shadow-sm">
+                    <h2 class="text-2xl text-olive-950 mb-4">Project Overview</h2>
+                    <p class="text-base text-olive-800 mb-6">A fully local energy intelligence stack that ties together HVAC, ventilation, power monitoring, and environmental sensing with automation-driven control and reporting.</p>
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">Power + Load</h3>
+                            <p class="text-sm text-olive-700">Emporia Vue 3 for whole-home and circuit-level power monitoring.</p>
                         </div>
-                    </a>
-                    <a href="/pages/phase1_erv_guide/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🌬️</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Phase 1 — ERV Guide</h3>
-                            <p class="text-sm text-olive-700">Ventilation scope + wiring • Guide</p>
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">Air Quality + ERV</h3>
+                            <p class="text-sm text-olive-700">Broan ERV AI for air quality, ventilation, and energy recovery.</p>
                         </div>
-                    </a>
-                    <a href="/pages/phase2_heatpump_guide/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🔥</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Phase 2 — Heat Pump Guide</h3>
-                            <p class="text-sm text-olive-700">Sizing, incentives, ROI • Guide</p>
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">Room Sensors</h3>
+                            <p class="text-sm text-olive-700">Aqara sensors for temperature and humidity.</p>
                         </div>
-                    </a>
-                    <a href="/pages/phase3_visual_dashboard/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">📊</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Phase 3 — Visual Dashboard</h3>
-                            <p class="text-sm text-olive-700">Dashboards + telemetry • Tooling</p>
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">Conditioning</h3>
+                            <p class="text-sm text-olive-700">Mitsubishi Hyper Heat for primary heating and cooling.</p>
                         </div>
-                    </a>
-                    <a href="/pages/energy-monitoring/solar/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">☀️</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Solar Payback</h3>
-                            <p class="text-sm text-olive-700">Savings + storage model • Calculator</p>
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">UPS + Power</h3>
+                            <p class="text-sm text-olive-700">NUTS for UPS management and graceful shutdowns.</p>
                         </div>
-                    </a>
-                    <a href="/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
-                        <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🏠</div>
-                        <div class="flex-1 min-w-0">
-                            <h3 class="text-base text-olive-900 font-semibold">Techmore Home</h3>
-                            <p class="text-sm text-olive-700">Main F.I.R.E. feed • Overview</p>
+                        <div class="bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                            <h3 class="text-sm text-olive-950 font-semibold mb-2">Switches + Loads</h3>
+                            <p class="text-sm text-olive-700">Kasa switches for light and outlet power monitoring.</p>
                         </div>
-                    </a>
+                    </div>
+                    <div class="mt-6 bg-olive-300 rounded-2xl border border-olive-400 p-4">
+                        <h3 class="text-sm text-olive-950 font-semibold mb-2">Automation Layer</h3>
+                        <p class="text-sm text-olive-700">Forecast-aware automation for pre-heat/pre-cool, ventilation scheduling, and alerting when usage drifts.</p>
+                    </div>
                 </div>
             </div>
         </div>
