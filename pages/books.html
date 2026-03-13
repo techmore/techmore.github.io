@@ -4,7 +4,7 @@ title: Books - Techmore
 ---
 
 <main class="bg-olive-50">
-    <!-- Command Bar -->
+    <!-- Hero -->
     <section class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
@@ -65,207 +65,73 @@ title: Books - Techmore
         </div>
     </section>
 
-    <!-- Status Bar -->
-    <section class="bg-olive-100 border-y border-olive-200 py-2">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col gap-2 text-xs sm:flex-row sm:items-center sm:justify-between">
-                <div class="flex items-center gap-4 text-olive-700">
-                    <span class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-olive-600 rounded-full"></span>
-                        Updated March 2026
-                    </span>
-                    <span class="text-olive-300">|</span>
-                    <span>Reading lists and structured pathways</span>
-                </div>
-                <div class="flex items-center gap-4 text-olive-600">
-                    <a href="#browse" class="hover:text-olive-800 transition-colors">Browse</a>
-                    <a href="#collections" class="hover:text-olive-800 transition-colors">Collections</a>
-                    <a href="#research" class="hover:text-olive-800 transition-colors">Research</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Browse Section -->
     <section id="browse" class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <h2 class="text-2xl text-olive-950">Reading Deck</h2>
-                    <p class="text-sm text-olive-700">Curated lists, notes, and the Modern Western pathway.</p>
+            <div class="grid gap-6 lg:grid-cols-5">
+                <div class="lg:col-span-2 bg-olive-200/80 rounded-3xl border border-olive-300 p-6 shadow-sm" id="content-grid">
+                    <div class="space-y-4">
+                        <a href="/pages/books/" class="content-card compact-card flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300" data-category="lists" data-search="Books Reading List">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">📚</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Reading List</h3>
+                                <p class="text-sm text-olive-700">Primary notes and current stack</p>
+                            </div>
+                        </a>
+                        <a href="/pages/modern-western/" class="content-card compact-card flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300" data-category="pathways" data-search="Modern Western Reading Pathway">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🏜️</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Modern Western</h3>
+                                <p class="text-sm text-olive-700">Structured reading pathway and map</p>
+                            </div>
+                        </a>
+                        <a href="/pages/writingprompts/" class="content-card compact-card flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300" data-category="notes" data-search="Writing Prompts">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">✍️</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Writing Prompts</h3>
+                                <p class="text-sm text-olive-700">Creative practice and idea bank</p>
+                            </div>
+                        </a>
+                        <a href="/pages/guitar/" class="content-card compact-card flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300" data-category="notes" data-search="Guitar Notes">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🎸</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Guitar Notes</h3>
+                                <p class="text-sm text-olive-700">Adjacent practice and reference notes</p>
+                            </div>
+                        </a>
+                        <a href="/" class="content-card compact-card flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300" data-category="notes" data-search="FIRE Home">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🏠</div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-base text-olive-900 font-semibold">Techmore Home</h3>
+                                <p class="text-sm text-olive-700">Main F.I.R.E. feed and overview</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <a href="/pages/modern-western/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">Open Modern Western</a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" id="content-grid">
-                <a href="/pages/books/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="lists" data-search="Books Reading List">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">📚</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Reading List</h3>
-                        <p class="text-xs text-olive-600 truncate">Primary book notes</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">List</span>
-                            <span class="text-olive-400">Updated March 2026</span>
+                <div class="lg:col-span-3 bg-olive-200/70 rounded-3xl border border-olive-300 p-6 shadow-sm">
+                    <h2 class="text-2xl text-olive-950 mb-4">Reading Overview</h2>
+                    <p class="text-base text-olive-800 mb-4">This section tracks reading lists, structured pathways, and adjacent note collections that support the broader Techmore stack. It is less about book reviews and more about building a reusable research system.</p>
+                    <p class="text-base text-olive-800 mb-8">The main reading list holds raw notes and takeaways. Pathway pages provide sequencing and curation. Related pages like writing prompts and guitar notes stay linked here because they are part of the same personal knowledge loop.</p>
+                    <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Primary Use</p>
+                            <p class="text-sm text-olive-700">Capture notes, maintain reading order, and keep active reference pages close together.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Collections</p>
+                            <p class="text-sm text-olive-700">Reading List, Modern Western, Writing Prompts, and connected practice pages.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Updated</p>
+                            <p class="text-sm text-olive-700">March 2026 refresh across reading lists and the Modern Western pathway.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Next Action</p>
+                            <p class="text-sm text-olive-700">Use the filter pills to narrow by lists, pathways, or notes, then jump into the archive below.</p>
                         </div>
                     </div>
-                </a>
-
-                <a href="/pages/modern-western/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="pathways" data-search="Modern Western Reading Pathway">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🏜️</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Modern Western</h3>
-                        <p class="text-xs text-olive-600 truncate">Structured pathway</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Pathway</span>
-                            <span class="text-olive-400">Reading map</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/writingprompts/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="notes" data-search="Writing Prompts">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">✍️</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Writing Prompts</h3>
-                        <p class="text-xs text-olive-600 truncate">Practice prompts + ideas</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Notes</span>
-                            <span class="text-olive-400">Creative</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/" class="content-card compact-card group bg-white rounded-2xl border border-olive-100 overflow-hidden hover:border-olive-300 hover:shadow-md transition-all" data-category="notes" data-search="FIRE Home">
-                    <div class="aspect-[2/3] bg-gradient-to-br from-olive-100 to-olive-200 flex items-center justify-center">
-                        <span class="text-3xl">🏠</span>
-                    </div>
-                    <div class="p-3">
-                        <h3 class="text-sm text-olive-900 font-semibold truncate">Techmore Home</h3>
-                        <p class="text-xs text-olive-600 truncate">F.I.R.E. post index</p>
-                        <div class="flex items-center gap-2 mt-2 text-[10px]">
-                            <span class="px-2 py-0.5 bg-olive-50 rounded-full text-olive-700">Home</span>
-                            <span class="text-olive-400">Overview</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collections -->
-    <section id="collections" class="py-6 bg-white border-y border-olive-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xs text-olive-500 font-semibold uppercase tracking-widest">Collections</span>
-                <a href="/pages/modern-western/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Modern Western</a>
-                <a href="/pages/writingprompts/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Writing Prompts</a>
-                <a href="/pages/guitar/" class="px-3 py-1.5 bg-olive-50 border border-olive-200 rounded-full text-xs text-olive-700 font-medium hover:bg-olive-100 hover:border-olive-400 transition-colors">Guitar Notes</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-olive-200 rounded-full text-sm text-olive-700 font-medium">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.2l5-.7L12 3z" />
-                        </svg>
-                        Reading Strategy
-                    </div>
-                    <h2 class="mt-4 text-4xl text-olive-950">Curate the Next Stack</h2>
-                    <p class="mt-4 text-lg text-olive-700">Use the pathway to prioritize the highest-impact reading for your current goals.</p>
-
-                    <div class="mt-8 space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h7" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Intentional sequencing</h3>
-                                <p class="text-sm text-olive-600">Build your reading order with short, focused arcs.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l-9 9h7v7l9-9h-7z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Highlight extraction</h3>
-                                <p class="text-sm text-olive-600">Capture the best insights and convert them into notes.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-700">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base text-olive-900 font-semibold">Reading cadence</h3>
-                                <p class="text-sm text-olive-600">Keep a pace that supports research, not just consumption.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="/pages/modern-western/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-olive-700 rounded-xl text-sm text-olive-50 font-semibold hover:bg-olive-800 transition-colors">
-                        View the Pathway
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-5-5l5 5-5 5" />
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-olive-200/60 rounded-3xl blur-2xl"></div>
-                    <div class="relative bg-white border border-olive-100 rounded-2xl p-6 shadow-xl">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-lg text-olive-900 font-semibold">Recent Updates</h3>
-                            <a href="/" class="text-sm text-olive-600 font-medium hover:text-olive-800 transition-colors">View All</a>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">📚</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Reading list additions</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Books</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">🏜️</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Modern Western pathway refresh</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Pathway</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-olive-50 rounded-xl">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-10 h-10 bg-white border border-olive-200 rounded-lg flex items-center justify-center text-olive-600">✍️</div>
-                                    <div>
-                                        <h4 class="text-sm text-olive-900 font-semibold">Prompt bank updates</h4>
-                                        <p class="text-xs text-olive-600">Updated March 2026 • Writing</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="mt-6 border-t border-olive-400 pt-4">
+                        <a href="/pages/modern-western/" class="text-sm text-olive-700 font-medium hover:text-olive-900 transition-colors">Open Modern Western</a>
                     </div>
                 </div>
             </div>
