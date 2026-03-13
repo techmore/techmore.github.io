@@ -138,10 +138,11 @@ title: Energy Monitoring - Techmore
     </section>
 
 
-    <div id="emporia-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-olive-950/80 px-4 py-6">
+    <div id="emporia-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-olive-950/80 px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="emporia-modal-title" tabindex="-1">
         <div class="relative w-full max-w-3xl bg-olive-200 rounded-2xl border border-olive-400 shadow-lg">
             <button type="button" id="emporia-close" class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-olive-300 text-olive-900 hover:bg-olive-400/60 transition-colors" aria-label="Close modal">✕</button>
             <div class="p-4 sm:p-6">
+                <h2 id="emporia-modal-title" class="sr-only">Emporia Vue image preview</h2>
                 <img id="emporia-modal-image" src="" alt="" class="w-full max-h-[70vh] object-contain rounded-xl bg-olive-300 border border-olive-400">
             </div>
         </div>
@@ -217,6 +218,11 @@ title: Energy Monitoring - Techmore
             var modalImage = document.getElementById('emporia-modal-image');
             var modalClose = document.getElementById('emporia-close');
             var thumbs = document.querySelectorAll('.emporia-thumb');
+            var lastFocused = null;
+
+            function modalIsOpen() {
+                return modal && !modal.classList.contains('hidden');
+            }
 
             function closeModal() {
                 if (!modal) return;
@@ -226,6 +232,10 @@ title: Energy Monitoring - Techmore
                     modalImage.src = '';
                     modalImage.alt = '';
                 }
+                if (lastFocused) {
+                    lastFocused.focus();
+                    lastFocused = null;
+                }
             }
 
             thumbs.forEach(function(thumb) {
@@ -233,10 +243,14 @@ title: Energy Monitoring - Techmore
                     var src = thumb.getAttribute('data-modal-src');
                     var alt = thumb.getAttribute('data-modal-alt') || 'Emporia Vue image';
                     if (!src || !modal || !modalImage) return;
+                    lastFocused = document.activeElement;
                     modalImage.src = src;
                     modalImage.alt = alt;
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
+                    if (modalClose) {
+                        modalClose.focus();
+                    }
                 });
             });
 
@@ -247,6 +261,13 @@ title: Energy Monitoring - Techmore
             if (modal) {
                 modal.addEventListener('click', function(event) {
                     if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                modal.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        event.preventDefault();
                         closeModal();
                     }
                 });
