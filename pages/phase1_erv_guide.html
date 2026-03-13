@@ -25,6 +25,17 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   .guide-back:hover { color:var(--text); }
   .guide-dl { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; font-family:var(--mono); padding:0.35rem 0.85rem; border-radius:6px; background:var(--panel); border:1px solid var(--border); color:var(--subtext); cursor:pointer; }
   .guide-dl:hover { background:var(--border); color:var(--text); }
+  .container-no-bottom { padding-bottom: 0; }
+  .hero-shell { max-width: 960px; margin: 0.75rem auto 0; }
+  .body-font { font-family: var(--body); }
+  .body-copy-small { font-size: 13px; color: var(--subtext); margin-bottom: 0.75rem; }
+  .rule-priority { color: var(--accent2); font-family: var(--mono); font-size: 11px; }
+  .cause-warn { color: var(--yellow); }
+  .panel-spaced { margin-bottom: 2rem; }
+  .callout-spaced { margin-bottom: 2rem; }
+  .guide-footer { padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+  .guide-next { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 13px; color: var(--subtext); text-decoration: none; }
+  .guide-next:hover { color: var(--text); }
 
   /* ── Hero ── */
   .hero {
@@ -143,7 +154,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   @media (max-width: 600px) { .step { grid-template-columns: 2.5rem 1fr; gap: 0 1rem; } }
 </style>
 
-<div class="container" style="padding-bottom:0">
+<div class="container container-no-bottom">
   <div class="guide-topbar">
     <a href="/pages/energy-monitoring/" class="guide-back">
       <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
@@ -156,7 +167,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   </div>
 </div>
 
-<div class="hero" style="max-width:960px;margin:0.75rem auto 0;">
+<div class="hero hero-shell">
   <div class="hero-tag">Home Intelligence — Phase 1 of 3</div>
   <h1>ERV Integration,<br><span>Monitoring &amp; Weather Automation</span></h1>
   <div class="hero-sub">Complete setup from bare hardware to a fully logged, weather-aware ERV control system. By end of Phase 1 both Broan units are on MQTT, Aqara indoor sensors are feeding the data pipeline, Open-Meteo forecasts drive automated ERV decisions, and everything is visible and controllable from a local web UI.</div>
@@ -178,7 +189,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   <div class="section-head">What Phase 1 Delivers</div>
   <div class="panel">
     <div class="panel-title">Outcomes by end of Phase 1</div>
-    <table class="pin-table" style="font-family:var(--body)">
+    <table class="pin-table body-font">
       <thead><tr><th>Capability</th><th>Source</th><th>Used For</th></tr></thead>
       <tbody>
         <tr><td>ERV intake &amp; exhaust temp, CFM, power, filter life</td><td>RS-485 → ESP32 → MQTT</td><td>Logging, efficiency calc, filter alerts</td></tr>
@@ -201,7 +212,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   <div class="section-head">Parts &amp; Tools — Per ERV Unit</div>
   <div class="panel">
     <div class="panel-title">Hardware checklist (Amazon links + estimated costs)</div>
-    <table class="pin-table" style="font-family:var(--body)">
+    <table class="pin-table body-font">
       <thead>
         <tr>
           <th></th>
@@ -770,7 +781,7 @@ systemctl daemon-reload && systemctl enable --now erv-monitor</pre>
 
       <div class="panel">
         <div class="panel-title">Path A — Home Assistant (recommended, most future-proof)</div>
-        <p style="font-size:13px;color:var(--subtext);margin-bottom:0.75rem">Install Home Assistant OS in its own LXC or VM. Add the official Aqara integration (Settings → Integrations → Aqara). Enable the MQTT integration in HA pointed at your Mosquitto broker. HA republishes every Aqara sensor automatically.</p>
+        <p class="body-copy-small">Install Home Assistant OS in its own LXC or VM. Add the official Aqara integration (Settings → Integrations → Aqara). Enable the MQTT integration in HA pointed at your Mosquitto broker. HA republishes every Aqara sensor automatically.</p>
 <pre><span class="c"># HA MQTT topic pattern for Aqara sensors:</span>
 <span class="s">homeassistant/sensor/aqara_living_room_temp/state</span>
 <span class="s">homeassistant/sensor/aqara_bedroom_humidity/state</span>
@@ -816,7 +827,7 @@ systemctl daemon-reload && systemctl enable --now erv-monitor</pre>
 
       <div class="panel">
         <div class="panel-title green">Sensor placement for ERV automation purposes</div>
-        <table class="pin-table" style="font-family:var(--body)">
+        <table class="pin-table body-font">
           <thead><tr><th class="green">Location</th><th class="green">What it tells the automation engine</th></tr></thead>
           <tbody>
             <tr><td>Main living floor — central</td><td class="note">Primary comfort reference and humidity trigger source</td></tr>
@@ -900,43 +911,43 @@ FORECAST_URL = (
           <thead><tr><th>Priority</th><th>Condition</th><th>Action</th><th>Reason</th></tr></thead>
           <tbody>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">1 — Safety</td>
+              <td class="rule-priority">1 — Safety</td>
               <td class="cond">outdoor_temp &lt; 10°F</td>
               <td class="action action-min">Min</td>
               <td class="note">Extreme cold — prevent heat loss and frosting</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">2 — Humidity</td>
+              <td class="rule-priority">2 — Humidity</td>
               <td class="cond">indoor_rh &gt; 55%</td>
               <td class="action action-max">Max</td>
               <td class="note">Indoor humidity too high regardless of outdoor conditions</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">3 — Forecast</td>
+              <td class="rule-priority">3 — Forecast</td>
               <td class="cond">temp_in_4h &lt; outdoor_temp − 20°F</td>
               <td class="action action-max">Max → then Min</td>
               <td class="note">Cold front incoming — ventilate while cheap, close down before it hits</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">4 — Moisture</td>
+              <td class="rule-priority">4 — Moisture</td>
               <td class="cond">outdoor_rh &gt; indoor_rh + 20%</td>
               <td class="action action-min">Min</td>
               <td class="note">Outdoor air much more humid — bringing it in worsens indoor conditions</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">5 — Ideal</td>
+              <td class="rule-priority">5 — Ideal</td>
               <td class="cond">45°F &lt; outdoor_temp &lt; 75°F AND outdoor_rh &lt; 65%</td>
               <td class="action action-max">Max</td>
               <td class="note">Best possible outdoor air — ventilate aggressively, energy cost near zero</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">6 — Cold</td>
+              <td class="rule-priority">6 — Cold</td>
               <td class="cond">10°F &lt; outdoor_temp &lt; 45°F</td>
               <td class="action action-med">Med</td>
               <td class="note">Maintain air quality without excessive heat exchange load</td>
             </tr>
             <tr>
-              <td style="color:var(--accent2);font-family:var(--mono);font-size:11px">7 — Default</td>
+              <td class="rule-priority">7 — Default</td>
               <td class="cond">all other conditions</td>
               <td class="action action-med">Med</td>
               <td class="note">Baseline ventilation</td>
@@ -987,7 +998,7 @@ FORECAST_URL = (
       <div class="step-desc">Served by the FastAPI backend at port 8080. No external access required — local network only.</div>
       <div class="panel">
         <div class="panel-title green">Dashboard sections</div>
-        <table class="pin-table" style="font-family:var(--body)">
+        <table class="pin-table body-font">
           <thead><tr><th class="green">Section</th><th class="green">Content</th></tr></thead>
           <tbody>
             <tr><td><strong>ERV Status</strong></td><td class="note">Per-unit: current mode, fan speed, intake temp, exhaust temp, CFM, power draw, filter life remaining</td></tr>
@@ -1002,7 +1013,7 @@ FORECAST_URL = (
       </div>
       <div class="panel">
         <div class="panel-title">API endpoints — accessible at http://server:8080</div>
-        <table class="pin-table" style="font-family:var(--body)">
+        <table class="pin-table body-font">
           <thead><tr><th>Endpoint</th><th>Method</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>GET /</code></td><td>GET</td><td class="note">Web dashboard HTML</td></tr>
@@ -1020,32 +1031,32 @@ FORECAST_URL = (
 
   <!-- ── TROUBLESHOOTING ── -->
   <div class="section-head">Troubleshooting Reference</div>
-  <div class="panel" style="margin-bottom:2rem">
+  <div class="panel panel-spaced">
     <div class="panel-title">Common problems and fixes</div>
-    <table class="pin-table" style="font-family:var(--body)">
+    <table class="pin-table body-font">
       <thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead>
       <tbody>
-        <tr><td>Alignment errors / unknown command spam</td><td style="color:var(--yellow)">D+/D− reversed</td><td class="note">Swap the two RS-485 wires at the ERV terminal block</td></tr>
-        <tr><td>ESP connects to WiFi but no ERV data</td><td style="color:var(--yellow)">ERV not restarted after connect</td><td class="note">Power-cycle the ERV (flip its breaker)</td></tr>
-        <tr><td>No MQTT messages at broker</td><td style="color:var(--yellow)">Wrong broker IP or credentials</td><td class="note">Verify with mosquitto_sub test, check secrets.yaml</td></tr>
-        <tr><td>Aqara sensors not appearing in MQTT</td><td style="color:var(--yellow)">Bridge not configured</td><td class="note">Confirm HA MQTT integration is enabled and pointing at your broker</td></tr>
-        <tr><td>Open-Meteo returning wrong temps</td><td style="color:var(--yellow)">Wrong coordinates</td><td class="note">Verify lat/lon in FORECAST_URL — use decimal degrees</td></tr>
-        <tr><td>Buck converter warm / ESP resets</td><td style="color:var(--yellow)">Output voltage too high</td><td class="note">Re-measure output with multimeter, readjust to 5.0–5.2V</td></tr>
+        <tr><td>Alignment errors / unknown command spam</td><td class="cause-warn">D+/D− reversed</td><td class="note">Swap the two RS-485 wires at the ERV terminal block</td></tr>
+        <tr><td>ESP connects to WiFi but no ERV data</td><td class="cause-warn">ERV not restarted after connect</td><td class="note">Power-cycle the ERV (flip its breaker)</td></tr>
+        <tr><td>No MQTT messages at broker</td><td class="cause-warn">Wrong broker IP or credentials</td><td class="note">Verify with mosquitto_sub test, check secrets.yaml</td></tr>
+        <tr><td>Aqara sensors not appearing in MQTT</td><td class="cause-warn">Bridge not configured</td><td class="note">Confirm HA MQTT integration is enabled and pointing at your broker</td></tr>
+        <tr><td>Open-Meteo returning wrong temps</td><td class="cause-warn">Wrong coordinates</td><td class="note">Verify lat/lon in FORECAST_URL — use decimal degrees</td></tr>
+        <tr><td>Buck converter warm / ESP resets</td><td class="cause-warn">Output voltage too high</td><td class="note">Re-measure output with multimeter, readjust to 5.0–5.2V</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="callout good" style="margin-bottom:2rem">
+  <div class="callout good callout-spaced">
     <div class="callout-icon">📌</div>
     <div><b>Phase 1 complete — what comes next</b>Once both ERV units are logging, Aqara sensors are feeding indoor conditions, Open-Meteo is driving automated decisions, and the web UI is live — you have a fully operational air quality management system. Phase 2 adds the Mitsubishi Hyper Heat and Emporia Vue for temperature and energy cost intelligence.</div>
   </div>
 
-  <div style="padding-top:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:1rem;">
+  <div class="guide-footer">
     <a href="/pages/energy-monitoring/" class="guide-back">
       <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
       Back to Energy Monitoring
     </a>
-    <a href="/pages/phase2_heatpump_guide/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;color:var(--subtext);text-decoration:none;">
+    <a href="/pages/phase2_heatpump_guide/" class="guide-next">
       Phase 2: Heat Pump Intelligence
       <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
     </a>

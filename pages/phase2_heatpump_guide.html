@@ -36,6 +36,10 @@ title: Phase 2 — Heat Pump Intelligence & Power Validation - Techmore
 .guide-back:hover { color:var(--ink); }
 .guide-dl { display:inline-flex; align-items:center; gap:0.4rem; font-size:13px; font-family:var(--mono); padding:0.35rem 0.85rem; border-radius:6px; background:var(--bg2); border:1px solid var(--border); color:var(--muted); cursor:pointer; }
 .guide-dl:hover { background:var(--border); color:var(--ink); }
+.rule-note { font-size: 11px; color: var(--muted); }
+.guide-footer { padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+.guide-footer-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 13px; color: var(--muted); text-decoration: none; }
+.guide-footer-link:hover { color: var(--ink); }
 
 .cover { background: oklch(16% 0.015 110); color: oklch(91% 0.012 106.5); padding: 3rem 3rem 2.5rem; position: relative; overflow: hidden; max-width: 900px; margin: 0.75rem auto 0; border-radius: 16px; }
 .cover::after { content: 'PHASE 2'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: var(--head); font-style:italic; font-size: 7rem; font-weight: 400; color: oklch(91% 0.012 106.5 / 0.04); letter-spacing: 0.1em; pointer-events: none; white-space: nowrap; }
@@ -493,31 +497,31 @@ ORDER BY temp_bucket_f DESC;</pre>
     <span class="rule-cond">now &gt; 40°F AND forecast shows &lt; 20°F within 8h</span>
     <span class="rule-op">→</span>
     <span class="action-up">Raise setpoint +2°F now</span>
-    <span style="font-size:11px;color:var(--muted)">Pre-load thermal mass at high COP before cold arrives</span>
+    <span class="rule-note">Pre-load thermal mass at high COP before cold arrives</span>
   </div>
   <div class="rule-row">
     <span class="rule-cond">20°F &lt; outdoor &lt; 45°F, steady for next 6h</span>
     <span class="rule-op">→</span>
     <span class="action-hold">Normal setpoint, run continuously</span>
-    <span style="font-size:11px;color:var(--muted)">Hyper Heat sweet spot — steady low-load is most efficient</span>
+    <span class="rule-note">Hyper Heat sweet spot — steady low-load is most efficient</span>
   </div>
   <div class="rule-row">
     <span class="rule-cond">outdoor &lt; 5°F AND house within 1°F of setpoint</span>
     <span class="rule-op">→</span>
     <span class="action-hold">Drop setpoint −1°F</span>
-    <span style="font-size:11px;color:var(--muted)">Lowest COP window — let stored heat carry, reduce compressor demand</span>
+    <span class="rule-note">Lowest COP window — let stored heat carry, reduce compressor demand</span>
   </div>
   <div class="rule-row">
     <span class="rule-cond">forecast shows warming &gt; 15°F rise within 4h</span>
     <span class="rule-op">→</span>
     <span class="action-hold">Hold current setpoint — don't pre-heat</span>
-    <span style="font-size:11px;color:var(--muted)">Better conditions coming — inefficient to push heat in now</span>
+    <span class="rule-note">Better conditions coming — inefficient to push heat in now</span>
   </div>
   <div class="rule-row">
     <span class="rule-cond">Emporia shows &gt; 150% expected watts for outdoor temp</span>
     <span class="rule-op">→</span>
     <span class="action-alrt">Alert: efficiency anomaly</span>
-    <span style="font-size:11px;color:var(--muted)">Unit working harder than COP curve predicts — possible coil/refrigerant issue</span>
+    <span class="rule-note">Unit working harder than COP curve predicts — possible coil/refrigerant issue</span>
   </div>
 </div>
 
@@ -610,12 +614,12 @@ ORDER BY temp_bucket_f DESC;</pre>
   </div>
 </div>
 
-  <div style="padding-top:1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-top:1rem;">
-    <a href="/pages/phase1_erv_guide/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;color:var(--muted);text-decoration:none;">
+  <div class="guide-footer">
+    <a href="/pages/phase1_erv_guide/" class="guide-footer-link">
       <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
       Phase 1: ERV Integration
     </a>
-    <a href="/pages/energy-monitoring/" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:13px;color:var(--muted);text-decoration:none;">
+    <a href="/pages/energy-monitoring/" class="guide-footer-link">
       Back to Energy Monitoring
       <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
     </a>
