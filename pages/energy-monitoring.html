@@ -96,10 +96,10 @@ title: Energy Monitoring - Techmore
                                 </div>
                                 <div class="flex gap-3">
                                     <button type="button" class="emporia-thumb group w-16 h-12 bg-olive-300 rounded-lg border border-olive-400 overflow-hidden hover:bg-olive-400/60 transition-colors" data-modal-src="/assets/images/energy-monitoring/Emporia_Vue_physical_install.jpeg" data-modal-alt="Emporia Vue physical install">
-                                        <img src="/assets/images/energy-monitoring/Emporia_Vue_physical_install.jpeg" alt="Emporia Vue physical install" class="w-full h-full object-cover">
+                                        <img src="/assets/images/energy-monitoring/Emporia_Vue_physical_install.jpeg" alt="Emporia Vue physical install" loading="lazy" decoding="async" class="w-full h-full object-cover">
                                     </button>
                                     <button type="button" class="emporia-thumb group w-16 h-12 bg-olive-300 rounded-lg border border-olive-400 overflow-hidden hover:bg-olive-400/60 transition-colors" data-modal-src="/assets/images/energy-monitoring/Emporia_Vue_digital_Display.jpeg" data-modal-alt="Emporia Vue display">
-                                        <img src="/assets/images/energy-monitoring/Emporia_Vue_digital_Display.jpeg" alt="Emporia Vue display" class="w-full h-full object-cover">
+                                        <img src="/assets/images/energy-monitoring/Emporia_Vue_digital_Display.jpeg" alt="Emporia Vue display" loading="lazy" decoding="async" class="w-full h-full object-cover">
                                     </button>
                                 </div>
                             </div>
@@ -251,6 +251,14 @@ title: Energy Monitoring - Techmore
                     }
                 });
             }
+
+            function printGuide(path) {
+                var w = window.open(path);
+                if (!w) return;
+                w.addEventListener('load', function() { w.print(); });
+            }
+
+            window.printGuide = printGuide;
         })();
     </script>
 
@@ -462,7 +470,7 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase1_erv_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/phase1_erv_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase1_erv_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
@@ -487,7 +495,7 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase2_heatpump_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/phase2_heatpump_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase2_heatpump_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
@@ -511,7 +519,7 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase3_visual_dashboard/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/phase3_visual_dashboard/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase3_visual_dashboard/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
@@ -555,7 +563,7 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/energy-monitoring/solar/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">Open calculator</a>
-                    <button onclick="printGuide('/energy-monitoring/solar/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/energy-monitoring/solar/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
