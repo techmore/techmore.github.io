@@ -26,31 +26,7 @@ title: F.I.R.E. - Techmore
     <section id="blog-posts" class="pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid gap-6 lg:grid-cols-3">
-                <div class="bg-olive-200/80 rounded-3xl border border-olive-400 p-6 shadow-sm">
-                    <p class="text-xs text-olive-600 font-mono tracking-widest uppercase">F.I.R.E. Index</p>
-                    <h2 class="mt-3 text-2xl text-olive-950">Blog Posts</h2>
-                    <p class="mt-3 text-base text-olive-800">Savings wins, infrastructure upgrades, and long-term financial optimization in one running log. The goal is simple: reduce recurring costs, improve resilience, and reinvest the delta.</p>
-                    <div class="mt-6 space-y-4">
-                        <div class="border-l border-olive-400 pl-4">
-                            <p class="text-sm text-olive-700">Completed savings</p>
-                            <p class="text-lg text-olive-950 font-semibold">~$1,800-2,100/year</p>
-                        </div>
-                        <div class="border-l border-olive-400 pl-4">
-                            <p class="text-sm text-olive-700">Projected upside</p>
-                            <p class="text-lg text-olive-950 font-semibold">~$1,800-2,500/year</p>
-                        </div>
-                        <div class="border-l border-olive-400 pl-4">
-                            <p class="text-sm text-olive-700">Coverage</p>
-                            <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
-                                <li>Utilities and recurring services</li>
-                                <li>Network and energy infrastructure</li>
-                                <li>Cash management and household purchasing</li>
-                                <li>Future capital projects with ROI modeling</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-2 bg-olive-200/70 rounded-3xl border border-olive-400 p-6 shadow-sm">
+                <div class="bg-olive-200/80 rounded-3xl border border-olive-400 p-6 shadow-sm" id="content-grid">
                     <h2 class="text-2xl text-olive-950 mb-4">Browse the Feed</h2>
                     <div class="space-y-4">
                         <a href="#electrical" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-400">
@@ -113,6 +89,36 @@ title: F.I.R.E. - Techmore
                                 </ul>
                             </div>
                         </a>
+                        <a href="#solar" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-400">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">☀️</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base text-olive-900 font-semibold">Solar</h3>
+                                    <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">Projection</span>
+                                </div>
+                                <p class="text-sm text-olive-700">6kWh goal with 24-hour backup</p>
+                                <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
+                                    <li>Phased solar and battery roadmap</li>
+                                    <li>Load profile and ROI assumptions</li>
+                                    <li>Off-grid comfort vs cost tradeoffs</li>
+                                </ul>
+                            </div>
+                        </a>
+                        <a href="#unifi" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-400">
+                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">📡</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <h3 class="text-base text-olive-900 font-semibold">UniFi</h3>
+                                    <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">Project</span>
+                                </div>
+                                <p class="text-sm text-olive-700">Network build</p>
+                                <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
+                                    <li>Firewall, switching, and AP design</li>
+                                    <li>Per-building rollout model</li>
+                                    <li>Cost summary for resilient local networking</li>
+                                </ul>
+                            </div>
+                        </a>
                         <a href="#septic" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-400">
                             <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">🚽</div>
                             <div class="flex-1 min-w-0">
@@ -122,18 +128,6 @@ title: F.I.R.E. - Techmore
                                     <li>Maintenance cadence and invoice review</li>
                                     <li>Service pricing context</li>
                                     <li>Low-drama upkeep guidance</li>
-                                </ul>
-                            </div>
-                        </a>
-                        <a href="#unifi" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-400">
-                            <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">📡</div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-base text-olive-900 font-semibold">UniFi</h3>
-                                <p class="text-sm text-olive-700">Network build</p>
-                                <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
-                                    <li>Firewall, switching, and AP design</li>
-                                    <li>Per-building rollout model</li>
-                                    <li>Cost summary for resilient local networking</li>
                                 </ul>
                             </div>
                         </a>
@@ -152,6 +146,33 @@ title: F.I.R.E. - Techmore
                                 </ul>
                             </div>
                         </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 bg-olive-200/70 rounded-3xl border border-olive-400 p-6 shadow-sm">
+                    <p class="text-xs text-olive-600 font-mono tracking-widest uppercase">F.I.R.E. Index</p>
+                    <h2 class="mt-3 text-2xl text-olive-950">Blog Posts</h2>
+                    <p class="mt-3 text-base text-olive-800">This feed tracks the operating system behind financial independence: cut recurring costs, understand which systems drive spending, and document where larger infrastructure projects can buy back future flexibility.</p>
+                    <p class="mt-4 text-base text-olive-800">The completed posts are the fast wins: rate shopping, service plan cleanup, internet and phone optimization, cash yield improvement, and more disciplined household purchasing. The project-tagged and projection-tagged posts are the next layer: capital improvements where the payoff comes from reliability, efficiency, or lower long-term utility exposure.</p>
+                    <div class="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Completed Savings</p>
+                            <p class="text-sm text-olive-700">~$1,800-2,100/year already captured through plan changes, pricing fixes, and account optimization.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Future Upside</p>
+                            <p class="text-sm text-olive-700">~$1,800-2,500/year additional upside tied to water heating, solar, and systems-level upgrades.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Completed Posts</p>
+                            <p class="text-sm text-olive-700">Electrical, cell phone, internet, Betterment, Costco, and septic focus on current-state operating expense reductions.</p>
+                        </div>
+                        <div class="flex flex-col gap-y-2 border-l border-olive-400 pl-6">
+                            <p class="text-lg text-olive-950 font-semibold tracking-tight">Future Projects</p>
+                            <p class="text-sm text-olive-700">UniFi is marked as <code class="bg-olive-100 px-1 rounded text-olive-800 font-mono text-xs">Project</code>; heat pump and solar are marked as <code class="bg-olive-100 px-1 rounded text-olive-800 font-mono text-xs">Projection</code> so future-state work is visible without mixing it with booked savings.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 border-t border-olive-400 pt-4">
+                        <p class="text-sm text-olive-800">Once this top index is final, the lower legacy index can be removed without losing navigability.</p>
                     </div>
                 </div>
             </div>
