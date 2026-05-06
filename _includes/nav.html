@@ -16,12 +16,11 @@
                         </div>
                     </div>
                     <a href="/pages/books/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url contains '/pages/books' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Books</a>
-                    <a href="/pages/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/pages/' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Index</a>
-                    <a href="/#github-work" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium">Work</a>
+                    <a href="/pages/repos/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url contains '/pages/repos' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Repos</a>
                     
                     <!-- Misc Dropdown -->
                     <div class="relative group">
-                        <button class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/pages/writingprompts' or page.url contains '/pages/guitar' or page.url contains '/pages/dnd' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Misc ▾</button>
+                        <button class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url contains '/pages/writingprompts' or page.url contains '/pages/guitar' or page.url contains '/pages/dnd' or page.url contains '/pages/misc/taxes' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Misc ▾</button>
                         <div class="absolute left-0 mt-1 w-56 bg-olive-50 rounded-lg border border-olive-400 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                             <a href="/" class="block px-3 py-2 rounded-t-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/' %} bg-olive-100 text-olive-800{% endif %}">Blog</a>
                             <a href="/pages/writingprompts/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/writingprompts/' %} bg-olive-100 text-olive-800{% endif %}">Writing Prompts</a>
@@ -30,6 +29,7 @@
                             <a href="/pages/misc/taxes/" class="block px-3 py-2 rounded-b-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/misc/taxes/' %} bg-olive-100 text-olive-800{% endif %}">PA Taxes</a>
                         </div>
                     </div>
+                    <a href="/pages/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/pages/' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Site Index</a>
                 </div>
                 <a href="https://github.com/techmore/techmore.github.io" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-olive-200 text-sm text-stone-500 hover:bg-olive-100 hover:text-olive-800 transition-colors" aria-label="Techmore GitHub">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
