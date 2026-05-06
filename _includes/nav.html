@@ -1,35 +1,35 @@
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-olive-950 text-olive-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-8 w-full justify-center md:justify-start">
-                    <a href="/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-800{% endif %}">F.I.R.E.</a>
+    <nav class="sticky top-0 z-50 bg-olive-50/85 backdrop-blur-md border-b border-olive-200/60 text-stone-800 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-5 lg:px-6">
+            <div class="flex items-center justify-between h-14">
+                <div class="flex items-center gap-1 w-full justify-center md:justify-start">
+                    <a href="/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">F.I.R.E.</a>
                     <!-- Energy Dropdown -->
                     <div class="relative group">
-                        <a href="/pages/energy-monitoring/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/pages/energy-monitoring/' or page.url contains '/pages/phase1_erv_guide' or page.url contains '/pages/phase2_heatpump_guide' or page.url contains '/pages/phase3_visual_dashboard' or page.url contains '/pages/energy-monitoring/solar' %} bg-olive-800{% endif %}">Energy ▾</a>
-                        <div class="absolute left-0 mt-0 w-56 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                            <a href="/pages/energy-monitoring/" class="block px-4 py-2 hover:bg-olive-700 rounded-t-lg text-sm{% if page.url == '/pages/energy-monitoring/' %} bg-olive-700{% endif %}">Overview</a>
-                            <a href="/pages/phase1_erv_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase1_erv_guide' %} bg-olive-700{% endif %}">Phase 1 — ERV Guide</a>
-                            <a href="/pages/phase2_heatpump_guide/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase2_heatpump_guide' %} bg-olive-700{% endif %}">Phase 2 — Heat Pump Guide</a>
-                            <a href="/pages/phase3_visual_dashboard/" class="block px-4 py-2 hover:bg-olive-700 text-sm{% if page.url contains '/pages/phase3_visual_dashboard' %} bg-olive-700{% endif %}">Phase 3 — Visual Dashboard</a>
-                            <a href="/pages/energy-monitoring/solar/" class="block px-4 py-2 hover:bg-olive-700 rounded-b-lg text-sm{% if page.url contains '/pages/energy-monitoring/solar' %} bg-olive-700{% endif %}">Phase 5 — Solar Offset</a>
+                        <a href="/pages/energy-monitoring/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/pages/energy-monitoring/' or page.url contains '/pages/phase1_erv_guide' or page.url contains '/pages/phase2_heatpump_guide' or page.url contains '/pages/phase3_visual_dashboard' or page.url contains '/pages/energy-monitoring/solar' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Energy ▾</a>
+                        <div class="absolute left-0 mt-1 w-60 bg-olive-50/95 backdrop-blur-md rounded-lg border border-olive-200 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="/pages/energy-monitoring/" class="block px-3 py-2 rounded-t-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/energy-monitoring/' %} bg-olive-100 text-olive-800{% endif %}">Overview</a>
+                            <a href="/pages/phase1_erv_guide/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url contains '/pages/phase1_erv_guide' %} bg-olive-100 text-olive-800{% endif %}">Phase 1 — ERV Guide</a>
+                            <a href="/pages/phase2_heatpump_guide/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url contains '/pages/phase2_heatpump_guide' %} bg-olive-100 text-olive-800{% endif %}">Phase 2 — Heat Pump Guide</a>
+                            <a href="/pages/phase3_visual_dashboard/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url contains '/pages/phase3_visual_dashboard' %} bg-olive-100 text-olive-800{% endif %}">Phase 3 — Visual Dashboard</a>
+                            <a href="/pages/energy-monitoring/solar/" class="block px-3 py-2 rounded-b-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url contains '/pages/energy-monitoring/solar' %} bg-olive-100 text-olive-800{% endif %}">Phase 5 — Solar Offset</a>
                         </div>
                     </div>
-                    <a href="/pages/books/" class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url contains '/pages/books' %} bg-olive-800{% endif %}">Books</a>
+                    <a href="/pages/books/" class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url contains '/pages/books' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Books</a>
                     
                     <!-- Misc Dropdown -->
                     <div class="relative group">
-                        <button class="px-4 py-2 rounded-lg hover:bg-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/pages/writingprompts' or page.url contains '/pages/guitar' or page.url contains '/pages/dnd' %} bg-olive-800{% endif %}">Misc ▾</button>
-                        <div class="absolute left-0 mt-0 w-56 bg-olive-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                            <a href="/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/' %} bg-olive-700{% endif %}">Blog</a>
-                            <a href="/pages/writingprompts/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/writingprompts/' %} bg-olive-700{% endif %}">Writing Prompts</a>
-                            <a href="/pages/guitar/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/guitar/' %} bg-olive-700{% endif %}">Guitar</a>
-                            <a href="/pages/dnd/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/dnd/' %} bg-olive-700{% endif %}">DnD 5e</a>
-                            <a href="/pages/misc/taxes/" class="block px-4 py-2 hover:bg-olive-700 rounded-lg{% if page.url == '/pages/misc/taxes/' %} bg-olive-700{% endif %}">PA Taxes</a>
+                        <button class="px-3 py-1.5 rounded-md text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800 transition-colors font-medium{% if page.url == '/' or page.url contains '/pages/writingprompts' or page.url contains '/pages/guitar' or page.url contains '/pages/dnd' %} bg-olive-600 text-olive-50 hover:bg-olive-600 hover:text-olive-50{% endif %}">Misc ▾</button>
+                        <div class="absolute left-0 mt-1 w-56 bg-olive-50/95 backdrop-blur-md rounded-lg border border-olive-200 shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                            <a href="/" class="block px-3 py-2 rounded-t-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/' %} bg-olive-100 text-olive-800{% endif %}">Blog</a>
+                            <a href="/pages/writingprompts/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/writingprompts/' %} bg-olive-100 text-olive-800{% endif %}">Writing Prompts</a>
+                            <a href="/pages/guitar/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/guitar/' %} bg-olive-100 text-olive-800{% endif %}">Guitar</a>
+                            <a href="/pages/dnd/" class="block px-3 py-2 text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/dnd/' %} bg-olive-100 text-olive-800{% endif %}">DnD 5e</a>
+                            <a href="/pages/misc/taxes/" class="block px-3 py-2 rounded-b-lg text-sm text-stone-600 hover:bg-olive-100 hover:text-olive-800{% if page.url == '/pages/misc/taxes/' %} bg-olive-100 text-olive-800{% endif %}">PA Taxes</a>
                         </div>
                     </div>
                 </div>
-                <a href="https://github.com/techmore/techmore.github.io" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-olive-700 text-sm text-olive-200 hover:bg-olive-800 transition-colors" aria-label="Techmore GitHub">
+                <a href="https://github.com/techmore/techmore.github.io" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-olive-200 text-sm text-stone-500 hover:bg-olive-100 hover:text-olive-800 transition-colors" aria-label="Techmore GitHub">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.48l-.01-1.7c-2.78.62-3.37-1.2-3.37-1.2-.45-1.2-1.1-1.52-1.1-1.52-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.94.85.09-.67.35-1.11.64-1.36-2.22-.26-4.55-1.15-4.55-5.1 0-1.13.39-2.06 1.03-2.78-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05.8-.23 1.66-.35 2.51-.35.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.56 1.41.21 2.46.11 2.72.64.72 1.03 1.65 1.03 2.78 0 3.96-2.34 4.84-4.57 5.09.36.32.69.95.69 1.92l-.01 2.85c0 .27.18.59.69.48 3.97-1.35 6.84-5.18 6.84-9.7C22 6.58 17.52 2 12 2z"/>
                     </svg>

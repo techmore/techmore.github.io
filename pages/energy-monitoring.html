@@ -3,7 +3,7 @@ layout: default
 title: Energy Monitoring - Techmore
 ---
 
-<main class="bg-olive-50">
+<main class="bg-olive-300">
     <!-- Command Bar -->
     <section class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ title: Energy Monitoring - Techmore
     <section id="browse" class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid gap-6 lg:grid-cols-3">
-                <div class="bg-olive-200/80 rounded-3xl border border-olive-300 p-6 shadow-sm" id="content-grid">
+                <div class="bg-olive-200/80 rounded-xl border border-olive-300 p-6 shadow-sm" id="content-grid">
                     <div class="space-y-4">
                         <a href="/pages/energy-monitoring/" class="flex items-start gap-4 p-4 bg-olive-200 rounded-xl hover:bg-olive-400/60 transition-colors border border-olive-300">
                             <div class="w-12 h-12 bg-olive-300 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">⚡</div>
@@ -82,7 +82,7 @@ title: Energy Monitoring - Techmore
                         </a>
                     </div>
                 </div>
-                <div class="lg:col-span-2 bg-olive-200/70 rounded-3xl border border-olive-300 p-6 shadow-sm">
+                <div class="lg:col-span-2 bg-olive-200/70 rounded-xl border border-olive-300 p-6 shadow-sm">
                     <h2 class="text-2xl text-olive-950 mb-4">Project Overview</h2>
                     <p class="text-base text-olive-800 mb-4">This is a fully local, open-source home intelligence system built around two goals: minimize heating and cooling costs while maintaining measurable comfort. It integrates every layer of the home's HVAC stack — ventilation, heat pump, indoor air quality, and whole-home power monitoring — into a single data pipeline with a unified web dashboard.</p>
                     <p class="text-base text-olive-800 mb-4">The system uses two Broan ERV units connected via RS-485 to ESP32 microcontrollers running ESPHome, feeding ventilation metrics into an MQTT broker. Aqara temperature and humidity sensors provide per-room indoor conditions. A Mitsubishi Hyper Heat mini-split is controlled via its CN105 serial port, bypassing cloud dependencies entirely. Emporia Vue monitors per-circuit power consumption as an independent ground-truth validator. Open-Meteo provides free, no-key 48-hour weather forecasts used for proactive scheduling — pre-cooling before a heat wave, pre-heating before a cold front.</p>
@@ -128,7 +128,7 @@ title: Energy Monitoring - Techmore
                     <div class="mt-6 border-t border-olive-400 pt-4">
                         <p class="text-sm text-olive-800">Automation layer handles pre-heat/pre-cool logic, ERV scheduling, and alerts when usage drifts.</p>
                     </div>
-                    <div id="phase-4" class="mt-6 rounded-2xl border border-olive-300 bg-olive-100/70 p-4">
+                    <div id="phase-4" class="mt-6 rounded-xl border border-olive-300 bg-olive-100/70 p-4">
                         <p class="text-xs font-mono tracking-widest uppercase text-olive-600 mb-2">Phase 4 — Expansion Monitoring</p>
                         <p class="text-sm text-olive-800">Add NUTS UPS telemetry and Kasa switch power monitoring to extend reliability tracking and spot-load visibility. This phase layers onto the existing MQTT + SQLite pipeline.</p>
                     </div>
@@ -139,7 +139,7 @@ title: Energy Monitoring - Techmore
 
 
     <div id="emporia-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-olive-950/80 px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="emporia-modal-title" tabindex="-1">
-        <div class="relative w-full max-w-3xl bg-olive-200 rounded-2xl border border-olive-400 shadow-lg">
+        <div class="relative w-full max-w-3xl bg-olive-200 rounded-xl border border-olive-400 shadow-sm">
             <button type="button" id="emporia-close" class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-olive-300 text-olive-900 hover:bg-olive-400/60 transition-colors" aria-label="Close modal">✕</button>
             <div class="p-4 sm:p-6">
                 <h2 id="emporia-modal-title" class="sr-only">Emporia Vue image preview</h2>
@@ -221,7 +221,7 @@ title: Energy Monitoring - Techmore
         })();
     </script>
 
-<section class="py-16 bg-white border-t border-olive-200">
+<section class="py-16 bg-olive-200 border-t border-olive-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between mb-6">
             <div>
@@ -237,7 +237,7 @@ title: Energy Monitoring - Techmore
         <p class="text-olive-500 font-mono text-xs tracking-widest uppercase mb-8">Hardware &amp; data flow</p>
 
         <!-- Architecture diagram -->
-        <div class="bg-olive-950 rounded-2xl p-6 md:p-8 mb-8 overflow-x-auto">
+        <div class="bg-olive-950 rounded-xl p-6 md:p-8 mb-8 overflow-x-auto">
             <svg viewBox="0 0 720 380" width="100%" style="display:block;max-width:720px;margin:0 auto;">
                 <defs>
                     <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -272,7 +272,7 @@ title: Energy Monitoring - Techmore
 
                 <text x="360" y="130" fill="oklch(50% 0.030 110)" font-family="monospace" font-size="9" text-anchor="middle" letter-spacing="3">BROKER LAYER</text>
                 <rect x="210" y="140" width="300" height="40" rx="4" fill="oklch(22% 0.020 110)" stroke="oklch(42% 0.045 110)" stroke-width="1.5"/>
-                <text x="360" y="158" fill="oklch(80% 0.035 110)" font-family="monospace" font-size="10"  text-anchor="middle" font-weight="bold">Mosquitto MQTT Broker</text>
+                <text x="360" y="158" fill="oklch(64.26% 0.0588 117.06)" font-family="monospace" font-size="10"  text-anchor="middle" font-weight="bold">Mosquitto MQTT Broker</text>
                 <text x="360" y="172" fill="oklch(50% 0.025 110)" font-family="monospace" font-size="7.5" text-anchor="middle">erv/#  heatpump/#  power/#  aqara/#</text>
 
                 <line x1="75"  y1="76" x2="280" y2="140" stroke="oklch(45% 0.035 110)" stroke-width="1" marker-end="url(#arr)" stroke-dasharray="4,3"/>
@@ -292,8 +292,8 @@ title: Energy Monitoring - Techmore
                 <text x="230" y="340" fill="oklch(50% 0.025 110)" font-family="monospace" font-size="7.5" text-anchor="middle">time-series · events · COP curve</text>
                 <line x1="230" y1="278" x2="230" y2="308" stroke="oklch(45% 0.035 110)" stroke-width="1" marker-end="url(#arr-a)"/>
 
-                <rect x="390" y="308" width="200" height="40" rx="4" fill="oklch(22% 0.020 110)" stroke="oklch(55% 0.040 110)" stroke-width="1.5"/>
-                <text x="490" y="326" fill="oklch(80% 0.035 110)" font-family="monospace" font-size="10"  text-anchor="middle" font-weight="bold">Web Dashboard</text>
+                <rect x="390" y="308" width="200" height="40" rx="4" fill="oklch(22% 0.020 110)" stroke="oklch(55.34% 0.0116 58.07)" stroke-width="1.5"/>
+                <text x="490" y="326" fill="oklch(64.26% 0.0588 117.06)" font-family="monospace" font-size="10"  text-anchor="middle" font-weight="bold">Web Dashboard</text>
                 <text x="490" y="340" fill="oklch(50% 0.025 110)" font-family="monospace" font-size="7.5" text-anchor="middle">local browser · charts · controls</text>
                 <line x1="490" y1="278" x2="490" y2="308" stroke="oklch(45% 0.035 110)" stroke-width="1" marker-end="url(#arr)"/>
             </svg>
@@ -301,27 +301,27 @@ title: Energy Monitoring - Techmore
 
         <!-- Component cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-olive-50 rounded-xl border border-olive-200 p-6">
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
                 <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-2">Ventilation</p>
                 <h3 class="text-xl text-olive-950 mb-2">Broan B210E75RT ERV ×2</h3>
                 <p class="text-olive-700 text-sm leading-relaxed">Each unit communicates over RS-485 Modbus via a MAX485 module wired to an ESP32-S3 running ESPHome. Exposes intake/exhaust temperature, CFM, power draw, and filter life. Commands (Min / Med / Max / Turbo) are sent over MQTT. The automation engine adjusts fan mode based on outdoor conditions and indoor air quality.</p>
             </div>
-            <div class="bg-olive-50 rounded-xl border border-olive-200 p-6">
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
                 <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-2">Heating &amp; Cooling</p>
                 <h3 class="text-xl text-olive-950 mb-2">Mitsubishi Hyper Heat</h3>
                 <p class="text-olive-700 text-sm leading-relaxed">Controlled via the CN105 serial port using the SwiCago ESPHome HeatPump component — fully local, no cloud. Exposes mode, setpoint, true outdoor temperature from the compressor sensor, compressor frequency, and defrost state. The pre-heat scheduler raises setpoint before high-efficiency windows close.</p>
             </div>
-            <div class="bg-olive-50 rounded-xl border border-olive-200 p-6">
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
                 <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-2">Indoor Conditions</p>
                 <h3 class="text-xl text-olive-950 mb-2">Aqara Hub V3 + Sensors</h3>
                 <p class="text-olive-700 text-sm leading-relaxed">Per-room temperature and humidity sensors on Zigbee, bridged to MQTT via Home Assistant, the Aqara Cloud API, or Zigbee2MQTT. Sensors placed in the main floor, upstairs landing, basement, and near the ERV supply-air outlet give the automation engine room-level comfort data.</p>
             </div>
-            <div class="bg-olive-50 rounded-xl border border-olive-200 p-6">
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
                 <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-2">Power Validation</p>
                 <h3 class="text-xl text-olive-950 mb-2">Emporia Vue</h3>
                 <p class="text-olive-700 text-sm leading-relaxed">Per-circuit watt monitoring polled every 60 seconds via the <code class="bg-olive-100 px-1 rounded text-olive-800 font-mono text-xs">pyemvue</code> library. Completely independent of what the CN105 reports — this is the ground-truth validator. If the heat pump draws power when it shouldn't, the watchdog detects it from the wire and re-issues the off command.</p>
             </div>
-            <div class="bg-olive-50 rounded-xl border border-olive-200 p-6 md:col-span-2">
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 md:col-span-2">
                 <p class="font-mono text-xs tracking-widest text-olive-500 uppercase mb-2">Weather Forecasting</p>
                 <h3 class="text-xl text-olive-950 mb-2">Open-Meteo — 48-hour forecast, free, no API key</h3>
                 <p class="text-olive-700 text-sm leading-relaxed">Polled every 15 minutes. Returns current outdoor temp and humidity plus 48 hourly data points including temperature, dewpoint, precipitation probability, and wind speed. The ERV automation uses forecast to ventilate aggressively before a cold front hits and close down when outdoor humidity spikes. The heat pump scheduler uses it to identify high-COP heating windows up to 12 hours ahead — pre-loading thermal mass when efficiency is best, letting the house coast when COP is worst.</p>
@@ -335,7 +335,7 @@ title: Energy Monitoring - Techmore
         <p class="text-olive-500 font-mono text-xs tracking-widest uppercase mb-8">What done looks like</p>
 
         <div class="space-y-3">
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">1</span>
                 </div>
@@ -344,7 +344,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">Intake and exhaust temperature, CFM, power draw, and filter life for each Broan unit are visible in the SQLite database and web dashboard with no gaps longer than 60 seconds. ERV fan mode can be commanded from the dashboard and confirmed via RS-485 response.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">2</span>
                 </div>
@@ -353,7 +353,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">The 7-rule priority engine runs every 5 minutes. Every decision is logged with a human-readable reason. Manual overrides expire after 2 hours and automation resumes. The system can be paused from the dashboard without modifying configuration files.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">3</span>
                 </div>
@@ -362,7 +362,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">CN105 adapter reports mode, setpoint, compressor frequency, and outdoor temperature to MQTT. Every commanded change is confirmed against both CN105 state and Emporia wattage within 90 seconds. Three failed confirmations trigger an alert. No Kumo Cloud or internet connection required for any control function.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">4</span>
                 </div>
@@ -371,7 +371,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">After two weeks of logging, a SQL query groups Emporia wattage by 5°F outdoor temperature buckets to produce the unit's actual efficiency curve. This replaces spec-sheet estimates and gives the scheduler accurate cost-per-hour values at every outdoor temperature the system will encounter.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">5</span>
                 </div>
@@ -380,7 +380,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">The scheduler detects when outdoor temperature will drop more than 20°F within 8 hours and pre-loads thermal mass while COP is high. Before heat waves it drops setpoint during the overnight cool window. Every scheduled change is logged with the forecast that triggered it, so the rationale is always traceable.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">6</span>
                 </div>
@@ -389,7 +389,7 @@ title: Energy Monitoring - Techmore
                     <p class="text-sm text-olive-600">The dashboard shows actual $/day heating and cooling cost derived from Emporia circuit data and the local electricity rate. After 30 days of COP-aware scheduling, measured cost-per-heating-degree-day is lower than the pre-automation baseline captured during the data-collection phase.</p>
                 </div>
             </div>
-            <div class="flex gap-4 bg-olive-50 rounded-xl border border-olive-200 p-5">
+            <div class="flex gap-4 bg-olive-200 rounded-xl border border-olive-400 p-5">
                 <div class="flex-shrink-0 w-8 h-8 rounded-full bg-olive-200 flex items-center justify-center">
                     <span class="font-mono text-xs font-bold text-olive-700">7</span>
                 </div>
@@ -409,7 +409,7 @@ title: Energy Monitoring - Techmore
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
             <!-- Phase 1 -->
-            <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+            <div class="flex flex-col bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
                 <div class="px-6 pt-6 pb-8 bg-olive-950">
                     <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-400">Phase 1 of 3</p>
                     <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">ERV Integration,<br>Monitoring &amp;<br>Weather Automation</h3>
@@ -429,12 +429,12 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase1_erv_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/pages/phase1_erv_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase1_erv_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-400 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
             <!-- Phase 2 -->
-            <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+            <div class="flex flex-col bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
                 <div class="px-6 pt-6 pb-8 bg-olive-900">
                     <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-400">Phase 2 of 3</p>
                     <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Heat Pump Intelligence<br>&amp; Power<br>Validation</h3>
@@ -454,12 +454,12 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase2_heatpump_guide/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/pages/phase2_heatpump_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase2_heatpump_guide/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-400 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
             <!-- Phase 3 -->
-            <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+            <div class="flex flex-col bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
                 <div class="px-6 pt-6 pb-8 bg-olive-800">
                     <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-200">Phase 3 of 5</p>
                     <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Visual House Model<br>&amp; Unified<br>Dashboard</h3>
@@ -478,12 +478,12 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/phase3_visual_dashboard/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View guide</a>
-                    <button onclick="printGuide('/pages/phase3_visual_dashboard/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/phase3_visual_dashboard/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-400 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
             <!-- Phase 4 -->
-            <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+            <div class="flex flex-col bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
                 <div class="px-6 pt-6 pb-8 bg-olive-700">
                     <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-100">Phase 4 of 5</p>
                     <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Expansion Monitoring<br>&amp; Reliability</h3>
@@ -500,12 +500,12 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="#phase-4" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">View phase</a>
-                    <a href="/pages/energy-monitoring/" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors">Overview</a>
+                    <a href="/pages/energy-monitoring/" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-400 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors">Overview</a>
                 </div>
             </div>
 
             <!-- Phase 5 -->
-            <div class="flex flex-col bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+            <div class="flex flex-col bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
                 <div class="px-6 pt-6 pb-8 bg-olive-700">
                     <p class="mb-3 font-mono text-xs tracking-widest uppercase text-olive-100">Phase 5 of 5</p>
                     <h3 class="text-2xl font-display italic text-olive-50 leading-tight mb-2">Solar Offset<br>&amp; System<br>Sizing</h3>
@@ -522,7 +522,7 @@ title: Energy Monitoring - Techmore
                 </div>
                 <div class="flex gap-3 px-6 pt-2 pb-6">
                     <a href="/pages/energy-monitoring/solar/" class="flex-1 text-center bg-olive-950 text-olive-50 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-800 transition-colors">Open calculator</a>
-                    <button onclick="printGuide('/pages/energy-monitoring/solar/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-200 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
+                    <button onclick="printGuide('/pages/energy-monitoring/solar/')" class="flex-1 text-center bg-olive-100 text-olive-700 border border-olive-400 px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-olive-200 transition-colors cursor-pointer">Download PDF</button>
                 </div>
             </div>
 
@@ -534,10 +534,10 @@ title: Energy Monitoring - Techmore
         <h2 class="text-3xl text-olive-950 mb-2">Full stack at a glance</h2>
         <p class="text-olive-500 font-mono text-xs tracking-widest uppercase mb-8">Every tool, library, and service involved</p>
 
-        <div class="bg-olive-50 rounded-2xl border border-olive-200 overflow-hidden">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 overflow-hidden">
             <table class="w-full text-sm">
                 <thead>
-                    <tr class="bg-olive-100 border-b border-olive-200">
+                    <tr class="bg-olive-100 border-b border-olive-400">
                         <th class="text-left px-6 py-3 text-olive-700 font-mono text-xs tracking-wider uppercase">Layer</th>
                         <th class="text-left px-6 py-3 text-olive-700 font-mono text-xs tracking-wider uppercase">Technology</th>
                         <th class="text-left px-6 py-3 text-olive-700 font-mono text-xs tracking-wider uppercase hidden md:table-cell">Purpose</th>

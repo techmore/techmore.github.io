@@ -4,18 +4,18 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
 ---
 <style>
   :root {
-    --bg:      oklch(91% 0.012 106.5);
-    --panel:   oklch(96% 0.015 110);
-    --border:  oklch(85% 0.028 110);
-    --accent:  oklch(35% 0.045 110);
+    --bg:      oklch(82.52% 0.0345 116.34);
+    --panel:   oklch(90.20% 0.0232 117.63);
+    --border:  oklch(73.59% 0.0492 116.81);
+    --accent:  oklch(46.42% 0.0493 117.00);
     --accent2: oklch(48% 0.100 60);
     --green:   oklch(38% 0.090 145);
     --yellow:  oklch(52% 0.130 75);
     --red:     oklch(45% 0.160 25);
     --purple:  oklch(42% 0.120 290);
-    --muted:   oklch(62% 0.055 110);
-    --text:    oklch(22% 0.025 110);
-    --subtext: oklch(50% 0.045 110);
+    --muted:   oklch(55.34% 0.0116 58.07);
+    --text:    oklch(26.85% 0.0063 34.30);
+    --subtext: oklch(55.34% 0.0116 58.07);
     --mono:    'Inter', ui-monospace, monospace;
     --head:    'Instrument Serif', serif;
     --body:    'Inter', system-ui, sans-serif;
@@ -39,7 +39,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
 
   /* ── Hero ── */
   .hero {
-    background: oklch(16% 0.015 110);
+    background: oklch(24.22% 0.0185 116.99);
     border-radius: 16px;
     padding: 2.5rem 2rem 2rem;
     margin-bottom: 0;
@@ -51,7 +51,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
     background: radial-gradient(circle, oklch(35% 0.040 110 / 0.18) 0%, transparent 70%);
     pointer-events: none;
   }
-  .hero-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: oklch(55% 0.040 110); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .hero-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: oklch(55.34% 0.0116 58.07); text-transform: uppercase; margin-bottom: 0.75rem; }
   .hero h1 { font-family: var(--head); font-style: italic; font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 400; line-height: 1.1; color: oklch(96% 0.012 110); margin-bottom: 0.5rem; }
   .hero h1 span { color: oklch(75% 0.040 110); }
   .hero-sub { color: oklch(62% 0.030 110); font-size: 14px; max-width: 620px; margin-bottom: 1.5rem; }
@@ -104,7 +104,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
 
   /* ── Tables ── */
   .pin-table { width: 100%; border-collapse: collapse; font-size: 13px; font-family: var(--mono); }
-  .pin-table th { text-align: left; font-size: 10px; letter-spacing: 0.1em; color: var(--subtext); text-transform: uppercase; padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); background: oklch(93% 0.016 110); }
+  .pin-table th { text-align: left; font-size: 10px; letter-spacing: 0.1em; color: var(--subtext); text-transform: uppercase; padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); background: oklch(90.20% 0.0232 117.63); }
   .pin-table th.green  { color: var(--green); }
   .pin-table th.orange { color: var(--accent2); }
   .pin-table td { padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); }
@@ -115,7 +115,7 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   .arrow { color: var(--muted); }
 
   /* ── Code ── */
-  pre { background: oklch(16% 0.015 110); border: 1px solid oklch(25% 0.020 110); border-left: 3px solid var(--accent); border-radius: 6px; padding: 1rem 1.25rem; font-family: var(--mono); font-size: 12px; color: oklch(80% 0.020 110); overflow-x: auto; line-height: 1.7; margin-bottom: 1rem; }
+  pre { background: oklch(24.22% 0.0185 116.99); border: 1px solid oklch(25% 0.020 110); border-left: 3px solid var(--accent); border-radius: 6px; padding: 1rem 1.25rem; font-family: var(--mono); font-size: 12px; color: oklch(80% 0.020 110); overflow-x: auto; line-height: 1.7; margin-bottom: 1rem; }
   pre.green  { border-left-color: var(--green); }
   pre.orange { border-left-color: var(--accent2); }
   pre.purple { border-left-color: var(--purple); }
@@ -126,11 +126,11 @@ title: Phase 1 — ERV Integration, Monitoring & Weather Automation - Techmore
   code { font-family: var(--mono); font-size: 12px; background: oklch(91% 0.020 110); color: var(--accent); padding: 1px 5px; border-radius: 3px; border: 1px solid var(--border); }
 
   /* ── Diagram ── */
-  .diagram-wrap { background: oklch(16% 0.015 110); border: 1px solid oklch(25% 0.020 110); border-radius: 8px; padding: 1.5rem; overflow-x: auto; margin-bottom: 1rem; }
+  .diagram-wrap { background: oklch(24.22% 0.0185 116.99); border: 1px solid oklch(25% 0.020 110); border-radius: 8px; padding: 1.5rem; overflow-x: auto; margin-bottom: 1rem; }
 
   /* ── Rule table ── */
   .rule-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1rem 0; }
-  .rule-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--subtext); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); background: oklch(93% 0.016 110); }
+  .rule-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--subtext); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); background: oklch(90.20% 0.0232 117.63); }
   .rule-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; font-size: 12px; }
   .rule-table tr:last-child td { border-bottom: none; }
   .rule-table td.cond   { font-family: var(--mono); color: var(--accent); font-size: 11px; }

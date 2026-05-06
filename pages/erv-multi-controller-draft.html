@@ -5,13 +5,13 @@ title: Broan ERV Custom Controller — Full Build Guide - Techmore
 
 <style>
   :root {
-    --bg:      oklch(91% 0.012 106.5);
-    --panel:   oklch(96% 0.015 110);
-    --border:  oklch(85% 0.028 110);
-    --accent:  oklch(35% 0.045 110);
-    --muted:   oklch(62% 0.055 110);
-    --text:    oklch(22% 0.025 110);
-    --subtext: oklch(50% 0.045 110);
+    --bg:      oklch(82.52% 0.0345 116.34);
+    --panel:   oklch(90.20% 0.0232 117.63);
+    --border:  oklch(73.59% 0.0492 116.81);
+    --accent:  oklch(46.42% 0.0493 117.00);
+    --muted:   oklch(55.34% 0.0116 58.07);
+    --text:    oklch(26.85% 0.0063 34.30);
+    --subtext: oklch(55.34% 0.0116 58.07);
     --mono:    'Inter', ui-monospace, monospace;
     --head:    'Instrument Serif', serif;
   }
@@ -38,18 +38,18 @@ title: Broan ERV Custom Controller — Full Build Guide - Techmore
   table.bom td { padding: 0.45rem 0.6rem; border-bottom: 1px solid oklch(88% 0.018 110); vertical-align: top; }
   table.bom tr:last-child td { border-bottom: none; }
   .reg-table { width:100%; border-collapse: collapse; font-size: 0.80rem; font-family: var(--mono); }
-  .reg-table th { background: oklch(16% 0.015 110); padding: 0.4rem 0.65rem; text-align: left; color: oklch(72% 0.03 110); border-bottom: 1px solid oklch(28% 0.025 110); }
+  .reg-table th { background: oklch(24.22% 0.0185 116.99); padding: 0.4rem 0.65rem; text-align: left; color: oklch(72% 0.03 110); border-bottom: 1px solid oklch(28% 0.025 110); }
   .reg-table td { padding: 0.4rem 0.65rem; border-bottom: 1px solid oklch(22% 0.018 110); color: oklch(82% 0.025 110); }
   .reg-table tr:last-child td { border-bottom: none; }
   .reg-table .inferred { color: oklch(68% 0.08 75); }
 </style>
 
-<main class="bg-olive-50">
+<main class="bg-olive-300">
   <section class="py-12">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- ── HERO ── -->
-      <div class="bg-olive-950 rounded-2xl border border-olive-800 p-8 mb-10">
+      <div class="bg-olive-950 rounded-xl border border-olive-800 p-8 mb-10">
         <p class="text-xs font-mono tracking-widest uppercase text-olive-400 mb-3">Build Guide · Draft</p>
         <h1 class="text-4xl font-display italic text-olive-50 leading-tight">Custom Controller for<br><span class="text-olive-300">Broan B210E75RT AI ERV</span></h1>
         <p class="text-olive-400 mt-4 max-w-2xl text-sm leading-relaxed">Full clean-room reverse engineering of the VTouch RS-485 protocol, followed by a staged replacement with an ESP32-S3 RS-485 master running an MQTT broker, a web dashboard, and drop-in VTouch-emulator panels — all without the ERV knowing anything changed.</p>
@@ -63,22 +63,22 @@ title: Broan ERV Custom Controller — Full Build Guide - Techmore
       </div>
 
       <!-- ── WHAT THIS GUIDE PRODUCES ── -->
-      <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-10">
+      <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-10">
         <h2 class="text-xl text-olive-950 mb-3">What You End Up With</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-sm text-olive-700">
-          <div class="bg-olive-50 rounded-xl border border-olive-200 p-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4">
             <p class="font-semibold text-olive-900 mb-1">Controller Node</p>
             <p>ESP32-S3 as the only RS-485 master. Talks directly to the ERV, hosts MQTT broker + web UI.</p>
           </div>
-          <div class="bg-olive-50 rounded-xl border border-olive-200 p-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4">
             <p class="font-semibold text-olive-900 mb-1">VTouch Emulator Bridge</p>
             <p>Second ESP32-S3 intercepts the original VTouch, translates its commands to MQTT, and feeds it fabricated responses so it still works normally.</p>
           </div>
-          <div class="bg-olive-50 rounded-xl border border-olive-200 p-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4">
             <p class="font-semibold text-olive-900 mb-1">Replacement Panels</p>
             <p>WT32-SC01 Plus touchscreens that look and feel like the VTouch but run your firmware. Multiple panels possible.</p>
           </div>
-          <div class="bg-olive-50 rounded-xl border border-olive-200 p-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4">
             <p class="font-semibold text-olive-900 mb-1">Web Dashboard</p>
             <p>Hosted on the controller at <code>http://erv.local</code>. Live state, controls, audit log, config — from any browser on the LAN.</p>
           </div>
@@ -89,7 +89,7 @@ title: Broan ERV Custom Controller — Full Build Guide - Techmore
       <div class="mb-10">
         <h2 class="text-2xl text-olive-950 mb-4">Your Hardware: Broan B210E75RT</h2>
         <div class="grid gap-4 lg:grid-cols-2">
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">Unit Specs (Relevant to This Build)</h3>
             <table class="bom">
               <tbody>
@@ -104,9 +104,9 @@ title: Broan ERV Custom Controller — Full Build Guide - Techmore
               </tbody>
             </table>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">VTouch Terminal Wiring</h3>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">ERV terminal block (inside unit):
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">ERV terminal block (inside unit):
   T1 = RS-485 A (non-inverting)
   T2 = RS-485 B (inverting)
   T3 = GND
@@ -127,7 +127,7 @@ Max stated run: 100 ft / 30 m</pre>
         <p class="text-sm text-olive-600 mb-5">Everything needed across all stages. Buy Stage 0–1 parts first — later stages depend on what you learn from capture.</p>
 
         <!-- Stage 0-1 -->
-        <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
           <p class="text-xs font-mono uppercase tracking-widest text-olive-500 mb-3">Stage 0–1 · Tools &amp; RE Capture Hardware</p>
           <table class="bom">
             <thead><tr><th>Part</th><th>Purpose</th><th>Where to Buy</th><th>Cost</th></tr></thead>
@@ -186,7 +186,7 @@ Max stated run: 100 ft / 30 m</pre>
         </div>
 
         <!-- Stage 2-3 Controller -->
-        <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
           <p class="text-xs font-mono uppercase tracking-widest text-olive-500 mb-3">Stage 2–3 · Controller ESP32-S3 (RS-485 Master + MQTT Broker + Web Server)</p>
           <table class="bom">
             <thead><tr><th>Part</th><th>Purpose</th><th>Where to Buy</th><th>Cost</th></tr></thead>
@@ -233,7 +233,7 @@ Max stated run: 100 ft / 30 m</pre>
         </div>
 
         <!-- Stage 4 Panels -->
-        <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
           <p class="text-xs font-mono uppercase tracking-widest text-olive-500 mb-3">Stage 4 · Tier 3 Replacement Panels (per panel — buy 1 or 2)</p>
           <table class="bom">
             <thead><tr><th>Part</th><th>Purpose</th><th>Where to Buy</th><th>Cost</th></tr></thead>
@@ -280,7 +280,7 @@ Max stated run: 100 ft / 30 m</pre>
         </div>
 
         <!-- Grand total -->
-        <div class="bg-olive-950 rounded-2xl border border-olive-800 p-5 text-sm text-olive-200">
+        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 text-sm text-olive-200">
           <div class="grid sm:grid-cols-3 gap-4">
             <div><p class="text-olive-400 text-xs font-mono uppercase mb-1">Minimum Build (1 panel)</p><p class="text-xl text-olive-50 font-semibold">~$110–160</p><p class="text-xs text-olive-400">Stages 0–4, one WT32-SC01 Plus</p></div>
             <div><p class="text-olive-400 text-xs font-mono uppercase mb-1">Two Panels</p><p class="text-xl text-olive-50 font-semibold">~$165–235</p><p class="text-xs text-olive-400">Duplicate the wall panel for two locations</p></div>
@@ -290,7 +290,7 @@ Max stated run: 100 ft / 30 m</pre>
       </div>
 
       <!-- ── ARCHITECTURE ── -->
-      <div class="mt-12 bg-olive-950 rounded-2xl border border-olive-800 p-6 mb-10">
+      <div class="mt-12 bg-olive-950 rounded-xl border border-olive-800 p-6 mb-10">
         <h2 class="text-2xl text-olive-50 mb-4">Final System Architecture</h2>
         <div class="bg-olive-900/60 rounded-xl border border-olive-800 p-4 mb-5">
           <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap leading-relaxed">┌──────────────────┐    ┌──────────────────────┐    ┌─────────────────────────┐
@@ -336,27 +336,27 @@ Max stated run: 100 ft / 30 m</pre>
       <div class="mb-10">
         <h2 class="text-2xl text-olive-950 mb-5">Build Stages at a Glance</h2>
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 text-sm">
-          <div class="bg-white rounded-xl border border-olive-200 p-4 text-center">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-center">
             <div class="text-2xl font-display italic text-olive-400 mb-1">0</div>
             <p class="font-semibold text-olive-900">Setup</p>
             <p class="text-olive-600 text-xs mt-1">Toolchain, libraries, test blink on both ESP32-S3 boards</p>
           </div>
-          <div class="bg-white rounded-xl border border-olive-200 p-4 text-center">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-center">
             <div class="text-2xl font-display italic text-olive-400 mb-1">1</div>
             <p class="font-semibold text-olive-900">Passive Capture</p>
             <p class="text-olive-600 text-xs mt-1">Bridge listens between VTouch &amp; ERV. Map every register.</p>
           </div>
-          <div class="bg-white rounded-xl border border-olive-200 p-4 text-center">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-center">
             <div class="text-2xl font-display italic text-olive-400 mb-1">2</div>
             <p class="font-semibold text-olive-900">Active Proxy</p>
             <p class="text-olive-600 text-xs mt-1">Bridge forwards frames. Controller begins sending commands directly.</p>
           </div>
-          <div class="bg-white rounded-xl border border-olive-200 p-4 text-center">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-center">
             <div class="text-2xl font-display italic text-olive-400 mb-1">3</div>
             <p class="font-semibold text-olive-900">Full Takeover</p>
             <p class="text-olive-600 text-xs mt-1">Controller is sole RS-485 master. Bridge emulates ERV responses to VTouch.</p>
           </div>
-          <div class="bg-white rounded-xl border border-olive-200 p-4 text-center">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-center">
             <div class="text-2xl font-display italic text-olive-400 mb-1">4</div>
             <p class="font-semibold text-olive-900">Replacement Panels</p>
             <p class="text-olive-600 text-xs mt-1">WT32-SC01 Plus panels installed. VTouch optionally retained or removed.</p>
@@ -377,7 +377,7 @@ Max stated run: 100 ft / 30 m</pre>
         </div>
         <div class="stage-track">
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">0.1 — Install Toolchain</h3>
             <ol class="text-sm text-olive-700 space-y-2 list-decimal list-inside">
               <li>Install <a class="part-link" href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> + <a class="part-link" href="https://platformio.org/install/ide?install=vscode" target="_blank" rel="noopener noreferrer">PlatformIO extension</a>. This is the recommended toolchain for this build — better library management than Arduino IDE and supports both boards.</li>
@@ -395,19 +395,19 @@ Max stated run: 100 ft / 30 m</pre>
             </ol>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">0.2 — Flash Test Both Boards</h3>
             <p class="text-sm text-olive-700 mb-3">Before touching the ERV, verify both ESP32-S3 boards enumerate over USB and accept a basic blink sketch. Identify serial port assignments on your machine.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">Board: "XIAO_ESP32S3"  (for capture bridge board)
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">Board: "XIAO_ESP32S3"  (for capture bridge board)
 Board: "Adafruit Feather ESP32-S3"  (for controller board)
 Upload speed: 921600
 USB CDC on Boot: Enabled  ← important for Serial monitor on S3</pre>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">0.3 — Wire the Capture Bridge (Bench Test First)</h3>
             <p class="text-sm text-olive-700 mb-3">Build and test the bridge on the bench before connecting it to the ERV. Use two 3.3 V MAX3485 breakouts and the XIAO ESP32-S3.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">XIAO ESP32-S3 GPIO pins used:
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">XIAO ESP32-S3 GPIO pins used:
   GPIO4  = UART1_RX  (from MAX3485 #1 RO — VTouch side)
   GPIO5  = UART1_TX  (to MAX3485 #1 DI  — VTouch side)
   GPIO6  = DIR1      (DE/RE control for MAX3485 #1)
@@ -444,7 +444,7 @@ MAX3485 wiring (each transceiver):
         </div>
         <div class="stage-track">
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">1.1 — Physical Install of the Bridge</h3>
             <ol class="text-sm text-olive-700 space-y-2 list-decimal list-inside">
               <li>Power down the ERV at the breaker.</li>
@@ -452,7 +452,7 @@ MAX3485 wiring (each transceiver):
               <li>Use T-tap wire connectors or a 4-way terminal splitter to insert the bridge <strong>in series</strong> between the ERV terminal and the VTouch cable — do not cut the VTouch cable.</li>
               <li>
                 Connect bridge wiring:
-                <pre class="mt-2 text-xs bg-olive-50 border border-olive-200 rounded-lg p-3 font-mono">ERV terminal ─── [T-tap A] ──┬── VTouch cable A
+                <pre class="mt-2 text-xs bg-olive-50 border border-olive-400 rounded-lg p-3 font-mono">ERV terminal ─── [T-tap A] ──┬── VTouch cable A
                               └── MAX3485 #2 (ERV side) A
 
 ERV terminal ─── [T-tap B] ──┬── VTouch cable B
@@ -467,7 +467,7 @@ ERV +12 V ──── Buck 12→5 V ──── Bridge USB-C / 5 V rail</pre>
             </ol>
           </div>
 
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6 mb-4">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-50 mb-3">1.2 — Stage 1 Firmware: Passive Capture</h3>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">// platformio.ini board: seeed_xiao_esp32s3
 // Both UARTs receive-only. DE=LOW, RE=LOW on both MAX3485 boards.
@@ -541,7 +541,7 @@ void loop() {
             <p class="text-xs text-olive-400 mt-3">Flash this, open MQTT Explorer pointed at the broker, then operate the VTouch through every function.</p>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">1.3 — Capture Session Checklist</h3>
             <p class="text-sm text-olive-600 mb-3">Run through each action multiple times. Let the unit idle between each group to capture poll cycles clearly. Log to a file in MQTT Explorer (File → Export).</p>
             <div class="grid gap-4 sm:grid-cols-2">
@@ -564,10 +564,10 @@ void loop() {
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">1.4 — Decoding Modbus RTU Frames</h3>
             <p class="text-sm text-olive-700 mb-3">All frames follow standard Modbus RTU framing. Decode each captured hex string:</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">── Read Request (VTouch → ERV) ──
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">── Read Request (VTouch → ERV) ──
 [Addr][FC  ][RegHi][RegLo][CntHi][CntLo][CRC_Lo][CRC_Hi]
   01    03    00     01     00     06      XX       XX
 FC 03 = Read Holding Registers
@@ -590,7 +590,7 @@ Reg 0x0001, value 0x0003 → set mode to High (or index 3)
             </div>
           </div>
 
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-6">
             <h3 class="text-base font-semibold text-olive-50 mb-3">1.5 — Build Your Register Map</h3>
             <p class="text-xs text-olive-400 mb-3">Fill this in from your capture session. Mark each row as field-verified with a date once confirmed.</p>
             <table class="reg-table">
@@ -634,9 +634,9 @@ Reg 0x0001, value 0x0003 → set mode to High (or index 3)
         </div>
         <div class="stage-track">
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">2.1 — Wire the Controller (ESP32-S3 #1)</h3>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">Adafruit Feather ESP32-S3 GPIO assignments:
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">Adafruit Feather ESP32-S3 GPIO assignments:
   GPIO17 = UART1_RX  ← MAX3485 RO (ERV RS-485 A/B)
   GPIO18 = UART1_TX  → MAX3485 DI
   GPIO15 = DIR_ERV   → MAX3485 DE+RE tied (HIGH = transmit, LOW = receive)
@@ -652,7 +652,7 @@ Power: 5 V USB-C or 12V ERV → buck → 5 V → USB-C input</pre>
             </div>
           </div>
 
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6 mb-4">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-50 mb-3">2.2 — Controller Firmware: MQTT Broker + RS-485 Master</h3>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">// Controller ESP32-S3 #1 — Stage 2 sketch outline
 // Libraries: PubSubClient, ESPAsyncWebServer, eModbus, ArduinoJson, ESPmDNS
@@ -695,10 +695,10 @@ void onCommandReceived(const char* topic, const char* payload) {
 // See queue section below</pre>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">2.3 — Upgrade Bridge to Active Proxy</h3>
             <p class="text-sm text-olive-700 mb-3">In Stage 2 the bridge still passes VTouch commands through to the ERV, but it also translates them to MQTT so the controller is aware.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">VTouch READ  → Bridge forwards bytes verbatim to ERV side
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">VTouch READ  → Bridge forwards bytes verbatim to ERV side
              ← ERV response forwarded back to VTouch
              → Decoded frame published to erv/audit (info only)
 
@@ -711,10 +711,10 @@ VTouch WRITE → Bridge:
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">2.4 — Web Server + Dashboard (Set Up Now)</h3>
             <p class="text-sm text-olive-700 mb-3">Stand the web server up in Stage 2 so you can validate state from a browser while the VTouch is still in control.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">// In controller firmware setup():
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">// In controller firmware setup():
 #include &lt;ESPAsyncWebServer.h&gt;
 #include &lt;LittleFS.h&gt;
 #include &lt;ESPmDNS.h&gt;
@@ -753,10 +753,10 @@ void setup() {
         </div>
         <div class="stage-track">
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">3.1 — Rewire the Bridge</h3>
             <p class="text-sm text-olive-700 mb-3">Remove the bridge's tap on the ERV side. The controller is now the only device on the ERV RS-485 bus. The bridge only talks to the VTouch.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">Before Stage 3:
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">Before Stage 3:
   VTouch ── Bridge (pass-through) ── ERV
 
 After Stage 3:
@@ -765,7 +765,7 @@ After Stage 3:
             <p class="text-sm text-olive-700 mt-3">The bridge now has a single MAX3485 (VTouch side only). It no longer has physical access to the ERV bus.</p>
           </div>
 
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6 mb-4">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-50 mb-3">3.2 — Bridge Firmware: VTouch Emulator</h3>
             <p class="text-xs text-olive-400 mb-3">The bridge now acts as a <em>fake ERV slave</em> to the VTouch. It answers all of VTouch's Modbus reads from a local state cache that is kept in sync with <code>erv/state</code> via MQTT. VTouch writes are translated to MQTT commands and sent to the real controller.</p>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">// Bridge ESP32-S3 #2 — Stage 3: VTouch emulator
@@ -816,11 +816,11 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">3.3 — Command Arbitration on the Controller</h3>
             <p class="text-sm text-olive-700 mb-3">All commands — from VTouch bridge, replacement panels, and web UI — arrive on <code>erv/command/request</code>. The controller serializes them before issuing RS-485 writes.</p>
             <div class="grid gap-4 sm:grid-cols-2">
-              <div class="bg-olive-50 rounded-xl border border-olive-200 p-4 text-sm text-olive-700">
+              <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-sm text-olive-700">
                 <p class="font-semibold text-olive-900 mb-2">Arbitration Rules</p>
                 <ol class="space-y-1 list-decimal list-inside">
                   <li>Lower <code>priority</code> number wins (0 = highest)</li>
@@ -829,7 +829,7 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
                   <li>Superseded commands get <code>status: superseded</code> ACK</li>
                 </ol>
               </div>
-              <div class="bg-olive-50 rounded-xl border border-olive-200 p-4 text-sm text-olive-700">
+              <div class="bg-olive-200 rounded-xl border border-olive-400 p-4 text-sm text-olive-700">
                 <p class="font-semibold text-olive-900 mb-2">Queue Params</p>
                 <ul class="space-y-1 list-disc list-inside">
                   <li>FIFO depth: 5 entries</li>
@@ -841,7 +841,7 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">3.4 — Smoke Test Checklist</h3>
             <ul class="text-sm text-olive-700 space-y-2">
               <li class="flex gap-2"><span class="text-olive-400">☐</span> VTouch shows correct mode, temps, humidity (sourced from bridge cache)</li>
@@ -869,7 +869,7 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
         </div>
         <div class="stage-track">
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">4.1 — Why WT32-SC01 Plus</h3>
             <div class="grid gap-4 sm:grid-cols-2 text-sm text-olive-700">
               <ul class="space-y-2">
@@ -885,7 +885,7 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
             </div>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">4.2 — Physical Installation</h3>
             <ol class="text-sm text-olive-700 space-y-2 list-decimal list-inside">
               <li>Cut a single-gang opening in drywall at the desired location (where VTouch was, or new location).</li>
@@ -899,7 +899,7 @@ void handleVTouchRequest(uint8_t* req, uint8_t len) {
             </div>
           </div>
 
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-6 mb-4">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-50 mb-3">4.3 — Panel Firmware (LVGL + MQTT Client)</h3>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">// WT32-SC01 Plus — platformio.ini
 // board: esp32s3box  (or use WT32-SC01-PLUS custom board def)
@@ -937,9 +937,9 @@ void onMqttState(const char* payload) {
 //   broker IP display, firmware version</pre>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
             <h3 class="text-base font-semibold text-olive-900 mb-3">4.4 — UI Sketch (480 × 320)</h3>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-4">┌────────────────────────────────────────────────────────────────┐
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-4">┌────────────────────────────────────────────────────────────────┐
 │  ● ERV  ·  High Speed          🌡 Supply: 68.4°F   [●] online  │  ← top bar
 ├────────────────────────────────────────────────────────────────┤
 │                                                                │
@@ -954,7 +954,7 @@ void onMqttState(const char* payload) {
 └────────────────────────────────────────────────────────────────┘</pre>
           </div>
 
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-3">4.5 — Multi-Panel Setup</h3>
             <p class="text-sm text-olive-700 mb-3">Each additional WT32-SC01 Plus is an independent MQTT client. Add one per location — upstairs hall, kitchen, wherever you want VTouch-like control. All panels stay in sync via <code>erv/state</code> retained topic.</p>
             <ul class="text-sm text-olive-700 space-y-2">
@@ -971,7 +971,7 @@ void onMqttState(const char* payload) {
       <!-- ── MQTT SCHEMA ── -->
       <div class="mb-10">
         <h2 class="text-2xl text-olive-950 mb-4">MQTT Topic Schema</h2>
-        <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
           <table class="bom">
             <thead><tr><th>Topic</th><th>Direction</th><th>Retained</th><th>Description</th></tr></thead>
             <tbody>
@@ -989,7 +989,7 @@ void onMqttState(const char* payload) {
         </div>
 
         <div class="grid gap-4 lg:grid-cols-2">
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-5">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-5">
             <p class="text-xs font-mono uppercase tracking-widest text-olive-400 mb-2">Command Request</p>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "client_id": "panel-kitchen",
@@ -1003,7 +1003,7 @@ void onMqttState(const char* payload) {
   "priority": 1
 }</pre>
           </div>
-          <div class="bg-olive-950 rounded-2xl border border-olive-800 p-5">
+          <div class="bg-olive-950 rounded-xl border border-olive-800 p-5">
             <p class="text-xs font-mono uppercase tracking-widest text-olive-400 mb-2">ERV State (retained)</p>
             <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">{
   "timestamp": 1749500005,
@@ -1025,7 +1025,7 @@ void onMqttState(const char* payload) {
       <!-- ── WEB DASHBOARD ── -->
       <div class="mb-10">
         <h2 class="text-2xl text-olive-950 mb-4">Web Dashboard (Hosted on Controller)</h2>
-        <div class="bg-white rounded-2xl border border-olive-200 p-6 mb-4">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-6 mb-4">
           <p class="text-sm text-olive-700 mb-3">Access at <code>http://erv.local</code> from any browser on your LAN. Static files served from LittleFS, live state pushed via WebSocket — no polling needed.</p>
           <div class="grid gap-4 sm:grid-cols-2">
             <div>
@@ -1050,7 +1050,7 @@ void onMqttState(const char* payload) {
             </div>
           </div>
         </div>
-        <div class="bg-olive-950 rounded-2xl border border-olive-800 p-5">
+        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5">
           <h3 class="text-base font-semibold text-olive-50 mb-3">WebSocket Live Update (Browser JS)</h3>
           <pre class="text-sm text-olive-100 font-mono whitespace-pre-wrap bg-olive-900/70 border border-olive-800 rounded-xl p-4">const ws = new WebSocket(`ws://${location.host}/ws/state`);
 ws.onmessage = (e) => {
@@ -1085,7 +1085,7 @@ async function sendCommand(mode) {
       <div class="mb-10">
         <h2 class="text-2xl text-olive-950 mb-4">OTA Updates &amp; First-Boot Configuration</h2>
         <div class="grid gap-4 lg:grid-cols-2">
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-2">First-Boot Captive Portal (Panels)</h3>
             <p class="text-sm text-olive-700 mb-3">So you never need to reflash a wall panel just to change Wi-Fi credentials. Use <a class="part-link" href="https://github.com/tzapu/WiFiManager" target="_blank" rel="noopener noreferrer">WiFiManager</a>:</p>
             <ol class="text-sm text-olive-700 space-y-1 list-decimal list-inside">
@@ -1095,10 +1095,10 @@ async function sendCommand(mode) {
               <li>Panel saves to NVS, reboots, connects to broker</li>
             </ol>
           </div>
-          <div class="bg-white rounded-2xl border border-olive-200 p-6">
+          <div class="bg-olive-200 rounded-xl border border-olive-400 p-6">
             <h3 class="text-base font-semibold text-olive-900 mb-2">OTA via ArduinoOTA</h3>
             <p class="text-sm text-olive-700 mb-3">All ESP32-S3 nodes (controller + bridge + panels) should include OTA support so you never need physical USB access after initial flash.</p>
-            <pre class="text-sm text-olive-800 font-mono bg-olive-50 rounded-xl border border-olive-200 p-3">#include &lt;ArduinoOTA.h&gt;
+            <pre class="text-sm text-olive-800 font-mono bg-olive-200 rounded-xl border border-olive-400 p-3">#include &lt;ArduinoOTA.h&gt;
 // In setup():
 ArduinoOTA.setHostname("erv-controller");
 ArduinoOTA.setPassword("your-ota-pass");
@@ -1111,7 +1111,7 @@ ArduinoOTA.handle();</pre>
       </div>
 
       <!-- ── BUILD ORDER SUMMARY ── -->
-      <div class="mb-10 bg-olive-950 rounded-2xl border border-olive-800 p-6">
+      <div class="mb-10 bg-olive-950 rounded-xl border border-olive-800 p-6">
         <h2 class="text-2xl text-olive-50 mb-4">Complete Build Order</h2>
         <ol class="text-sm text-olive-200 space-y-3">
           <li class="flex gap-3"><span class="text-olive-500 font-mono w-6 shrink-0">01</span> Order Stage 0–1 parts (XIAO ESP32-S3 + 2× MAX3485 breakouts)</li>
@@ -1133,7 +1133,7 @@ ArduinoOTA.handle();</pre>
       </div>
 
       <!-- ── OPEN QUESTIONS ── -->
-      <div class="mb-10 bg-white rounded-2xl border border-olive-200 p-6">
+      <div class="mb-10 bg-olive-200 rounded-xl border border-olive-400 p-6">
         <h2 class="text-xl text-olive-950 mb-3">Open Questions to Resolve in Stage 1</h2>
         <ul class="text-sm text-olive-700 space-y-2">
           <li><strong>Confirmed baud rate:</strong> 9600 is assumed — verify from capture. Some Broan units use 19200.</li>

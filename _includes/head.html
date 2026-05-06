@@ -18,17 +18,29 @@
                 extend: {
                     colors: {
                         olive: {
-                            50: 'oklch(96% 0.015 110)',
-                            100: 'oklch(91% 0.020 110)',
-                            200: 'oklch(85% 0.028 110)',
-                            300: 'oklch(75% 0.040 110)',
-                            400: 'oklch(62% 0.055 110)',
-                            500: 'oklch(50% 0.065 110)',
-                            600: 'oklch(42% 0.055 110)',
-                            700: 'oklch(35% 0.045 110)',
-                            800: 'oklch(28% 0.035 110)',
-                            900: 'oklch(22% 0.025 110)',
-                            950: 'oklch(16% 0.015 110)',
+                            50: 'oklch(97.73% 0.0054 117.92)',
+                            100: 'oklch(95.09% 0.0134 115.84)',
+                            200: 'oklch(90.20% 0.0232 117.63)',
+                            300: 'oklch(82.52% 0.0345 116.34)',
+                            400: 'oklch(73.59% 0.0492 116.81)',
+                            500: 'oklch(64.26% 0.0588 117.06)',
+                            600: 'oklch(54.54% 0.0616 116.19)',
+                            700: 'oklch(46.42% 0.0493 117.00)',
+                            800: 'oklch(39.89% 0.0355 116.41)',
+                            900: 'oklch(35.57% 0.0284 116.00)',
+                            950: 'oklch(24.22% 0.0185 116.99)',
+                        },
+                        stone: {
+                            50: 'oklch(98.48% 0.0013 106.42)',
+                            100: 'oklch(96.99% 0.0013 106.42)',
+                            200: 'oklch(92.32% 0.0026 48.72)',
+                            300: 'oklch(86.87% 0.0043 56.37)',
+                            400: 'oklch(71.61% 0.0091 56.26)',
+                            500: 'oklch(55.34% 0.0116 58.07)',
+                            600: 'oklch(44.44% 0.0096 73.64)',
+                            700: 'oklch(37.41% 0.0087 67.56)',
+                            800: 'oklch(26.85% 0.0063 34.30)',
+                            900: 'oklch(21.61% 0.0061 56.04)',
                         }
                     },
                     fontFamily: {
@@ -42,12 +54,37 @@
     <style>
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: oklch(91% 0.012 106.5);
-            color: oklch(15.3% 0.006 107.1);
+            background-color: oklch(82.52% 0.0345 116.34);
+            color: oklch(26.85% 0.0063 34.30);
+            font-size: 15px;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
         h1, h2, h3, h4 {
             font-family: 'Instrument Serif', serif;
+            line-height: 1.2;
+        }
+        ::selection {
+            background-color: oklch(90.20% 0.0232 117.63);
+            color: oklch(39.89% 0.0355 116.41);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: oklch(96.99% 0.0013 106.42);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: oklch(73.59% 0.0492 116.81);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: oklch(64.26% 0.0588 117.06);
+        }
+        :focus-visible {
+            outline: 2px solid oklch(64.26% 0.0588 117.06);
+            outline-offset: 2px;
         }
     </style>
 </head>

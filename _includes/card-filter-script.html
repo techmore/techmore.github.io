@@ -33,17 +33,17 @@
             pill.addEventListener('click', function() {
                 filterPills.forEach(function(other) {
                     other.classList.remove('bg-olive-700', 'text-olive-50');
-                    if (!other.classList.contains('bg-white')) {
-                        other.classList.add('bg-white');
+                    if (!other.classList.contains('bg-olive-200')) {
+                        other.classList.add('bg-olive-200');
                     }
                     if (!other.classList.contains('border')) {
-                        other.classList.add('border', 'border-olive-200');
+                        other.classList.add('border', 'border-olive-400');
                     }
                     other.classList.add('text-olive-700');
                 });
 
                 pill.classList.add('bg-olive-700', 'text-olive-50');
-                pill.classList.remove('bg-white', 'text-olive-700');
+                pill.classList.remove('bg-olive-200', 'text-olive-700');
 
                 activeFilter = pill.getAttribute('data-filter') || 'all';
                 applyFilters();
