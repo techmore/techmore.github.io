@@ -24,8 +24,8 @@ title: Solar Offset - Techmore
             </div>
             <div>
                 <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Current answer</p>
-                <h2 class="mt-2 text-2xl text-olive-50">EG4 first, Pecron optional</h2>
-                <p class="mt-2 text-sm text-olive-200">Use EG4 for the permanent no-backfeed system. Consider Pecron only as portable backup or bridge power.</p>
+                <h2 class="mt-2 text-2xl text-olive-50">EG4 only if complete</h2>
+                <p class="mt-2 text-sm text-olive-200">The $5.7k EG4 control stack is not useful by itself. A usable intro needs the control stack, one battery, and at least one solar string.</p>
             </div>
         </div>
     </section>
@@ -57,14 +57,46 @@ title: Solar Offset - Techmore
         <div class="grid lg:grid-cols-3 gap-5">
             <div class="lg:col-span-2">
                 <h2 class="text-3xl text-olive-950 mb-3">Recommended Phase 5 Direction</h2>
-                <p class="text-olive-800 leading-relaxed">The best first move is still the EG4 deep-dive plan: FlexBOSS21 + GridBOSS, one 16 kWh wall battery, and roughly 9-12 kW DC of starter PV. That is enough solar to matter against the measured 60.5 kWh/day average without pretending one battery can cover extreme winter heating days.</p>
-                <p class="mt-3 text-olive-800 leading-relaxed">The point is not full independence on day one. The point is reliable daytime offset, automatic grid fallback, and a clean base that can add battery #2 or more PV after you see actual production and curtailment.</p>
+                <p class="text-olive-800 leading-relaxed">The best first move is still the EG4 deep-dive direction, but it needs to be stated as a complete starter system: FlexBOSS21 + GridBOSS, one 16 kWh wall battery, and 9-12 kW DC of panels. The inverter bundle alone is just the control layer.</p>
+                <p class="mt-3 text-olive-800 leading-relaxed">The point is reliable daytime offset and automatic grid fallback for the HVAC-heavy house. The heat pump remains the major energy user, so Phase 5 should support heating/cooling with grid headroom instead of pretending a small battery can carry winter HVAC overnight.</p>
             </div>
             <div class="bg-olive-950 rounded-lg p-4 text-olive-50">
                 <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Planning target</p>
                 <p class="mt-2 text-4xl font-display italic">9-12 kW PV</p>
                 <p class="mt-2 text-sm text-olive-200">One 16 kWh battery first. Grid stays connected for heat-pump headroom. Zero/no intentional export.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4">
+            <div>
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Minimum viable solar</p>
+                <h2 class="text-3xl text-olive-950">What A Usable EG4 Intro Actually Includes</h2>
+            </div>
+            <p class="text-sm text-olive-600">Hardware prices checked May 21, 2026.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Not enough alone</p>
+                <h3 class="mt-2 text-2xl text-olive-50">$5,674.88 control stack</h3>
+                <p class="mt-2 text-sm text-olive-200">FlexBOSS21 + GridBOSS is the right no-backfeed control architecture, but without panels and storage it does not offset energy.</p>
+            </div>
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Minimum functional</p>
+                <h3 class="mt-2 text-2xl text-olive-950">$10.8k hardware</h3>
+                <p class="mt-2 text-sm text-olive-700">Control stack + one 16 kWh EG4 battery + 10 BlueSun panels. This is about 4.6 kW DC, so it is a learning system more than a meaningful HVAC offset.</p>
+            </div>
+            <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Practical starter</p>
+                <h3 class="mt-2 text-2xl text-olive-950">$12.5k-$13.2k hardware</h3>
+                <p class="mt-2 text-sm text-olive-700">Control stack + one battery + 20-24 panels. This creates 9.2-11.0 kW DC, which finally starts to match the Phase 5 offset goal.</p>
+            </div>
+        </div>
+
+        <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
+            <p class="text-sm text-olive-800"><strong>Reality check:</strong> these are hardware-only starter numbers before racking, wire, conduit, breakers, rapid shutdown if required, permits, engineering, electrician labor, and utility requirements. The useful first stage is not cheap, but it is at least coherent: panels create the offset, the battery buffers it, and EG4 manages no-backfeed/grid fallback.</p>
         </div>
     </section>
 
@@ -123,7 +155,7 @@ title: Solar Offset - Techmore
             <p class="text-sm text-olive-600">Pecron pricing/specs checked May 21, 2026.</p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-5">
+        <div class="grid lg:grid-cols-4 gap-5">
             <a href="https://signaturesolar.com/eg4-flexboss21-inverter-v-1-1-48v-split-phase-21kw-pv-input-eg4-gridboss-mid-v3-1-bndl-e00019-3-1/" target="_blank" rel="noopener noreferrer" class="block bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50 hover:bg-olive-900 transition-colors">
                 <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Primary core</p>
                 <h3 class="mt-2 text-2xl text-olive-50">EG4 FlexBOSS21 + GridBOSS</h3>
@@ -135,6 +167,12 @@ title: Solar Offset - Techmore
                 <h3 class="mt-2 text-2xl text-olive-950">EG4 314Ah WallMount</h3>
                 <p class="mt-2 text-sm text-olive-700">16 kWh class buffer. Use it for clouds, transitions, and evening carryover, not full winter overnight heat.</p>
                 <p class="mt-4 text-lg font-semibold text-olive-900">$3,399.99 reference</p>
+            </a>
+            <a href="https://signaturesolar.com/bluesun-460w-half-cell-bifacial-solar-panel-silver-up-to-575w-with-bifacial-gain/" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Panels</p>
+                <h3 class="mt-2 text-2xl text-olive-950">BlueSun 460 W</h3>
+                <p class="mt-2 text-sm text-olive-700">Panels are mandatory. 10-panel minimum is 4.6 kW DC; 20-24 panels creates the 9.2-11.0 kW DC practical starter range.</p>
+                <p class="mt-4 text-lg font-semibold text-olive-900">$170.20 each</p>
             </a>
             <a href="https://www.pecron.com/products/pecron-e3800lfp-portable-power-station-4200w-3840wh?variant=45837248856252#ref=229" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
                 <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Portable candidate</p>
@@ -150,6 +188,41 @@ title: Solar Offset - Techmore
 
     <section class="grid lg:grid-cols-2 gap-6 mb-8">
         <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <h2 class="text-2xl text-olive-950 mb-4">80 Gallon Heat Pump Water Heater Payback</h2>
+            <div class="grid sm:grid-cols-3 gap-3">
+                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
+                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Current WH load</p>
+                    <p class="mt-2 text-2xl font-display italic text-olive-950">4,006 kWh/yr</p>
+                    <p class="mt-1 text-sm text-olive-700">Measured and annualized from Emporia.</p>
+                </div>
+                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
+                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Current cost</p>
+                    <p class="mt-2 text-2xl font-display italic text-olive-950">$551/yr</p>
+                    <p class="mt-1 text-sm text-olive-700">At $0.13760/kWh.</p>
+                </div>
+                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
+                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Likely savings</p>
+                    <p class="mt-2 text-2xl font-display italic text-olive-950">$276-$383/yr</p>
+                    <p class="mt-1 text-sm text-olive-700">If HPWH uses roughly 1,225-2,000 kWh/year.</p>
+                </div>
+            </div>
+            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
+                <p class="text-sm text-olive-800"><strong>Payback:</strong> a $2,229-$2,779 unit-only purchase pays back in roughly 6-10 years before rebates. A $3.5k-$6.0k installed project pays back in roughly 9-22 years before rebates. Rebates, avoided electrical upgrades, or a failing existing tank can make it more attractive.</p>
+            </div>
+        </div>
+
+        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
+            <h2 class="text-2xl text-olive-50 mb-4">Why The Water Heater Still Matters</h2>
+            <div class="space-y-3 text-sm text-olive-200">
+                <p><strong class="text-olive-50">The HVAC heat pump is now the big load.</strong> Solar planning has to preserve heating/cooling comfort first, because the heat pump is 44.0% of measured mains and sits on a 45 A / 240 V circuit.</p>
+                <p><strong class="text-olive-50">The water heater is the clean controllable load.</strong> It is 18.1% of measured mains, and an 80 gallon HPWH can reduce baseline demand while also being scheduled into solar hours.</p>
+                <p><strong class="text-olive-50">Priority:</strong> keep grid fallback for HVAC, reduce water-heater load, then use EG4 solar to offset daytime heat-pump and household use.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid lg:grid-cols-2 gap-6 mb-8">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
             <h2 class="text-2xl text-olive-950 mb-4">Pecron E3800LFP Read</h2>
             <div class="space-y-3 text-sm text-olive-800">
                 <p><strong>What it is good for:</strong> portable backup, trailer/RV loads, temporary critical circuits through extension-cord style use, and charging from portable solar when the main solar project is not installed yet.</p>
@@ -160,9 +233,9 @@ title: Solar Offset - Techmore
         <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
             <h2 class="text-2xl text-olive-50 mb-4">Decision Rule</h2>
             <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">Buy EG4 first</strong> if the goal is barn/home offset, no intentional export, and using Emporia data to tune the system over time.</p>
+                <p><strong class="text-olive-50">Buy EG4 first only as a complete stage</strong> if the goal is barn/home offset, no intentional export, and using Emporia data to tune the system over time.</p>
                 <p><strong class="text-olive-50">Consider Pecron</strong> if you need a near-term portable backup unit, want 12 V / 30 A DC for field loads, or want a movable battery before committing to permanent electrical work.</p>
-                <p><strong class="text-olive-50">Do not oversize day one:</strong> one EG4 battery plus 9-12 kW PV is enough to learn. Add battery #2 before chasing full winter independence.</p>
+                <p><strong class="text-olive-50">Do not buy an unusable middle:</strong> EG4 without panels and battery is too high a bar for no actual offset. Either build the practical starter or wait.</p>
             </div>
         </div>
     </section>
@@ -170,18 +243,18 @@ title: Solar Offset - Techmore
     <section class="grid lg:grid-cols-3 gap-6 mb-8">
         <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 1</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Install control stack</h3>
-            <p class="mt-2 text-sm text-olive-700">GridBOSS + FlexBOSS21 creates the service/load integration point and automatic grid support.</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Do not stop at EG4 only</h3>
+            <p class="mt-2 text-sm text-olive-700">GridBOSS + FlexBOSS21 creates the service/load integration point, but it is not a usable offset system without storage and panels.</p>
         </div>
         <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 2</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Start with one battery</h3>
-            <p class="mt-2 text-sm text-olive-700">The first 16 kWh battery buffers solar and transitions. It is not sized for the 178.7 kWh winter peak day.</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Add one battery</h3>
+            <p class="mt-2 text-sm text-olive-700">The first 16 kWh battery buffers solar and transitions. It is not sized for the 178.7 kWh winter peak day or full overnight HVAC.</p>
         </div>
         <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 3</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Add PV, then measure</h3>
-            <p class="mt-2 text-sm text-olive-700">Start at 9-12 kW DC, validate self-consumption and curtailment, then decide whether battery #2 or more PV is next.</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Add 20-24 panels</h3>
+            <p class="mt-2 text-sm text-olive-700">Start at 9.2-11.0 kW DC if possible, validate self-consumption and curtailment, then decide whether battery #2 or more PV is next.</p>
         </div>
     </section>
 
@@ -194,6 +267,7 @@ title: Solar Offset - Techmore
             <li>Heat pump breaker appears to be double-pole 45 A. At 240 V that is about 10.8 kVA of breaker capacity, but breaker size is not the same as typical operating draw.</li>
             <li>Federal tax credit treatment depends on eligibility and tax liability; this page treats it as planning context, not guaranteed cash.</li>
             <li>Final solar sizing still needs roof/ground-mount layout, shading, utility rules, permitting, and installer or electrician review.</li>
+            <li>EG4 and BlueSun prices were checked against Signature Solar on May 21, 2026: FlexBOSS21 + GridBOSS $5,674.88, EG4 314Ah indoor battery $3,399.99, BlueSun 460 W panels $170.20 each with 10-panel minimum.</li>
         </ul>
         <p class="mt-4 text-sm text-olive-800">Pecron E3800LFP source: official Pecron product page, opened May 21, 2026. Listed specs include 3,840 Wh capacity, 4,200 W 120 V AC output, 12 V / 30 A DC output, 3,000 W max solar input, and expansion up to 26,880 Wh.</p>
     </section>
