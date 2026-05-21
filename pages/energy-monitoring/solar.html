@@ -3,522 +3,390 @@ layout: default
 title: Solar Offset - Techmore
 ---
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-    <section class="mb-10">
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Phase 5 • Solar offset</p>
-        <h1 class="mt-3 text-5xl sm:text-6xl font-display italic text-olive-950">Solar-first, grid-backed.</h1>
-        <p class="mt-4 max-w-3xl text-lg text-olive-700 leading-relaxed">This is the homeowner blueprint for Phase 1 solar: what the cart buys, how the panels fit the EG4 system, what is still missing, and what the first-year savings may look like.</p>
-    </section>
+<main class="bg-stone-50 text-olive-900">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="max-w-3xl">
+      <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Phase 5 solar offset blueprint</p>
+      <h1 class="mt-4 font-display italic text-5xl sm:text-6xl text-olive-950 leading-tight">Solar-first, grid-backed.</h1>
+      <p class="mt-6 text-lg text-olive-800 leading-8">
+        The goal is not off-grid living. Phase 1 should reduce daytime grid use, carry useful solar into the evening, and keep the existing grid-backed HVAC comfort system available during peak summer and winter.
+      </p>
+    </div>
+  </section>
 
-    <section class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 mb-8 text-olive-50">
-        <div class="grid lg:grid-cols-3 gap-5">
-            <div>
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Goal</p>
-                <h2 class="mt-2 text-2xl text-olive-50">Offset, not off-grid</h2>
-                <p class="mt-2 text-sm text-olive-200">Reduce daytime grid use, keep automatic grid fallback, avoid intentional export, and build a base that can expand after real data.</p>
-            </div>
-            <div>
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">What we have</p>
-                <h2 class="mt-2 text-2xl text-olive-50">Emporia + all-electric loads</h2>
-                <p class="mt-2 text-sm text-olive-200">Measured 60.5 kWh/day average, heat pump at 44.0% of mains, water heater at 18.1%, and a 45 A / 240 V heat-pump circuit.</p>
-            </div>
-            <div>
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Current answer</p>
-                <h2 class="mt-2 text-2xl text-olive-50">EG4 only if complete</h2>
-                <p class="mt-2 text-sm text-olive-200">The useful Phase 1 model is the EG4 control stack, two batteries, the ZNShine pallet, and a real mount/BOS allowance.</p>
-            </div>
+  <section class="border-y border-olive-200 bg-olive-950 text-olive-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Measured average</p>
+          <p class="mt-3 text-3xl font-semibold text-white">60.5 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-200">Jan 14 through May 20, 2026.</p>
         </div>
-    </section>
+        <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Peak day</p>
+          <p class="mt-3 text-3xl font-semibold text-white">178.7 kWh</p>
+          <p class="mt-2 text-sm text-olive-200">Feb 8, winter heat driven.</p>
+        </div>
+        <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Peak demand</p>
+          <p class="mt-3 text-3xl font-semibold text-white">11.9 kW</p>
+          <p class="mt-2 text-sm text-olive-200">Highest 15-minute measured demand.</p>
+        </div>
+        <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Major circuit</p>
+          <p class="mt-3 text-3xl font-semibold text-white">45A / 240V</p>
+          <p class="mt-2 text-sm text-olive-200">Heat pump breaker capacity, not normal draw.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="grid md:grid-cols-4 gap-4 mb-8">
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Measured average</p>
-            <p class="mt-2 text-3xl font-display italic">60.5 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-200">January 14 through May 20, 2026.</p>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-6 lg:grid-cols-[1fr_1.15fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">System definition</p>
+        <h2 class="mt-3 text-3xl text-olive-950">What Phase 1 is trying to do</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          Phase 1 is a permitted, grid-backed solar and battery system sized around the measured house loads. It should prioritize HVAC offset, water heating, daytime household use, and evening carryover. It should not be presented as a promise to run winter heat overnight from batteries.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Solar</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">19.8 kW DC</p>
+          <p class="mt-2 text-sm text-olive-700">36 ZNShine 550W bifacial panels on ground mounts.</p>
         </div>
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Peak day</p>
-            <p class="mt-2 text-3xl font-display italic text-olive-950">178.7 kWh</p>
-            <p class="mt-2 text-sm text-olive-700">February 8, winter heat-driven.</p>
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Storage</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">32 kWh class</p>
+          <p class="mt-2 text-sm text-olive-700">Two EG4 16 kWh indoor wall-mount batteries.</p>
         </div>
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Peak demand</p>
-            <p class="mt-2 text-3xl font-display italic text-olive-950">11.9 kW</p>
-            <p class="mt-2 text-sm text-olive-700">Peak 15-minute demand from Emporia.</p>
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Controls</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">FlexBOSS + GridBOSS</p>
+          <p class="mt-2 text-sm text-olive-700">Solar inverter plus MID/load-management hardware.</p>
         </div>
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Heat pump circuit</p>
-            <p class="mt-2 text-3xl font-display italic text-olive-950">45 A / 240 V</p>
-            <p class="mt-2 text-sm text-olive-700">Double-pole breaker observed. Treat as circuit capacity context, not normal draw.</p>
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Operating mode</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">No-export target</p>
+          <p class="mt-2 text-sm text-olive-700">Self-consumption first, grid fallback retained.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6 mb-8">
-        <div class="grid lg:grid-cols-3 gap-5">
-            <div class="lg:col-span-2">
-                <h2 class="text-3xl text-olive-950 mb-3">Recommended Phase 5 Direction</h2>
-                <p class="text-olive-800 leading-relaxed">Use the current cart as the practical Phase 1, but model it with two 16 kWh EG4 batteries. FlexBOSS21 + GridBOSS, 32 kWh-class storage, and the 36-panel ZNShine pallet is a real solar offset system once mounts, wire, disconnects, grounding, permitting, and labor are added.</p>
-                <p class="mt-3 text-olive-800 leading-relaxed">The goal is not to run the HVAC heat pump overnight from batteries alone. The goal is to offset daytime heating/cooling and household load while the grid remains the safety net.</p>
-            </div>
-            <div class="bg-olive-950 rounded-lg p-4 text-olive-50">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Planning target</p>
-                <p class="mt-2 text-4xl font-display italic">19.8 kW PV</p>
-                <p class="mt-2 text-sm text-olive-200">36-panel ZNShine pallet plus two batteries. Grid stays connected for heat-pump headroom. Zero/no intentional export.</p>
-            </div>
+  <section class="bg-white border-y border-olive-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Budget model</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Phase 1 Pricing Snapshot</h2>
         </div>
-    </section>
+        <p class="max-w-xl text-sm text-olive-700">Hardware cart and allowances reviewed May 21, 2026. Installer labor is not included.</p>
+      </div>
 
-    <section class="mb-8">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4">
-            <div>
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Current cart</p>
-                <h2 class="text-3xl text-olive-950">Phase 1 Pricing Snapshot</h2>
-            </div>
-            <p class="text-sm text-olive-600">Solar Lab cart, user-provided May 21, 2026.</p>
-        </div>
+      <div class="mt-8 overflow-x-auto rounded-lg border border-olive-200">
+        <table class="w-full min-w-[820px] text-left text-sm">
+          <thead class="bg-olive-100 text-olive-950">
+            <tr>
+              <th class="px-4 py-3 font-semibold">Line item</th>
+              <th class="px-4 py-3 font-semibold">Purpose</th>
+              <th class="px-4 py-3 font-semibold">Qty</th>
+              <th class="px-4 py-3 font-semibold text-right">Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-olive-100 bg-white text-olive-800">
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/pallet-of-znshine-550w-bifacial-solar-panels-36-panels/">ZNShine 550W bifacial panel pallet</a></td>
+              <td class="px-4 py-3">19.8 kW DC array, 36 panels</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$6,732.00</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16kwh-indoor-heated-ul1973-ul9540a/">EG4 Indoor WallMount Battery 16 kWh</a></td>
+              <td class="px-4 py-3">Evening carryover and peak support</td>
+              <td class="px-4 py-3">2</td>
+              <td class="px-4 py-3 text-right">$6,119.98</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/eg4-flexboss21-inverter-v1-1-eg4-gridboss-mid-v3-1-bndl-e00019-3-1/">EG4 FlexBOSS21 + GridBOSS MID bundle</a></td>
+              <td class="px-4 py-3">Inverter, MID, and load-management base</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$5,674.88</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/gridboss-breaker-kit-90a/">GridBOSS Breaker Kit - 90A</a></td>
+              <td class="px-4 py-3">Breaker set for GridBOSS installation paths</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$272.99</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/staubli-mc4-connectors-male-and-female-12awg-10awg/">Staubli MC4 connector pairs</a></td>
+              <td class="px-4 py-3">PV connector allowance</td>
+              <td class="px-4 py-3">36</td>
+              <td class="px-4 py-3 text-right">$165.60</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/chiko-usa-groundflex-u2v-solar-panel-ground-mount-kit-large-module-version/">Chiko GroundFlex U2V high-wind mount, 30-panel</a></td>
+              <td class="px-4 py-3">Primary ground rack block</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$6,230.00</td>
+            </tr>
+            <tr class="bg-amber-50/60">
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/chiko-usa-groundflex-u2v-solar-panel-ground-mount-kit-large-module-version/">Chiko GroundFlex U2V high-wind mount, 10-panel</a></td>
+              <td class="px-4 py-3">Smaller rack block; leaves 4 unused positions across 40-panel capacity</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$2,375.00</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">EG4 RS232 and USB cables</td>
+              <td class="px-4 py-3">Included support cables</td>
+              <td class="px-4 py-3">2</td>
+              <td class="px-4 py-3 text-right">$0.00</td>
+            </tr>
+            <tr class="bg-olive-50">
+              <td class="px-4 py-3 font-semibold text-olive-950">Current cart subtotal</td>
+              <td class="px-4 py-3">Before shipping, tax, coupon, and discount</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right font-semibold text-olive-950">$27,570.45</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">SAVE50THESOLARLAB coupon and discount</td>
+              <td class="px-4 py-3">Cart discount shown by Signature Solar</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">-$50.01</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Shipping</td>
+              <td class="px-4 py-3">Quoted cart freight</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">$2,187.24</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Tax</td>
+              <td class="px-4 py-3">Quoted cart tax</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">$1,782.46</td>
+            </tr>
+            <tr class="bg-olive-50">
+              <td class="px-4 py-3 font-semibold text-olive-950">Quoted cart total</td>
+              <td class="px-4 py-3">Hardware, racks, shipping, and tax</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right font-semibold text-olive-950">$31,490.14</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Electrical BOS allowance</td>
+              <td class="px-4 py-3">Wire home runs, conduit, disconnects, grounding, labels, combiner/fusing as needed</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">$1,500-$3,500</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/zoning-code-enforcement/">Tinicum permit placeholder</a></td>
+              <td class="px-4 py-3">$435.60 alternative-energy fee, $100 application review, $25 electrical processing; third-party review not included</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">$560.60+</td>
+            </tr>
+            <tr class="bg-olive-950 text-white">
+              <td class="px-4 py-4 font-semibold">Modeled Phase 1 planning total</td>
+              <td class="px-4 py-4 text-olive-100">Before labor, engineering, trenching/site work, and utility review</td>
+              <td class="px-4 py-4"></td>
+              <td class="px-4 py-4 text-right font-semibold">$33,550.74-$35,550.74</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="bg-olive-200 rounded-xl border border-olive-400 overflow-hidden mb-4">
-            <div class="grid grid-cols-12 gap-3 px-4 py-3 bg-olive-100 border-b border-olive-300 font-mono text-xs tracking-widest uppercase text-olive-600">
-                <div class="col-span-8">Item</div>
-                <div class="col-span-4 text-right">Price</div>
-            </div>
-            <div class="divide-y divide-olive-300 text-sm">
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800"><a href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16-1-kwh/" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">EG4 Indoor WallMount Battery, 48 V 314 Ah, 16 kWh</a> <span class="text-olive-600">× 2</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$6,119.98</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800"><a href="https://signaturesolar.com/eg4-flexboss21-inverter-v-1-1-48v-split-phase-21kw-pv-input-eg4-gridboss-mid-v3-1-bndl-e00019-3-1/" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">EG4 FlexBOSS21 Inverter V1.1 + EG4 GridBOSS MID V3.1 bundle</a></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$5,674.88</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">GridBOSS Breaker Kit - 90A <span class="text-olive-600">(BSB, SKU 1511048-BK)</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$272.99</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Staubli MC4 connectors, male and female, 12 AWG / 10 AWG <span class="text-olive-600">× 36</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$165.60</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800"><a href="https://signaturesolar.com/pallet-of-znshine-550w-bifacial-solar-panels-36-panels/" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">Pallet of ZNShine 550 W bifacial solar panels, 36 panels</a></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$6,732.00</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Chiko GroundFlex U2V high-wind ground mount, 30-panel kit</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$6,230.00</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3 bg-amber-50">
-                    <div class="col-span-8 text-olive-800">Chiko GroundFlex U2V high-wind ground mount, 10-panel kit <span class="text-olive-600">(smaller cost-saving rack block)</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$2,375.00</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800"><a href="https://signaturesolar.com/eg4-firmware-cable-for-6kw-6-5kw/" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">EG4 RS232 firmware update cable</a></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$0.00</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">EG4 USB read/write cable</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$0.00</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3 bg-olive-100">
-                    <div class="col-span-8 text-olive-800">Subtotal before coupon</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$27,570.45</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Shipping</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$2,187.24</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Tax</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$1,782.46</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Coupon SAVE50THESOLARLAB + discount</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">-$50.01</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-4 bg-olive-950 text-olive-50">
-                    <div class="col-span-8 font-semibold">Cart grand total</div>
-                    <div class="col-span-4 text-right font-semibold">$31,490.14</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Electrical BOS allowance <span class="text-olive-600">(conduit, disconnects, grounding, labels, combiner/fusing as needed)</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">+$1,500-$3,500</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3">
-                    <div class="col-span-8 text-olive-800">Tinicum Township solar permit estimate <span class="text-olive-600">(19.8 kW array, before third-party electrical review)</span></div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">+$560.60+</div>
-                </div>
-                <div class="grid grid-cols-12 gap-3 px-4 py-3 bg-olive-100">
-                    <div class="col-span-8 text-olive-800">Modeled total with BOS + permit allowance</div>
-                    <div class="col-span-4 text-right font-medium text-olive-950">$33.6k-$35.6k</div>
-                </div>
-            </div>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-lg border border-olive-200 bg-olive-50 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Rack reality</p>
+          <p class="mt-2 text-sm text-olive-800">The 30-panel plus 10-panel Chiko model is expensive, but it gives a permit-friendly high-wind mounting basis. Wood may be cheaper, but should not be assumed wind-resistant, bondable, or permit-friendly without engineered details.</p>
         </div>
+        <div class="rounded-lg border border-olive-200 bg-olive-50 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Promotion note</p>
+          <p class="mt-2 text-sm text-olive-800">Battery sale pricing appears already reflected in the cart. Signature Solar free-shipping promotions usually exclude panel pallets, large modules, terminal-shipped products, and Chiko mounts.</p>
+        </div>
+        <div class="rounded-lg border border-olive-200 bg-olive-50 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Tax credit note</p>
+          <p class="mt-2 text-sm text-olive-800">Model assumes $0 federal credit unless verified by a tax professional. If any credit applies, treat it as a one-time tax benefit or carryforward, not recurring bill savings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="grid gap-5">
-            <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Clarification</p>
-                <h3 class="mt-2 text-2xl text-olive-950">Mounts + BOS</h3>
-                <p class="mt-2 text-sm text-olive-700">The cart now includes the GridBOSS breaker kit and Chiko ground mounts. It still needs site BOS, permitting, electrical review, and labor.</p>
-            </div>
-        </div>
-    </section>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Expected offset</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Savings and payback</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          The model uses 18,947 kWh/year of production and $0.13760/kWh. Because the system is planned around self-consumption and no intentional export, the practical value depends on how much production is captured by live loads or batteries.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-200 bg-white p-6">
+        <dl class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Annual production</dt>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">18,947 kWh</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Gross value</dt>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">$2,607/year</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Practical capture</dt>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">80%-95%</dd>
+          </div>
+          <div>
+            <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Simple payback</dt>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">13.6-17.1 years</dd>
+          </div>
+        </dl>
+        <p class="mt-6 text-sm text-olive-700">
+          Practical modeled savings are about $174-$206/month, or $2.1k-$2.5k/year, before labor and rebates.
+        </p>
+      </div>
+    </div>
 
-    <section class="grid lg:grid-cols-3 gap-6 mb-8">
-        <div class="lg:col-span-2 bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">Solar Offset From 18,947 kWh/year</h2>
-            <div class="grid sm:grid-cols-3 gap-3">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Average-sun output</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">51.9 kWh/day</p>
-                    <p class="mt-1 text-sm text-olive-700">18,947 kWh/year divided across the year.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Gross value</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$217/mo</p>
-                    <p class="mt-1 text-sm text-olive-700">$2,607/year if every solar kWh offsets grid use at $0.13760/kWh.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Practical with 2 batteries</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$174-$206/mo</p>
-                    <p class="mt-1 text-sm text-olive-700">Assumes 80-95% capture with two batteries and zero/no-export behavior.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>12 month view:</strong> the modeled system should offset about <strong>$2.1k-$2.5k/year</strong> before any tax credit or utility rule change. Against the $33.6k-$35.6k modeled scope with Chiko high-wind mounts, BOS, basic township permit allowances, tax, and quoted shipping, simple payback is roughly <strong>13.6-17.1 years</strong> before labor and rebates.</p>
-            </div>
-        </div>
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-200 bg-white">
+      <table class="w-full min-w-[720px] text-left text-sm">
+        <thead class="bg-olive-100 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Season</th>
+            <th class="px-4 py-3 font-semibold">Expected pattern</th>
+            <th class="px-4 py-3 font-semibold text-right">Modeled savings</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-100 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Peak summer</td>
+            <td class="px-4 py-3">Cooling load should use a lot of production while the sun is available.</td>
+            <td class="px-4 py-3 text-right">$210-$276/month</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Peak winter</td>
+            <td class="px-4 py-3">Solar production is lower, but heat-pump self-consumption is high.</td>
+            <td class="px-4 py-3 text-right">$107-$157/month</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">No HVAC shoulder months</td>
+            <td class="px-4 py-3">Production can be strong, but value drops if batteries fill and daytime loads are low.</td>
+            <td class="px-4 py-3 text-right">$111-$198/month</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">Homeowner Read</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">Good fit:</strong> the panel pallet is large enough to offset meaningful daytime HVAC, water-heater, and household load.</p>
-                <p><strong class="text-olive-50">Battery model:</strong> two batteries are now the planning baseline because they match the panel pallet better and improve evening carryover.</p>
-                <p><strong class="text-olive-50">Main remaining costs:</strong> labor, utility coordination, and any site-specific electrical or civil work beyond the Chiko mount, BOS, and township permit allowances.</p>
-            </div>
-        </div>
-    </section>
+  <section class="bg-olive-100/70 border-y border-olive-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-3xl">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Permitting</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Tinicum Township review path</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          A six-panel experiment may look minor in the yard, but Tinicum lists solar as a permit item. A 36-panel ground array is about 999 square feet of module surface before row spacing, access paths, trenching, and equipment pads, so it should be treated as a real site-plan project.
+        </p>
+      </div>
 
-    <section class="grid lg:grid-cols-3 gap-6 mb-8">
-        <div class="lg:col-span-2 bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">Promotions And Tax Credits</h2>
-            <div class="grid sm:grid-cols-3 gap-3">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Recurring savings</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$2.1k-$2.5k/yr</p>
-                    <p class="mt-1 text-sm text-olive-700">This is the modeled annual utility offset. It can recur if production and usage hold.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Federal credit</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$0 expected</p>
-                    <p class="mt-1 text-sm text-olive-700">IRS currently says the residential clean energy credit is not available for property placed in service after December 31, 2025.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">If eligibility changes</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">One-time</p>
-                    <p class="mt-1 text-sm text-olive-700">A tax credit reduces tax owed once, with possible carryforward. It is not a yearly bill savings stream.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-200 rounded-lg border border-olive-400 p-4">
-                <p class="text-sm text-olive-800"><strong>Promotion check:</strong> Signature Solar currently advertises 10% off select batteries and free shipping on qualifying $3,000+ orders, but the page says solar panel pallets, large modules, terminal-shipped items, and Chiko ground mounts are excluded from free shipping. The battery discount appears already reflected in the $3,059.99 battery price, so do not count it twice.</p>
-            </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <h3 class="text-xl text-olive-950">Paperwork links</h3>
+          <ul class="mt-4 space-y-2 text-sm text-olive-800">
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/zoning-code-enforcement/">Township zoning and permit page</a></li>
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/wp-content/uploads/2026/05/zoning-permit-app-12-3-24.pdf">Zoning permit application</a></li>
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/wp-content/uploads/2024/12/Bldg-Permit-App-Final-12-3-24.pdf">Building permit application</a></li>
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/wp-content/uploads/2024/12/Electrical-Permit-App-12-3-24.pdf">Electrical permit application</a></li>
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/wp-content/uploads/2024/12/Stormwater-Mgmt-App-12-3-24.pdf">Stormwater management application</a></li>
+            <li><a class="underline decoration-olive-300 hover:text-olive-700" href="https://tinicumtownship.org/wp-content/uploads/2024/01/CODIFIED_ZONING_ORDINANCE_REVISED%208-7-23.pdf">Zoning ordinance</a></li>
+          </ul>
         </div>
+        <div class="rounded-lg border border-olive-200 bg-white p-5">
+          <h3 class="text-xl text-olive-950">Likely review topics</h3>
+          <ul class="mt-4 space-y-2 text-sm text-olive-800">
+            <li>Scaled site plan with array location, setbacks, lot lines, wells, septic, slopes, woods, wetlands, and overlays.</li>
+            <li>Electrical permit, third-party PA electrical review, rough inspection, and final inspection.</li>
+            <li>Ground-mount height, building envelope, 110% property-energy sizing limit, and any historic-resource review.</li>
+            <li>Stormwater or grading review if trenching, equipment pads, access work, or disturbance triggers it.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">Links To Verify</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><a href="https://signaturesolar.com/promotions" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-50 hover:text-olive-200">Signature Solar promotions</a><br>Check before checkout for battery discounts, coupon stacking, free-shipping exclusions, and sale end dates.</p>
-                <p><a href="https://www.irs.gov/credits-deductions/residential-clean-energy-credit" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-50 hover:text-olive-200">IRS residential clean energy credit</a><br>Use the IRS page and tax preparer guidance before assuming any credit applies.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="grid lg:grid-cols-3 gap-6 mb-8">
-        <div class="lg:col-span-2 bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">Ground Mount Options</h2>
-            <div class="grid sm:grid-cols-3 gap-3">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Modeled path</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$8,605</p>
-                    <p class="mt-1 text-sm text-olive-700">Chiko 30-panel high-wind kit plus 10-panel high-wind kit. Covers the full 36-panel pallet with extra rack capacity.</p>
-                </div>
-                <div class="bg-amber-50 rounded-lg border border-amber-200 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-amber-700">Cheaper block</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$2,375</p>
-                    <p class="mt-1 text-sm text-olive-700">The 10-panel Chiko kit is the clean small-rack unit. It is useful for staged builds, but four of them would cost more than 30+10.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Rack cost</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$0.43/W</p>
-                    <p class="mt-1 text-sm text-olive-700">$8,605 spread across the 19.8 kW DC array, before freight, labor, and site work.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>Wood rack caution:</strong> wood can be cheap, but do not assume it is wind-resistant or permit-friendly. A 36-panel array is roughly 999 sq ft of panel surface before row spacing, so the township or insurer may ask for engineered wind uplift, anchoring, bonding, and material durability.</p>
-            </div>
-        </div>
-
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">Cheaper Leads To Check</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">PowerField PowerRack:</strong> Signature Solar lists PowerRack units around $85-$90 each, but large-panel compatibility, ballast, anchoring, and permit acceptance need confirmation.</p>
-                <p><strong class="text-olive-50">Sinclair SkyRack HD:</strong> ShopSolar lists a 36-panel fixed-tilt rack around $7,409, cheaper than Chiko 30+10, but freight and compatibility need checking.</p>
-                <p><strong class="text-olive-50">IntegraRack:</strong> may be cheaper per panel for DIY ballast-style layouts, but confirm it fits the 2279 × 1134 mm ZNShine modules and local wind exposure.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6 mb-8">
-        <h2 class="text-2xl text-olive-950 mb-4">Seasonal HVAC Offset</h2>
-        <div class="grid md:grid-cols-3 gap-4">
-            <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Peak summer</p>
-                <p class="mt-2 text-2xl font-display italic text-olive-950">$210-$276/mo</p>
-                <p class="mt-1 text-sm text-olive-700">Planning estimate from 60-70 kWh/day solar and 85-95% capture when cooling load is high.</p>
-            </div>
-            <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Peak winter</p>
-                <p class="mt-2 text-2xl font-display italic text-olive-950">$107-$157/mo</p>
-                <p class="mt-1 text-sm text-olive-700">Planning estimate from 30-40 kWh/day solar and high heat-pump self-consumption.</p>
-            </div>
-            <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">No HVAC shoulder</p>
-                <p class="mt-2 text-2xl font-display italic text-olive-950">$111-$198/mo</p>
-                <p class="mt-1 text-sm text-olive-700">Production can be good, but capture drops if the house has no daytime load and batteries are full.</p>
-            </div>
-        </div>
-        <div class="mt-4 bg-olive-200 rounded-lg border border-olive-400 p-4">
-            <p class="text-sm text-olive-800"><strong>Homeowner read:</strong> HVAC season is where the array is most useful because heating and cooling create a place for solar to go. In shoulder months, schedule water heating, laundry, charging, and other flexible loads into solar hours so the system does not curtail useful production.</p>
-        </div>
-    </section>
-
-    <section class="bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6 mb-8">
-        <div class="grid lg:grid-cols-3 gap-5">
-            <div class="lg:col-span-2">
-                <h2 class="text-2xl text-olive-950 mb-3">Tinicum Permit Reality Check</h2>
-                <div class="space-y-3 text-sm text-olive-800">
-                    <p><strong>Ground solar is not just an electrical project.</strong> Tinicum lists solar on the ground as requiring both a <a href="https://tinicumtownship.org/wp-content/uploads/2026/05/zoning-permit-app-12-3-24.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">Zoning Permit Application</a> and <a href="https://tinicumtownship.org/wp-content/uploads/2024/12/Bldg-Permit-App-Final-12-3-24.pdf" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-olive-950">Building Permit Application</a>. Roof solar is listed as requiring the building permit path.</p>
-                    <p><strong>Permit cost estimate:</strong> the 19.8 kW array falls in the township alternative-energy 11-100 kW tier. Using the published $22/kW fee gives <strong>$435.60</strong>. Add the current <strong>$100</strong> application review fee and the listed <strong>$25</strong> electrical processing fee, so the basic township permit placeholder is <strong>$560.60+</strong>. Third-party electrical plan review/inspection is separate and paid by the applicant.</p>
-                    <p><strong>Scale matters.</strong> Six panels may feel minor, but the township still lists solar as a permit item. The full 36-panel pallet is about 999 sq ft of panel surface before row spacing, access, trenching, and equipment pads, so it is much harder to treat as informal or visually incidental.</p>
-                </div>
-            </div>
-            <div class="bg-olive-200 rounded-xl border border-olive-400 p-4">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Likely review items</p>
-                <ul class="mt-3 list-disc pl-5 space-y-2 text-sm text-olive-700">
-                    <li>Scaled site plan, setbacks, lot boundaries, well/septic, slopes, wetlands, woods, and overlays.</li>
-                    <li>Electrical permit, third-party PA electrical review, rough/final electrical inspections.</li>
-                    <li>Ground-mount height, building envelope, 110% property-energy sizing limit, and historic-resource approval if applicable.</li>
-                    <li>Stormwater/grading review if disturbance, trenching, access, or equipment pads trigger it.</li>
-                </ul>
-                <div class="mt-4 space-y-2 text-sm">
-                    <a href="https://tinicumtownship.org/zoning-code-enforcement/" target="_blank" rel="noopener noreferrer" class="block font-semibold text-olive-800 hover:text-olive-950">Township zoning and permits page</a>
-                    <a href="https://tinicumtownship.org/wp-content/uploads/2024/12/Electrical-Permit-App-12-3-24.pdf" target="_blank" rel="noopener noreferrer" class="block font-semibold text-olive-800 hover:text-olive-950">Electrical permit application</a>
-                    <a href="https://tinicumtownship.org/wp-content/uploads/2024/12/Stormwater-Mgmt-App-12-3-24.pdf" target="_blank" rel="noopener noreferrer" class="block font-semibold text-olive-800 hover:text-olive-950">Stormwater management application</a>
-                    <a href="https://tinicumtownship.org/wp-content/uploads/2024/01/CODIFIED_ZONING_ORDINANCE_REVISED%208-7-23.pdf" target="_blank" rel="noopener noreferrer" class="block font-semibold text-olive-800 hover:text-olive-950">Zoning ordinance</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="grid lg:grid-cols-2 gap-6 mb-8">
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">ZNShine Panel Fit</h2>
-            <div class="grid sm:grid-cols-2 gap-3">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Pallet output</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">19.8 kW DC</p>
-                    <p class="mt-1 text-sm text-olive-700">36 panels × 550 W.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Panel footprint</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">~999 sq ft</p>
-                    <p class="mt-1 text-sm text-olive-700">Each panel is about 7.48 ft × 3.72 ft, or 27.8 sq ft before row spacing/service access.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Best string shape</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">4 × 9</p>
-                    <p class="mt-1 text-sm text-olive-700">Four strings of nine panels: two strings on MPPT 1 and two strings on MPPT 2.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Avoid</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">10/string</p>
-                    <p class="mt-1 text-sm text-olive-700">Ten in series risks high cold-weather voltage against FlexBOSS protection limits.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>Compatibility read:</strong> ZNShine lists 50.20 V Voc, 41.90 V Vmp, 13.89 A Isc, and 13.13 A Imp. A 9-panel string is about 452 V Voc and 377 V Vmp at STC, which fits the FlexBOSS21 voltage window. Two parallel strings are near the MPPT current limit, so final stringing should be checked by the installer, especially if bifacial rear gain will be high.</p>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>Bifacial ground-mount note:</strong> bifacial gain is most useful when the back of the panel sees reflected light. A raised ground mount over light gravel, concrete, or snow-friendly open ground should do better than a tight roof mount. Treat that as upside, not base output, because ground surface, row spacing, tilt, and height drive the real gain.</p>
-            </div>
-        </div>
-
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">How Panels Stack Up</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">For the inverter:</strong> no. 19.8 kW DC is under the FlexBOSS21 recommended 21 kW STC array power. Bifacial rear gain may cause clipping, but clipping is different from incompatibility.</p>
-                <p><strong class="text-olive-50">For two batteries:</strong> much better. A 32 kWh-class battery bank can absorb more midday surplus and carry more load into the evening, though it still is not sized for full winter HVAC backup.</p>
-                <p><strong class="text-olive-50">Best next move:</strong> keep the full array plan if mounting works, include two batteries in the first financial model, and verify mount/BOS cost before ordering.</p>
-                <p><strong class="text-olive-50">Minimal install option:</strong> mount 18 panels first as two 9-panel strings, keep the other 18 for expansion, and wire the design so adding the second half is straightforward.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="grid lg:grid-cols-3 gap-6 mb-8">
-        <div class="lg:col-span-2 bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">What The Starter Array Covers</h2>
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">9 kW array</p>
-                    <p class="mt-2 text-3xl font-display italic text-olive-950">31 kWh/day</p>
-                    <p class="mt-2 text-sm text-olive-700">Using 4 peak-sun-hours and 85% system yield. About 51% of measured average load if self-consumed.</p>
-                    <p class="mt-2 text-sm text-olive-800">Gross value: about $1,537/year.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">19.8 kW array</p>
-                    <p class="mt-2 text-3xl font-display italic text-olive-950">51.9 kWh/day</p>
-                    <p class="mt-2 text-sm text-olive-700">Based on the 18,947 kWh/year average-sun estimate.</p>
-                    <p class="mt-2 text-sm text-olive-800">Gross value: about $2,607/year if fully self-consumed.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>Practical savings range:</strong> with two batteries and zero/no-export behavior, model 80-95% of the 18,947 kWh/year production as captured. That is the clearest reason to keep the pallet while also budgeting the second battery.</p>
-            </div>
-        </div>
-
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">Load Priority</h2>
-            <div class="space-y-3 text-sm">
-                <div>
-                    <div class="flex justify-between gap-3 text-olive-900"><strong>Heat pump</strong><span>44.0%</span></div>
-                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-700 rounded-full" style="width:44%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between gap-3 text-olive-900"><strong>Water heater</strong><span>18.1%</span></div>
-                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-600 rounded-full" style="width:18.1%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between gap-3 text-olive-900"><strong>Master bedroom</strong><span>10.3%</span></div>
-                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-500 rounded-full" style="width:10.3%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between gap-3 text-olive-900"><strong>Kitchen outlets</strong><span>4.1%</span></div>
-                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-500 rounded-full" style="width:4.1%"></div></div>
-                </div>
-            </div>
-            <p class="mt-4 text-sm text-olive-700">Control priority: shift water heating to solar hours first. Let the heat pump keep grid fallback because comfort load is seasonal and winter-peaky; the observed double-pole 45 A breaker is another reason not to size Phase 1 as if the battery must carry every heat-pump event.</p>
-        </div>
-    </section>
-
-    <section class="mb-8">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4">
-            <div>
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Equipment paths</p>
-                <h2 class="text-3xl text-olive-950">Core System Buying Links</h2>
-            </div>
-            <p class="text-sm text-olive-600">Core buying links</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-5">
-            <a href="https://signaturesolar.com/eg4-flexboss21-inverter-v-1-1-48v-split-phase-21kw-pv-input-eg4-gridboss-mid-v3-1-bndl-e00019-3-1/" target="_blank" rel="noopener noreferrer" class="block bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50 hover:bg-olive-900 transition-colors">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Primary core</p>
-                <h3 class="mt-2 text-2xl text-olive-50">EG4 FlexBOSS21 + GridBOSS</h3>
-                <p class="mt-2 text-sm text-olive-200">Cleanest match for daytime solar offset, service integration, automatic grid fallback, and no intentional export.</p>
-                <p class="mt-4 text-lg font-semibold">$5,674.88 bundle reference</p>
-            </a>
-            <a href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16-1-kwh/" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery model</p>
-                <h3 class="mt-2 text-2xl text-olive-950">Two EG4 314Ah WallMounts</h3>
-                <p class="mt-2 text-sm text-olive-700">32 kWh-class buffer for clouds, transitions, and evening carryover, not full winter overnight heat.</p>
-                <p class="mt-4 text-lg font-semibold text-olive-900">$3,059.99 each in cart</p>
-            </a>
-            <a href="https://signaturesolar.com/pallet-of-znshine-550w-bifacial-solar-panels-36-panels/" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
-                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Panels</p>
-                <h3 class="mt-2 text-2xl text-olive-950">ZNShine 550 W</h3>
-                <p class="mt-2 text-sm text-olive-700">Current cart panel choice. 36 panels provide 19.8 kW DC; install as 4 strings of 9 if site design allows.</p>
-                <p class="mt-4 text-lg font-semibold text-olive-900">$6,732 pallet</p>
-            </a>
-        </div>
-    </section>
-
-    <section class="grid lg:grid-cols-2 gap-6 mb-8">
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <h2 class="text-2xl text-olive-950 mb-4">80 Gallon Heat Pump Water Heater Payback</h2>
-            <div class="grid sm:grid-cols-3 gap-3">
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Current WH load</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">4,006 kWh/yr</p>
-                    <p class="mt-1 text-sm text-olive-700">Measured and annualized from Emporia.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Current cost</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$551/yr</p>
-                    <p class="mt-1 text-sm text-olive-700">At $0.13760/kWh.</p>
-                </div>
-                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
-                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Likely savings</p>
-                    <p class="mt-2 text-2xl font-display italic text-olive-950">$276-$383/yr</p>
-                    <p class="mt-1 text-sm text-olive-700">If HPWH uses roughly 1,225-2,000 kWh/year.</p>
-                </div>
-            </div>
-            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
-                <p class="text-sm text-olive-800"><strong>Payback:</strong> a $2,229-$2,779 unit-only purchase pays back in roughly 6-10 years before rebates. A $3.5k-$6.0k installed project pays back in roughly 9-22 years before rebates. Rebates, avoided electrical upgrades, or a failing existing tank can make it more attractive.</p>
-            </div>
-        </div>
-
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">Why The Water Heater Still Matters</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">The HVAC heat pump is now the big load.</strong> Solar planning has to preserve heating/cooling comfort first, because the heat pump is 44.0% of measured mains and sits on a 45 A / 240 V circuit.</p>
-                <p><strong class="text-olive-50">The water heater is the clean controllable load.</strong> It is 18.1% of measured mains, and an 80 gallon HPWH can reduce baseline demand while also being scheduled into solar hours.</p>
-                <p><strong class="text-olive-50">Priority:</strong> keep grid fallback for HVAC, reduce water-heater load, then use EG4 solar to offset daytime heat-pump and household use.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-8">
-        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
-            <h2 class="text-2xl text-olive-50 mb-4">Decision Rule</h2>
-            <div class="space-y-3 text-sm text-olive-200">
-                <p><strong class="text-olive-50">Buy EG4 first only as a complete stage</strong> if the goal is barn/home offset, no intentional export, and using Emporia data to tune the system over time.</p>
-                <p><strong class="text-olive-50">Use the full pallet if mounting works.</strong> The array is large, but it fits the FlexBOSS21 better than a tiny starter array would.</p>
-                <p><strong class="text-olive-50">Model battery #2 now.</strong> More storage improves capture, evening use, and cloudy-day usefulness, so the second battery belongs in the pricing model.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="grid lg:grid-cols-3 gap-6 mb-8">
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 1</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Do not stop at EG4 only</h3>
-            <p class="mt-2 text-sm text-olive-700">GridBOSS + FlexBOSS21 creates the service/load integration point, but it is not a usable offset system without storage and panels.</p>
-        </div>
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 2</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Add two batteries</h3>
-            <p class="mt-2 text-sm text-olive-700">Two 16 kWh batteries buffer solar and evening load. They are still not sized for the 178.7 kWh winter peak day or full overnight HVAC.</p>
-        </div>
-        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 3</p>
-            <h3 class="mt-2 text-2xl text-olive-950">Add panels in strings</h3>
-            <p class="mt-2 text-sm text-olive-700">Install 18 panels first if you want a smaller build, or all 36 if mounting and budget are ready. Keep strings consistent at 9 panels.</p>
-        </div>
-    </section>
-
-    <section class="bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6">
-        <h2 class="text-2xl text-olive-950 mb-3">Notes And Assumptions</h2>
-        <ul class="list-disc pl-5 space-y-2 text-sm text-olive-800">
-            <li>Emporia source period: January 14, 2026 through May 20, 2026, with 7,681.8 kWh measured over 127 complete days.</li>
-            <li>Offset math uses $0.13760/kWh and the 18,947 kWh/year average-sun production estimate for the full 36-panel array.</li>
-            <li>Heat pump is 44.0% of measured mains; water heater is 18.1%. Water heating is the cleaner load to shift or reduce first.</li>
-            <li>Heat pump breaker appears to be double-pole 45 A. At 240 V that is about 10.8 kVA of breaker capacity, but breaker size is not the same as typical operating draw.</li>
-            <li>Federal tax credit treatment depends on eligibility, tax liability, placed-in-service date, and future law or guidance. As of the IRS page reviewed May 21, 2026, the residential clean energy credit is not available for property placed in service after December 31, 2025, so this model assumes $0 federal credit unless verified otherwise.</li>
-            <li>Final solar sizing still needs roof/ground-mount layout, shading, utility rules, permitting, and installer or electrician review.</li>
-            <li>Solar Lab cart on May 21, 2026: ZNShine 550 W 36-panel pallet $6,732.00, two EG4 314Ah indoor batteries discounted to $6,119.98, GridBOSS Breaker Kit - 90A $272.99, FlexBOSS21 + GridBOSS $5,674.88, Staubli MC4 connectors $165.60, Chiko high-wind ground mounts $8,605.00, free RS232 and USB cables, coupon SAVE50THESOLARLAB, shipping $2,187.24, tax $1,782.46, and total $31,490.14.</li>
-            <li>Signature Solar promotions reviewed May 21, 2026: advertised battery sale pricing, 10% off select batteries at cart, and free shipping on qualifying $3,000+ orders. Promotion exclusions state that solar panel pallets, large modules, terminal-shipped products, and Chiko ground mounts are not eligible for free shipping.</li>
-            <li>Tinicum permit placeholder uses the township alternative-energy fee for 11-100 kW systems, the current $100 application review fee shown on the township permits page, and the $25 listed electrical processing fee. It does not include third-party electrical underwriter costs, engineered drawings, stormwater/grading escrow, zoning relief, or installer permit handling.</li>
-            <li>Mount model uses the user-provided Chiko GroundFlex U2V large-module high-wind pricing: $6,230 for a 30-panel kit plus $2,375 for a 10-panel kit. The 40-panel rack capacity leaves four unused positions when installing the 36-panel pallet.</li>
-            <li>BOS allowance remains a planning placeholder: $1,500-$3,500 for conduit, disconnects, grounding, labels, and combiner/fusing if needed. Labor, trenching, utility work, and final engineering are still separate.</li>
-            <li>ZNShine source: Signature Solar product page and linked spec sheet. Listed specs include 550 W, 50.20 V Voc, 13.89 A Isc, 69.44 lb panel weight, 350 mm module leads with MC4-compatible connectors, and 2279 × 1134 × 35 mm module dimensions.</li>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Technical fit</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Panel, inverter, and battery fit</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          The panel pallet fits the FlexBOSS21 on paper when arranged conservatively. The installer still needs to verify cold-weather voltage, parallel current, grounding, breaker placement, and the final one-line diagram.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-200 bg-white p-6">
+        <ul class="space-y-3 text-sm text-olive-800">
+          <li><span class="font-semibold text-olive-950">Best string shape:</span> four strings of nine panels, with two strings on MPPT 1 and two strings on MPPT 2.</li>
+          <li><span class="font-semibold text-olive-950">Why not ten per string:</span> ten-panel strings create more cold-weather high-voltage risk against protection limits.</li>
+          <li><span class="font-semibold text-olive-950">Voltage read:</span> nine panels are about 452V Voc and 377V Vmp at STC.</li>
+          <li><span class="font-semibold text-olive-950">Array sizing:</span> 19.8 kW DC is under the FlexBOSS21 recommended 21 kW STC array power; rear-side bifacial gain may clip at times.</li>
+          <li><span class="font-semibold text-olive-950">Battery read:</span> two batteries make the pallet more usable by storing more midday surplus, but they do not turn winter HVAC into an overnight battery load.</li>
         </ul>
-    </section>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="rounded-lg border border-olive-200 bg-white p-5">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Panel size</p>
+        <p class="mt-2 text-2xl font-semibold text-olive-950">~999 sq ft</p>
+        <p class="mt-2 text-sm text-olive-700">36 panels at roughly 27.8 sq ft each before spacing and access.</p>
+      </div>
+      <div class="rounded-lg border border-olive-200 bg-white p-5">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Bifacial upside</p>
+        <p class="mt-2 text-2xl font-semibold text-olive-950">Ground mounts help</p>
+        <p class="mt-2 text-sm text-olive-700">Rear gain is better with air gap and reflective ground such as gravel, concrete, snow, or open light surfaces.</p>
+      </div>
+      <div class="rounded-lg border border-olive-200 bg-white p-5">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Starter option</p>
+        <p class="mt-2 text-2xl font-semibold text-olive-950">18 panels first</p>
+        <p class="mt-2 text-sm text-olive-700">Two nine-panel strings can reduce first-stage site work while keeping the rest of the pallet for expansion.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white border-y border-olive-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Load strategy</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Use solar where it matters most</h2>
+          <p class="mt-4 text-olive-800 leading-7">
+            HVAC is the major energy user now, so the design should help with peak summer and winter bills without depending on batteries for full comfort backup. In shoulder months, the value comes from scheduling flexible loads into solar hours.
+          </p>
+        </div>
+        <div class="rounded-lg border border-olive-200 bg-olive-50 p-6">
+          <ol class="space-y-4 text-sm text-olive-800">
+            <li><span class="font-semibold text-olive-950">1. HVAC first:</span> let solar directly offset cooling and heat-pump runtime when available.</li>
+            <li><span class="font-semibold text-olive-950">2. Water heater next:</span> current water-heater load is about 4,006 kWh/year, or $551/year at $0.13760/kWh.</li>
+            <li><span class="font-semibold text-olive-950">3. Shift flexible loads:</span> run laundry, charging, printing, and other noncritical work while solar is producing.</li>
+            <li><span class="font-semibold text-olive-950">4. Keep grid fallback:</span> treat the batteries as offset and resilience, not as a replacement for utility service.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-lg border border-olive-200 bg-white p-6">
+        <h3 class="text-xl text-olive-950">Heat-pump water heater note</h3>
+        <p class="mt-3 text-sm text-olive-800 leading-6">
+          An 80-gallon heat-pump water heater is a load-reduction candidate, not a prerequisite for Phase 1 solar. If it drops annual water-heater use to roughly 1,225-2,000 kWh/year, the savings range is about $276-$383/year. That is usually a 6-10 year unit-only payback, or 9-22 years installed before rebates, so the solar scope should not depend on it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="rounded-lg border border-olive-200 bg-olive-950 p-6 sm:p-8 text-olive-50">
+      <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Planning takeaway</p>
+      <h2 class="mt-3 text-3xl text-white">The close blueprint</h2>
+      <p class="mt-4 max-w-4xl text-olive-100 leading-7">
+        Phase 1 is strongest as a permitted 19.8 kW DC ground-mounted array with two 16 kWh batteries, FlexBOSS21, GridBOSS, proper breakers, proper BOS, and an honest permit/site-work allowance. The decision point is not whether the panels are useful; it is whether the mount, permit, labor, and site constraints make the full pallet worth doing now versus staging the array in smaller nine-panel string blocks.
+      </p>
+    </div>
+  </section>
 </main>
