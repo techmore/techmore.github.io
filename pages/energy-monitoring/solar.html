@@ -27,9 +27,9 @@ title: Solar Offset - Techmore
             <p class="mt-2 text-sm text-olive-700">Peak 15-minute demand from Emporia.</p>
         </div>
         <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Rate used</p>
-            <p class="mt-2 text-3xl font-display italic text-olive-950">$0.1376</p>
-            <p class="mt-2 text-sm text-olive-700">Per kWh planning rate.</p>
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Heat pump circuit</p>
+            <p class="mt-2 text-3xl font-display italic text-olive-950">45 A / 240 V</p>
+            <p class="mt-2 text-sm text-olive-700">Double-pole breaker observed. Treat as circuit capacity context, not normal draw.</p>
         </div>
     </section>
 
@@ -43,7 +43,7 @@ title: Solar Offset - Techmore
             <div class="bg-olive-950 rounded-lg p-4 text-olive-50">
                 <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Planning target</p>
                 <p class="mt-2 text-4xl font-display italic">9-12 kW PV</p>
-                <p class="mt-2 text-sm text-olive-200">One 16 kWh battery first. Grid stays connected. Zero/no intentional export.</p>
+                <p class="mt-2 text-sm text-olive-200">One 16 kWh battery first. Grid stays connected for heat-pump headroom. Zero/no intentional export.</p>
             </div>
         </div>
     </section>
@@ -90,7 +90,7 @@ title: Solar Offset - Techmore
                     <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-500 rounded-full" style="width:4.1%"></div></div>
                 </div>
             </div>
-            <p class="mt-4 text-sm text-olive-700">Control priority: shift water heating to solar hours first. Let the heat pump keep grid fallback because comfort load is seasonal and winter-peaky.</p>
+            <p class="mt-4 text-sm text-olive-700">Control priority: shift water heating to solar hours first. Let the heat pump keep grid fallback because comfort load is seasonal and winter-peaky; the observed double-pole 45 A breaker is another reason not to size Phase 1 as if the battery must carry every heat-pump event.</p>
         </div>
     </section>
 
@@ -168,6 +168,7 @@ title: Solar Offset - Techmore
             <li>Emporia source period: January 14, 2026 through May 20, 2026, with 7,681.8 kWh measured over 127 complete days.</li>
             <li>Offset math uses $0.13760/kWh, 4 peak-sun-hours/day, and 85% system yield for planning only.</li>
             <li>Heat pump is 44.0% of measured mains; water heater is 18.1%. Water heating is the cleaner load to shift or reduce first.</li>
+            <li>Heat pump breaker appears to be double-pole 45 A. At 240 V that is about 10.8 kVA of breaker capacity, but breaker size is not the same as typical operating draw.</li>
             <li>Federal tax credit treatment depends on eligibility and tax liability; this page treats it as planning context, not guaranteed cash.</li>
             <li>Final solar sizing still needs roof/ground-mount layout, shading, utility rules, permitting, and installer or electrician review.</li>
         </ul>
