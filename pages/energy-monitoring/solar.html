@@ -245,7 +245,7 @@ title: Solar Offset - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Expected offset</p>
         <h2 class="mt-3 text-3xl text-olive-950">Savings and payback</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The model uses 18,947 kWh/year of production and $0.13760/kWh. Practical value depends on how much production lands on live loads or batteries instead of being clipped or unused.
+          The model uses 18,947 kWh/year of production. Recent bills show the avoidable energy cost is closer to $0.184-$0.217/kWh, not the older $0.13760/kWh planning rate.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-6">
@@ -256,7 +256,7 @@ title: Solar Offset - Techmore
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Gross value</dt>
-            <dd class="mt-2 text-2xl font-semibold text-olive-950">$2,607/year</dd>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">$3,486-$4,111/year</dd>
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Practical capture</dt>
@@ -264,13 +264,64 @@ title: Solar Offset - Techmore
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Simple payback</dt>
-            <dd class="mt-2 text-2xl font-semibold text-olive-950">13.6-17.1 years</dd>
+            <dd class="mt-2 text-2xl font-semibold text-olive-950">8.6-12.8 years</dd>
           </div>
         </dl>
         <p class="mt-6 text-sm text-olive-700">
-          Practical modeled savings are about $174-$206/month, or $2.1k-$2.5k/year, before labor.
+          Practical modeled savings are about $232-$325/month, or $2.8k-$3.9k/year, before labor. Equal Payment Plan billing does not change the underlying avoided kWh value.
         </p>
       </div>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <table class="w-full min-w-[760px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Bill period</th>
+            <th class="px-4 py-3 font-semibold text-right">kWh used</th>
+            <th class="px-4 py-3 font-semibold text-right">Avoidable cost/kWh</th>
+            <th class="px-4 py-3 font-semibold">Read</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Nov 3-Dec 1, 2025</td>
+            <td class="px-4 py-3 text-right">3,064</td>
+            <td class="px-4 py-3 text-right">$0.213/kWh</td>
+            <td class="px-4 py-3">AEP winter bill; high usage and high supplier rate.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Dec 2-Dec 30, 2025</td>
+            <td class="px-4 py-3 text-right">2,101</td>
+            <td class="px-4 py-3 text-right">$0.214/kWh</td>
+            <td class="px-4 py-3">AEP winter bill.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Dec 31-Jan 29, 2026</td>
+            <td class="px-4 py-3 text-right">2,663</td>
+            <td class="px-4 py-3 text-right">$0.217/kWh</td>
+            <td class="px-4 py-3">AEP winter bill.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Jan 30-Mar 1, 2026</td>
+            <td class="px-4 py-3 text-right">3,110</td>
+            <td class="px-4 py-3 text-right">$0.217/kWh</td>
+            <td class="px-4 py-3">Highest reviewed bill period.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Mar 2-Mar 30, 2026</td>
+            <td class="px-4 py-3 text-right">1,744</td>
+            <td class="px-4 py-3 text-right">$0.189/kWh</td>
+            <td class="px-4 py-3">Supplier switch month.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Mar 31-Apr 29, 2026</td>
+            <td class="px-4 py-3 text-right">940</td>
+            <td class="px-4 py-3 text-right">$0.184/kWh</td>
+            <td class="px-4 py-3">Current Town Square rate period.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
@@ -286,17 +337,17 @@ title: Solar Offset - Techmore
           <tr>
             <td class="px-4 py-3 font-semibold text-olive-950">Peak summer</td>
             <td class="px-4 py-3">Cooling load should use a lot of production while the sun is available.</td>
-            <td class="px-4 py-3 text-right">$210-$276/month</td>
+            <td class="px-4 py-3 text-right">$281-$437/month</td>
           </tr>
           <tr>
             <td class="px-4 py-3 font-semibold text-olive-950">Peak winter</td>
             <td class="px-4 py-3">Solar production is lower, but heat-pump self-consumption is high.</td>
-            <td class="px-4 py-3 text-right">$107-$157/month</td>
+            <td class="px-4 py-3 text-right">$143-$249/month</td>
           </tr>
           <tr>
             <td class="px-4 py-3 font-semibold text-olive-950">No HVAC shoulder months</td>
             <td class="px-4 py-3">Production can be strong, but value drops if batteries fill and daytime loads are low.</td>
-            <td class="px-4 py-3 text-right">$111-$198/month</td>
+            <td class="px-4 py-3 text-right">$148-$314/month</td>
           </tr>
         </tbody>
       </table>
