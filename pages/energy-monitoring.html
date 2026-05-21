@@ -151,6 +151,31 @@ title: Energy Monitoring - Techmore
                     <div class="mt-6 border-t border-olive-400 pt-4">
                         <p class="text-sm text-olive-800">Automation layer handles pre-heat/pre-cool logic, ERV scheduling, and alerts when usage drifts.</p>
                     </div>
+                    <div class="mt-6 rounded-xl border border-olive-300 bg-olive-100/70 p-4">
+                        <p class="text-xs font-mono tracking-widest uppercase text-olive-600 mb-2">HVAC details</p>
+                        <h3 class="text-xl text-olive-950 mb-2">Mitsubishi Hyper Heat check list</h3>
+                        <p class="text-sm text-olive-800 mb-4">The site currently documents a Mitsubishi Hyper Heat mini-split controlled through CN105, but the exact indoor head and outdoor condenser model numbers are not captured yet. Add the nameplate model numbers from every indoor head and the outdoor unit before making sizing claims.</p>
+                        <div class="grid gap-3 md:grid-cols-2">
+                            <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
+                                <p class="font-semibold text-olive-950">If it is not cooling well</p>
+                                <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
+                                    <li>Clean indoor head filters and confirm all returns/supplies are unobstructed.</li>
+                                    <li>Wash the outdoor coil and keep plants/debris away from the condenser.</li>
+                                    <li>Measure return-to-supply temperature split while cooling; a weak split points to airflow, charge, or control issues.</li>
+                                    <li>Have a tech verify refrigerant charge, line-set condition, fan speed, and that the system is not short-cycling.</li>
+                                </ul>
+                            </div>
+                            <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
+                                <p class="font-semibold text-olive-950">Building shell priority</p>
+                                <ul class="mt-2 list-disc pl-5 text-sm text-olive-800 space-y-1">
+                                    <li>Air-seal attic penetrations before adding more insulation.</li>
+                                    <li>Check attic hatch, can lights, bath fans, duct chases, and top plates for leakage.</li>
+                                    <li>Confirm attic ventilation is not blocked by insulation.</li>
+                                    <li>ENERGY STAR guidance for this region generally points to attic insulation around <a href="https://www.energystar.gov/saveathome/seal_insulate/identify-problems-you-want-fix/diy-checks-inspections/insulation-r-values" class="underline decoration-olive-400 hover:text-olive-700">R49-R60</a>, depending on existing levels.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div id="phase-4" class="mt-6 rounded-xl border border-olive-300 bg-olive-100/70 p-4">
                         <p class="text-xs font-mono tracking-widest uppercase text-olive-600 mb-2">Phase 4 — Expansion Monitoring</p>
                         <p class="text-sm text-olive-800">Add NUTS UPS telemetry and Kasa switch power monitoring to extend reliability tracking and spot-load visibility. This phase layers onto the existing MQTT + SQLite pipeline.</p>
