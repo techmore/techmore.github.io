@@ -1,0 +1,413 @@
+---
+layout: default
+title: DELTA Pro 3 Issues - Techmore
+---
+<style>
+:root {
+  --olive-50:oklch(97.73% 0.0054 117.92); --olive-100:oklch(95.09% 0.0134 115.84); --olive-200:oklch(90.20% 0.0232 117.63); --olive-300:oklch(82.52% 0.0345 116.34);
+  --olive-400:oklch(73.59% 0.0492 116.81); --olive-600:oklch(54.54% 0.0616 116.19); --olive-700:oklch(46.42% 0.0493 117.00); --olive-800:oklch(39.89% 0.0355 116.41);
+  --olive-950:oklch(24.22% 0.0185 116.99); --stone-50:oklch(98.48% 0.0013 106.42); --stone-500:oklch(55.34% 0.0116 58.07); --stone-600:oklch(44.44% 0.0096 73.64);
+  --stone-800:oklch(26.85% 0.0063 34.30); --stone-900:oklch(21.61% 0.0061 56.04); --red:oklch(45% 0.160 25); --amber:oklch(52% 0.130 75); --blue:oklch(55% 0.060 210);
+  --bg:var(--olive-300); --surface:var(--olive-200); --soft:var(--olive-100); --border:var(--olive-400);
+}
+.portable-power-page * { box-sizing:border-box; }
+.portable-power-page a { color:var(--olive-800); font-weight:700; }
+.portable-power-page h1, .portable-power-page h2, .portable-power-page h3 { font-family:"Instrument Serif",Georgia,serif; line-height:1.05; margin:0; color:var(--stone-900); }
+.portable-power-page h1 { color:var(--olive-50); font-size:clamp(2.4rem,8vw,4.7rem); max-width:12ch; }
+.portable-power-page h2 { font-size:1.75rem; } .portable-power-page h3 { font-size:1.18rem; } .portable-power-page p { margin:0; }
+.portable-power-page .topbar { position:relative; z-index:1; background:rgba(247,248,244,.86); backdrop-filter:blur(14px); border-bottom:1px solid rgba(110,117,75,.24); }
+.portable-power-page .topbar-inner { max-width:980px; margin:0 auto; padding:.6rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:.75rem; }
+.portable-power-page .brand { font-family:"Instrument Serif",Georgia,serif; color:var(--olive-950); font-size:1.1rem; font-weight:700; white-space:nowrap; }
+.portable-power-page .nav { display:flex; gap:.35rem; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+.portable-power-page .nav::-webkit-scrollbar { display:none; }
+.portable-power-page .nav a { text-decoration:none; color:var(--stone-600); border:1px solid transparent; border-radius:999px; padding:.34rem .62rem; font-size:.76rem; white-space:nowrap; }
+.portable-power-page .nav a:hover, .portable-power-page .nav a.active { background:var(--olive-100); border-color:var(--olive-400); color:var(--olive-900); }
+.portable-power-page .hero { background:var(--olive-950); color:var(--olive-50); border-bottom:1px solid var(--olive-800); }
+.portable-power-page .hero-inner { max-width:980px; margin:0 auto; padding:2.2rem 1rem 1.45rem; }
+.portable-power-page .eyebrow { color:var(--olive-300); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; font-weight:800; margin-bottom:.7rem; }
+.portable-power-page .hero-copy { color:var(--olive-100); max-width:720px; margin-top:1rem; font-size:.98rem; }
+.portable-power-page .hero-strip { margin-top:1.3rem; display:grid; grid-template-columns:repeat(3,1fr); gap:.65rem; }
+.portable-power-page .hero-stat { border:1px solid var(--olive-800); border-radius:14px; padding:.85rem; background:rgba(255,255,255,.035); }
+.portable-power-page .hero-stat b { display:block; font-family:"Instrument Serif",Georgia,serif; font-size:1.8rem; line-height:1; color:var(--olive-50); }
+.portable-power-page .hero-stat span { display:block; margin-top:.28rem; color:var(--olive-300); font-size:.75rem; }
+.portable-power-page main { max-width:980px; margin:0 auto; padding:1rem 1rem 3rem; }
+.portable-power-page .section { margin-top:1.15rem; }
+.portable-power-page .section-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin:0 0 .65rem; padding-bottom:.55rem; border-bottom:1px solid rgba(87,93,61,.35); }
+.portable-power-page .section-sub { color:var(--stone-500); font-size:.78rem; text-align:right; }
+.portable-power-page .grid { display:grid; gap:.75rem; } .portable-power-page .two { grid-template-columns:repeat(2,minmax(0,1fr)); } .portable-power-page .three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.portable-power-page .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:.95rem; }
+.portable-power-page .card.dark { background:var(--olive-950); color:var(--olive-50); border-color:var(--olive-800); }
+.portable-power-page .card.soft { background:var(--soft); }
+.portable-power-page .label { color:var(--stone-500); font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+.portable-power-page .dark .label { color:var(--olive-400); }
+.portable-power-page .value { margin-top:.18rem; font-family:"Instrument Serif",Georgia,serif; font-size:2rem; line-height:1; color:var(--stone-900); }
+.portable-power-page .dark .value { color:var(--olive-50); }
+.portable-power-page .meta { margin-top:.42rem; color:var(--stone-500); font-size:.76rem; }
+.portable-power-page .dark .meta { color:var(--olive-300); }
+.portable-power-page .callout { padding:.95rem; border-radius:14px; border:1px solid var(--olive-400); background:var(--soft); }
+.portable-power-page .stack { display:grid; gap:.62rem; }
+.portable-power-page .row { display:grid; grid-template-columns:1.1fr .72fr .78fr; gap:.65rem; align-items:start; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:.72rem; }
+.portable-power-page .row.four { grid-template-columns:1fr .7fr .95fr .5fr; }
+.portable-power-page .row-title { font-weight:800; color:var(--stone-900); }
+.portable-power-page .row-text { color:var(--stone-600); font-size:.78rem; margin-top:.18rem; }
+.portable-power-page .pill { display:inline-flex; width:fit-content; border-radius:999px; padding:.22rem .48rem; background:var(--soft); color:var(--olive-800); border:1px solid rgba(87,93,61,.22); font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
+.portable-power-page .risk-high { color:var(--red); font-weight:850; } .portable-power-page .risk-med { color:var(--amber); font-weight:850; } .portable-power-page .risk-low { color:var(--olive-800); font-weight:850; }
+.portable-power-page ul { margin:.45rem 0 0 1.1rem; padding:0; } .portable-power-page li { margin:.28rem 0; }
+.portable-power-page .footer { margin-top:1.5rem; color:var(--stone-600); font-size:.75rem; border-top:1px solid rgba(87,93,61,.35); padding-top:1rem; }
+@media (max-width:760px) {
+  .portable-power-page .topbar-inner { padding:.48rem .75rem; align-items:start; flex-direction:column; }
+  .portable-power-page .nav { width:100%; }
+  .portable-power-page .hero-inner { padding:1.55rem .75rem 1rem; }
+  .portable-power-page .hero-copy { font-size:.88rem; }
+  .portable-power-page .hero-strip, .portable-power-page .two, .portable-power-page .three { grid-template-columns:1fr; }
+  .portable-power-page main { padding:.75rem .75rem 2.5rem; }
+  .portable-power-page .section-head { display:block; }
+  .portable-power-page .section-sub { text-align:left; margin-top:.2rem; }
+  .portable-power-page .card { padding:.78rem; border-radius:12px; }
+  .portable-power-page .value { font-size:1.62rem; }
+  .portable-power-page .row, .portable-power-page .row.four { grid-template-columns:1fr; gap:.4rem; padding:.72rem; }
+  .portable-power-page .nav a { font-size:.7rem; padding:.3rem .52rem; }
+}
+</style>
+<div class="portable-power-page">
+<nav class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">DELTA Pro 3 Issues</div>
+    <div class="nav">
+      <a href="/pages/eg4-solar-no-backfeed-plan/">Solar Plan</a>
+      <a class="active" href="/pages/delta-pro-3-issues/">DELTA Pro 3</a>
+      <a href="#comparison">Compare</a>
+      <a href="#shipping">Shipping</a>
+      <a href="#deals">Deals</a>
+      <a href="#issues">Issues</a>
+      <a href="#threads">Threads</a>
+      <a href="#recommendation">Recommendation</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Portable power research page</div>
+    <h1>DELTA Pro 3 is too much unit for the RV job.</h1>
+    <p class="hero-copy">This page documents known EcoFlow DELTA Pro 3 risk areas and why the better fit for light RV/camping loads is a smaller 1 kWh class LFP unit such as the Anker SOLIX C1000 with 200-400 W of XT60-compatible solar.</p>
+    <div class="hero-strip">
+      <div class="hero-stat"><b>4,096 Wh</b><span>DELTA Pro 3 base capacity</span></div>
+      <div class="hero-stat"><b>113.5 lb</b><span>DELTA Pro 3 weight</span></div>
+      <div class="hero-stat"><b>1-3 kWh</b><span>Estimated daily RV/camping use</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="section-head">
+      <h2>Decision Summary</h2>
+      <div class="section-sub">What matters for this use case</div>
+    </div>
+    <div class="grid three">
+      <div class="card dark">
+        <div class="label">Best answer</div>
+        <div class="value">C1000 class</div>
+        <div class="meta">Anker SOLIX C1000 or similar 1 kWh LFP unit, not DELTA Pro 3.</div>
+      </div>
+      <div class="card">
+        <div class="label">Why not DP3</div>
+        <div class="value">Overkill</div>
+        <div class="meta">Excellent capability, but high cost/weight for fridge, fan, LEDs, and occasional printer.</div>
+      </div>
+      <div class="card">
+        <div class="label">Solar input goal</div>
+        <div class="value">XT60</div>
+        <div class="meta">Use MC4-to-XT60 cabling with 200-400 W portable panels.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comparison">
+    <div class="section-head">
+      <h2>Modern Small Station Comparison</h2>
+      <div class="section-sub">1 kWh LFP class, RV/camping filter</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP</div><div class="row-text">1004 Wh, 1500 W inverter, 3000 W surge, 600 W solar, app, UPS, 25 dB under 500 W. Current official sale price is very aggressive.</div></div>
+        <div class="risk-low">Best value</div>
+        <div class="row-text">$329 station / $508 with 200 W panel / $687 with 400 W panels. Great if budget matters and you accept smaller-brand support risk.</div>
+        <div><a href="https://www.pecron.com/products/pecron-f1000lfp-portable-power-station-1500w-1004wh?variant=45854615929020">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Anker SOLIX C1000 / C1000 Gen 2</div><div class="row-text">1056 Wh original or 1024 Wh Gen 2 class, strong app/support reputation, XT60 solar, roughly 600 W solar input on C1000 class.</div></div>
+        <div class="risk-low">Best ownership</div>
+        <div class="row-text">Often $429-$500 on sale; bundles around $650-$700 with 200 W panel. Better support confidence than Pecron.</div>
+        <div><a href="https://www.ankersolix.com/products/c1000">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Pecron E1000LFP</div><div class="row-text">1024 Wh, 1800 W output, 600 W solar, 12 V / 20 A DC output, expandable with larger Pecron batteries.</div></div>
+        <div class="risk-low">Best Pecron upgrade</div>
+        <div class="row-text">Worth the small upcharge over F1000 if you may expand storage later or want 1800 W output.</div>
+        <div><a href="https://www.pecron.com/products/pecron-e1000lfp-portable-power-station-2000w-1024wh">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Bluetti AC180</div><div class="row-text">1152 Wh, 1800 W output, 500 W solar input, LiFePO4, Bluetooth app, 35.3 lb. Very common and frequently discounted.</div></div>
+        <div class="risk-med">Solid but heavier</div>
+        <div class="row-text">Official listing showed $769 kit context and $449 station comparison; independent pricing often around $699. Good unit, less compelling than Anker/Pecron for this exact goal.</div>
+        <div><a href="https://www.bluettipower.com/products/solar-generator-ac180">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Jackery Explorer 1000 v2</div><div class="row-text">1070 Wh, 1500 W output, 3000 W surge, LiFePO4, 4000 cycles, very light/small for class.</div></div>
+        <div class="risk-med">Portable pick</div>
+        <div class="row-text">$499 official basic listing. Solar ecosystem is polished, but generic XT60-style flexibility is less central than Anker/Pecron.</div>
+        <div><a href="https://www.jackery.com/products/jackery-explorer-1000-v2">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">EcoFlow DELTA 2 / DELTA 3 Plus</div><div class="row-text">1024 Wh LFP class, 1800 W output, fast AC charging, XT60 solar. DELTA 3 Plus has dual 500 W solar inputs / 1000 W total in current manuals.</div></div>
+        <div class="risk-med">Fastest solar path</div>
+        <div class="row-text">Good hardware, but EcoFlow firmware/support risk is the reason this page exists. Buy only if price is excellent and return window is strong.</div>
+        <div><a href="https://www.ecoflow.com/us/delta-3-series-portable-power-station">Link</a></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Ranking for your RV use:</strong> 1. Anker C1000/C1000 Gen 2 for best ownership, 2. Pecron F1000LFP for best value, 3. Pecron E1000LFP if expansion matters, 4. Bluetti AC180 if sale price is strong, 5. Jackery 1000 v2 if portability matters most, 6. EcoFlow Delta 2/3 Plus only if the deal is excellent.</p>
+    </div>
+  </section>
+
+  <section class="section" id="shipping">
+    <div class="section-head">
+      <h2>Fastest Shipping Check</h2>
+      <div class="section-sub">ZIP-code dependent</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Fastest documented option: Jackery Explorer 1000 v2</div><div class="row-text">Jackery's official page advertises 1-business-day delivery in select city regions, including multiple New Jersey cities, if ordered before the posted cutoff. Otherwise it states a normal 1-5 day shipping timeframe.</div></div>
+        <div class="risk-low">Fastest signal</div>
+        <div class="row-text">Best immediate-delivery candidate if your ZIP falls into the listed service area.</div>
+        <div><a href="https://www.jackery.com/products/jackery-explorer-1000-v2">Link</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Likely fast if Amazon has local stock: Anker / Bluetti / Jackery</div><div class="row-text">Amazon Prime delivery can beat brand-direct shipping, but it is inventory and ZIP dependent. Check the exact listing from the official brand store or Amazon-sold listing.</div></div>
+        <div class="risk-low">Check cart</div>
+        <div class="row-text">Use Amazon when delivery date matters more than direct-brand purchase perks.</div>
+        <div><a href="https://www.amazon.com/">Amazon</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Best value but not fastest certainty: Pecron F1000LFP</div><div class="row-text">Pecron's listing says to contact customer service for out-of-stock, pre-order, and non-US shipping timing. It may ship quickly when in stock, but it is not the safest same-week bet.</div></div>
+        <div class="risk-med">Verify first</div>
+        <div class="row-text">Buy Pecron for price/performance, not because you need it fastest.</div>
+        <div><a href="https://www.pecron.com/products/pecron-f1000lfp-portable-power-station-1500w-1004wh?variant=45854615929020">Link</a></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Fast-shipping recommendation:</strong> if you need it soon, check <strong>Jackery Explorer 1000 v2 direct</strong> and Amazon Prime listings first. If Pecron shows a longer delivery window, do not wait on it unless the price is the main priority.</p>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Pecron vs Anker shipping decision:</strong> Pecron direct states orders process in <strong>1-3 business days</strong> and shipment takes about <strong>2-7 business days</strong>, so plan on <strong>3-10 business days total</strong> unless checkout shows better. Anker's shipping FAQ says delivery is generally <strong>3-7 business days</strong> and may be shipped by Anker's warehouse partner or Amazon. If Anker is only about $100 more and arrives several days earlier with a firm date, buy Anker. If both show similar arrival dates, Pecron F1000LFP is the better value.</p>
+    </div>
+  </section>
+
+  <section class="section" id="deals">
+    <div class="section-head">
+      <h2>Current Deal Watch</h2>
+      <div class="section-sub">Verify in cart before buying</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP</div><div class="row-text">Strongest deal signal. Multiple current listings show $329 with free shipping. A Pecron sale-page search result also surfaced a possible $189 sale display, but that conflicts with the direct product page and must be verified at checkout.</div></div>
+        <div class="risk-low">Best deal</div>
+        <div class="row-text">Buy at $329 if delivery timing works. If the $189 sale is real in cart, this becomes the obvious value pick.</div>
+        <div><a href="https://www.pecron.com/collections/on-sales">Sale page</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Anker SOLIX C1000 / C1000 Gen 2</div><div class="row-text">Recent/current deal signals cluster around $397-$449 for the station, with C1000 Gen 2 + 200 W panel bundle posts around $650-$670.</div></div>
+        <div class="risk-low">Worth +$100</div>
+        <div class="row-text">If Anker is $429-$449 and arrives faster, it is the cleaner ownership choice.</div>
+        <div><a href="https://www.ankersolix.com/products/c1000">Anker</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Pecron via ShopSolar</div><div class="row-text">ShopSolar listing shows Pecron F1000LFP at $329, 45% off, with support and 30-day return messaging.</div></div>
+        <div class="risk-med">Alt retailer</div>
+        <div class="row-text">Useful if Pecron direct shipping is unclear, but compare return terms and delivery estimate.</div>
+        <div><a href="https://shopsolarkits.com/products/pecron-f1000lfp-portable-power-station">Link</a></div>
+      </div>
+    </div>
+    <div class="section-head" style="margin-top:1rem">
+      <h3>Seller Links: Price And Shipping Confidence</h3>
+      <div class="section-sub">Pecron vs Anker only</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP direct</div><div class="row-text">Official listing shows $329 station, $508 with PV200, $687 with two PV200 panels. Specs: 1004 Wh, 1500 W, XT60 600 W solar.</div></div>
+        <div class="risk-low">$329</div>
+        <div class="row-text">Shipping policy suggests 3-10 business days total unless checkout shows better. Best verified price.</div>
+        <div><a href="https://www.pecron.com/products/pecron-f1000lfp-portable-power-station-1500w-1004wh?variant=45854615929020">Direct</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP via ShopSolar</div><div class="row-text">ShopSolar listing also shows $329, with 30-day free returns and lifetime support messaging.</div></div>
+        <div class="risk-low">$329</div>
+        <div class="row-text">Check cart delivery date. Good alternate if Pecron direct shipping is unclear.</div>
+        <div><a href="https://shopsolarkits.com/products/pecron-f1000lfp-portable-power-station">ShopSolar</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP via Walmart marketplace</div><div class="row-text">Walmart marketplace listing exists, but price/shipping must be checked in cart because marketplace sellers can vary.</div></div>
+        <div class="risk-med">Cart check</div>
+        <div class="row-text">Use only if delivery date/return terms beat Pecron direct or ShopSolar.</div>
+        <div><a href="https://www.walmart.com/ip/19942953345">Walmart</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Pecron F1000LFP via Amazon</div><div class="row-text">Search results surfaced older/preorder discussion, but no stable current Amazon product page was verifiable from search.</div></div>
+        <div class="risk-med">Unknown</div>
+        <div class="row-text">If Amazon shows Prime delivery and official Pecron seller, it may be fastest. Verify seller and return window.</div>
+        <div><a href="https://www.amazon.com/s?k=Pecron+F1000LFP">Amazon search</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Anker SOLIX C1000 direct</div><div class="row-text">Official Anker product page. Shipping FAQ says typical delivery is 3-7 business days and orders may ship via Anker warehouse partner or Amazon.</div></div>
+        <div class="risk-low">$429-$449 target</div>
+        <div class="row-text">Buy direct if price is close to Amazon and delivery date is firm.</div>
+        <div><a href="https://www.ankersolix.com/products/c1000">Direct</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Anker SOLIX C1000 / Gen 2 via Amazon</div><div class="row-text">Past Amazon deal history shows C1000 around $397-$449. Current Prime delivery is ZIP and seller dependent.</div></div>
+        <div class="risk-low">Cart check</div>
+        <div class="row-text">Best path if delivery date matters. Prefer AnkerDirect / Anker official store listings.</div>
+        <div><a href="https://www.amazon.com/s?k=Anker+SOLIX+C1000">Amazon search</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Anker via Signature Solar</div><div class="row-text">Signature Solar has Anker documentation indexed, but I did not find a live C1000 retail listing in current search results.</div></div>
+        <div class="risk-med">Not useful</div>
+        <div class="row-text">Do not use Signature Solar for this portable-station decision unless a current C1000 product page appears.</div>
+        <div><a href="https://signaturesolar.com/search.php?search_query=Anker%20C1000">Search</a></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Deal rule:</strong> at <strong>$329</strong>, Pecron F1000LFP wins value unless Anker ships much faster. At <strong>$429-$449</strong>, Anker wins if you value support/app polish and the arrival date is better. At a verified <strong>$189</strong>, Pecron is the buy unless there is a stock/preorder catch.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Official DELTA Pro 3 Baseline</h2>
+      <div class="section-sub">Documented capabilities</div>
+    </div>
+    <div class="grid two">
+      <div class="card soft">
+        <h3>What it does well</h3>
+        <ul>
+          <li>4,096 Wh LFP battery, expandable with extra batteries.</li>
+          <li>4,000 W AC continuous output, 8,000 W surge, 120/240 V output modes.</li>
+          <li>Up to 2,600 W total solar input across high-voltage and low-voltage PV ports.</li>
+          <li>10 ms UPS behavior and 5-year warranty per EcoFlow product specs.</li>
+        </ul>
+        <p class="meta">Source: <a href="https://us.ecoflow.com/collections/delta-series-nav/products/delta-pro-3-portable-power-station">EcoFlow DELTA Pro 3 product page/specs</a>.</p>
+      </div>
+      <div class="card soft">
+        <h3>Why it is wrong-sized here</h3>
+        <ul>
+          <li>RV/camping average draw is likely under 100 W most of the time.</li>
+          <li>Daily energy estimate is around 1-3 kWh, below the DP3's design center.</li>
+          <li>Weight and cost are poor tradeoffs for a portable weekend setup.</li>
+          <li>Smaller systems are easier to carry, recharge, and replace if support is needed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="issues">
+    <div class="section-head">
+      <h2>Known Issue Areas</h2>
+      <div class="section-sub">Community-reported, not all confirmed defects</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Error 36 / overtemperature protection</div><div class="row-text">Multiple users report Battery overtemperature protection or Error 36 behavior, sometimes after firmware updates. Reports describe charging limits or false sensor behavior rather than obvious real overheating.</div></div>
+        <div class="risk-high">High concern</div>
+        <div class="row-text">Avoid firmware updates immediately before trips; test AC and solar charging after any update.</div>
+        <div><a href="https://www.reddit.com/r/Ecoflow_community/comments/1olzdxd/delta_pro_3_error_36/">Thread</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Firmware reliability and opaque changelogs</div><div class="row-text">Community posts repeatedly complain that firmware updates can alter behavior and EcoFlow does not publish enough detail to assess risk before updating.</div></div>
+        <div class="risk-high">High concern</div>
+        <div class="row-text">Do not update during a critical use window. Record current firmware before updating.</div>
+        <div><a href="https://www.reddit.com/r/Ecoflow_community/comments/1s5mshv/psa_the_delta_pro_3_latest_firmware_is_problematic/">Thread</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Smart Home Panel / ecosystem compatibility</div><div class="row-text">Forum activity shows confusion and compatibility questions around DELTA Pro 3 with Smart Home Panel variants and expansion adapters.</div></div>
+        <div class="risk-med">Medium concern</div>
+        <div class="row-text">For RV use, avoid buying the DP3 because of future home-panel ecosystem assumptions.</div>
+        <div><a href="https://forum.ecoflow.com/us/products/delta-series">Forum</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Solar input confusion and connector behavior</div><div class="row-text">DIY solar threads around EcoFlow units frequently focus on solar-vs-car input detection, XT60i behavior, voltage windows, and slow/no charging when arrays are mismatched.</div></div>
+        <div class="risk-med">Medium concern</div>
+        <div class="row-text">Use panel voltage/current inside the official port specs and verify cable type before travel.</div>
+        <div><a href="https://diysolarforum.com/threads/ecoflow-delta-pro-solar-questions.110888/">Thread</a></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Support and replacement friction</div><div class="row-text">User reports include slow escalation, replacement-stock delays, and frustration around warranty handling. This is not unique to DP3, but matters more with a 113 lb unit.</div></div>
+        <div class="risk-med">Medium concern</div>
+        <div class="row-text">Buy from a retailer with a strong return window; test hard immediately.</div>
+        <div><a href="https://www.reddit.com/r/Ecoflow_community/comments/1s44och/another_report_of_ecoflows_poor_customer_support/">Thread</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="threads">
+    <div class="section-head">
+      <h2>Documentation And Threads</h2>
+      <div class="section-sub">High-signal links</div>
+    </div>
+    <div class="stack">
+      <div class="row">
+        <div><div class="row-title">EcoFlow product/spec page</div><div class="row-text">Official capacity, output, PV input, temperature, warranty, and FAQ details.</div></div>
+        <div><span class="pill">Official</span></div>
+        <div><a href="https://us.ecoflow.com/collections/delta-series-nav/products/delta-pro-3-portable-power-station">Open</a></div>
+      </div>
+      <div class="row">
+        <div><div class="row-title">EcoFlow DELTA Series forum</div><div class="row-text">Current EcoFlow community posts, including DP3 compatibility and solar behavior questions.</div></div>
+        <div><span class="pill">Forum</span></div>
+        <div><a href="https://forum.ecoflow.com/us/products/delta-series">Open</a></div>
+      </div>
+      <div class="row">
+        <div><div class="row-title">Error 36 report thread</div><div class="row-text">Reports of DP3 overtemperature behavior after firmware update 7.65.89.11.</div></div>
+        <div><span class="pill">Reddit</span></div>
+        <div><a href="https://www.reddit.com/r/Ecoflow_community/comments/1olzdxd/delta_pro_3_error_36/">Open</a></div>
+      </div>
+      <div class="row">
+        <div><div class="row-title">Firmware/problematic update PSA</div><div class="row-text">Detailed user account of multiple DP3 units and suspected firmware/sensor behavior.</div></div>
+        <div><span class="pill">Reddit</span></div>
+        <div><a href="https://www.reddit.com/r/Ecoflow_community/comments/1s5mshv/psa_the_delta_pro_3_latest_firmware_is_problematic/">Open</a></div>
+      </div>
+      <div class="row">
+        <div><div class="row-title">DIY Solar input discussion</div><div class="row-text">Practical discussion around EcoFlow solar input behavior and connector/cable gotchas.</div></div>
+        <div><span class="pill">DIY Solar</span></div>
+        <div><a href="https://diysolarforum.com/threads/ecoflow-delta-pro-solar-questions.110888/">Open</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="recommendation">
+    <div class="section-head">
+      <h2>Recommendation For The RV Load</h2>
+      <div class="section-sub">Fridge, fan, LEDs, occasional printer</div>
+    </div>
+    <div class="grid two">
+      <div class="card dark">
+        <div class="label">Buy class</div>
+        <div class="value">1 kWh LFP</div>
+        <div class="meta">Anker C1000 class remains the safest recommendation; Pecron F1000LFP is the value disruptor.</div>
+      </div>
+      <div class="card">
+        <div class="label">Solar kit</div>
+        <div class="value">200-400 W</div>
+        <div class="meta">Portable panels with MC4-to-XT60 cable. Use 12 V outputs for fridge/fan where possible to reduce inverter losses.</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Bottom line:</strong> buy the Anker C1000/C1000 Gen 2 if you want the least drama. Buy the Pecron F1000LFP if the $329 sale price holds and you are comfortable trading some support confidence for the best price/performance. Skip DELTA Pro 3 for this job.</p>
+    </div>
+  </section>
+
+  <section class="footer">
+    <p>Research checked May 21, 2026. Reddit/forum reports are anecdotal and should be treated as risk signals, not confirmed failure rates. Official specifications come from EcoFlow's DELTA Pro 3 product page. Before any purchase, confirm current firmware behavior, retailer return window, and exact solar input/cable requirements for the model being bought.</p>
+  </section>
+</main>
+</div>
