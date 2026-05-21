@@ -193,6 +193,53 @@ title: Solar Offset - Techmore
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Runtime model</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Battery runtime by sun and HVAC use</h2>
+      </div>
+      <p class="max-w-xl text-sm text-olive-700">Uses two 16 kWh batteries, modeled at 28.8 kWh usable, with measured average loads.</p>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <table class="w-full min-w-[760px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Solar condition</th>
+            <th class="px-4 py-3 font-semibold">With HVAC average load</th>
+            <th class="px-4 py-3 font-semibold">Without HVAC average load</th>
+            <th class="px-4 py-3 font-semibold">Read</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Full sun average</td>
+            <td class="px-4 py-3">~80 hours</td>
+            <td class="px-4 py-3">Daily surplus</td>
+            <td class="px-4 py-3">Solar nearly covers the measured average day; non-HVAC loads should refill the batteries on average.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Partial sun, about 50%</td>
+            <td class="px-4 py-3">~20 hours</td>
+            <td class="px-4 py-3">~88 hours</td>
+            <td class="px-4 py-3">Good for lights, fridge, outlets, and water-heater scheduling; HVAC still pulls the reserve down quickly.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">No sun</td>
+            <td class="px-4 py-3">~11 hours</td>
+            <td class="px-4 py-3">~20 hours</td>
+            <td class="px-4 py-3">Battery-only operation is short once HVAC is included. A measured winter peak day would drain much faster.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4 text-sm text-olive-700">
+      The no-HVAC case removes the measured heat-pump share of mains, about 26.6 kWh/day. Real runtime will move with outdoor temperature, thermostat behavior, inverter losses, battery reserve settings, and whether solar production lines up with the actual loads.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Expected offset</p>
