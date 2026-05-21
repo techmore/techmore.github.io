@@ -3,492 +3,174 @@ layout: default
 title: Solar Offset - Techmore
 ---
 
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+    <section class="mb-10">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Phase 5 • Solar offset</p>
+        <h1 class="mt-3 text-5xl sm:text-6xl font-display italic text-olive-950">Solar-first, grid-backed.</h1>
+        <p class="mt-4 max-w-3xl text-lg text-olive-700 leading-relaxed">Use the Emporia data to size a practical offset system: reduce the expensive daytime load, keep the grid as fallback, avoid intentional export, and expand only after the first season of real production data.</p>
+    </section>
 
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-12">
-            <h1 class="text-6xl md:text-7xl font-display italic text-olive-950 mb-4">☀️ Solar Offset</h1>
-            <p class="text-xl text-olive-600 italic">Phase 5 • Offset Planning Calculator</p>
-            <p class="mt-4 text-olive-700 max-w-2xl mx-auto">Based on my F.I.R.E. journey. Edit the values below to see your own offset planning analysis.</p>
+    <section class="grid md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Measured average</p>
+            <p class="mt-2 text-3xl font-display italic">60.5 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-200">January 14 through May 20, 2026.</p>
         </div>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Peak day</p>
+            <p class="mt-2 text-3xl font-display italic text-olive-950">178.7 kWh</p>
+            <p class="mt-2 text-sm text-olive-700">February 8, winter heat-driven.</p>
+        </div>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Peak demand</p>
+            <p class="mt-2 text-3xl font-display italic text-olive-950">11.9 kW</p>
+            <p class="mt-2 text-sm text-olive-700">Peak 15-minute demand from Emporia.</p>
+        </div>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Rate used</p>
+            <p class="mt-2 text-3xl font-display italic text-olive-950">$0.1376</p>
+            <p class="mt-2 text-sm text-olive-700">Per kWh planning rate.</p>
+        </div>
+    </section>
 
-        <!-- Equipment Links -->
-        <div class="bg-olive-200 rounded-xl p-6 border border-olive-400 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">🔗 Recommended Equipment (EG4 & BlueSun)</h2>
-            <div class="grid md:grid-cols-4 gap-4">
-                <a href="https://www.signaturesolar.com/eg4-12k-xp-off-grid-inverter-v2-12kw-24kw-pv-48v-split-phase" target="_blank" rel="noopener noreferrer" class="p-4 bg-olive-200 rounded-lg border border-olive-400 hover:bg-olive-100 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <span class="text-2xl">⚡</span>
-                        <div>
-                            <h4 class="font-medium text-olive-800">EG4 12K XP Inverter</h4>
-                            <p class="text-sm text-olive-600">12kW / 24kW PV + generator input</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.signaturesolar.com/blue-sun-460w-bifacial-solar-panel" target="_blank" rel="noopener noreferrer" class="p-4 bg-olive-200 rounded-lg border border-olive-400 hover:bg-olive-100 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <span class="text-2xl">☀️</span>
-                        <div>
-                            <h4 class="font-medium text-olive-800">BlueSun 460W Bifacial</h4>
-                            <p class="text-sm text-olive-600">High-efficiency panel</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.signaturesolar.com/eg4-indoor-wallmount-48v-14-34kwh-280ah-lifepo4-battery" target="_blank" rel="noopener noreferrer" class="p-4 bg-olive-200 rounded-lg border border-olive-400 hover:bg-olive-100 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <span class="text-2xl">🔋</span>
-                        <div>
-                            <h4 class="font-medium text-olive-800">EG4 Indoor Battery</h4>
-                            <p class="text-sm text-olive-600">14.34kWh LiFePO4</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://www.amazon.com/GENMAX-Generator-Compliant-Ultra-Portable-GM2200i/dp/B0CQHS9D3M" target="_blank" rel="noopener noreferrer" class="p-4 bg-amber-50 rounded-lg border border-amber-200 hover:bg-amber-100 transition-colors">
-                    <div class="flex items-center gap-3">
-                        <span class="text-2xl">⛽</span>
-                        <div>
-                            <h4 class="font-medium text-amber-800">GENMAX GM2200i</h4>
-                            <p class="text-sm text-amber-700">2200W portable generator</p>
-                        </div>
-                    </div>
-                </a>
+    <section class="bg-olive-100 rounded-xl border border-olive-300 p-5 sm:p-6 mb-8">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="lg:col-span-2">
+                <h2 class="text-3xl text-olive-950 mb-3">Recommended Phase 5 Direction</h2>
+                <p class="text-olive-800 leading-relaxed">The best first move is still the EG4 deep-dive plan: FlexBOSS21 + GridBOSS, one 16 kWh wall battery, and roughly 9-12 kW DC of starter PV. That is enough solar to matter against the measured 60.5 kWh/day average without pretending one battery can cover extreme winter heating days.</p>
+                <p class="mt-3 text-olive-800 leading-relaxed">The point is not full independence on day one. The point is reliable daytime offset, automatic grid fallback, and a clean base that can add battery #2 or more PV after you see actual production and curtailment.</p>
             </div>
-            <div class="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
-                <p class="text-sm text-green-800"><strong>💰 Offset + Payback Target:</strong> Aim for 2-year payback (interest-free financing) for maximum value. 5-7 year payback with standard loan is acceptable. 10+ years = questionable ROI given system degradation, squirrel damage, storm risks, and equipment failure possibilities.</p>
+            <div class="bg-olive-950 rounded-lg p-4 text-olive-50">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Planning target</p>
+                <p class="mt-2 text-4xl font-display italic">9-12 kW PV</p>
+                <p class="mt-2 text-sm text-olive-200">One 16 kWh battery first. Grid stays connected. Zero/no intentional export.</p>
             </div>
         </div>
+    </section>
 
-        <div class="grid lg:grid-cols-3 gap-8 mb-12">
-            <!-- Minimal Deployment Spreadsheet -->
-            <div class="bg-olive-200 rounded-xl border-2 border-olive-300 overflow-hidden shadow-sm">
-                <div class="p-4 bg-olive-200 border-b border-olive-300">
-                    <h2 class="text-2xl text-olive-950">Minimal Deployment</h2>
-                    <p class="text-sm text-olive-700">Entry system: EG4 12K + 14.34kWh battery + 36 panels</p>
+    <section class="grid lg:grid-cols-3 gap-6 mb-8">
+        <div class="lg:col-span-2 bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <h2 class="text-2xl text-olive-950 mb-4">What The Starter Array Covers</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
+                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">9 kW array</p>
+                    <p class="mt-2 text-3xl font-display italic text-olive-950">31 kWh/day</p>
+                    <p class="mt-2 text-sm text-olive-700">Using 4 peak-sun-hours and 85% system yield. About 51% of measured average load if self-consumed.</p>
+                    <p class="mt-2 text-sm text-green-700">Gross value: about $1,537/year.</p>
                 </div>
-                <div id="demo-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-olive-100 border-t border-olive-400">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-olive-800">Monthly Cost:</span>
-                        <span id="demo-monthly-cost" class="text-lg font-bold text-olive-950">$346</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-olive-800">Upfront Cost:</span>
-                        <span id="demo-upfront" class="text-lg font-bold text-olive-950">$25,121</span>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-olive-400 text-xs text-olive-600">
-                        <p><strong>Daily Generation:</strong> ~66 kWh/day | <strong>Battery:</strong> 14.3 kWh = ~4-6 hrs backup</p>
-                        <p class="mt-1 text-amber-600">⚠️ <strong>Peak Usage Warning:</strong> Not designed for sustained 150 kWh/day peak — covers ~50% of average winter usage</p>
-                    </div>
+                <div class="bg-olive-50 rounded-lg border border-olive-300 p-4">
+                    <p class="font-mono text-xs tracking-widest uppercase text-olive-500">10.8 kW array</p>
+                    <p class="mt-2 text-3xl font-display italic text-olive-950">37 kWh/day</p>
+                    <p class="mt-2 text-sm text-olive-700">About 61% of measured average load if self-consumed. Summer may be better; winter may be worse.</p>
+                    <p class="mt-2 text-sm text-green-700">Gross value: about $1,845/year.</p>
                 </div>
             </div>
-
-            <!-- Complete Offset Spreadsheet -->
-            <div class="bg-green-50 rounded-xl border-2 border-green-300 overflow-hidden shadow-sm">
-                <div class="p-4 bg-green-200 border-b border-green-300">
-                    <h2 class="text-2xl text-green-900">🚀 Complete Offset</h2>
-                    <p class="text-sm text-green-700">Over-produces & over-deploys: 3200 kWh/mo + 3-day backup</p>
-                </div>
-                <div id="complete-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-green-100 border-t border-green-200">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-green-800">Monthly Cost:</span>
-                        <span id="complete-monthly-cost" class="text-lg font-bold text-green-900">$0</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-green-800">Upfront Cost:</span>
-                        <span id="complete-upfront" class="text-lg font-bold text-green-900">$148,225</span>
-                    </div>
-                    <div class="mt-3 pt-3 border-t border-green-200 text-xs text-green-700">
-                        <p><strong>Daily Generation:</strong> ~140 kWh/day | <strong>Battery:</strong> 458 kWh = 3+ days backup</p>
-                        <p class="mt-1 font-medium text-green-800">✅ Handles worst-case: 150 kWh/day for 3+ days</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Your Values Spreadsheet -->
-            <div class="bg-slate-50 rounded-xl border border-slate-300 overflow-hidden">
-                <div class="p-4 bg-slate-600 text-white border-b border-slate-500">
-                    <h2 class="text-2xl">Your Values</h2>
-                    <p class="text-sm text-slate-200">Edit cells to calculate your own offset + payback</p>
-                </div>
-                <div id="interactive-spreadsheet" class="p-4"></div>
-                <div class="p-4 bg-slate-100 border-t border-slate-200">
-                    <div class="flex items-center justify-between">
-                        <span class="font-medium text-slate-700">Monthly Cost:</span>
-                        <span id="user-monthly-cost" class="text-lg font-bold text-slate-900">$346</span>
-                    </div>
-                    <div class="flex items-center justify-between mt-2">
-                        <span class="font-medium text-slate-700">Upfront Cost:</span>
-                        <span id="user-upfront" class="text-lg font-bold text-slate-900">$25,121</span>
-                    </div>
-                </div>
+            <div class="mt-4 bg-olive-100 rounded-lg border border-olive-300 p-4">
+                <p class="text-sm text-olive-800"><strong>Practical savings range:</strong> because this is a zero/no-export design with one battery, assume roughly 75-90% solar self-consumption until production data proves otherwise. That puts Phase 1 savings around $1,150-$1,660/year at the current planning rate.</p>
             </div>
         </div>
 
-        <!-- Results Section -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h3 class="text-lg text-olive-600 mb-2">Current Monthly</h3>
-                <p id="result-monthly-cost" class="text-3xl font-bold text-olive-950">$346</p>
-                <p class="text-sm text-olive-500 mt-1">Electric bill</p>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <h2 class="text-2xl text-olive-950 mb-4">Load Priority</h2>
+            <div class="space-y-3 text-sm">
+                <div>
+                    <div class="flex justify-between gap-3 text-olive-900"><strong>Heat pump</strong><span>44.0%</span></div>
+                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-700 rounded-full" style="width:44%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between gap-3 text-olive-900"><strong>Water heater</strong><span>18.1%</span></div>
+                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-green-700 rounded-full" style="width:18.1%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between gap-3 text-olive-900"><strong>Master bedroom</strong><span>10.3%</span></div>
+                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-500 rounded-full" style="width:10.3%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between gap-3 text-olive-900"><strong>Kitchen outlets</strong><span>4.1%</span></div>
+                    <div class="mt-1 h-2 bg-olive-100 rounded-full overflow-hidden"><div class="h-full bg-olive-500 rounded-full" style="width:4.1%"></div></div>
+                </div>
             </div>
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h3 class="text-lg text-olive-600 mb-2">Upfront Cost</h3>
-                <p id="result-upfront-cost" class="text-3xl font-bold text-amber-700">$25,121</p>
-                <p class="text-sm text-olive-500 mt-1">Hardware + wiring + labor</p>
+            <p class="mt-4 text-sm text-olive-700">Control priority: shift water heating to solar hours first. Let the heat pump keep grid fallback because comfort load is seasonal and winter-peaky.</p>
+        </div>
+    </section>
+
+    <section class="mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4">
+            <div>
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Equipment paths</p>
+                <h2 class="text-3xl text-olive-950">Core System vs Portable Option</h2>
             </div>
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h3 class="text-lg text-olive-600 mb-2">30% Tax Credit</h3>
-                <p id="result-tax-credit" class="text-3xl font-bold text-green-600">$7,536</p>
-                <p class="text-sm text-olive-500 mt-1">Potential rebate (claim later)</p>
-            </div>
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h3 class="text-lg text-olive-600 mb-2">Annual Savings</h3>
-                <p id="result-annual-savings" class="text-3xl font-bold text-green-600">$2,076</p>
-                <p class="text-sm text-olive-500 mt-1">Offset %</p>
-            </div>
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h3 class="text-lg text-olive-600 mb-2">Offset Payback</h3>
-                <p id="result-payback" class="text-3xl font-bold text-olive-950">12.1 yrs</p>
-                <p id="result-payback-credit" class="text-sm text-green-600">8.5 yrs w/ credit</p>
-                <p id="result-verdict" class="text-sm font-medium mt-1 px-2 py-0.5 rounded inline-block">❌ Reconsider</p>
-            </div>
+            <p class="text-sm text-olive-600">Pecron pricing/specs checked May 21, 2026.</p>
         </div>
 
-        <!-- Chart -->
-        <div class="bg-olive-200 rounded-xl p-6 border border-olive-400 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">Offset Timeline</h2>
-            <div class="h-80">
-                <canvas id="paybackChart"></canvas>
+        <div class="grid lg:grid-cols-3 gap-5">
+            <a href="https://signaturesolar.com/eg4-flexboss21-inverter-v-1-1-48v-split-phase-21kw-pv-input-eg4-gridboss-mid-v3-1-bndl-e00019-3-1/" target="_blank" rel="noopener noreferrer" class="block bg-olive-950 rounded-xl border border-olive-800 p-5 text-olive-50 hover:bg-olive-900 transition-colors">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Primary core</p>
+                <h3 class="mt-2 text-2xl text-olive-50">EG4 FlexBOSS21 + GridBOSS</h3>
+                <p class="mt-2 text-sm text-olive-200">Cleanest match for daytime solar offset, service integration, automatic grid fallback, and no intentional export.</p>
+                <p class="mt-4 text-lg font-semibold">$5,674.88 bundle reference</p>
+            </a>
+            <a href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16-1-kwh/" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">First battery</p>
+                <h3 class="mt-2 text-2xl text-olive-950">EG4 314Ah WallMount</h3>
+                <p class="mt-2 text-sm text-olive-700">16 kWh class buffer. Use it for clouds, transitions, and evening carryover, not full winter overnight heat.</p>
+                <p class="mt-4 text-lg font-semibold text-olive-900">$3,399.99 reference</p>
+            </a>
+            <a href="https://www.pecron.com/products/pecron-e3800lfp-portable-power-station-4200w-3840wh?variant=45837248856252#ref=229" target="_blank" rel="noopener noreferrer" class="block bg-olive-200 rounded-xl border border-olive-400 p-5 hover:bg-olive-100 transition-colors">
+                <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Portable candidate</p>
+                <h3 class="mt-2 text-2xl text-olive-950">Pecron E3800LFP</h3>
+                <p class="mt-2 text-sm text-olive-700">3.84 kWh portable station, 4,200 W 120 V output, 12 V / 30 A DC, app/UPS, and high solar input. Useful as a mobile backup layer, not a direct substitute for GridBOSS load management.</p>
+                <p class="mt-4 text-lg font-semibold text-olive-900">$1,499 sale signal</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="grid lg:grid-cols-2 gap-6 mb-8">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <h2 class="text-2xl text-olive-950 mb-4">Pecron E3800LFP Read</h2>
+            <div class="space-y-3 text-sm text-olive-800">
+                <p><strong>What it is good for:</strong> portable backup, trailer/RV loads, temporary critical circuits through extension-cord style use, and charging from portable solar when the main solar project is not installed yet.</p>
+                <p><strong>Why it is interesting:</strong> Pecron lists 3,840 Wh capacity, 4,200 W AC output, 12 V / 30 A DC output, 3,000 W max solar input through XT60-M, and expansion up to 26,880 Wh with EP3800-48V batteries.</p>
+                <p><strong>Why it does not replace EG4:</strong> it does not solve whole-service no-backfeed integration by itself. It is a portable power station, while FlexBOSS/GridBOSS is the better architecture for controlled home solar offset.</p>
             </div>
         </div>
-
-        <!-- Kaizen Expansion & Investment Comparison -->
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <!-- Phase Roadmap -->
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h2 class="text-2xl text-olive-950 mb-4">🚀 Kaizen Expansion Plan</h2>
-                <p class="text-sm text-olive-600 mb-4">Use annual savings to expand system toward complete independence</p>
-                
-                <div class="space-y-3">
-                    <div class="p-3 bg-olive-200 rounded-lg border border-olive-400">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-olive-800">Phase 1 (Current)</span>
-                            <span class="font-bold text-olive-950">$23,621</span>
-                        </div>
-                        <p class="text-xs text-olive-600">16.56 kW panels + EG4 14.34kWh battery</p>
-                        <p class="text-xs text-green-600">~$2,076/yr savings → ~50% offset</p>
-                    </div>
-                    
-                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-amber-800">+3 EG4 Batteries (Year 2)</span>
-                            <span class="font-bold text-amber-800">$9,330</span>
-                        </div>
-                        <p class="text-xs text-amber-700">57.36kWh total storage → covers winter</p>
-                        <p class="text-xs text-green-600">80% offset → +$1,000/yr more</p>
-                    </div>
-                    
-                    <div class="p-3 bg-orange-50 rounded-lg border border-orange-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-orange-800">+16 Panels (Year 3)</span>
-                            <span class="font-bold text-orange-800">$5,283</span>
-                        </div>
-                        <p class="text-xs text-orange-700">24kW array → max inverter capacity</p>
-                        <p class="text-xs text-green-600">~85% offset → +$500/yr more</p>
-                    </div>
-                    
-                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-green-800">Full Independence</span>
-                            <span class="font-bold text-green-800">$38,234</span>
-                        </div>
-                        <p class="text-xs text-green-700">Complete system worst-case coverage</p>
-                        <p class="text-xs font-medium">~95%+ offset</p>
-                    </div>
-                    
-                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                        <div class="flex justify-between items-center">
-                            <span class="font-medium text-blue-800">Years to Full System</span>
-                            <span class="font-bold text-blue-800">~8-10 years</span>
-                        </div>
-                        <p class="text-xs text-blue-700">Reinvest annual savings into expansion</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Investment Comparison -->
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h2 class="text-2xl text-olive-950 mb-4">📊 Save vs. Invest Comparison</h2>
-                <p class="text-sm text-olive-600 mb-4">If you invest the replacement reserve monthly instead</p>
-                
-                <div class="space-y-4">
-                    <div class="p-4 bg-olive-200 rounded-lg border border-olive-400">
-                        <h4 class="font-medium text-olive-800 mb-2">Monthly Replacement Reserve</h4>
-                        <p class="text-2xl font-bold text-olive-950" id="monthly-replacement">$65/mo</p>
-                        <p class="text-xs text-olive-600">Set aside for future system replacement</p>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                            <h4 class="text-sm font-medium text-blue-800">Betterment (3.75%)</h4>
-                            <p class="text-xl font-bold text-blue-700" id="investment-betterment">$14,200</p>
-                            <p class="text-xs text-blue-600">25 years</p>
-                        </div>
-                        <div class="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                            <h4 class="text-sm font-medium text-purple-800">Mutual Fund (11%)</h4>
-                            <p class="text-xl font-bold text-purple-700" id="investment-mutual">$58,900</p>
-                            <p class="text-xs text-purple-600">25 years (taxed)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-                        <h4 class="font-medium text-green-800">Solar Savings (25 years)</h4>
-                        <p class="text-xl font-bold text-green-700" id="savings-total">$64,800</p>
-                        <p class="text-xs text-green-600">$2,592/yr × 25 years - upfront</p>
-                    </div>
-                    
-                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
-                        <h4 class="font-medium text-amber-800">💡 Recommendation</h4>
-                        <p class="text-sm text-amber-700" id="investment-recommendation">
-                            Solar wins! 11% mutual fund beats solar ROI, but after 30% tax credit solar pays back in 6 years. Invest the difference after payback for max returns.
-                        </p>
-                    </div>
-                </div>
+        <div class="bg-olive-950 rounded-xl border border-olive-800 p-5 sm:p-6 text-olive-50">
+            <h2 class="text-2xl text-olive-50 mb-4">Decision Rule</h2>
+            <div class="space-y-3 text-sm text-olive-200">
+                <p><strong class="text-olive-50">Buy EG4 first</strong> if the goal is barn/home offset, no intentional export, and using Emporia data to tune the system over time.</p>
+                <p><strong class="text-olive-50">Consider Pecron</strong> if you need a near-term portable backup unit, want 12 V / 30 A DC for field loads, or want a movable battery before committing to permanent electrical work.</p>
+                <p><strong class="text-olive-50">Do not oversize day one:</strong> one EG4 battery plus 9-12 kW PV is enough to learn. Add battery #2 before chasing full winter independence.</p>
             </div>
         </div>
+    </section>
 
-            <!-- Financial Metrics -->
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h2 class="text-2xl text-olive-950 mb-4">💰 Financial Metrics</h2>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Monthly Replacement Reserve</span>
-                        <span id="metric-replacement" class="font-medium">$65/mo</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Annual Replacement Reserve</span>
-                        <span id="metric-replacement-annual" class="font-medium">$655/yr</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">25-Year Savings (no credit)</span>
-                        <span id="metric-lifetime" class="font-medium text-green-600">$26,779</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">25-Year Savings (w/ 30% credit)</span>
-                        <span class="font-bold text-green-600">$34,315</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Summer Free Power (est.)</span>
-                        <span id="metric-summer" class="font-medium">$179/season</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-olive-700">ROI (upfront cost)</span>
-                        <span id="metric-roi" class="font-bold text-green-600">107%</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Generator Section -->
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h2 class="text-2xl text-olive-950 mb-4">⛽ Generator Backup (EG4 Compatible)</h2>
-                <p class="text-sm text-olive-600 mb-4">EG4 12K XP supports generator input for backup charging</p>
-                
-                <div class="space-y-3">
-                    <div class="p-3 bg-olive-200 rounded-lg border border-olive-400">
-                        <h4 class="font-medium text-olive-800">Recommended: GENMAX GM2200i</h4>
-                        <p class="text-xs text-olive-600">2200W start / 1800W running • 1.1 gal tank • 10.5hr @ 25% load</p>
-                        <p class="text-xs text-olive-600 mt-1"><a href="https://www.amazon.com/GENMAX-Generator-Compliant-Ultra-Portable-GM2200i/dp/B0CQHS9D3M" target="_blank" rel="noopener noreferrer" class="underline">View on Amazon</a></p>
-                    </div>
-                    
-                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200">
-                        <h4 class="font-medium text-amber-800">Generator Cost</h4>
-                        <p class="text-xl font-bold text-amber-700">~$700-900</p>
-                    </div>
-                    
-                    <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                        <h4 class="font-medium text-blue-800">Generator Power Cost</h4>
-                        <p class="text-sm text-blue-700">Fuel: ~0.23 gal/kWh • Run time: 2.6hr @ full load</p>
-                        <p class="text-sm text-blue-700 mt-1">Cost per kWh (at $3/gal): <strong>$0.69/kWh</strong></p>
-                    </div>
-                    
-                    <div class="p-3 bg-red-50 rounded-lg border border-red-200">
-                        <h4 class="font-medium text-red-800">Grid vs Generator Break-even</h4>
-                        <p id="generator-break-even" class="text-lg font-bold text-red-700">$0.49/gal</p>
-                        <p class="text-xs text-red-600">Gasoline must be cheaper than this to beat grid power</p>
-                    </div>
-                    
-                    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-                        <h4 class="font-medium text-green-800">Verdict</h4>
-                        <p id="generator-verdict" class="text-sm text-green-700">Grid ($0.11/kWh) is much cheaper than generator ($0.69/kWh). Generator only worth it during prolonged outages or if gas drops below $0.49/gal.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="grid lg:grid-cols-3 gap-6 mb-8">
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 1</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Install control stack</h3>
+            <p class="mt-2 text-sm text-olive-700">GridBOSS + FlexBOSS21 creates the service/load integration point and automatic grid support.</p>
         </div>
-
-            <div class="bg-olive-200 rounded-xl p-6 border border-olive-400">
-                <h2 class="text-2xl text-olive-950 mb-4">🔋 Phase 1 Breakdown</h2>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">EG4 12K XP Inverter</span>
-                        <span class="font-medium">$1,899</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">EG4 Indoor Battery 14.34kWh</span>
-                        <span class="font-medium">$3,110</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">BlueSun 460W Panels (×36)</span>
-                        <span class="font-medium">$5,962</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Mounting Hardware</span>
-                        <span class="font-medium">$5,400</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Wiring, MC4, Conduit</span>
-                        <span class="font-medium">$1,500</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Labor (estimated)</span>
-                        <span class="font-medium">$5,000</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-olive-400">
-                        <span class="text-olive-700">Permits</span>
-                        <span class="font-medium">$750</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 bg-olive-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
-                        <span class="font-bold text-olive-800">Phase 1 Total</span>
-                        <span class="font-bold text-olive-950" id="breakdown-total">$23,621</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-olive-200 rounded-xl p-6 border border-green-200">
-                <h2 class="text-2xl text-green-900 mb-4">🔋 Complete Offset Breakdown</h2>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">EG4 12K XP Inverter ×2</span>
-                        <span class="font-medium">$3,798</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">EG4 Indoor Battery ×32 (458 kWh)</span>
-                        <span class="font-medium">$99,520</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">BlueSun 460W Panels ×87 (40 kW)</span>
-                        <span class="font-medium">$14,407</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">Mounting Hardware</span>
-                        <span class="font-medium">$13,000</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">Wiring, MC4, Conduit</span>
-                        <span class="font-medium">$4,000</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">Labor (estimated)</span>
-                        <span class="font-medium">$12,000</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-green-100">
-                        <span class="text-green-700">Permits</span>
-                        <span class="font-medium">$1,500</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 bg-green-50 -mx-6 px-6 -mb-6 pt-4 rounded-b-xl">
-                        <span class="font-bold text-green-800">Complete Total</span>
-                        <span class="font-bold text-green-900" id="complete-total">$148,225</span>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 2</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Start with one battery</h3>
+            <p class="mt-2 text-sm text-olive-700">The first 16 kWh battery buffers solar and transitions. It is not sized for the 178.7 kWh winter peak day.</p>
         </div>
-
-        <!-- Financing & Payback Analysis -->
-        <div class="bg-olive-200 rounded-xl p-6 border border-olive-400 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">💳 Financing & Offset Analysis</h2>
-            <div class="grid md:grid-cols-3 gap-4">
-                <div class="p-4 bg-green-50 rounded-lg border border-green-200">
-                    <h4 class="font-medium text-green-800 mb-2">✅ Great (2 years or less)</h4>
-                    <p class="text-sm text-green-700">Interest-free financing available. Many installers offer 24 months 0% APR. Monthly savings exceed payment = pure profit from day one.</p>
-                    <p class="text-lg font-bold text-green-800 mt-2">Ideal scenario</p>
-                </div>
-                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
-                    <h4 class="font-medium text-amber-800 mb-2">⚠️ Acceptable (5-7 years)</h4>
-                    <p class="text-sm text-amber-700">Standard solar loans at 5-8% APR. Payback within system life leaves ~15+ years of free power. Still a solid investment.</p>
-                    <p class="text-lg font-bold text-amber-800 mt-2">Reasonable</p>
-                </div>
-                <div class="p-4 bg-red-50 rounded-lg border border-red-200">
-                    <h4 class="font-medium text-red-800 mb-2">❌ Questionable (10+ years)</h4>
-                    <p class="text-sm text-red-700">Long loan terms = interest eats gains. Plus: panel degradation (~0.5%/yr), inverter/battery replacement (10-15 yrs), storm damage, squirrel damage, equipment failures.</p>
-                    <p class="text-lg font-bold text-red-800 mt-2">High risk</p>
-                </div>
-            </div>
-            <div class="mt-4 p-3 bg-olive-200 rounded-lg border border-olive-400">
-                <p class="text-sm text-olive-700"><strong>⚡ System Lifespan:</strong> Solar panels rated for 25-30 years, but inverters typically last 10-15 years and batteries 10-15 years. Budget for replacement costs over the system's life.</p>
-            </div>
+        <div class="bg-olive-200 rounded-xl border border-olive-400 p-5 sm:p-6">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Step 3</p>
+            <h3 class="mt-2 text-2xl text-olive-950">Add PV, then measure</h3>
+            <p class="mt-2 text-sm text-olive-700">Start at 9-12 kW DC, validate self-consumption and curtailment, then decide whether battery #2 or more PV is next.</p>
         </div>
+    </section>
 
-        <!-- Space Requirements -->
-        <div class="bg-olive-200 rounded-xl p-6 border border-olive-400 mb-8">
-            <h2 class="text-2xl text-olive-950 mb-4">🏠 Space Requirements</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
-                    <h4 class="font-medium text-amber-800 mb-3">☀️ Solar Panel Space</h4>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-amber-700">Phase 1 (16.56 kW)</span>
-                            <span class="font-medium">~400 sq ft (36 panels)</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-amber-700">Complete (40 kW)</span>
-                            <span class="font-medium">~1,000 sq ft (87 panels)</span>
-                        </div>
-                        <p class="text-xs text-amber-600 mt-2">Each 460W panel: ~21 sq ft (3.5' × 6'). Panels need clear south-facing roof or ground mount with no shading.</p>
-                    </div>
-                </div>
-                <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <h4 class="font-medium text-blue-800 mb-3">🔋 Battery Space</h4>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-blue-700">Phase 1 (14.34 kWh)</span>
-                            <span class="font-medium">~6 sq ft (wall-mounted)</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-blue-700">Complete (458 kWh)</span>
-                            <span class="font-medium">~100+ sq ft (32 batteries)</span>
-                        </div>
-                        <p class="text-xs text-blue-600 mt-2">Each EG4 battery: 36"×18"×10" = ~18 sq ft floor space when floor-mounted. Requires indoor, climate-controlled space (garage or basement).</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-4 p-3 bg-olive-200 rounded-lg border border-olive-400">
-                <p class="text-sm text-olive-700"><strong>⚠️ Important:</strong> Complete offset system requires significant space. 32 batteries at ~100+ sq ft plus 1,000 sq ft of panels. Most homes don't have room for full deployment — consider phased approach or accept partial grid dependence.</p>
-            </div>
-        </div>
-
-        <!-- Notes -->
-        <div class="mt-8 bg-amber-50 rounded-xl p-6 border border-amber-200">
-            <h3 class="text-xl text-amber-800 mb-3">📝 Understanding Solar Offset %</h3>
-            <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm mb-4">
-                <li><strong>Solar Offset %</strong> = what percentage of your electricity use is covered by solar generation</li>
-                <li><strong>50% offset</strong> = solar covers half your bill, you still pay the rest to the grid</li>
-                <li><strong>Daily Generation</strong> = how much power your panels produce per day (varies by season)</li>
-                <li><strong>Battery Storage</strong> = how much you can store for night/use during outages</li>
-                <li><strong>Backup Hours</strong> = battery capacity ÷ your nightly usage (typically 30-40 kWh/night)</li>
-            </ul>
-            <h3 class="text-xl text-amber-800 mb-3">Other Notes</h3>
-            <ul class="list-disc pl-5 space-y-1 text-amber-800 text-sm">
-                <li><strong>Upfront cost</strong> = hardware + wiring + labor + permits (what you pay today)</li>
-                <li><strong>30% Tax Credit</strong> = potential rebate claimed on next tax return (not upfront!)</li>
-                <li>Monthly usage: 3,100 kWh (peak winter) — average ~60-90 kWh/day depending on season</li>
-                <li>30% Federal Tax Credit requires you owe taxes to claim it</li>
-                <li><strong>System lifespan:</strong> Panels 25-30 yrs, inverters 10-15 yrs, batteries 10-15 yrs — plan for replacements</li>
-                <li>Replacement reserve: hardware cost ÷ system life (save monthly for future replacement)</li>
-                <li>Green light: payback &lt; 7 years AND system life &gt; payback × 1.5</li>
-                <li><strong>Risks not included:</strong> Storm damage, squirrel/rodent damage, equipment failure, grid changes, utility rate hikes</li>
-            </ul>
-        </div>
-    </main>
-
-    
+    <section class="bg-amber-50 rounded-xl border border-amber-200 p-5 sm:p-6">
+        <h2 class="text-2xl text-amber-900 mb-3">Notes And Assumptions</h2>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-amber-800">
+            <li>Emporia source period: January 14, 2026 through May 20, 2026, with 7,681.8 kWh measured over 127 complete days.</li>
+            <li>Offset math uses $0.13760/kWh, 4 peak-sun-hours/day, and 85% system yield for planning only.</li>
+            <li>Heat pump is 44.0% of measured mains; water heater is 18.1%. Water heating is the cleaner load to shift or reduce first.</li>
+            <li>Federal tax credit treatment depends on eligibility and tax liability; this page treats it as planning context, not guaranteed cash.</li>
+            <li>Final solar sizing still needs roof/ground-mount layout, shading, utility rules, permitting, and installer or electrician review.</li>
+        </ul>
+        <p class="mt-4 text-sm text-amber-800">Pecron E3800LFP source: official Pecron product page, opened May 21, 2026. Listed specs include 3,840 Wh capacity, 4,200 W 120 V AC output, 12 V / 30 A DC output, 3,000 W max solar input, and expansion up to 26,880 Wh.</p>
+    </section>
+</main>
