@@ -76,6 +76,7 @@ title: DELTA Pro 3 Issues - Techmore
     <div class="nav">
       <a href="/pages/eg4-solar-no-backfeed-plan/">Solar Plan</a>
       <a class="active" href="/pages/delta-pro-3-issues/">DELTA Pro 3</a>
+      <a href="#load">Load</a>
       <a href="#comparison">Compare</a>
       <a href="#expansion">Expand</a>
       <a href="#shipping">Shipping</a>
@@ -91,11 +92,11 @@ title: DELTA Pro 3 Issues - Techmore
   <div class="hero-inner">
     <div class="eyebrow">Portable power research page</div>
     <h1>DELTA Pro 3 issue notes.</h1>
-    <p class="hero-copy">This page documents the EcoFlow DELTA Pro 3 issue areas we are tracking, plus nearby portable power alternatives, expansion paths, shipping notes, and deal checks. It is intentionally scoped to observed risk signals and buying context.</p>
+    <p class="hero-copy">We already have a DELTA Pro 3. This page is scoped to the problems we are seeing: shutdown behavior, overheating, over-voltage or solar-input faults, and whether a smaller modern station can run the actual RV loads with less friction.</p>
     <div class="hero-strip">
-      <div class="hero-stat"><b>4,096 Wh</b><span>DELTA Pro 3 base capacity</span></div>
-      <div class="hero-stat"><b>113.5 lb</b><span>DELTA Pro 3 weight</span></div>
-      <div class="hero-stat"><b>1-3 kWh</b><span>Estimated daily RV/camping use</span></div>
+      <div class="hero-stat"><b>Fridge</b><span>Small RV fridge is the main continuous load</span></div>
+      <div class="hero-stat"><b>Fan + LEDs</b><span>Standing fan, lights, and phones are modest steady loads</span></div>
+      <div class="hero-stat"><b>Printer</b><span>HP Envy is an occasional AC load</span></div>
     </div>
   </div>
 </header>
@@ -109,25 +110,67 @@ title: DELTA Pro 3 Issues - Techmore
     <div class="grid three">
       <div class="card dark">
         <div class="label">Primary focus</div>
-        <div class="value">Issues</div>
-        <div class="meta">Known DELTA Pro 3 risk areas, firmware notes, support signals, and compatibility questions.</div>
+        <div class="value">Shutdowns</div>
+        <div class="meta">Track the DELTA Pro 3 shutdown, overheating, and over-voltage behavior we are actually seeing.</div>
       </div>
       <div class="card">
-        <div class="label">Comparison scope</div>
-        <div class="value">Alternates</div>
-        <div class="meta">Comparable portable stations are listed for price, shipping, expansion, and support context.</div>
+        <div class="label">Actual load</div>
+        <div class="value">Small RV</div>
+        <div class="meta">Small fridge, LED lights, standing fan, phone charging, and occasional HP Envy printer use.</div>
       </div>
       <div class="card">
-        <div class="label">Solar input goal</div>
-        <div class="value">XT60</div>
-        <div class="meta">Use MC4-to-XT60 cabling with 200-400 W portable panels.</div>
+        <div class="label">Solar unknown</div>
+        <div class="value">XT?</div>
+        <div class="meta">Confirm whether the existing solar path is XT60, XT60i, or another XT-style cable before relying on it.</div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="load">
+    <div class="section-head">
+      <h2>Actual Load To Support</h2>
+      <div class="section-sub">Design around this, not peak marketing specs</div>
+    </div>
+    <div class="stack">
+      <div class="row four">
+        <div><div class="row-title">Small RV fridge</div><div class="row-text">Primary continuous load. If it can run from a regulated 12 V DC output, that usually avoids inverter waste.</div></div>
+        <div class="risk-low">Core load</div>
+        <div class="row-text">Size for overnight runtime and compressor cycling, then test before a trip.</div>
+        <div><span class="pill">DC preferred</span></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Standing fan</div><div class="row-text">Steady comfort load. AC is fine if using the fan you already own; a DC fan is more efficient if buying new.</div></div>
+        <div class="risk-low">Steady load</div>
+        <div class="row-text">Runtime matters more than startup surge.</div>
+        <div><span class="pill">Test hours</span></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">LED lights and phones</div><div class="row-text">Small loads that should not drive the station choice by themselves.</div></div>
+        <div class="risk-low">Small load</div>
+        <div class="row-text">Use USB or 12 V direct outputs where practical.</div>
+        <div><span class="pill">Direct DC</span></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">HP Envy printer</div><div class="row-text">Occasional AC load. It needs a pure-sine inverter with headroom, but it should not define daily battery capacity.</div></div>
+        <div class="risk-med">Burst load</div>
+        <div class="row-text">Print on AC output, then turn the inverter off when not needed.</div>
+        <div><span class="pill">Occasional</span></div>
+      </div>
+      <div class="row four">
+        <div><div class="row-title">Existing portable solar</div><div class="row-text">Input is uncertain and likely not huge. The key risk is cable/port mismatch or panel voltage causing over-voltage or no-charge behavior.</div></div>
+        <div class="risk-high">Verify first</div>
+        <div class="row-text">Record panel Voc, Vmp, Imp, watts, connector type, and whether the cable is XT60 or XT60i style.</div>
+        <div><span class="pill">XT check</span></div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:.75rem">
+      <p><strong>Modern target:</strong> a stable 1 kWh LFP station with regulated 12 V output, USB-C, pure-sine AC for the HP Envy, enough inverter headroom for the fan/printer, verified XT60/XT60i solar compatibility, and an easy return path.</p>
     </div>
   </section>
 
   <section class="section" id="comparison">
     <div class="section-head">
-      <h2>Modern Small Station Comparison</h2>
+      <h2>Modern Replacement Candidates</h2>
       <div class="section-sub">1 kWh LFP class, RV/camping filter</div>
     </div>
     <div class="stack">
@@ -372,6 +415,12 @@ title: DELTA Pro 3 Issues - Techmore
     </div>
     <div class="stack">
       <div class="row four">
+        <div><div class="row-title">Observed: shutdowns, overheating, over-voltage</div><div class="row-text">This is the current concern set. Treat any replacement as needing stable low-load behavior, clear thermal handling, and solar input that does not fault when panels or cables are mismatched.</div></div>
+        <div class="risk-high">Primary concern</div>
+        <div class="row-text">Document exact error text, firmware version, solar cable type, panel Voc/Vmp/Imp, and load at shutdown.</div>
+        <div><span class="pill">Track locally</span></div>
+      </div>
+      <div class="row four">
         <div><div class="row-title">Error 36 / overtemperature protection</div><div class="row-text">Multiple users report Battery overtemperature protection or Error 36 behavior, sometimes after firmware updates. Reports describe charging limits or false sensor behavior rather than obvious real overheating.</div></div>
         <div class="risk-high">High concern</div>
         <div class="row-text">Avoid firmware updates immediately before trips; test AC and solar charging after any update.</div>
@@ -392,7 +441,7 @@ title: DELTA Pro 3 Issues - Techmore
       <div class="row four">
         <div><div class="row-title">Solar input confusion and connector behavior</div><div class="row-text">DIY solar threads around EcoFlow units frequently focus on solar-vs-car input detection, XT60i behavior, voltage windows, and slow/no charging when arrays are mismatched.</div></div>
         <div class="risk-med">Medium concern</div>
-        <div class="row-text">Use panel voltage/current inside the official port specs and verify cable type before travel.</div>
+        <div class="row-text">Confirm panel open-circuit voltage stays below the input max, use the right XT60/XT60i cable, and test before relying on it.</div>
         <div><a href="https://diysolarforum.com/threads/ecoflow-delta-pro-solar-questions.110888/">Thread</a></div>
       </div>
       <div class="row four">
@@ -445,18 +494,18 @@ title: DELTA Pro 3 Issues - Techmore
     </div>
     <div class="grid two">
       <div class="card dark">
-        <div class="label">Buy class</div>
+        <div class="label">Target class</div>
         <div class="value">1 kWh LFP</div>
-        <div class="meta">Anker C1000 class remains the safest recommendation; Pecron F1000LFP is the value disruptor. For future expansion, use original C1000 or Pecron E1000LFP, not C1000 Gen 2 or F1000LFP.</div>
+        <div class="meta">Enough for the actual small loads if DC output and solar behavior are stable. Expansion is optional, not the first requirement.</div>
       </div>
       <div class="card">
-        <div class="label">Solar kit</div>
-        <div class="value">200-400 W</div>
-        <div class="meta">Portable panels with MC4-to-XT60 cable. Use 12 V outputs for fridge/fan where possible to reduce inverter losses.</div>
+        <div class="label">Solar check</div>
+        <div class="value">XT60/i</div>
+        <div class="meta">Do not assume the XT or XT+ cable is right. Confirm XT60 vs XT60i behavior plus panel Voc, Vmp, Imp, and watts.</div>
       </div>
     </div>
     <div class="callout" style="margin-top:.75rem">
-      <p><strong>Bottom line:</strong> this page does not make a universal claim against DELTA Pro 3. It documents the issues and tradeoffs we are tracking. If choosing an alternative, Anker C1000/C1000 Gen 2 is the cleaner support/app path, original C1000 is the Anker expansion path, Pecron F1000LFP is the low-cost standalone path, and Pecron E1000LFP is the Pecron expansion path.</p>
+      <p><strong>Bottom line:</strong> choose for stable behavior with the small RV fridge, LED lights, standing fan, phone charging, occasional HP Envy printing, and the actual solar cable/panel. Anker C1000/C1000 Gen 2 is the cleaner support/app path, original C1000 is the Anker expansion path, Pecron F1000LFP is the low-cost standalone path, and Pecron E1000LFP is the Pecron expansion path.</p>
     </div>
   </section>
 
