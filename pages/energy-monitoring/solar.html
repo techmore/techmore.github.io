@@ -193,6 +193,124 @@ title: Solar Offset - Techmore
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Staged EG4 path</p>
+        <h2 class="mt-3 text-3xl text-olive-950">A smaller first stage keeps the system expandable.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          The full 36-panel layout is the best offset model, but the footprint and first purchase are large. A staged EG4 build can start with the inverter, one 16 kWh battery, and a smaller fixed array such as 10 Aptos 550W panels. That keeps the investment on the same platform as the full design instead of buying a portable system that may not scale into HVAC offset.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+        <h3 class="text-2xl text-olive-950">Starter equipment idea</h3>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">FlexBOSS21 inverter</p>
+            <p class="mt-1 text-sm text-olive-800">Keeps the same inverter platform as the full solar-first plan.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">1x EG4 16 kWh battery</p>
+            <p class="mt-1 text-sm text-olive-800">Enough to prove solar capture and selected load support; not enough for long HVAC autonomy.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">10x Aptos 550W panels</p>
+            <p class="mt-1 text-sm text-olive-800">5.5 kW DC starter array from the 10-panel minimum order.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">GridBOSS decision</p>
+            <p class="mt-1 text-sm text-olive-800">Use upfront if whole-home/MID/load-management is part of stage 1; defer only if the installer supports a simpler code-compliant critical-loads path.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <table class="w-full min-w-[860px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Stage</th>
+            <th class="px-4 py-3 font-semibold">Hardware</th>
+            <th class="px-4 py-3 font-semibold">Solar / storage scale</th>
+            <th class="px-4 py-3 font-semibold">How it fits your usage</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Stage 1: proof of platform</td>
+            <td class="px-4 py-3">FlexBOSS21, 1x 16 kWh battery, 10x Aptos 550W panels, required BOS, disconnects, permits, mounting, and electrician work.</td>
+            <td class="px-4 py-3">5.5 kW DC, about 14.4 kWh usable storage.</td>
+            <td class="px-4 py-3">About 28% of the full 19.8 kW array. Rough annual production estimate is about 5,260 kWh/year, or about 14.4 kWh/day average. That is roughly 24% of your measured 60.5 kWh/day average and about half of the measured non-HVAC daily load.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Stage 2: battery catch-up</td>
+            <td class="px-4 py-3">Add a second EG4 16 kWh battery.</td>
+            <td class="px-4 py-3">32 kWh nominal, about 28.8 kWh usable.</td>
+            <td class="px-4 py-3">Better evening carryover and selected outage support. This makes the smaller array easier to use, but still does not make winter HVAC off-grid.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Stage 3: array expansion</td>
+            <td class="px-4 py-3">Add more mounted panels after the site, permitting, and rack layout are proven.</td>
+            <td class="px-4 py-3">Grow from 5.5 kW toward 9.9 kW, 14.85 kW, or 19.8 kW DC.</td>
+            <td class="px-4 py-3">This is where HVAC offset improves. Solar has to be large because the heat pump is about 44% of measured mains use.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Stage 4: full integration</td>
+            <td class="px-4 py-3">GridBOSS/MID/load-management finalization if not installed at the start.</td>
+            <td class="px-4 py-3">Whole-home solar-first, grid-backed operation.</td>
+            <td class="px-4 py-3">Best match for your long-term goal: solar/battery/grid blending without changing behavior at each appliance.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <table class="w-full min-w-[820px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Starter pricing line</th>
+            <th class="px-4 py-3 font-semibold">Qty</th>
+            <th class="px-4 py-3 font-semibold text-right">Known price</th>
+            <th class="px-4 py-3 font-semibold">Read</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tr>
+            <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/aptos-550w-bifacial-solar-panels-black-up-to-688w-with-bifacial-gain-dna-144-bf10-550w-dg/">Aptos 550W bifacial panels</a></td>
+            <td class="px-4 py-3">10-panel minimum</td>
+            <td class="px-4 py-3 text-right">$2,145.00</td>
+            <td class="px-4 py-3">5.5 kW DC at $0.389/W. Smaller and easier to place than the 36-panel pallet.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700" href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16kwh-indoor-heated-ul1973-ul9540a/">EG4 Indoor WallMount Battery 16 kWh</a></td>
+            <td class="px-4 py-3">1</td>
+            <td class="px-4 py-3 text-right">$3,059.99</td>
+            <td class="px-4 py-3">Starter storage. Add the second battery before expecting meaningful HVAC carryover.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">FlexBOSS21 / GridBOSS decision</td>
+            <td class="px-4 py-3">1</td>
+            <td class="px-4 py-3 text-right">TBD</td>
+            <td class="px-4 py-3">Full bundle is $5,674.88 in the current cart. Confirm whether a code-compliant FlexBOSS-first install can defer GridBOSS without undermining the goal.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">Mounting, BOS, permit, shipping, tax, labor</td>
+            <td class="px-4 py-3">As required</td>
+            <td class="px-4 py-3 text-right">TBD</td>
+            <td class="px-4 py-3">Still required. A staged system lowers panels and battery count, but not electrical safety requirements.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 rounded-lg border border-olive-400 bg-olive-100 p-5">
+      <p class="font-semibold text-olive-950">Design read</p>
+      <p class="mt-2 text-sm text-olive-800 leading-6">
+        The 10-panel stage is a reasonable real-solar entry if the full 999 sq ft array is too large right now. It will not carry peak summer or winter HVAC by itself, but it should offset daytime loads, help with shoulder-season usage, and prove the EG4 platform before adding the second battery and more panels.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Runtime model</p>
