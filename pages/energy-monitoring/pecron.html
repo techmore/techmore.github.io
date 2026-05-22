@@ -185,6 +185,80 @@ title: Pecron Backup Plan - Techmore
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Critical-loads subpanel</p>
+        <h2 class="mt-3 text-3xl text-olive-950">A small Square D panel could make this cleaner.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          The useful version is not removing random circuits from the grid. It is moving a few chosen circuits into a small critical-loads subpanel, then feeding that subpanel through a code-compliant transfer setup so it can be powered by the grid normally or by the Pecron during an outage.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+        <h3 class="text-2xl text-olive-950">Good candidate circuits</h3>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">Fridge</p>
+            <p class="mt-1 text-sm text-olive-800">High value, moderate average load, startup surge needs inverter headroom.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">Network / office</p>
+            <p class="mt-1 text-sm text-olive-800">Gateway, switch, AP, NAS, and chargers if the circuit is cleanly scoped.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">Selected lights</p>
+            <p class="mt-1 text-sm text-olive-800">LED lighting gives a lot of comfort for very little battery draw.</p>
+          </div>
+          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
+            <p class="font-semibold text-olive-950">Small kitchen outlet</p>
+            <p class="mt-1 text-sm text-olive-800">Only if it is intentionally managed for the Jura and not shared with heavy appliances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <table class="w-full min-w-[760px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Component</th>
+            <th class="px-4 py-3 font-semibold">Purpose</th>
+            <th class="px-4 py-3 font-semibold">Planning note</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Small Square D load center</td>
+            <td class="px-4 py-3">Holds the selected backup breakers.</td>
+            <td class="px-4 py-3">Size it for a few 120V circuits first. Do not include the 45A HVAC circuit in this Pecron plan.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Manual transfer switch or inlet/interlock</td>
+            <td class="px-4 py-3">Prevents grid backfeed and chooses grid or battery feed.</td>
+            <td class="px-4 py-3">This is the important safety part. The Pecron must never energize utility wiring accidentally.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Breaker and inlet matched to Pecron output</td>
+            <td class="px-4 py-3">Limits the subpanel to what the battery can safely supply.</td>
+            <td class="px-4 py-3">The breaker should be sized to the actual Pecron output and cable, not the old branch-circuit breaker size.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Circuit moves</td>
+            <td class="px-4 py-3">Moves only chosen loads from the main panel.</td>
+            <td class="px-4 py-3">Keep the list boring: fridge, network, a few lights, and maybe one managed outlet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 rounded-lg border border-olive-400 bg-olive-100 p-5">
+      <p class="font-semibold text-olive-950">Recommendation</p>
+      <p class="mt-2 text-sm text-olive-800 leading-6">
+        Yes, model a small Square D critical-loads subpanel, but keep it as an electrician-installed transfer system. It is a better fit than extension cords if you want repeatable outage behavior, and it is much cheaper and simpler than trying to make the Pecron act like the EG4 whole-home stack.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Wiring note</p>
