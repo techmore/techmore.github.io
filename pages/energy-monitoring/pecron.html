@@ -45,9 +45,9 @@ title: Pecron Backup Plan - Techmore
     <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Recommendation</p>
-        <h2 class="mt-3 text-3xl text-olive-950">Buy the unit first, then start with two panels.</h2>
+        <h2 class="mt-3 text-3xl text-olive-950">Buy the unit first, then mount fixed panels.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The E3800LFP is strongest as a portable battery with enough inverter headroom to run normal outage loads. For solar, two 300W panels are the sane starter set: useful, movable, and not a huge yard project. Four panels are the better solar setup if you want meaningful daytime refill.
+          The E3800LFP is strongest as a portable battery with enough inverter headroom to run normal outage loads. For solar, use rigid mounted panels instead of foldable panels. Two large panels are the minimum useful fixed setup; four panels are the better small array if you want daytime refill to matter.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
@@ -68,14 +68,14 @@ title: Pecron Backup Plan - Techmore
                 <td class="px-4 py-3">Best value for the current portable-backup target: large battery, strong inverter, high solar input.</td>
               </tr>
               <tr>
-                <td class="px-4 py-3 font-semibold text-olive-950"><a href="https://www.pecron.com/products/pecron-330w-portable-solar-panel" class="underline decoration-olive-500 hover:text-olive-700">Pecron PV300 portable panel</a></td>
+                <td class="px-4 py-3 font-semibold text-olive-950"><a href="https://signaturesolar.com/znshine-550w-bifacial-solar-panel/" class="underline decoration-olive-500 hover:text-olive-700">ZNShine 550W bifacial rigid panel</a></td>
                 <td class="px-4 py-3">2</td>
-                <td class="px-4 py-3">Good starter set. About 600W nameplate, often 350-500W real-world in good sun.</td>
+                <td class="px-4 py-3">Minimum mounted setup. About 1.1 kW nameplate and roughly 45 sq ft of panel surface.</td>
               </tr>
               <tr>
-                <td class="px-4 py-3 font-semibold text-olive-950">Extra PV300 panels</td>
+                <td class="px-4 py-3 font-semibold text-olive-950">Additional ZNShine 550W panels</td>
                 <td class="px-4 py-3">+2 optional</td>
-                <td class="px-4 py-3">Four total panels makes the solar side more useful without turning this into a permanent ground array.</td>
+                <td class="px-4 py-3">Four total panels is the preferred small mounted array: about 2.2 kW nameplate and roughly 111 sq ft before spacing.</td>
               </tr>
             </tbody>
           </table>
@@ -88,27 +88,27 @@ title: Pecron Backup Plan - Techmore
     <div class="grid gap-6 md:grid-cols-3">
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Minimum</p>
-        <h3 class="mt-3 text-2xl text-olive-950">Two 300W panels</h3>
+        <h3 class="mt-3 text-2xl text-olive-950">Two 550W panels</h3>
         <p class="mt-3 text-sm text-olive-800 leading-6">
-          This is the right first buy. It can help refill fridge/network/light usage during the day and stays portable enough to move around the yard.
+          This is the smallest mounted array worth doing. Wire one panel to each Pecron solar input, or use the final wiring your electrician prefers.
         </p>
-        <p class="mt-4 text-sm font-semibold text-olive-950">Expected refill: about 1.5-2.5 kWh on a decent sun day.</p>
+        <p class="mt-4 text-sm font-semibold text-olive-950">Expected refill: about 2.5-4.0 kWh on a decent sun day.</p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
         <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Recommended</p>
-        <h3 class="mt-3 text-2xl text-olive-950">Four 300W panels</h3>
+        <h3 class="mt-3 text-2xl text-olive-950">Four 550W panels</h3>
         <p class="mt-3 text-sm text-olive-800 leading-6">
-          This is the practical sweet spot if solar charging matters. It gives the E3800LFP enough input to recover faster while still avoiding a fixed permit-scale installation.
+          This is the practical sweet spot if solar charging matters. Wire two panels in series per Pecron input: two strings total, one string into each input.
         </p>
-        <p class="mt-4 text-sm font-semibold text-olive-950">Expected refill: about 3-5 kWh on a decent sun day.</p>
+        <p class="mt-4 text-sm font-semibold text-olive-950">Expected refill: about 5-8 kWh on a decent sun day.</p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Not first</p>
-        <h3 class="mt-3 text-2xl text-olive-950">Eight 300W panels</h3>
+        <h3 class="mt-3 text-2xl text-olive-950">Six or more panels</h3>
         <p class="mt-3 text-sm text-olive-800 leading-6">
-          The E3800LFP can accept a lot of solar, but eight portable panels are bulky and expensive. If the goal grows this large, revisit fixed panels and EG4 planning.
+          More panels can work only if the wiring stays within voltage and current limits. At that point, this starts looking like a real permitted solar project, not a simple backup accessory.
         </p>
-        <p class="mt-4 text-sm font-semibold text-olive-950">Expected refill: strong, but awkward to deploy.</p>
+        <p class="mt-4 text-sm font-semibold text-olive-950">Recommendation: stop at four unless the plan becomes permanent.</p>
       </div>
     </div>
   </section>
@@ -264,7 +264,7 @@ title: Pecron Backup Plan - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Wiring note</p>
         <h2 class="mt-3 text-3xl text-olive-950">Keep panel voltage inside the input window.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The E3800LFP solar inputs want 32-150V. One PV300 panel is around 36V operating voltage and about 41V open-circuit voltage, so one panel per input works. Two panels in series per input also works. Do not build long series strings that can exceed 150V open-circuit voltage, especially in cold weather.
+          The E3800LFP solar inputs want 32-150V. The ZNShine 550W panel lists about 50.2V open-circuit voltage and about 41.9V maximum-power voltage, so two panels in series per input stays inside the 150V limit. Do not put three 550W panels in series on one Pecron input without cold-weather voltage math.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
@@ -272,9 +272,9 @@ title: Pecron Backup Plan - Techmore
         <h2 class="mt-3 text-3xl text-olive-950">My buy order</h2>
         <ol class="mt-4 list-decimal pl-5 text-olive-800 leading-7 space-y-2">
           <li>Buy the E3800LFP if the $1,199 price is still available.</li>
-          <li>Start with two PV300 panels.</li>
-          <li>Add two more panels if you actually deploy them and want faster recharge.</li>
-          <li>Stop before eight portable panels unless the portable setup is clearly working for you.</li>
+          <li>Start with two mounted 550W rigid panels if you want the lowest fixed-array cost.</li>
+          <li>Use four mounted 550W panels if you want the Pecron solar side to feel useful.</li>
+          <li>Stop at four panels unless this becomes a permitted fixed solar project.</li>
         </ol>
       </div>
     </div>
@@ -285,7 +285,7 @@ title: Pecron Backup Plan - Techmore
       <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Sources</p>
       <ul class="mt-4 list-disc pl-5 text-sm text-olive-800 leading-7">
         <li><a href="https://www.pecron.com/collections/home-backup-solar-generator/products/pecron-e3800lfp-solar-generator-4200w-3840wh" class="underline decoration-olive-500 hover:text-olive-700">Pecron E3800LFP product page</a> for battery size, inverter rating, solar input, expandability, and cycle claim.</li>
-        <li><a href="https://www.pecron.com/products/pecron-330w-portable-solar-panel" class="underline decoration-olive-500 hover:text-olive-700">Pecron PV300 product page</a> for panel wattage, voltage, current, and size.</li>
+        <li><a href="https://signaturesolar.com/znshine-550w-bifacial-solar-panel/" class="underline decoration-olive-500 hover:text-olive-700">Signature Solar ZNShine 550W panel page</a> for panel wattage, price, voltage, current, and dimensions.</li>
         <li><a href="https://manualzz.com/doc/90392558/pecron-e3800lfp-portable-power-station-user-manual" class="underline decoration-olive-500 hover:text-olive-700">Pecron E3800LFP manual mirror</a> for the 32-150V solar input guidance and wiring examples.</li>
       </ul>
     </div>
