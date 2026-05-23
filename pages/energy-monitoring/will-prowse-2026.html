@@ -191,40 +191,72 @@ title: Will Prowse 2026 - Techmore
         </table>
       </div>
 
-      <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Budget model</p>
+          <h3 class="mt-3 text-3xl text-olive-950">Budget Stack Pricing Snapshot</h3>
+        </div>
+        <p class="max-w-xl text-sm text-olive-700">Hardware prices checked May 23, 2026. Panels, mounts, shipping, tax, permits, and labor are not included.</p>
+      </div>
+
+      <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400">
         <table class="w-full min-w-[820px] text-left text-sm">
           <thead class="bg-olive-300 text-olive-950">
             <tr>
-              <th class="px-4 py-3 font-semibold">Budget stack idea</th>
-              <th class="px-4 py-3 font-semibold">Known hardware price</th>
-              <th class="px-4 py-3 font-semibold">Storage / solar scale</th>
-              <th class="px-4 py-3 font-semibold">Read</th>
+              <th class="px-4 py-3 font-semibold">Line item</th>
+              <th class="px-4 py-3 font-semibold">Purpose</th>
+              <th class="px-4 py-3 font-semibold">Qty</th>
+              <th class="px-4 py-3 font-semibold text-right">Cost</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-olive-300 text-olive-800">
+          <tbody class="divide-y divide-olive-300 bg-olive-200 text-olive-800">
             <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">12000XP + Yixiang 32 kWh</td>
-              <td class="px-4 py-3">$5,598 before panels, BOS, shipping/tax, permit, and labor</td>
-              <td class="px-4 py-3">12kW inverter, 32 kWh nominal battery</td>
-              <td class="px-4 py-3">Very strong raw value. Needs battery compatibility, code, and installer acceptance before it can be considered for the house.</td>
+              <td class="px-4 py-3"><a href="https://shopsolarkits.com/products/eg4-12000xp" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">EG4 12000XP Off-Grid Inverter V2</a></td>
+              <td class="px-4 py-3">Recommended budget inverter branch; 12kW output and 24kW PV input</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$1,899.00</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">SunGoldPower 10kW + Yixiang 32 kWh</td>
-              <td class="px-4 py-3">$5,389 before panels, BOS, shipping/tax, permit, and labor</td>
-              <td class="px-4 py-3">10kW inverter, 32 kWh nominal battery</td>
-              <td class="px-4 py-3">Cheapest stack on paper, but not the lead recommendation because the EG4 12000XP is only $209 more and has stronger specs.</td>
+              <td class="px-4 py-3"><a href="https://yixiangpower.com/products/pre-sale-yixiang-us-stock-eve-mb56-finished-battery-pack-32kwh-51-2v-16s-628ah-eve-lifepo4-cell-lithium-battery-estimated-shipping-date-dec-20th?sca_ref=9207522.jYuzmwEjUpH" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Yixiang EVE MB56 finished battery pack</a></td>
+              <td class="px-4 py-3">32 kWh 51.2V battery storage</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$3,699.00</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">12000XP + 2x EG4 16 kWh</td>
-              <td class="px-4 py-3">$8,018.98 before panels, BOS, shipping/tax, permit, and labor</td>
-              <td class="px-4 py-3">12kW inverter, 32 kWh class EG4 storage</td>
-              <td class="px-4 py-3">Costs more than Yixiang, but keeps the battery/inverter ecosystem cleaner.</td>
+              <td class="px-4 py-3">Yixiang MB56 rolling base</td>
+              <td class="px-4 py-3">Listed trolley/base accessory for the 32 kWh pack</td>
+              <td class="px-4 py-3">1</td>
+              <td class="px-4 py-3 text-right">$209.00</td>
+            </tr>
+            <tr class="bg-olive-100">
+              <td class="px-4 py-3 font-semibold text-olive-950">Recommended budget hardware subtotal</td>
+              <td class="px-4 py-3">12000XP + Yixiang 32 kWh + base</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right font-semibold text-olive-950">$5,807.00</td>
+            </tr>
+            <tr class="bg-amber-50/60">
+              <td class="px-4 py-3"><a href="https://sungoldpower.com/collections/power-inverter/products/10kw-48v-split-phase-solar-inverter" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">SunGoldPower 10kW inverter alternate</a></td>
+              <td class="px-4 py-3">Cheapest inverter alternate; lower output and PV input than EG4 12000XP</td>
+              <td class="px-4 py-3">replace inverter</td>
+              <td class="px-4 py-3 text-right">-$209.00</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">FlexBOSS/GridBOSS + 2x EG4 16 kWh</td>
-              <td class="px-4 py-3">$11,794.86 before panels, BOS, shipping/tax, permit, and labor</td>
-              <td class="px-4 py-3">Fuller grid-backed integration path</td>
-              <td class="px-4 py-3">Most aligned with the existing blueprint, but highest entry cost before panels and mounting.</td>
+              <td class="px-4 py-3"><a href="https://signaturesolar.com/eg4-indoor-wallmount-battery-48v-314ah-16kwh-indoor-heated-ul1973-ul9540a/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">EG4 battery alternate</a></td>
+              <td class="px-4 py-3">Use 2x EG4 16 kWh batteries instead of Yixiang for cleaner ecosystem compatibility</td>
+              <td class="px-4 py-3">replace battery</td>
+              <td class="px-4 py-3 text-right">+$2,211.98</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3">Panels, mounts, BOS, permits, shipping, tax, labor</td>
+              <td class="px-4 py-3">Not modeled on this watchlist page; use Phase 5 solar page for panel and permit planning</td>
+              <td class="px-4 py-3"></td>
+              <td class="px-4 py-3 text-right">TBD</td>
+            </tr>
+            <tr class="bg-olive-950 text-white">
+              <td class="px-4 py-4 font-semibold">Budget stack planning total</td>
+              <td class="px-4 py-4 text-olive-100">Before panels, mounts, BOS, shipping, tax, permit, labor, and compatibility review</td>
+              <td class="px-4 py-4"></td>
+              <td class="px-4 py-4 text-right font-semibold">$5,807.00</td>
             </tr>
           </tbody>
         </table>
