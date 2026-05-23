@@ -77,10 +77,46 @@ title: Will Prowse 2026 - Techmore
 
   <section class="bg-olive-200/70 border-y border-olive-400">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Solar selection</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Model 14 panels first, with 20 panels as the stronger plan.</h2>
+          <p class="mt-4 text-olive-800 leading-7">
+            Six panels was too small for the measured load. Fourteen panels gives a real daily offset without jumping to a huge array. Twenty panels is the better target if the space, mounting, wiring, and budget work.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">14-panel base</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">2.8 kW DC</p>
+            <p class="mt-2 text-sm text-olive-700">About 7.3 kWh/day average, roughly 33% of the 22 kWh/day selected-load target.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">20-panel plan</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">4.0 kW DC</p>
+            <p class="mt-2 text-sm text-olive-700">About 10.5 kWh/day average, roughly 48% of the selected-load target.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery model</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~23 kWh AC</p>
+            <p class="mt-2 text-sm text-olive-700">32 kWh x 80% depth of discharge x 90% inverter efficiency.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Reality check</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">Still grid-backed</p>
+            <p class="mt-2 text-sm text-olive-700">Fourteen panels helps materially, but it does not make the selected-load panel energy-independent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div>
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Itemized options</p>
-          <h2 class="mt-3 text-3xl text-olive-950">Two complete backup paths.</h2>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Pricing options</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Two itemized hardware paths.</h2>
         </div>
         <p class="max-w-xl text-sm text-olive-700">Hardware prices checked May 23, 2026. Totals exclude selected-load panel, breakers, disconnects, labels, permits, shipping, tax, and labor.</p>
       </div>
@@ -178,19 +214,7 @@ title: Will Prowse 2026 - Techmore
         <p class="mt-2 text-sm text-olive-800 leading-6"><span class="font-semibold text-olive-950">Qty 1</span> - <a href="https://www.amazon.com/WEN-721830-1000-Pound-Capacity-30-Inch/dp/B07DB3XB21/ref=sr_1_4?crid=267RCLUEM3OWX&dib=eyJ2IjoiMSJ9.IqJSuFwaFPNHybg5TpxOXOd_CXR9GHcMSKFxYMorADronTOZN3-TIEsn6XTfrqr4vP_pYOgqGgK-iB8nrRmLfCe6TsTXVzBH8x_RDsgNfJ3q4ii5LuelMCZjd2xnffsPCBbBQA5O6dXh0h8r8c4bTZQmhR1gcTnz7NRs9OB7D2lER1zUvOz8E-opCkNGsfgLwpkGjb1pYLk43mS4CFs5yE_GGyhhYq3yMGGy4ebkWlA.-lzwt2FrApUCYQ0ZRU6SuKDxLxlJkfdNxDQyRkC4c98&dib_tag=se&keywords=rolling%2Bdolly&qid=1779547719&sprefix=rolling%2Bdoll%2Caps%2C125&sr=8-4&th=1" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">WEN 1000 lb 30in rolling dolly</a> is a $42.01 alternate to the $209 Yixiang rolling base. It can reduce either stack by $166.99 if the footprint, stability, and battery safety requirements fit. With this alternate, Option A becomes $9,836.30 and Option B becomes $8,910.30.</p>
       </div>
 
-      <div class="mt-6 rounded-lg border border-olive-400 bg-olive-200 p-5">
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-600">14 to 20 panel read</p>
-        <div class="mt-4 grid gap-4 md:grid-cols-2">
-          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
-            <p class="font-semibold text-olive-950">14 panels / 2.8 kW DC</p>
-            <p class="mt-2 text-sm text-olive-800 leading-6">Modeled in both paths above. Roughly 7.3 kWh/day average, about 33% of the 22 kWh/day selected-load target. This is a serious offset, but not daily independence.</p>
-          </div>
-          <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
-            <p class="font-semibold text-olive-950">20 panels / 4.0 kW DC</p>
-            <p class="mt-2 text-sm text-olive-800 leading-6">Adds roughly 10.5 kWh/day average, about 48% of the selected-load target. Upgrade cost from 14 panels is about $1,662 for 3 more panel kits and 6 more racks before extra wiring or hardware.</p>
-          </div>
-        </div>
-      </div>
+      <p class="mt-6 text-sm text-olive-700 leading-6">Moving from 14 panels to 20 panels adds about $1,662.12 before extra wiring or hardware: 3 more Callsun kits and 6 more racks. That raises the modeled solar from about 7.3 kWh/day to about 10.5 kWh/day. With 20 panels, Option A becomes about $11,665.41, the refurbished 10kW version becomes about $11,158.41, and Option B becomes about $10,739.41.</p>
     </div>
   </section>
 
@@ -267,42 +291,6 @@ title: Will Prowse 2026 - Techmore
           </div>
         </div>
       </article>
-    </div>
-  </section>
-
-  <section class="bg-olive-200/70 border-y border-olive-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-        <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Expected result</p>
-          <h2 class="mt-3 text-3xl text-olive-950">Starter solar helps, but it does not carry the day.</h2>
-          <p class="mt-4 text-olive-800 leading-7">
-            Both starter paths use 14 panels, or 2.8 kW DC. Model the 32 kWh battery at 80% depth of discharge and 90% inverter efficiency. That gives about 23 kWh usable AC energy, which is close to the measured 22 kWh/day selected-load target. The 14-panel array adds roughly 7.3 kWh/day on an average solar day, so it makes a meaningful dent but does not refill the battery daily under load.
-          </p>
-        </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Usable battery</p>
-            <p class="mt-2 text-2xl font-semibold text-olive-950">~23 kWh AC</p>
-            <p class="mt-2 text-sm text-olive-700">32 kWh x 80% x 90%.</p>
-          </div>
-          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Runtime</p>
-            <p class="mt-2 text-2xl font-semibold text-olive-950">~25 hours</p>
-            <p class="mt-2 text-sm text-olive-700">Battery-only average selected-load day, not a peak-use promise.</p>
-          </div>
-          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar add</p>
-            <p class="mt-2 text-2xl font-semibold text-olive-950">~7.3 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-700">14-panel starter array, about 33% of the selected-load target.</p>
-          </div>
-          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Recharge reality</p>
-            <p class="mt-2 text-2xl font-semibold text-olive-950">Still grid-backed</p>
-            <p class="mt-2 text-sm text-olive-700">At 22 kWh/day load, 14 panels still leave about 15 kWh/day to battery or grid. A 20-panel plan improves to about 10.5 kWh/day, roughly half the target.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
