@@ -6,10 +6,10 @@ title: Will Prowse 2026 - Techmore
 <main class="bg-olive-300 text-olive-900">
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
     <div class="max-w-3xl">
-      <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Budget solar stack blueprint</p>
+      <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Budget backup blueprint</p>
       <h1 class="mt-4 font-display italic text-5xl sm:text-6xl text-olive-950 leading-tight">Will Prowse 2026 budget path.</h1>
       <p class="mt-6 text-lg text-olive-800 leading-8">
-        A logical budget build order for a serious 48V solar system: inverter first, battery second, solar panels third. This is a low-cost architecture for comparing budget hardware, not the default permitted-home recommendation.
+        A small, practical backup model for selected 120V house loads. The goal is to keep normal-life circuits running without paying for full-home HVAC, water-heater, dryer, or permitted whole-home solar infrastructure.
       </p>
     </div>
   </section>
@@ -18,189 +18,59 @@ title: Will Prowse 2026 - Techmore
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid gap-4 md:grid-cols-4">
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Budget inverter</p>
-          <p class="mt-3 text-3xl font-semibold text-white">$1,690</p>
-          <p class="mt-2 text-sm text-olive-200">SunGoldPower 10kW split phase.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Recommended path</p>
+          <p class="mt-3 text-3xl font-semibold text-white">$6,419</p>
+          <p class="mt-2 text-sm text-olive-200">10kW split-phase budget stack.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Budget battery</p>
-          <p class="mt-3 text-3xl font-semibold text-white">32 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">Yixiang EVE MB56, $3,699 before accessories.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Micro path</p>
+          <p class="mt-3 text-3xl font-semibold text-white">$5,509</p>
+          <p class="mt-2 text-sm text-olive-200">5kW 120V-only alternative.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Starter panels</p>
-          <p class="mt-3 text-3xl font-semibold text-white">0.4 kW</p>
-          <p class="mt-2 text-sm text-olive-200">Callsun Amazon kit is a test panel option, not the main array.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Selected-load target</p>
+          <p class="mt-3 text-3xl font-semibold text-white">~22 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-200">Excludes HVAC, water heater, and dryer.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">120V daily target</p>
-          <p class="mt-3 text-3xl font-semibold text-white">~22 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">Average after removing HVAC, water heater, and dryer.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Battery runtime</p>
+          <p class="mt-3 text-3xl font-semibold text-white">~25 hours</p>
+          <p class="mt-2 text-sm text-olive-200">Battery-only average selected-load estimate.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
       <div>
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">1. Inverter</p>
-        <h2 class="mt-3 text-3xl text-olive-950">Use the 10kW split-phase inverter as the budget lead.</h2>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Design decision</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Build for selected 120V loads first.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The point of this page is the low-cost 120/240V split-phase path. For the target loads, the SunGoldPower 10kW unit has far more output than the average non-HVAC load requires, but it still needs a proper selected-load panel, disconnects, breakers, conductor sizing, and inspection before any house circuits move onto it.
-        </p>
-        <p class="mt-4 text-sm text-olive-700 leading-6">
-          Note: the EG4 12000XP is still a stronger ecosystem option at $1,899, with more PV input and a longer listed warranty, but this page keeps it as a comparison note instead of the priced build.
+          Your Emporia data says the whole house averages about 60.5 kWh/day. Heat pump, water heater, and dryer are the wrong first targets for a cheap backup stack. Removing those loads leaves roughly 22 kWh/day for the circuits that actually fit this design: fridge, network, lights, office, phone charging, ERV controls, and occasional small kitchen use.
         </p>
       </div>
-      <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
-        <table class="w-full min-w-[760px] text-left text-sm">
-          <thead class="bg-olive-300 text-olive-950">
-            <tr>
-              <th class="px-4 py-3 font-semibold">Inverter</th>
-              <th class="px-4 py-3 font-semibold text-right">Price</th>
-              <th class="px-4 py-3 font-semibold">Spec</th>
-              <th class="px-4 py-3 font-semibold">Decision</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-olive-300 text-olive-800">
-            <tr class="bg-olive-100">
-              <td class="px-4 py-3"><a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3Jib2diMmRzNDlPUkRCUGhYM3U2a25qbjZHd3xBQ3Jtc0trSGI2LVlGcmEyWGpaQ2VlS0VZcmQtZS1iRldOaEhyMHZ5RUVBUmoxR3B0VkExcUs2eW5oMl9TYXYzNXUtRmhKVXI5WXZfLU1QRGZneUVWY0w0Vk8tTnh3anM0VHpXXzU0UXdsYkd2SjJ5WUdzbVFmMA&q=https%3A%2F%2Fshrsl.com%2F4x9y9&v=H07wpHqmVGM" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">SunGoldPower 10kW Split Phase Inverter</a></td>
-              <td class="px-4 py-3 text-right">$1,690</td>
-              <td class="px-4 py-3">10kW output, 11kW PV input, 500V PV input, dual MPPT, Wi-Fi monitoring.</td>
-              <td class="px-4 py-3">Priced build for this budget page.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-olive-200/70 border-y border-olive-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Micro model</p>
-          <h2 class="mt-3 text-3xl text-olive-950">A cheaper 120V-only branch.</h2>
-          <p class="mt-4 text-olive-800 leading-7">
-            The 5kW SunGoldPower-style inverter is a smaller entry point if the goal is only a few 120V circuits. It is not a clean substitute for the 10kW split-phase model because it does not natively cover both 120V legs or 240V loads.
-          </p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Measured average</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">60.5 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-700">Emporia measured house load.</p>
         </div>
-        <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
-          <table class="w-full min-w-[760px] text-left text-sm">
-            <thead class="bg-olive-300 text-olive-950">
-              <tr>
-                <th class="px-4 py-3 font-semibold">Micro option</th>
-                <th class="px-4 py-3 font-semibold text-right">Price</th>
-                <th class="px-4 py-3 font-semibold">What it changes</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-olive-300 text-olive-800">
-              <tr class="bg-amber-50/60">
-                <td class="px-4 py-3"><a href="https://www.amazon.com/dp/B0B7WD7HZZ?th=1&linkCode=sl1&tag=kiteonabudg-20&linkId=6fa24503c9c1fcfac23005915e4f0eb1&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">5kW 48V 120V inverter charger</a></td>
-                <td class="px-4 py-3 text-right">$780</td>
-                <td class="px-4 py-3">100A MPPT, 40A AC battery charger, 120V AC output, parallel-capable listing. Good for a single selected-load panel; not for 240V loads.</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-olive-950">Micro stack total</td>
-                <td class="px-4 py-3 text-right">$5,509.07</td>
-                <td class="px-4 py-3">Inverter, Yixiang 32 kWh battery, rolling base, Callsun panel kit, IntegraRack test mounts, and 4/0 battery cable pair.</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-olive-950">Coverage read</td>
-                <td class="px-4 py-3 text-right">~25 hours</td>
-                <td class="px-4 py-3">Energy coverage is still battery-limited, not inverter-limited, for the roughly 22 kWh/day selected 120V target.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Removed loads</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">~63.7%</p>
+          <p class="mt-2 text-sm text-olive-700">HVAC 44.0%, water heater 18.1%, dryer about 1.6%.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-olive-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">2. Battery</p>
-          <h2 class="mt-3 text-3xl text-olive-950">Yixiang is the price benchmark.</h2>
-          <p class="mt-4 text-olive-800 leading-7">
-            The Yixiang EVE MB56 finished pack is the reason this page exists. It gives 32 kWh nominal storage at a very low listed price. The tradeoff is confidence: certification, closed-loop communication, support, and permit acceptance must be verified before using it in a real residential design.
-          </p>
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Remaining target</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">~22 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-700">The backup panel sizing target.</p>
         </div>
-        <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
-          <table class="w-full min-w-[760px] text-left text-sm">
-            <thead class="bg-olive-300 text-olive-950">
-              <tr>
-                <th class="px-4 py-3 font-semibold">Battery</th>
-                <th class="px-4 py-3 font-semibold">Storage</th>
-                <th class="px-4 py-3 font-semibold text-right">Price</th>
-                <th class="px-4 py-3 font-semibold text-right">$/kWh</th>
-                <th class="px-4 py-3 font-semibold">Read</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-olive-300 text-olive-800">
-              <tr class="bg-olive-100">
-                <td class="px-4 py-3"><a href="https://yixiangpower.com/products/pre-sale-yixiang-us-stock-eve-mb56-finished-battery-pack-32kwh-51-2v-16s-628ah-eve-lifepo4-cell-lithium-battery-estimated-shipping-date-dec-20th?sca_ref=9207522.jYuzmwEjUpH" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Yixiang EVE MB56 finished pack</a></td>
-                <td class="px-4 py-3">32 kWh</td>
-                <td class="px-4 py-3 text-right">$3,699</td>
-                <td class="px-4 py-3 text-right">~$116/kWh</td>
-                <td class="px-4 py-3">Best raw battery price; verify listing/certification/compatibility.</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3 font-semibold text-olive-950">Yixiang + trolley base</td>
-                <td class="px-4 py-3">32 kWh</td>
-                <td class="px-4 py-3 text-right">$3,908</td>
-                <td class="px-4 py-3 text-right">~$122/kWh</td>
-                <td class="px-4 py-3">Adds the listed $209 rolling base/accessory.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Dryer note</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">0.95 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-700">Low average, high active-day spikes. Leave it grid-only.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-      <div>
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">3. Solar panels</p>
-        <h2 class="mt-3 text-3xl text-olive-950">Use Amazon panels only as a test, not the array.</h2>
-        <p class="mt-4 text-olive-800 leading-7">
-          This page only tracks the panel kit linked for this budget path. The Callsun kit is Amazon-shipped and returnable, so it works as a small test panel set. It is not a full house array by itself. The IntegraRack parts below are included as a lightweight ground-mount allowance for that small test.
-        </p>
-      </div>
-      <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
-        <table class="w-full min-w-[760px] text-left text-sm">
-          <thead class="bg-olive-300 text-olive-950">
-            <tr>
-              <th class="px-4 py-3 font-semibold">Panel option</th>
-              <th class="px-4 py-3 font-semibold">Scale</th>
-              <th class="px-4 py-3 font-semibold text-right">Price</th>
-              <th class="px-4 py-3 font-semibold">Decision</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-olive-300 text-olive-800">
-            <tr class="bg-amber-50/60">
-              <td class="px-4 py-3"><a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&linkCode=sl1&tag=vehicledwelling-20&linkId=e872f8ed2e47d73c0f523237f63b2d82&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Callsun 400W bifacial Amazon kit</a></td>
-              <td class="px-4 py-3">2x 200W panels, 0.4 kW total</td>
-              <td class="px-4 py-3 text-right">$294.06</td>
-              <td class="px-4 py-3">Good for a small test; too small and high per watt for the main array.</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR-30 BallastRack</a></td>
-              <td class="px-4 py-3">1 fixed-leg module rack</td>
-              <td class="px-4 py-3 text-right">$129.99</td>
-              <td class="px-4 py-3">Small ground-mount rack allowance for the test panel branch.</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR EarthScrews 10-pack</a></td>
-              <td class="px-4 py-3">30in earth-screw mounting kit</td>
-              <td class="px-4 py-3 text-right">$129.99</td>
-              <td class="px-4 py-3">Ground anchoring allowance for the small rack setup.</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
@@ -209,144 +79,179 @@ title: Will Prowse 2026 - Techmore
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Budget model</p>
-          <h2 class="mt-3 text-3xl text-olive-950">Budget Stack Pricing Snapshot</h2>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Recommendation</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Two clean options.</h2>
         </div>
-        <p class="max-w-xl text-sm text-olive-700">Hardware prices checked May 23, 2026. This models a 120V selected-load backup path, not HVAC, water heater, dryer, permitting, or labor.</p>
+        <p class="max-w-xl text-sm text-olive-700">Hardware prices checked May 23, 2026. Totals exclude selected-load panel, breakers, disconnects, labels, permits, shipping, tax, and labor.</p>
       </div>
 
-      <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400">
-        <table class="w-full min-w-[820px] text-left text-sm">
-          <thead class="bg-olive-300 text-olive-950">
-            <tr>
-              <th class="px-4 py-3 font-semibold">Line item</th>
-              <th class="px-4 py-3 font-semibold">Purpose</th>
-              <th class="px-4 py-3 font-semibold">Qty</th>
-              <th class="px-4 py-3 font-semibold text-right">Cost</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-olive-300 bg-olive-200 text-olive-800">
-            <tr>
-              <td class="px-4 py-3"><a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3Jib2diMmRzNDlPUkRCUGhYM3U2a25qbjZHd3xBQ3Jtc0trSGI2LVlGcmEyWGpaQ2VlS0VZcmQtZS1iRldOaEhyMHZ5RUVBUmoxR3B0VkExcUs2eW5oMl9TYXYzNXUtRmhKVXI5WXZfLU1QRGZneUVWY0w0Vk8tTnh3anM0VHpXXzU0UXdsYkd2SjJ5WUdzbVFmMA&q=https%3A%2F%2Fshrsl.com%2F4x9y9&v=H07wpHqmVGM" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">SunGoldPower 10kW Split Phase Inverter</a></td>
-              <td class="px-4 py-3">Main budget inverter for selected 120V loads</td>
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-right">$1,690.00</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://yixiangpower.com/products/pre-sale-yixiang-us-stock-eve-mb56-finished-battery-pack-32kwh-51-2v-16s-628ah-eve-lifepo4-cell-lithium-battery-estimated-shipping-date-dec-20th?sca_ref=9207522.jYuzmwEjUpH" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Yixiang EVE MB56 finished battery pack</a></td>
-              <td class="px-4 py-3">32 kWh 51.2V battery storage</td>
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-right">$3,699.00</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3">Yixiang MB56 rolling base</td>
-              <td class="px-4 py-3">Listed trolley/base accessory</td>
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-right">$209.00</td>
-            </tr>
-            <tr class="bg-amber-50/60">
-              <td class="px-4 py-3"><a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&linkCode=sl1&tag=vehicledwelling-20&linkId=e872f8ed2e47d73c0f523237f63b2d82&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Callsun 400W bifacial Amazon panel kit</a></td>
-              <td class="px-4 py-3">Optional low-commitment panel test</td>
-              <td class="px-4 py-3">1 kit</td>
-              <td class="px-4 py-3 text-right">+$294.06</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR-30 BallastRack</a></td>
-              <td class="px-4 py-3">Small test panel ground rack</td>
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-right">$129.99</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR EarthScrews 10-pack</a></td>
-              <td class="px-4 py-3">Ground anchors for test rack</td>
-              <td class="px-4 py-3">1</td>
-              <td class="px-4 py-3 text-right">$129.99</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3"><a href="https://signaturesolar.com/96in-4-0-awg-battery-to-inverter-cables-black-and-red/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">96in 4/0 AWG battery-to-inverter cables</a></td>
-              <td class="px-4 py-3">One black/red cable pair for inverter battery connection</td>
-              <td class="px-4 py-3">1 pair</td>
-              <td class="px-4 py-3 text-right">$267.03</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3">Selected-load panel, breakers, disconnects, labels, permits, shipping, tax, labor</td>
-              <td class="px-4 py-3">Required for a real house install; not priced here</td>
-              <td class="px-4 py-3"></td>
-              <td class="px-4 py-3 text-right">TBD</td>
-            </tr>
-            <tr class="bg-olive-950 text-white">
-              <td class="px-4 py-4 font-semibold">120V selected-load planning total</td>
-              <td class="px-4 py-4 text-olive-100">Inverter, 32 kWh battery, rolling base, test panels, IntegraRack mounts, and battery cables</td>
-              <td class="px-4 py-4"></td>
-              <td class="px-4 py-4 text-right font-semibold">$6,419.07</td>
-            </tr>
-            <tr class="bg-amber-50/60">
-              <td class="px-4 py-3"><a href="https://www.amazon.com/dp/B0B7WD7HZZ?th=1&linkCode=sl1&tag=kiteonabudg-20&linkId=6fa24503c9c1fcfac23005915e4f0eb1&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Micro 5kW 120V inverter swap</a></td>
-              <td class="px-4 py-3">Cheaper 120V-only branch; loses split-phase coverage</td>
-              <td class="px-4 py-3">replace inverter</td>
-              <td class="px-4 py-3 text-right">$5,509.07 total</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="mt-8 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-lg border border-olive-500 bg-olive-100 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Recommended</p>
+          <h3 class="mt-3 text-2xl text-olive-950">10kW split-phase stack</h3>
+          <p class="mt-2 text-3xl font-semibold text-olive-950">$6,419.07</p>
+          <p class="mt-4 text-sm text-olive-800 leading-6">
+            Best fit if you want a real selected-load subpanel with better 120V leg flexibility. Still excludes HVAC, water heater, dryer, and EV charging.
+          </p>
+          <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3Jib2diMmRzNDlPUkRCUGhYM3U2a25qbjZHd3xBQ3Jtc0trSGI2LVlGcmEyWGpaQ2VlS0VZcmQtZS1iRldOaEhyMHZ5RUVBUmoxR3B0VkExcUs2eW5oMl9TYXYzNXUtRmhKVXI5WXZfLU1QRGZneUVWY0w0Vk8tTnh3anM0VHpXXzU0UXdsYkd2SjJ5WUdzbVFmMA&q=https%3A%2F%2Fshrsl.com%2F4x9y9&v=H07wpHqmVGM" class="mt-5 inline-flex text-sm font-semibold text-olive-950 underline decoration-olive-400 hover:text-olive-700">Open 10kW inverter</a>
+        </div>
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Micro alternative</p>
+          <h3 class="mt-3 text-2xl text-olive-950">5kW 120V-only stack</h3>
+          <p class="mt-2 text-3xl font-semibold text-olive-950">$5,509.07</p>
+          <p class="mt-4 text-sm text-olive-800 leading-6">
+            Saves $910 but is a narrower design. Use only if the target is one small 120V backup panel and you accept no native 240V or balanced split-phase coverage.
+          </p>
+          <a href="https://www.amazon.com/dp/B0B7WD7HZZ?th=1&linkCode=sl1&tag=kiteonabudg-20&linkId=6fa24503c9c1fcfac23005915e4f0eb1&language=en_US&ref_=as_li_ss_tl" class="mt-5 inline-flex text-sm font-semibold text-olive-950 underline decoration-olive-400 hover:text-olive-700">Open 5kW inverter</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Coverage model</p>
-        <h2 class="mt-3 text-3xl text-olive-950">The battery can cover about one average 120V day.</h2>
-        <p class="mt-4 text-olive-800 leading-7">
-          The measured house average is about 60.5 kWh/day. Removing heat pump usage at 44.0%, water-heater usage at 18.1%, and the dryer at about 1.6% leaves roughly 22 kWh/day for remaining selected loads. Dryer use is low on average, but it is lumpy enough that it should stay off this backup panel.
-        </p>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Cost blueprint</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Itemized parts and value.</h2>
       </div>
-      <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-        <dl class="grid gap-4 sm:grid-cols-2">
-          <div>
-            <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Target load</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">~22 kWh/day</dd>
-            <dd class="mt-1 text-sm text-olive-700">Mains minus HVAC, water heater, and dryer shares.</dd>
-          </div>
-          <div>
-            <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery usable model</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">~23.0 kWh</dd>
-            <dd class="mt-1 text-sm text-olive-700">32 kWh nominal x 80% depth x 90% inverter efficiency.</dd>
-          </div>
-          <div>
-            <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery-only coverage</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">~25 hours</dd>
-            <dd class="mt-1 text-sm text-olive-700">About one average non-HVAC/non-water-heater/non-dryer day.</dd>
-          </div>
-          <div>
-            <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar test kit</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">~1-2 kWh/day</dd>
-            <dd class="mt-1 text-sm text-olive-700">Helpful trickle input, not enough to materially change coverage.</dd>
-          </div>
-        </dl>
-      </div>
+      <p class="max-w-xl text-sm text-olive-700">The battery is the value anchor. The panel kit and rack are a test branch, not meaningful whole-house solar.</p>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400">
+      <table class="w-full min-w-[860px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Part</th>
+            <th class="px-4 py-3 font-semibold">Role</th>
+            <th class="px-4 py-3 font-semibold">Value read</th>
+            <th class="px-4 py-3 font-semibold text-right">Cost</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 bg-olive-200 text-olive-800">
+          <tr class="bg-olive-100">
+            <td class="px-4 py-3"><a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3Jib2diMmRzNDlPUkRCUGhYM3U2a25qbjZHd3xBQ3Jtc0trSGI2LVlGcmEyWGpaQ2VlS0VZcmQtZS1iRldOaEhyMHZ5RUVBUmoxR3B0VkExcUs2eW5oMl9TYXYzNXUtRmhKVXI5WXZfLU1QRGZneUVWY0w0Vk8tTnh3anM0VHpXXzU0UXdsYkd2SjJ5WUdzbVFmMA&q=https%3A%2F%2Fshrsl.com%2F4x9y9&v=H07wpHqmVGM" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">SunGoldPower 10kW Split Phase Inverter</a></td>
+            <td class="px-4 py-3">Recommended inverter</td>
+            <td class="px-4 py-3">Better selected-load flexibility than the 120V-only micro option.</td>
+            <td class="px-4 py-3 text-right">$1,690.00</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a href="https://www.amazon.com/dp/B0B7WD7HZZ?th=1&linkCode=sl1&tag=kiteonabudg-20&linkId=6fa24503c9c1fcfac23005915e4f0eb1&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">5kW 48V 120V Inverter Charger</a></td>
+            <td class="px-4 py-3">Micro inverter swap</td>
+            <td class="px-4 py-3">Saves $910, but only makes sense for one small 120V backup panel.</td>
+            <td class="px-4 py-3 text-right">$780.00</td>
+          </tr>
+          <tr class="bg-olive-100">
+            <td class="px-4 py-3"><a href="https://yixiangpower.com/products/pre-sale-yixiang-us-stock-eve-mb56-finished-battery-pack-32kwh-51-2v-16s-628ah-eve-lifepo4-cell-lithium-battery-estimated-shipping-date-dec-20th?sca_ref=9207522.jYuzmwEjUpH" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Yixiang EVE MB56 finished battery pack</a></td>
+            <td class="px-4 py-3">32 kWh battery</td>
+            <td class="px-4 py-3">Main value driver, about $116/kWh before accessory.</td>
+            <td class="px-4 py-3 text-right">$3,699.00</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">Yixiang MB56 rolling base</td>
+            <td class="px-4 py-3">Battery accessory</td>
+            <td class="px-4 py-3">Makes the battery easier to position; not energy-producing.</td>
+            <td class="px-4 py-3 text-right">$209.00</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a href="https://signaturesolar.com/96in-4-0-awg-battery-to-inverter-cables-black-and-red/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">96in 4/0 AWG battery-to-inverter cables</a></td>
+            <td class="px-4 py-3">Battery cable pair</td>
+            <td class="px-4 py-3">Required connection allowance; final sizing still belongs to the installer.</td>
+            <td class="px-4 py-3 text-right">$267.03</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&linkCode=sl1&tag=vehicledwelling-20&linkId=e872f8ed2e47d73c0f523237f63b2d82&language=en_US&ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Callsun 400W bifacial Amazon panel kit</a></td>
+            <td class="px-4 py-3">Small solar test</td>
+            <td class="px-4 py-3">Useful test input, but only about 1-2 kWh/day in good conditions.</td>
+            <td class="px-4 py-3 text-right">$294.06</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR-30 BallastRack</a></td>
+            <td class="px-4 py-3">Small panel rack</td>
+            <td class="px-4 py-3">Cleaner than improvised wood for the test panel branch.</td>
+            <td class="px-4 py-3 text-right">$129.99</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">IntegraRack IR EarthScrews 10-pack</a></td>
+            <td class="px-4 py-3">Ground anchors</td>
+            <td class="px-4 py-3">Anchoring allowance for the small rack setup.</td>
+            <td class="px-4 py-3 text-right">$129.99</td>
+          </tr>
+          <tr class="bg-olive-950 text-white">
+            <td class="px-4 py-4 font-semibold">Recommended stack total</td>
+            <td class="px-4 py-4 text-olive-100">10kW inverter path</td>
+            <td class="px-4 py-4 text-olive-100">Before electrical balance-of-system, permit, labor, shipping, and tax.</td>
+            <td class="px-4 py-4 text-right font-semibold">$6,419.07</td>
+          </tr>
+          <tr class="bg-amber-50/60">
+            <td class="px-4 py-3 font-semibold text-olive-950">Micro stack total</td>
+            <td class="px-4 py-3">5kW inverter path</td>
+            <td class="px-4 py-3">Same battery and solar test branch, lower inverter cost.</td>
+            <td class="px-4 py-3 text-right font-semibold text-olive-950">$5,509.07</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3">Selected-load panel, breakers, disconnects, labels, permits, shipping, tax, labor</td>
+            <td class="px-4 py-3">Real install scope</td>
+            <td class="px-4 py-3">Required before connecting house circuits.</td>
+            <td class="px-4 py-3 text-right">TBD</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
   <section class="bg-olive-200/70 border-y border-olive-400">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Install reality</p>
-          <h2 class="mt-3 text-3xl text-olive-950">This is energy coverage, not a finished electrical design.</h2>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Expected result</p>
+          <h2 class="mt-3 text-3xl text-olive-950">The result is one normal selected-load day.</h2>
           <p class="mt-4 text-olive-800 leading-7">
-            The 10kW inverter output is large relative to the average 120V energy target, but simultaneous circuit behavior still matters. A real installation needs an electrician to choose which 120V circuits move to a selected-load panel and to balance the two legs correctly.
+            Model the 32 kWh battery at 80% depth of discharge and 90% inverter efficiency. That gives about 23 kWh usable AC energy, which is close to the measured 22 kWh/day selected-load target. The small solar kit helps during daylight, but it does not materially change the system class.
           </p>
         </div>
-        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-          <ul class="space-y-3 text-sm text-olive-800">
-            <li><span class="font-semibold text-olive-950">Not included:</span> HVAC, water heater, dryer, EV charging, and other large 240V loads.</li>
-            <li><span class="font-semibold text-olive-950">Dryer read:</span> the CSV shows about 0.95 kWh/day average dryer use, but active dryer days can be much higher, so it should remain grid-only.</li>
-            <li><span class="font-semibold text-olive-950">Good candidates:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and limited kitchen outlet use.</li>
-            <li><span class="font-semibold text-olive-950">Coffee maker caution:</span> a Jura-style machine is fine as a short 120V load, but it should not run at the same time as every other kitchen load.</li>
-            <li><span class="font-semibold text-olive-950">Required checks:</span> certification, inverter/battery communication, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support.</li>
-          </ul>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Usable battery</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~23 kWh AC</p>
+            <p class="mt-2 text-sm text-olive-700">32 kWh x 80% x 90%.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Runtime</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~25 hours</p>
+            <p class="mt-2 text-sm text-olive-700">Average selected-load day, not a peak-use promise.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar add</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~1-2 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-700">Small panel test, not meaningful house offset.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Payback read</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">Backup value</p>
+            <p class="mt-2 text-sm text-olive-700">This is resilience-first; energy savings alone will not justify it quickly.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Install notes</p>
+        <h2 class="mt-3 text-3xl text-olive-950">What this does and does not solve.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          Treat this as a blueprint for an electrician conversation. It is not a finished permitted design. The practical next step is choosing the exact backed-up circuits and deciding whether the 10kW split-phase path is worth the extra $910 over the 5kW micro path.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+        <ul class="space-y-3 text-sm text-olive-800">
+          <li><span class="font-semibold text-olive-950">Include:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and limited kitchen outlet use.</li>
+          <li><span class="font-semibold text-olive-950">Exclude:</span> HVAC, water heater, dryer, EV charging, range, and other large 240V loads.</li>
+          <li><span class="font-semibold text-olive-950">Coffee maker:</span> fine as a short 120V load, but avoid stacking it with other kitchen loads during battery operation.</li>
+          <li><span class="font-semibold text-olive-950">EG4 12000XP note:</span> stronger ecosystem option at $1,899, but this page keeps it as a reference, not the priced build.</li>
+          <li><span class="font-semibold text-olive-950">Required review:</span> certification, inverter/battery communication, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support.</li>
+        </ul>
       </div>
     </div>
   </section>
