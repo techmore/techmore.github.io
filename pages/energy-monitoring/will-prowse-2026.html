@@ -322,6 +322,43 @@ title: Will Prowse 2026 - Techmore
     </div>
   </section>
 
+  <section class="bg-olive-200/70 border-y border-olive-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Grid charging</p>
+          <h2 class="mt-3 text-3xl text-olive-950">A 120V cord can charge, but it is slow.</h2>
+          <p class="mt-4 text-olive-800 leading-7">
+            Both inverter paths have AC charging behavior, but the safe setup is not an improvised extension cord into house wiring. Treat grid charging as either a dedicated inlet/breaker setup or a temporary bench-style charger connection sized by an electrician.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-200">
+          <table class="w-full min-w-[820px] text-left text-sm">
+            <thead class="bg-olive-300 text-olive-950">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Model</th>
+                <th class="px-4 py-3 font-semibold">120V grid-charge read</th>
+                <th class="px-4 py-3 font-semibold">Time to refill 23 kWh usable</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-olive-300 text-olive-800">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-olive-950">10kW split-phase model</td>
+                <td class="px-4 py-3">Listings/manual references show AC input support, including 120V single-phase ranges, but this belongs on a properly wired AC input circuit/inlet. Do not model it as a normal appliance cord unless the manual and electrician explicitly approve that wiring method.</td>
+                <td class="px-4 py-3">At a 12A continuous 120V source, expect roughly 17-20 hours after losses. A larger dedicated input circuit can be faster if the inverter settings and wiring support it.</td>
+              </tr>
+              <tr class="bg-amber-50/60">
+                <td class="px-4 py-3 font-semibold text-olive-950">5kW 120V micro model</td>
+                <td class="px-4 py-3">This is the more natural cord-style candidate because it is a 120V output inverter charger and the listing calls out a 40A AC battery charger. A normal 15A outlet cannot feed the full charger rate.</td>
+                <td class="px-4 py-3">A 15A outlet should be treated around 12A continuous, so about 17-20 hours. If a dedicated 20A 120V circuit is allowed, estimate roughly 13-16 hours.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
     <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
       <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Sources</p>
@@ -338,6 +375,7 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://signaturesolar.com/96in-4-0-awg-battery-to-inverter-cables-black-and-red/" class="underline decoration-olive-500 hover:text-olive-700">Signature Solar 96in 4/0 AWG battery-to-inverter cables</a> for the $267.03 black/red cable pair.</li>
         <li><a href="https://tubetested.com/episodes/58" class="underline decoration-olive-500 hover:text-olive-700">TubeTested 2026 Will Prowse approved products index</a> for the referenced 2026 affiliate-list context.</li>
         <li><a href="https://www.youtube.com/watch?v=HarRKsrqOss" class="underline decoration-olive-500 hover:text-olive-700">YouTube reference video</a> for additional budget-stack context.</li>
+        <li><a href="https://device.report/manuals/sungoldpower-10kw-48v-split-phase-solar-inverter-manual" class="underline decoration-olive-500 hover:text-olive-700">SunGoldPower 10kW manual reference</a> and related listings for AC input and 120/240V split-phase context.</li>
       </ul>
     </div>
   </section>
