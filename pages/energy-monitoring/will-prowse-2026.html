@@ -34,8 +34,8 @@ title: Will Prowse 2026 - Techmore
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">120V daily target</p>
-          <p class="mt-3 text-3xl font-semibold text-white">22.9 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">Average after removing HVAC and water heater.</p>
+          <p class="mt-3 text-3xl font-semibold text-white">~22 kWh</p>
+          <p class="mt-2 text-sm text-olive-200">Average after removing HVAC, water heater, and dryer.</p>
         </div>
       </div>
     </div>
@@ -226,15 +226,15 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Coverage model</p>
         <h2 class="mt-3 text-3xl text-olive-950">The battery can cover about one average 120V day.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The measured house average is 60.5 kWh/day. Removing heat pump usage at 44.0% and water-heater usage at 18.1% leaves about 22.9 kWh/day for the remaining loads. The dryer is not listed separately in the current source summary, so this is best read as non-HVAC and non-water-heater coverage, with dryer still excluded by design.
+          The measured house average is about 60.5 kWh/day. Removing heat pump usage at 44.0%, water-heater usage at 18.1%, and the dryer at about 1.6% leaves roughly 22 kWh/day for remaining selected loads. Dryer use is low on average, but it is lumpy enough that it should stay off this backup panel.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <dl class="grid gap-4 sm:grid-cols-2">
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Target load</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">22.9 kWh/day</dd>
-            <dd class="mt-1 text-sm text-olive-700">60.5 minus HVAC and water heater shares.</dd>
+            <dd class="mt-1 text-2xl font-semibold text-olive-950">~22 kWh/day</dd>
+            <dd class="mt-1 text-sm text-olive-700">Mains minus HVAC, water heater, and dryer shares.</dd>
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery usable model</dt>
@@ -243,8 +243,8 @@ title: Will Prowse 2026 - Techmore
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery-only coverage</dt>
-            <dd class="mt-1 text-2xl font-semibold text-olive-950">~24 hours</dd>
-            <dd class="mt-1 text-sm text-olive-700">About one average non-HVAC/non-water-heater day.</dd>
+            <dd class="mt-1 text-2xl font-semibold text-olive-950">~25 hours</dd>
+            <dd class="mt-1 text-sm text-olive-700">About one average non-HVAC/non-water-heater/non-dryer day.</dd>
           </div>
           <div>
             <dt class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar test kit</dt>
@@ -269,6 +269,7 @@ title: Will Prowse 2026 - Techmore
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <ul class="space-y-3 text-sm text-olive-800">
             <li><span class="font-semibold text-olive-950">Not included:</span> HVAC, water heater, dryer, EV charging, and other large 240V loads.</li>
+            <li><span class="font-semibold text-olive-950">Dryer read:</span> the CSV shows about 0.95 kWh/day average dryer use, but active dryer days can be much higher, so it should remain grid-only.</li>
             <li><span class="font-semibold text-olive-950">Good candidates:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and limited kitchen outlet use.</li>
             <li><span class="font-semibold text-olive-950">Coffee maker caution:</span> a Jura-style machine is fine as a short 120V load, but it should not run at the same time as every other kitchen load.</li>
             <li><span class="font-semibold text-olive-950">Required checks:</span> certification, inverter/battery communication, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support.</li>
