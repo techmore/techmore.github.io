@@ -111,6 +111,60 @@ title: Will Prowse 2026 - Techmore
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Blueprint comparison</p>
+        <h2 class="mt-3 text-3xl text-olive-950">What each model actually provides.</h2>
+      </div>
+      <p class="max-w-xl text-sm text-olive-700">Both models use the same 32 kWh battery, so runtime is almost the same. The inverter choice changes how many 120V circuits can be served cleanly at once.</p>
+    </div>
+
+    <div class="mt-8 overflow-x-auto rounded-lg border border-olive-400">
+      <table class="w-full min-w-[900px] text-left text-sm">
+        <thead class="bg-olive-300 text-olive-950">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Question</th>
+            <th class="px-4 py-3 font-semibold">10kW split-phase model</th>
+            <th class="px-4 py-3 font-semibold">5kW 120V micro model</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-olive-300 bg-olive-200 text-olive-800">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">What it powers</td>
+            <td class="px-4 py-3">Best fit for a real selected-load subpanel: fridge, network rack, lights, office, ERV controls, phone charging, and careful kitchen outlet use.</td>
+            <td class="px-4 py-3">Best fit for one smaller 120V backup panel or a few priority circuits. Same types of loads, but with less simultaneous-use headroom.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Does it cover all 120V needs?</td>
+            <td class="px-4 py-3">Likely yes for the selected 120V loads in the data model, if HVAC, water heater, dryer, range, and EV loads stay off it and the subpanel is balanced correctly.</td>
+            <td class="px-4 py-3">Partially. It can cover critical 120V needs, but not a broad house-style 120V panel. It is the cheap circuit-priority version, not the comfortable version.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Output limit</td>
+            <td class="px-4 py-3">10kW split phase gives better simultaneous load headroom and more useful panel design flexibility.</td>
+            <td class="px-4 py-3">5kW 120V output is enough for basics, but a coffee maker plus other kitchen loads can force active load discipline.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Runtime from data</td>
+            <td class="px-4 py-3">About 25 hours against the roughly 22 kWh/day selected-load target, using about 23 kWh usable AC from the battery.</td>
+            <td class="px-4 py-3">Also about 25 hours, because the battery is the runtime limit. The smaller inverter does not create more stored energy.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Solar contribution</td>
+            <td class="px-4 py-3">The 400W panel kit may add about 1-2 kWh/day in good conditions. Helpful, but not enough to refill a 22 kWh selected-load day.</td>
+            <td class="px-4 py-3">Same solar result. The micro model remains battery-first with a small recharge test, not a solar autonomy design.</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-olive-950">Best use</td>
+            <td class="px-4 py-3">Use this if the goal is a cleaner home backup panel that feels normal for essential 120V circuits.</td>
+            <td class="px-4 py-3">Use this if the goal is lowest-cost backup for a very small circuit list and you accept manual load awareness.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Cost blueprint</p>
         <h2 class="mt-3 text-3xl text-olive-950">Itemized parts and value.</h2>
       </div>
