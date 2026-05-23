@@ -47,7 +47,7 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Design decision</p>
         <h2 class="mt-3 text-3xl text-olive-950">Build for selected 120V loads first.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          Your Emporia data says the whole house averages about 60.5 kWh/day. Heat pump, water heater, and dryer are the wrong first targets for a cheap backup stack. Removing those loads leaves roughly 22 kWh/day for the circuits that actually fit this design: fridge, network, lights, office, phone charging, ERV controls, and kitchen outlet use including the coffee maker.
+          Your Emporia data says the whole house averages about 60.5 kWh/day. Heat pump, water heater, and dryer are the wrong first targets for a cheap backup stack. Removing those loads leaves roughly 22 kWh/day for the circuits that actually fit this design: fridge, network, lights, office, phone charging, ERV controls, and selected outlet use.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
@@ -152,7 +152,7 @@ title: Will Prowse 2026 - Techmore
           <div class="mt-5 grid gap-3 sm:grid-cols-2">
             <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
               <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Covers</p>
-              <p class="mt-2 text-sm text-olive-800">Likely all selected 120V needs in the data model: fridge, network, lights, office, ERV, phone charging, and kitchen outlet use including the coffee maker.</p>
+              <p class="mt-2 text-sm text-olive-800">Likely all selected 120V needs in the data model: fridge, network, lights, office, ERV, phone charging, and selected outlet use.</p>
             </div>
             <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
               <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Runtime</p>
@@ -305,9 +305,8 @@ title: Will Prowse 2026 - Techmore
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <ul class="space-y-3 text-sm text-olive-800">
-          <li><span class="font-semibold text-olive-950">Include:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and kitchen outlet use.</li>
+          <li><span class="font-semibold text-olive-950">Include:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and selected outlet use.</li>
           <li><span class="font-semibold text-olive-950">Exclude:</span> HVAC, water heater, dryer, EV charging, range, and other large 240V loads.</li>
-          <li><span class="font-semibold text-olive-950">Coffee maker:</span> the 10kW path has ample headroom for a Jura-style coffee maker and other normal 120V loads. The 5kW fallback can run it too, but that does not make the overall path a good fit.</li>
           <li><span class="font-semibold text-olive-950">EG4 12000XP note:</span> stronger ecosystem option at $1,899, but this page keeps it as a reference, not the priced build.</li>
           <li><span class="font-semibold text-olive-950">Required review:</span> certification, inverter/battery communication, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support.</li>
         </ul>
