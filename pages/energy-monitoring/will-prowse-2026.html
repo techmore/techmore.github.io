@@ -47,7 +47,7 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Design decision</p>
         <h2 class="mt-3 text-3xl text-olive-950">Build for selected 120V loads first.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          Your Emporia data says the whole house averages about 60.5 kWh/day. Heat pump, water heater, and dryer are the wrong first targets for a cheap backup stack. Removing those loads leaves roughly 22 kWh/day for the circuits that actually fit this design: fridge, network, lights, office, phone charging, ERV controls, and occasional small kitchen use.
+          Your Emporia data says the whole house averages about 60.5 kWh/day. Heat pump, water heater, and dryer are the wrong first targets for a cheap backup stack. Removing those loads leaves roughly 22 kWh/day for the circuits that actually fit this design: fridge, network, lights, office, phone charging, ERV controls, and kitchen outlet use including the coffee maker on the 10kW model.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
@@ -108,7 +108,7 @@ title: Will Prowse 2026 - Techmore
           <div class="mt-5 grid gap-3 sm:grid-cols-2">
             <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
               <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Covers</p>
-              <p class="mt-2 text-sm text-olive-800">Likely all selected 120V needs in the data model: fridge, network, lights, office, ERV, phone charging, and careful kitchen use.</p>
+              <p class="mt-2 text-sm text-olive-800">Likely all selected 120V needs in the data model: fridge, network, lights, office, ERV, phone charging, and kitchen outlet use including the coffee maker.</p>
             </div>
             <div class="rounded-lg border border-olive-300 bg-olive-200 p-4">
               <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Runtime</p>
@@ -159,7 +159,7 @@ title: Will Prowse 2026 - Techmore
             </div>
             <div class="rounded-lg border border-olive-300 bg-olive-100 p-4">
               <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Limit</p>
-              <p class="mt-2 text-sm text-olive-800">Not a broad house panel. Coffee maker plus other kitchen loads may require active load discipline.</p>
+              <p class="mt-2 text-sm text-olive-800">Not a broad house panel. The coffee maker should still run, but this smaller model needs more attention to simultaneous kitchen loads.</p>
             </div>
           </div>
         </article>
@@ -295,9 +295,9 @@ title: Will Prowse 2026 - Techmore
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
         <ul class="space-y-3 text-sm text-olive-800">
-          <li><span class="font-semibold text-olive-950">Include:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and limited kitchen outlet use.</li>
+          <li><span class="font-semibold text-olive-950">Include:</span> refrigerator, network rack, lights, office outlets, phone charging, ERV controls, and kitchen outlet use.</li>
           <li><span class="font-semibold text-olive-950">Exclude:</span> HVAC, water heater, dryer, EV charging, range, and other large 240V loads.</li>
-          <li><span class="font-semibold text-olive-950">Coffee maker:</span> fine as a short 120V load, but avoid stacking it with other kitchen loads during battery operation.</li>
+          <li><span class="font-semibold text-olive-950">Coffee maker:</span> the 10kW SPH10048P spec shown is rated 10,000W with 20,000W peak, so a Jura-style coffee maker is not a concern for that model. The caution only applies to the 5kW micro model and simultaneous kitchen loads.</li>
           <li><span class="font-semibold text-olive-950">EG4 12000XP note:</span> stronger ecosystem option at $1,899, but this page keeps it as a reference, not the priced build.</li>
           <li><span class="font-semibold text-olive-950">Required review:</span> certification, inverter/battery communication, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support.</li>
         </ul>
