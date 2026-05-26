@@ -367,6 +367,65 @@ title: Will Prowse 2026 - Techmore
         </p>
       </div>
 
+      <div class="mt-6 rounded-lg border border-olive-400 bg-olive-100 p-5">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar input model</p>
+        <h3 class="mt-2 text-2xl text-olive-950">Callsun 400W kits are useful, but wiring has to match Jackery input limits.</h3>
+        <p class="mt-3 text-sm text-olive-800 leading-6">
+          Use the <a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&amp;linkCode=sl1&amp;tag=vehicledwelling-20&amp;linkId=e872f8ed2e47d73c0f523237f63b2d82&amp;language=en_US&amp;ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Callsun 400W bifacial 2-panel kit</a> as the cheap rigid-panel model. Jackery advertises up to 4,000W solar input on the Explorer 5000 Plus, but the final string plan needs voltage/current verification across the high-PV and low-PV inputs before purchase.
+        </p>
+        <div class="mt-4 overflow-x-auto rounded-lg border border-olive-300 bg-olive-50">
+          <table class="min-w-full text-left text-sm text-olive-800">
+            <thead class="bg-olive-200 text-olive-950">
+              <tr>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Callsun array</th>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Panel cost</th>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Panel face</th>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Avg solar/day</th>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Base Jackery refill</th>
+                <th scope="col" class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Read</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-olive-200">
+              <tr>
+                <td class="px-4 py-3 font-semibold text-olive-950">2 kits / 4 panels / 800W</td>
+                <td class="px-4 py-3">$588.12</td>
+                <td class="px-4 py-3">~43 sq ft</td>
+                <td class="px-4 py-3">~2.1 kWh/day</td>
+                <td class="px-4 py-3">~2.4 average solar days</td>
+                <td class="px-4 py-3">Meaningful trickle recovery, not enough to run the 22kWh/day target.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-olive-950">4 kits / 8 panels / 1.6kW</td>
+                <td class="px-4 py-3">$1,176.24</td>
+                <td class="px-4 py-3">~86 sq ft</td>
+                <td class="px-4 py-3">~4.2 kWh/day</td>
+                <td class="px-4 py-3">~1.2 average solar days</td>
+                <td class="px-4 py-3">Good minimum fixed array for keeping the Jackery useful during a daytime outage.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-olive-950">6 kits / 12 panels / 2.4kW</td>
+                <td class="px-4 py-3">$1,764.36</td>
+                <td class="px-4 py-3">~130 sq ft</td>
+                <td class="px-4 py-3">~6.3 kWh/day</td>
+                <td class="px-4 py-3">About one average solar day</td>
+                <td class="px-4 py-3">Best practical Jackery solar target if the goal is refilling the base battery daily.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-olive-950">10 kits / 20 panels / 4.0kW</td>
+                <td class="px-4 py-3">$2,940.60</td>
+                <td class="px-4 py-3">~216 sq ft</td>
+                <td class="px-4 py-3">~10.5 kWh/day</td>
+                <td class="px-4 py-3">Refills base battery and supports load on average days</td>
+                <td class="px-4 py-3">Near the advertised Jackery solar-input ceiling; wiring and adapter details become the main risk.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-olive-700 leading-5">
+          Refill estimates use the same local production ratio as the 24-panel model: about 2.625kWh/day per installed kW DC. They are average-day planning numbers, not peak-hour guarantees.
+        </p>
+      </div>
+
       <div class="mt-6 grid gap-4 lg:grid-cols-2">
         <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Against your 120V usage</p>
