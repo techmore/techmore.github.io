@@ -9,7 +9,7 @@ title: Jackery Backup Plan - Techmore
       <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Portable backup</p>
       <h1 class="mt-4 font-display italic text-5xl sm:text-6xl text-olive-950 leading-tight">Jackery 5000 Plus MVP: $2,635.</h1>
       <p class="mt-6 text-lg text-olive-800 leading-8">
-        A refurbished Explorer 5000 Plus plus two 450W bifacial panels from Amazon. Sized for fridge, internet, radon, lights, and the well pump on critical-only loads. Solar numbers modeled for Tinicum, PA (ZIP 18947, ~40.5°N); load numbers come from 152 days of Emporia circuit data at the Barn.
+        A refurbished Explorer 5000 Plus plus two 450W bifacial panels from Amazon. Sized for fridge, internet, radon, lights, and the well pump on critical-only loads. Solar numbers modeled for Tinicum, PA (ZIP 18947, ~40.5°N); load numbers come from 152 days of Emporia circuit data at the Barn. Jackery markets the 5000 Plus as a long-life LFP class unit, so cycle life is part of the value story here too.
       </p>
     </div>
   </section>
@@ -30,7 +30,7 @@ title: Jackery Backup Plan - Techmore
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Battery</p>
           <p class="mt-3 text-3xl font-semibold text-white">5.04 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">~4.5 kWh usable LiFePO4, 7,200W output.</p>
+          <p class="mt-2 text-sm text-olive-200">~4.5 kWh usable LiFePO4, 7,200W output, long-cycle LFP class battery.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Summer day (avg)</p>
@@ -147,6 +147,37 @@ title: Jackery Backup Plan - Techmore
           <p class="mt-3 text-xs text-olive-700 leading-5">
             Drop the well pump and lights (no showering/cleaning) to drop the load to ~4.7 kWh/day. Summer surplus with reduced load: roughly break-even, Jackery holds overnight. Add a Jackery expansion battery to multiply the runtime table by 2x (10 kWh) or 4x (20 kWh).
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Mounting angle</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Use the same seasonal logic even on a portable-backed plan.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          If you mount the 450W pair permanently, the same Tinicum rules still apply: flatter in summer, steeper in winter, and true south in all cases. The fixed-angle IR-15 / IR-30 frame is the low-friction choice; the IR-45ASA makes seasonal tuning easier if the array becomes more than a test rig.
+        </p>
+      </div>
+      <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-50">
+        <table class="min-w-full text-left text-sm text-olive-800">
+          <thead class="bg-olive-200 text-olive-950">
+            <tr>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Season</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Recommended tilt</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Why</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-olive-200">
+            <tr><td class="px-4 py-3 font-semibold text-olive-950">Summer</td><td class="px-4 py-3">15°-25°</td><td class="px-4 py-3">Sun is high, so flatter panels catch more light.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-olive-950">Winter</td><td class="px-4 py-3">55°-60°</td><td class="px-4 py-3">Sun is low, so steeper panels face it better.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-olive-950">Year-round fixed</td><td class="px-4 py-3">30°-40°</td><td class="px-4 py-3">A practical compromise if we do not want seasonal adjustments.</td></tr>
+          </tbody>
+        </table>
+        <div class="border-t border-olive-200 p-4 text-sm text-olive-700">
+          Adjustable: <a href="https://www.currentconnected.com/product/integrarack-ir45asa-solar-panel-ground-mount-bracket-seasonably-adjustable/?ref=wp" class="underline decoration-olive-500 hover:text-olive-700">IR-45ASA</a>. Fixed: <a href="https://www.currentconnected.com/product/integrarack-ir-series-solar-panel-ground-mount-bracket-15-30-45-degree-angle-individual-frame/" class="underline decoration-olive-500 hover:text-olive-700">IR-15 / IR-30</a>.
         </div>
       </div>
     </div>
@@ -309,7 +340,7 @@ title: Jackery Backup Plan - Techmore
             <td class="px-4 py-3">20.16 / ~18.1 kWh</td>
             <td class="px-4 py-3">~20 hours</td>
             <td class="px-4 py-3">~9.7-12.5 hours</td>
-            <td class="px-4 py-3">Closest Jackery battery match, but now overlaps the DIY 24-panel budget.</td>
+              <td class="px-4 py-3">Closest Jackery battery match, but now overlaps the broader DIY split-phase budget.</td>
           </tr>
         </tbody>
       </table>
@@ -331,7 +362,7 @@ title: Jackery Backup Plan - Techmore
       <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Solar input model</p>
       <h2 class="mt-3 text-3xl text-olive-950">Callsun kits and the 450W Amazon pair — refill scenarios.</h2>
       <p class="mt-4 text-olive-800 leading-7">
-        The MVP uses the <a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ewc_pr_img_1?smid=ACXRZOBKQSG34&amp;th=1" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">450W bifacial 2-pack from Amazon</a> (0.9 kW, $699.99, Amazon's Choice, 25% efficiency). Jackery advertises up to 4,000W solar input on the Explorer 5000 Plus, so the array is well under the ceiling. For larger refill budgets, the <a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&amp;linkCode=sl1&amp;tag=vehicledwelling-20&amp;linkId=e872f8ed2e47d73c0f523237f63b2d82&amp;language=en_US&amp;ref_=as_li_ss_tl" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Callsun 400W bifacial 2-panel kit</a> chains in 0.8 kW increments. The final string plan needs voltage/current verification across the high-PV and low-PV inputs before scaling up.
+        The MVP uses the <a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ewc_pr_img_1?smid=ACXRZOBKQSG34&amp;th=1" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">450W bifacial 2-pack from Amazon</a> (0.9 kW, $699.99, Amazon's Choice, 25% efficiency). Jackery advertises up to 4,000W solar input on the Explorer 5000 Plus, so the array is well under the ceiling. For a larger mounted array, the same seasonal-rack logic applies if we ever expand beyond the test pair. The final string plan still needs voltage/current verification across the high-PV and low-PV inputs before scaling up.
       </p>
       <div class="mt-6 overflow-x-auto rounded-lg border border-olive-400 bg-olive-50">
         <table class="min-w-full text-left text-sm text-olive-800">
@@ -355,7 +386,7 @@ title: Jackery Backup Plan - Techmore
               <td class="px-4 py-3">Cheapest refill option; the MVP rig.</td>
             </tr>
             <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">2 kits / 4 panels / 800W (Callsun 400W)</td>
+              <td class="px-4 py-3 font-semibold text-olive-950">2 kits / 4 panels / 1.8 kW (Callsun 450W)</td>
               <td class="px-4 py-3">$588.12</td>
               <td class="px-4 py-3">~43 sq ft</td>
               <td class="px-4 py-3">~2.1 kWh/day</td>
@@ -390,7 +421,7 @@ title: Jackery Backup Plan - Techmore
         </table>
       </div>
       <p class="mt-3 text-xs text-olive-700 leading-5">
-        Refill estimates use the same local production ratio as the 24-panel model: about 2.625 kWh/day per installed kW DC. They are average-day planning numbers, not peak-hour guarantees. The MVP's 0.9 kW pair produces ~1.7 kWh/day in winter and ~4.0 kWh/day in summer; annual model: ~1,260 kWh.
+        Refill estimates use the same local production ratio as the larger solar planning model: about 2.625 kWh/day per installed kW DC. They are average-day planning numbers, not peak-hour guarantees. The MVP's 0.9 kW pair produces ~1.7 kWh/day in winter and ~4.0 kWh/day in summer; annual model: ~1,260 kWh.
       </p>
     </div>
   </section>
@@ -472,13 +503,10 @@ title: Jackery Backup Plan - Techmore
     <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
       <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Sources</p>
       <ul class="mt-4 list-disc pl-5 text-sm text-olive-800 leading-7">
-        <li><a href="https://www.jackery.com/products/jackery-explorer-5000-plus" class="underline decoration-olive-500 hover:text-olive-700">Jackery Explorer 5000 Plus</a> for the 5.04 kWh capacity, 7,200W output, 120/240V support, Smart Transfer Switch bundle, and current planning prices.</li>
+        <li><a href="https://www.jackery.com/products/jackery-explorer-5000-plus" class="underline decoration-olive-500 hover:text-olive-700">Jackery Explorer 5000 Plus</a> for the 5.04 kWh capacity, 7,200W output, 120/240V support, and current planning prices.</li>
         <li><a href="https://www.ebay.com/itm/376837819280" class="underline decoration-olive-500 hover:text-olive-700">Jackery Direct eBay refurbished Explorer 5000 Plus listing</a> for the $1,935 used/refurbished option, quantity, seller, warranty note, and return terms.</li>
-        <li><a href="https://www.jackery.com/products/add-onjackery-smart-transfer-switch" class="underline decoration-olive-500 hover:text-olive-700">Jackery Smart Transfer Switch add-on</a> for the separate $999 transfer-switch purchase path.</li>
-        <li><a href="https://shopsolarkits.com/products/jackery-smart-transfer-switch" class="underline decoration-olive-500 hover:text-olive-700">ShopSolarKits Jackery Smart Transfer Switch listing</a> for transfer-switch compatibility context.</li>
         <li><a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ewc_pr_img_1?smid=ACXRZOBKQSG34&amp;th=1" class="underline decoration-olive-500 hover:text-olive-700">Amazon 450W bifacial 2-pack (Callsun Store)</a> for the $699.99 coupon price, N-Type 16BB / 25% efficiency / anti-shade dual-module specs, and 4.8-star sample size.</li>
-        <li><a href="https://www.amazon.com/Callsun-Bifacial-Efficiency-Monocrystalline-Off-Grid/dp/B0DC6T55ZK?th=1&linkCode=sl1&tag=vehicledwelling-20&linkId=e872f8ed2e47d73c0f523237f63b2d82&language=en_US&ref_=as_li_ss_tl" class="underline decoration-olive-500 hover:text-olive-700">Amazon Callsun 400W bifacial panel kit</a> for the $294.06 limited-time price, 2x 200W configuration, Amazon shipping, and 30-day return details.</li>
-        <li><a href="https://manuals.plus/asin/B0DC6T55ZK" class="underline decoration-olive-500 hover:text-olive-700">Callsun 400W 2-pack manual reference</a> for the listed 51.3 x 30.3 x 1.4 in panel dimensions used in the area estimate.</li>
+        <li><a href="https://manuals.plus/asin/B0GJ5KLM1B" class="underline decoration-olive-500 hover:text-olive-700">Callsun 450W 2-pack manual reference</a> for the listed panel dimensions used in the area estimate.</li>
         <li><a href="/assets/emporia-data/8C9E94-Barn-1DAY.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-day circuit CSV (152 days)</a> for measured per-circuit daily kWh averages, heat-pump share, and critical-load subtotal used in the Jackery capability section.</li>
         <li><a href="/assets/emporia-data/8C9E94-Barn-1H.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-hour circuit CSV</a> for measured hourly peak kW per circuit (heat-pump 7.63 kW, water-heater 4.64 kW, dryer 4.44 kW).</li>
         <li><a href="/assets/emporia-data/8C9E94-Barn-1MIN.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-minute circuit CSV</a> for the 121W median / 145W avg / 50W minimum phantom-load baseline used in the charge-under-load math.</li>
