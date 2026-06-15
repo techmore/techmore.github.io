@@ -73,8 +73,8 @@ title: Will Prowse 2026 - Techmore
               </tr>
               <tr>
                 <td class="px-3 py-3 font-semibold text-white">Can it cover the heat pump?</td>
-                <td class="px-3 py-3">No, not as modeled.</td>
-                <td class="px-3 py-3">Emporia shows ~23.35 kWh/day average and a 7.63 kW hourly peak.</td>
+                <td class="px-3 py-3">Maybe as a managed recent-weather stretch, not as guaranteed backup.</td>
+                <td class="px-3 py-3">May+June heat-pump use is ~7.65 kWh/day, but winter stress-test days are much larger.</td>
               </tr>
               <tr>
                 <td class="px-3 py-3 font-semibold text-white">Can it use the VEVOR charger?</td>
@@ -160,8 +160,8 @@ title: Will Prowse 2026 - Techmore
           </div>
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Heat-pump gap</p>
-            <p class="mt-2 text-2xl font-semibold text-olive-950">~23.35 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-700">The heat pump alone averages about 4x the narrow critical-load package.</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~7.65 kWh/day recent</p>
+            <p class="mt-2 text-sm text-olive-700">May+June usage is closer to the 2-kit solar range, but winter is a different story.</p>
           </div>
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5 sm:col-span-2">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Rack area</p>
@@ -291,7 +291,8 @@ title: Will Prowse 2026 - Techmore
           <tr><td class="px-3 py-2">Kitchen stove</td><td class="px-3 py-2 text-right">0.31</td><td class="px-3 py-2 text-right">1.20</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Unlikely</td><td class="px-3 py-2">Small measured average, but cooking loads are the kind we should avoid backing up.</td></tr>
           <tr><td class="px-3 py-2">Clothes dryer</td><td class="px-3 py-2 text-right">0.87</td><td class="px-3 py-2 text-right">4.44</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">Still too spiky and too large for this class of system.</td></tr>
           <tr><td class="px-3 py-2">Water heater</td><td class="px-3 py-2 text-right">10.10</td><td class="px-3 py-2 text-right">4.64</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">Consumes too much daily energy even with double solar.</td></tr>
-          <tr><td class="px-3 py-2">Heat pump</td><td class="px-3 py-2 text-right">23.35</td><td class="px-3 py-2 text-right">7.63</td><td class="px-3 py-2 text-right text-red-700 font-semibold">Stretch only</td><td class="px-3 py-2">This is the priority we want, but this exact system is not the right size for it.</td></tr>
+          <tr><td class="px-3 py-2">Heat pump, recent May+June</td><td class="px-3 py-2 text-right">~7.65</td><td class="px-3 py-2 text-right">3.13</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Managed stretch</td><td class="px-3 py-2">Possible to offset on good sun days if other loads stay disciplined, but not guaranteed backup.</td></tr>
+          <tr><td class="px-3 py-2">Heat pump, full winter-weighted file</td><td class="px-3 py-2 text-right">23.35</td><td class="px-3 py-2 text-right">7.63</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">Useful as a stress test, not the normal-weather expectation.</td></tr>
         </tbody>
       </table>
     </div>
@@ -307,24 +308,24 @@ title: Will Prowse 2026 - Techmore
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Stretch priority</p>
           <h2 class="mt-3 text-3xl text-white">Offloading the heat pump is a different project size.</h2>
           <p class="mt-4 text-olive-200 leading-7">
-            I agree that the heat pump is the more interesting long-term target. The current data says it is also the thing that breaks this budget model: it averages about 23.35 kWh/day across the file, hits 7.63 kW in the hourly data, and has cold-day daily totals above 100 kWh. That does not mean "never." It means the heat-pump path should be modeled as a larger solar/storage design, or as a managed partial-offset strategy rather than a backup-panel circuit.
+            I agree that the heat pump is the more interesting long-term target. Using the full January 14-June 14 file makes the heat pump look worse than recent reality because February and March include the rare cold-spell behavior. For a recent-weather planning view, May plus June averages about 7.65 kWh/day with a 3.13 kW hourly max. That is much closer to the 2-kit Callsun range, but it still should be treated as managed offset, not guaranteed backup.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
           <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Heat pump avg</p>
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Recent avg</p>
+            <p class="mt-2 text-2xl font-semibold text-white">7.65 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-200">May+June heat-pump average from the daily Emporia file.</p>
+          </div>
+          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Recent peak</p>
+            <p class="mt-2 text-2xl font-semibold text-white">3.13 kW</p>
+            <p class="mt-2 text-sm text-olive-200">May+June hourly max, with p95 around 1.43 kW.</p>
+          </div>
+          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Winter stress</p>
             <p class="mt-2 text-2xl font-semibold text-white">23.35 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-200">About 4x the narrow critical-load target.</p>
-          </div>
-          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Hourly peak</p>
-            <p class="mt-2 text-2xl font-semibold text-white">7.63 kW</p>
-            <p class="mt-2 text-sm text-olive-200">Before considering startup, cold weather, or other simultaneous loads.</p>
-          </div>
-          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">2-kit solar</p>
-            <p class="mt-2 text-2xl font-semibold text-white">3.4-8.0 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-200">Good for critical loads, not enough for heat-pump offset.</p>
+            <p class="mt-2 text-sm text-olive-200">Full-file average stays visible as a cold-weather caution, not the headline case.</p>
           </div>
         </div>
       </div>
@@ -692,8 +693,8 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://www.youtube.com/watch?v=HarRKsrqOss" class="underline decoration-olive-500 hover:text-olive-700">YouTube reference video</a> for additional budget-stack context.</li>
         <li><a href="https://device.report/manuals/sungoldpower-10kw-48v-split-phase-solar-inverter-manual" class="underline decoration-olive-500 hover:text-olive-700">SunGoldPower 10kW manual reference</a> and related listings for AC input and 120/240V split-phase context.</li>
         <li><a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ewc_pr_img_1?smid=ACXRZOBKQSG34&amp;th=1" class="underline decoration-olive-500 hover:text-olive-700">Amazon 450W bifacial 2-pack (Callsun Store)</a> for the $699.99 coupon price, N-Type 16BB / 25% efficiency / anti-shade dual-module specs, and 4.8-star sample size.</li>
-        <li><a href="/assets/emporia-data/8C9E94-Barn-1DAY.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-day circuit CSV (152 days)</a> for measured per-circuit daily kWh averages, heat-pump share, and critical-load subtotal used in the current model.</li>
-        <li><a href="/assets/emporia-data/8C9E94-Barn-1H.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-hour circuit CSV</a> for measured hourly peak kW per circuit (heat-pump 7.63 kW, water-heater 4.64 kW, dryer 4.44 kW).</li>
+        <li><a href="/assets/emporia-data/8C9E94-Barn-1DAY.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-day circuit CSV (152 days)</a> for measured per-circuit daily kWh averages, the May+June recent heat-pump view, and the critical-load subtotal used in the current model.</li>
+        <li><a href="/assets/emporia-data/8C9E94-Barn-1H.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-hour circuit CSV</a> for measured hourly peak kW per circuit, including the May+June heat-pump peak of 3.13 kW and the full-file winter stress peak of 7.63 kW.</li>
         <li><a href="/assets/emporia-data/8C9E94-Barn-1MIN.csv" class="underline decoration-olive-500 hover:text-olive-700">Emporia Barn 1-minute circuit CSV</a> for the 121W median / 145W avg / 50W minimum phantom-load baseline used in the charge-under-load math.</li>
       </ul>
     </div>
