@@ -86,6 +86,11 @@ title: Will Prowse 2026 - Techmore
                 <td class="px-3 py-3">Possible as a rescue/top-off charger.</td>
                 <td class="px-3 py-3">It is about 1.17kW DC, so it is useful as a rescue charger when solar is weak and comfort loads matter.</td>
               </tr>
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">Can the GM2200i help in a full outage?</td>
+                <td class="px-3 py-3">Yes, as the AC source for the 58.4V charger.</td>
+                <td class="px-3 py-3">The generator is rated 1800W running, so it has headroom for the charger if we avoid stacking other loads.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -541,6 +546,10 @@ title: Will Prowse 2026 - Techmore
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Converter note</p>
             <p class="mt-2 text-sm text-olive-800 leading-6">The VEVOR RV converter is not a fit for directly charging this modeled battery bank. It is a 110V AC to 12V DC RV converter/charger, while the Prowse stack is a 48V battery system. A 58.4V 20A LiFePO4 charger, like the BROODAY option, is a more plausible rescue/top-off charger because 58.4V matches a 16S LiFePO4 full-charge voltage. At 20A it is about 1.17kW DC, so expect roughly 10 hours to replace 11.6 kWh usable AC equivalent, or about 14 hours to refill a 16.1 kWh nominal battery before losses and taper. It still needs a fused DC connection, disconnect, BMS compatibility check, and a plan so it does not fight the inverter charger.</p>
           </div>
+          <div class="mt-4 rounded-lg border border-olive-300 bg-olive-50 p-4">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Generator fallback note</p>
+            <p class="mt-2 text-sm text-olive-800 leading-6">The GENMAX GM2200i is a useful full-outage fallback for charging the battery through the 58.4V 20A charger. The clean path is generator 120V AC outlet to the LiFePO4 charger, then charger DC output to the 48V battery through the proper fused/disconnect path. GENMAX lists the GM2200i at 1800 running watts / 2200 starting watts, so a roughly 1.17kW DC charger leaves some headroom after charger losses. Treat this as battery charging only: do not backfeed the house, do not plug the generator into the inverter output, and avoid running large extra loads from the generator while charging.</p>
+          </div>
     </div>
   </section>
 
@@ -587,6 +596,11 @@ title: Will Prowse 2026 - Techmore
               <td class="px-4 py-3 font-semibold text-olive-950">58.4V 20A LiFePO4 charger to battery bank</td>
               <td class="px-4 py-3 text-amber-700 font-semibold">Possible rescue option</td>
               <td class="px-4 py-3">Confirm 16S LiFePO4 profile, BMS charge-current limits, AC circuit capacity, fusing, connector, disconnect, and whether the inverter's AC input charger is cleaner.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">GENMAX GM2200i to 58.4V charger</td>
+              <td class="px-4 py-3 text-green-700 font-semibold">Good outage fallback</td>
+              <td class="px-4 py-3">Use the generator as the charger AC source only. Keep it outdoors, avoid overload, and never connect it to house wiring without a legal transfer setup.</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">Heat pump to backed-up panel</td>
@@ -646,7 +660,7 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">System map</p>
         <h2 class="mt-3 text-3xl text-olive-950">This is the wiring story in one view.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The cleaner MVP is PV into the inverter, inverter into a proper load center, and then breakers for the critical circuits. If we later want grid-top-off or utility assist, the first-choice path is the inverter's AC input or a licensed transfer design. A separate 58.4V LiFePO4 charger can be a rescue battery top-off path for poor solar windows, but it is not the main power path.
+          The cleaner MVP is PV into the inverter, inverter into a proper load center, and then breakers for the critical circuits. If we later want grid-top-off or utility assist, the first-choice path is the inverter's AC input or a licensed transfer design. A separate 58.4V LiFePO4 charger can be a rescue battery top-off path for poor solar windows, and the GM2200i can feed that charger during a full outage, but neither path is the main house power path.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-950 p-5 overflow-x-auto">
@@ -702,6 +716,8 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://www.amazon.com/Shirbly-Battery-Automotive-Generator-Standard/dp/B0DBHLBBJR/ref=sr_1_6?dib=eyJ2IjoiMSJ9.2HRaIBWopgCRp2JwiILgkRQbka7xZoMDZrcwnNrh7JfPXDD86TDXHOR1s5DnbdfbXdsw62EaNKpYhgzE1RTzf5LlnYiyhTn3cLzMRdfJcIcBdHFoWNa0v6oH5cJZyiGhnboeUZZXwmxT7IMA4dR97fzRz2I23JGiEbNTYfBACegMeQzWJCxuoz6T4G4L1H4Pzmhw7sIjRLkvth1sZpXu47gdwzsdXSKQU8yVjZeKbMs.itqvqE2Wu8pPjJ1Ia1edB7Th4sfnUZcE1WXpv8D7i54&dib_tag=se&keywords=96in%2B4%2F0%2BAWG%2BBattery%2Bto%2BInverter%2BCables%2B%7C%2BBlack%2Band%2BRed&nsdOptOutParam=true&qid=1781489057&sr=8-6&th=1" class="underline decoration-olive-500 hover:text-olive-700">Shirbly 4/0 AWG battery-to-inverter cables</a> for the $181.99 black/red cable pair.</li>
         <li><a href="https://www.amazon.com/VEVOR-Converter-Charging-Operating-Compatible/dp/B0FX2DWJB1" class="underline decoration-olive-500 hover:text-olive-700">VEVOR RV converter / charger</a> for the 12V charger compatibility note; it is not suitable for directly charging the modeled 48V battery bank.</li>
         <li><a href="https://www.amazon.com/Over-Current-Over-Voltage-Protection-Phosphate-Batteries/dp/B0FWQZWCB1" class="underline decoration-olive-500 hover:text-olive-700">BROODAY 48V 20A LiFePO4 battery charger</a> for the possible 58.4V rescue grid/shore top-off charger note.</li>
+        <li><a href="https://www.genmaxpower.com/item/genmax-gm2200i-2200-watt-gasoline-inverter-generator-with-co-detect" class="underline decoration-olive-500 hover:text-olive-700">GENMAX GM2200i product page</a> for 1800 running watts, 2200 starting watts, 120V 20A duplex outlet, and 1-gallon fuel tank specs.</li>
+        <li><a href="https://www.genmaxpower.com/cdn/1429984513066467330/1540221165159768065.pdf" class="underline decoration-olive-500 hover:text-olive-700">GENMAX GM2200i user manual PDF</a> for operating, safety, maintenance, and storage documentation.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards</a> for the current smart-thermostat demand-response enrollment incentive.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/faq/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards FAQ</a> for eligibility, summer event season, and thermostat-adjustment behavior.</li>
         <li><a href="https://www.sustainablejersey.com/fileadmin/media/Actions_and_Certification/Actions/Energy/Energy_Tracking_and_Management/Utility_Demand_Response_Programs.pdf" class="underline decoration-olive-500 hover:text-olive-700">Sustainable Jersey utility demand response summary</a> for the $75 enrollment and $25 annual JCP&amp;L device incentive snapshot.</li>
