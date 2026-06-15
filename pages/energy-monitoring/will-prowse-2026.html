@@ -9,7 +9,7 @@ title: Will Prowse 2026 - Techmore
       <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Selected-load solar backup blueprint</p>
       <h1 class="mt-4 font-display italic text-5xl sm:text-6xl text-olive-950 leading-tight">Will Prowse 2026 budget path.</h1>
       <p class="mt-6 text-lg text-olive-800 leading-8">
-        A practical split-phase backup model for selected house loads: a 900W bifacial panel pair, one 16kWh DIY battery, and a clear read on how much of the Barn we can cover in Tinicum, PA 18947. The 2-kit Callsun upgrade shows what changes if we double the panels.
+        A practical split-phase backup model for selected house loads: a 900W bifacial panel pair, one 16kWh 48V DIY battery, and a clear read on how much of the Barn we can cover in Tinicum, PA 18947. The 2-kit Callsun upgrade shows what changes if we double the panels.
       </p>
     </div>
   </section>
@@ -20,22 +20,69 @@ title: Will Prowse 2026 - Techmore
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Hardware cost</p>
           <p class="mt-3 text-3xl font-semibold text-white">$4,889</p>
-          <p class="mt-2 text-sm text-olive-200">Inverter + 900W panel pair + DIY battery. Refurb model is lower.</p>
+          <p class="mt-2 text-sm text-olive-200">Base electrical stack, before racking, tax, shipping, labor, and final breaker hardware.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Solar per day</p>
-          <p class="mt-3 text-3xl font-semibold text-white">~1.7-4.0 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">Seasonal daily range from the current 900W array in 18947.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Best version</p>
+          <p class="mt-3 text-3xl font-semibold text-white">2 kits</p>
+          <p class="mt-2 text-sm text-olive-200">The 1.8kW Callsun version is the first one that feels meaningfully useful.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">No-solar runtime</p>
-          <p class="mt-3 text-3xl font-semibold text-white">~1-2 days</p>
-          <p class="mt-2 text-sm text-olive-200">Battery-only range from broader to narrow selected loads.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Practical target</p>
+          <p class="mt-3 text-3xl font-semibold text-white">~5.8 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-200">Radon, fridge/outlets, network, well, and basic lights from Emporia data.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Battery reserve</p>
-          <p class="mt-3 text-3xl font-semibold text-white">~11.6 kWh</p>
-          <p class="mt-2 text-sm text-olive-200">Usable AC from the 16kWh DIY battery model.</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Stretch goal</p>
+          <p class="mt-3 text-3xl font-semibold text-white">Heat pump</p>
+          <p class="mt-2 text-sm text-olive-200">Not supported by this build; needs a larger solar/storage plan or load-shed strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="rounded-lg border border-olive-800 bg-olive-950 p-5 text-olive-50">
+      <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Plain-English readout</p>
+          <h2 class="mt-3 text-3xl text-white">This is a critical-load battery system, not a heat-pump offset system.</h2>
+          <p class="mt-4 text-sm text-olive-200 leading-6">
+            The useful version is the 2-kit Callsun build. It gives enough solar to support the small daily loads and recover the battery on good days, but it does not make the Barn's heat pump, water heater, dryer, or electric cooking feel solar-backed.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-lg border border-olive-800 bg-olive-900/70">
+          <table class="min-w-full text-left text-sm text-olive-100">
+            <thead class="bg-olive-900 text-olive-50">
+              <tr>
+                <th class="px-3 py-3 font-mono text-[10px] tracking-widest uppercase">Question</th>
+                <th class="px-3 py-3 font-mono text-[10px] tracking-widest uppercase">Answer</th>
+                <th class="px-3 py-3 font-mono text-[10px] tracking-widest uppercase">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-olive-800">
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">What should I expect?</td>
+                <td class="px-3 py-3">A selected-circuit backup panel for fridge/outlets, radon, internet, well pump, and basic lighting.</td>
+                <td class="px-3 py-3">Those loads average about 5.8 kWh/day in the Emporia model.</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">Is the 2-kit upgrade worth modeling?</td>
+                <td class="px-3 py-3">Yes. It moves the array from ~1.7-4.0 to ~3.4-8.0 kWh/day.</td>
+                <td class="px-3 py-3">That changes the system from "slows discharge" to "can recover on decent sun days."</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">Can it cover the heat pump?</td>
+                <td class="px-3 py-3">No, not as modeled.</td>
+                <td class="px-3 py-3">Emporia shows ~23.35 kWh/day average and a 7.63 kW hourly peak.</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">Can it use the VEVOR charger?</td>
+                <td class="px-3 py-3">Not for this 48V battery bank.</td>
+                <td class="px-3 py-3">The VEVOR RV converter is a 12V charger; use inverter AC input or a proper 48V charger instead.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -47,7 +94,7 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Design decision</p>
         <h2 class="mt-3 text-3xl text-olive-950">Build for selected 120V loads first.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          Your Emporia data says the measured mains average about 55.2 kWh/day. A practical priority-load target is roughly 5.8-12.2 kWh/day depending on how wide we open the selected circuit list.
+          Your Emporia data says the measured mains average about 55.2 kWh/day. The useful Prowse target is not "the house." It is a critical-load island around roughly 5.8 kWh/day: radon, fridge/kitchen outlets, internet, well pump, and basic lighting. The broader 12.2 kWh/day version starts to include questionable outlet circuits and needs more care.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
@@ -59,7 +106,7 @@ title: Will Prowse 2026 - Techmore
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Removed loads</p>
           <p class="mt-2 text-2xl font-semibold text-olive-950">~79.0%</p>
-          <p class="mt-2 text-sm text-olive-700">If we only back up the tight priority circuit set.</p>
+          <p class="mt-2 text-sm text-olive-700">The heavy loads stay off this backup panel in the sane version.</p>
         </div>
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Remaining target</p>
@@ -69,7 +116,7 @@ title: Will Prowse 2026 - Techmore
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Modeled circuits</p>
           <p class="mt-2 text-2xl font-semibold text-olive-950">Priority-first</p>
-          <p class="mt-2 text-sm text-olive-700">Fridge, network, lights, well, radon, and selected outlets before HVAC.</p>
+          <p class="mt-2 text-sm text-olive-700">Fridge, network, lights, well, and radon before comfort loads.</p>
         </div>
       </div>
     </div>
@@ -82,19 +129,19 @@ title: Will Prowse 2026 - Techmore
           <p class="font-mono text-xs tracking-widest uppercase text-olive-500">System output</p>
           <h2 class="mt-3 text-3xl text-olive-950">What this system actually gives you.</h2>
           <p class="mt-4 text-olive-800 leading-7">
-            The updated model is the 900W bifacial pair you sent: two 450W panels, about 1.7-4.0 kWh/day depending on season in Tinicum, and a realistic off-grid test path. If we double the panel count to two 900W pairs, the solar side rises to about 1.8 kW DC and roughly 3.4-8.0 kWh/day seasonal. With no solar contribution, the DIY battery gives about 11.6 kWh usable AC, or roughly 1-2 days depending on how narrow the selected load set stays.
+            The updated model is the 900W bifacial pair you sent: two 450W panels, about 1.7-4.0 kWh/day depending on season in Tinicum, and a realistic off-grid test path. The better version doubles the panel count to two 900W pairs, which raises solar to about 1.8 kW DC and roughly 3.4-8.0 kWh/day seasonal. With no solar contribution, the DIY battery gives about 11.6 kWh usable AC, or about 2 days for the narrow 5.8 kWh/day priority set.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Solar generation</p>
             <p class="mt-2 text-2xl font-semibold text-olive-950">~1.7-4.0 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-700">Modeled seasonal output from the 900W pair. Real days vary with cloud cover, shade, tilt, and snow.</p>
+            <p class="mt-2 text-sm text-olive-700">The minimum learning build. It helps, but it is not enough to confidently refill daily usage in winter.</p>
           </div>
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Doubled solar</p>
             <p class="mt-2 text-2xl font-semibold text-olive-950">~3.4-8.0 kWh/day</p>
-            <p class="mt-2 text-sm text-olive-700">Two 900W pairs roughly double the harvest and make the system much better at keeping up with daytime selected loads.</p>
+            <p class="mt-2 text-sm text-olive-700">The recommended Prowse version. It can cover most or all of the priority-load day on decent sun.</p>
           </div>
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">No-solar outage</p>
@@ -110,6 +157,11 @@ title: Will Prowse 2026 - Techmore
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Daily gap</p>
             <p class="mt-2 text-2xl font-semibold text-olive-950">~1.8 to 8.8 kWh/day</p>
             <p class="mt-2 text-sm text-olive-700">A single 900W pair can nearly cover the narrow load set in summer, but it remains short on winter days and broader circuits.</p>
+          </div>
+          <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Heat-pump gap</p>
+            <p class="mt-2 text-2xl font-semibold text-olive-950">~23.35 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-700">The heat pump alone averages about 4x the narrow critical-load package.</p>
           </div>
           <div class="rounded-lg border border-olive-400 bg-olive-200 p-5 sm:col-span-2">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Rack area</p>
@@ -143,9 +195,15 @@ title: Will Prowse 2026 - Techmore
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">Average solar day</td>
-              <td class="px-4 py-3">~3.4 kWh/day planning</td>
-              <td class="px-4 py-3">~2.4 kWh/day</td>
+              <td class="px-4 py-3">~3.4 kWh/day with 1 kit</td>
+              <td class="px-4 py-3">~2.4 kWh/day against the narrow set</td>
               <td class="px-4 py-3 font-semibold text-olive-950">~4-5 days from full battery plus same-day solar</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">Average solar day, 2 kits</td>
+              <td class="px-4 py-3">~6.8 kWh/day planning</td>
+              <td class="px-4 py-3">Near break-even against the narrow set</td>
+              <td class="px-4 py-3 font-semibold text-olive-950">Can run indefinitely on many decent days if loads stay disciplined</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">Poor solar day</td>
@@ -169,9 +227,9 @@ title: Will Prowse 2026 - Techmore
     <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Upgrade option</p>
-        <h2 class="mt-3 text-3xl text-olive-950">Two Callsun kits is the cleaner solar upgrade.</h2>
+        <h2 class="mt-3 text-3xl text-olive-950">Two Callsun kits is the version I would actually model.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          If you want the array to do more than recharge the battery slowly, model the Callsun 450W bifacial 2-pack as two kits instead of one. That gives you 1.8 kW of PV, roughly doubles daytime harvest, and makes the battery bank much easier to recover after an overnight outage. It still is not a whole-house solar system, but it is a meaningful step up from the single-pair baseline.
+          If you want the array to do more than recharge the battery slowly, model the Callsun 450W bifacial 2-pack as two kits instead of one. That gives you 1.8 kW of PV, roughly doubles daytime harvest, and makes the battery bank much easier to recover after an overnight outage. It still is not a whole-house solar system, but it is the point where the Prowse option starts to make intuitive sense.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
@@ -188,12 +246,17 @@ title: Will Prowse 2026 - Techmore
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Array cost</p>
           <p class="mt-2 text-2xl font-semibold text-olive-950">$1,399.98</p>
-          <p class="mt-2 text-sm text-olive-700">2 kits at the current $699.99 coupon price each.</p>
+          <p class="mt-2 text-sm text-olive-700">2 panel kits at the current $699.99 coupon price each, before extra rack and wiring.</p>
         </div>
         <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Battery recharge</p>
           <p class="mt-2 text-2xl font-semibold text-olive-950">~1.5-3.4 days</p>
           <p class="mt-2 text-sm text-olive-700">From empty to full on 2-kit solar, before losses and load overlap.</p>
+        </div>
+        <div class="rounded-lg border border-olive-400 bg-olive-200 p-5 sm:col-span-2">
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Practical recommendation</p>
+          <p class="mt-2 text-2xl font-semibold text-olive-950">Buy-list base + 1 extra Callsun kit</p>
+          <p class="mt-2 text-sm text-olive-700">The current spreadsheet keeps the 1-kit MVP price visible. The planning recommendation is to treat the second kit as the first upgrade because it materially changes daily recovery.</p>
         </div>
       </div>
     </div>
@@ -203,7 +266,7 @@ title: Will Prowse 2026 - Techmore
     <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Per-circuit fit</p>
     <h2 class="mt-3 text-3xl text-olive-950">What the 2-kit Callsun upgrade actually runs.</h2>
     <p class="mt-4 text-olive-800 leading-7">
-      The "Yes" rows are the circuits the doubled array can support in normal use if the battery is doing the buffering. The "Partial" rows are possible only if the inverter, wiring, and load timing all cooperate. The "No" rows are the heavy loads that still belong on grid, generator, or a much larger system.
+      The "Yes" rows are the circuits the doubled array can support in normal use if the battery is doing the buffering. The "Investigate" rows are not automatically bad, but they need appliance-level truth before we put them on the backup panel. The "No" rows are the heavy loads that still belong on grid, generator, or a much larger system.
     </p>
     <div class="mt-6 overflow-x-auto rounded-lg border border-olive-400 bg-olive-50">
       <table class="min-w-full text-left text-sm text-olive-800">
@@ -212,28 +275,60 @@ title: Will Prowse 2026 - Techmore
             <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase">Circuit</th>
             <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase text-right">kWh/day</th>
             <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase text-right">Peak kW</th>
-            <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase text-right">2 kits?</th>
+            <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase text-right">Fit</th>
             <th scope="col" class="px-3 py-2 font-mono text-[10px] tracking-widest uppercase">Readout</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-olive-200">
-          <tr><td class="px-3 py-2">Radon fan</td><td class="px-3 py-2 text-right">2.26</td><td class="px-3 py-2 text-right">0.49</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Always-on load, easy on the inverter.</td></tr>
-          <tr><td class="px-3 py-2">Kitchen outlets / fridge</td><td class="px-3 py-2 text-right">2.14</td><td class="px-3 py-2 text-right">1.66</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">The doubled array can refill what the fridge uses through the day.</td></tr>
+          <tr><td class="px-3 py-2">Radon fan</td><td class="px-3 py-2 text-right">2.26</td><td class="px-3 py-2 text-right">0.49</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Always-on load. It is a real daily draw, but easy electrically.</td></tr>
+          <tr><td class="px-3 py-2">Kitchen outlets / fridge</td><td class="px-3 py-2 text-right">2.14</td><td class="px-3 py-2 text-right">1.66</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Likely the highest-value circuit because it includes refrigeration and normal kitchen outlet needs.</td></tr>
           <tr><td class="px-3 py-2">Internet / router / phones</td><td class="px-3 py-2 text-right">0.30</td><td class="px-3 py-2 text-right">0.05</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Negligible load relative to the array.</td></tr>
-          <tr><td class="px-3 py-2">Well pump</td><td class="px-3 py-2 text-right">0.59</td><td class="px-3 py-2 text-right">0.28</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Works if you avoid long simultaneous starts.</td></tr>
+          <tr><td class="px-3 py-2">Well pump</td><td class="px-3 py-2 text-right">0.59</td><td class="px-3 py-2 text-right">0.28</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes*</td><td class="px-3 py-2">Daily energy is small, but pump startup must be confirmed by the electrician.</td></tr>
           <tr><td class="px-3 py-2">LED lighting</td><td class="px-3 py-2 text-right">0.50</td><td class="px-3 py-2 text-right">0.10</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2">Easy fit even on weak solar days.</td></tr>
           <tr class="bg-green-50"><td class="px-3 py-2 font-semibold text-olive-950">Critical subtotal</td><td class="px-3 py-2 text-right font-semibold">~5.8</td><td class="px-3 py-2 text-right font-semibold">~2.6</td><td class="px-3 py-2 text-right text-green-700 font-semibold">Yes</td><td class="px-3 py-2 text-green-800">This is the target load set the doubled array is built to support.</td></tr>
-          <tr><td class="px-3 py-2">Master bedroom</td><td class="px-3 py-2 text-right">5.23</td><td class="px-3 py-2 text-right">1.76</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Partial</td><td class="px-3 py-2">Possible only if that branch is really a light-duty sub-load.</td></tr>
-          <tr><td class="px-3 py-2">Kitchen stove</td><td class="px-3 py-2 text-right">0.31</td><td class="px-3 py-2 text-right">1.20</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Short bursts</td><td class="px-3 py-2">Microwave/coffee ok; resistive cooking stays out.</td></tr>
+          <tr><td class="px-3 py-2">Master bedroom</td><td class="px-3 py-2 text-right">5.23 avg / 1.02 median</td><td class="px-3 py-2 text-right">1.76</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Investigate</td><td class="px-3 py-2">The median is small but the average is high, so something intermittent may be hiding here.</td></tr>
+          <tr><td class="px-3 py-2">Toaster / countertop appliance</td><td class="px-3 py-2 text-right">Unknown</td><td class="px-3 py-2 text-right">Often 1-1.8</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Short bursts</td><td class="px-3 py-2">Possible if it is on a supported outlet circuit and not stacked with other big loads.</td></tr>
+          <tr><td class="px-3 py-2">Kitchen stove</td><td class="px-3 py-2 text-right">0.31</td><td class="px-3 py-2 text-right">1.20</td><td class="px-3 py-2 text-right text-amber-700 font-semibold">Unlikely</td><td class="px-3 py-2">Small measured average, but cooking loads are the kind we should avoid backing up.</td></tr>
           <tr><td class="px-3 py-2">Clothes dryer</td><td class="px-3 py-2 text-right">0.87</td><td class="px-3 py-2 text-right">4.44</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">Still too spiky and too large for this class of system.</td></tr>
           <tr><td class="px-3 py-2">Water heater</td><td class="px-3 py-2 text-right">10.10</td><td class="px-3 py-2 text-right">4.64</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">Consumes too much daily energy even with double solar.</td></tr>
-          <tr><td class="px-3 py-2">Heat pump</td><td class="px-3 py-2 text-right">23.35</td><td class="px-3 py-2 text-right">7.63</td><td class="px-3 py-2 text-right text-red-700 font-semibold">No</td><td class="px-3 py-2">A larger inverter and much more PV would be needed.</td></tr>
+          <tr><td class="px-3 py-2">Heat pump</td><td class="px-3 py-2 text-right">23.35</td><td class="px-3 py-2 text-right">7.63</td><td class="px-3 py-2 text-right text-red-700 font-semibold">Stretch only</td><td class="px-3 py-2">This is the priority we want, but this exact system is not the right size for it.</td></tr>
         </tbody>
       </table>
     </div>
     <p class="mt-3 text-xs text-olive-700 leading-5">
-      Per-circuit fit here is based on the same Emporia circuit data already used on the page, with the doubled Callsun array treated as a daytime support and recharge source rather than a true whole-house system.
+      Per-circuit fit uses the Emporia 1-day file for daily kWh and the 1-hour file for planning peaks. The table is intentionally conservative because the final answer depends on which physical receptacles and appliances are actually on each breaker.
     </p>
+  </section>
+
+  <section class="bg-olive-950 text-olive-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Stretch priority</p>
+          <h2 class="mt-3 text-3xl text-white">Offloading the heat pump is a different project size.</h2>
+          <p class="mt-4 text-olive-200 leading-7">
+            I agree that the heat pump is the more interesting long-term target. The current data says it is also the thing that breaks this budget model: it averages about 23.35 kWh/day across the file, hits 7.63 kW in the hourly data, and has cold-day daily totals above 100 kWh. That does not mean "never." It means the heat-pump path should be modeled as a larger solar/storage design, or as a managed partial-offset strategy rather than a backup-panel circuit.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Heat pump avg</p>
+            <p class="mt-2 text-2xl font-semibold text-white">23.35 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-200">About 4x the narrow critical-load target.</p>
+          </div>
+          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Hourly peak</p>
+            <p class="mt-2 text-2xl font-semibold text-white">7.63 kW</p>
+            <p class="mt-2 text-sm text-olive-200">Before considering startup, cold weather, or other simultaneous loads.</p>
+          </div>
+          <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-300">2-kit solar</p>
+            <p class="mt-2 text-2xl font-semibold text-white">3.4-8.0 kWh/day</p>
+            <p class="mt-2 text-sm text-olive-200">Good for critical loads, not enough for heat-pump offset.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -285,6 +380,42 @@ title: Will Prowse 2026 - Techmore
           <p class="mt-3 text-sm text-olive-800 leading-6">Use this if you want a realistic Tinicum test path with the 900W solar pair and the 16kWh DIY battery. A refurbished inverter version lowers the total further, and a proper load center is the cleaner way to build the house-side output.</p>
 
           <div class="mt-5 border-t border-olive-300 pt-4">
+            <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Cost scenarios</p>
+            <div class="mt-3 overflow-x-auto rounded-lg border border-olive-300 bg-olive-50">
+              <table class="min-w-full text-left text-sm text-olive-800">
+                <thead class="bg-olive-200 text-olive-950">
+                  <tr>
+                    <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Scenario</th>
+                    <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Modeled cost</th>
+                    <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Monthly read</th>
+                    <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">What changes</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-olive-200">
+                  <tr>
+                    <td class="px-4 py-3 font-semibold text-olive-950">1-kit electrical MVP</td>
+                    <td class="px-4 py-3">$4,889.39</td>
+                    <td class="px-4 py-3">~$407/mo over 12 months</td>
+                    <td class="px-4 py-3">Good learning build, but solar recovery is modest.</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold text-olive-950">2-kit electrical upgrade</td>
+                    <td class="px-4 py-3">~$5,589.38</td>
+                    <td class="px-4 py-3">~$466/mo over 12 months</td>
+                    <td class="px-4 py-3">Adds one more Callsun kit and doubles daily solar harvest.</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold text-olive-950">2-kit with IR-30 racks</td>
+                    <td class="px-4 py-3">~$6,239.33</td>
+                    <td class="px-4 py-3">~$520/mo over 12 months</td>
+                    <td class="px-4 py-3">Adds 4 panel frames plus one EarthScrews 10-pack for the cleaner ground-mount model.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-5 border-t border-olive-300 pt-4">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Spreadsheet</p>
             <div class="mt-3 overflow-x-auto rounded-lg border border-olive-300 bg-olive-50">
               <table class="min-w-full text-left text-sm text-olive-800">
@@ -304,7 +435,7 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">1</td>
                     <td class="px-4 py-3">$1,635.44</td>
                     <td class="px-4 py-3 font-semibold text-olive-950">$1,635.44</td>
-                    <td class="px-4 py-3">14.9%</td>
+                    <td class="px-4 py-3">33.4%</td>
                     <td class="px-4 py-3">Primary 120/240V inverter.</td>
                   </tr>
                   <tr>
@@ -312,7 +443,7 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">1</td>
                     <td class="px-4 py-3">$2,249.00</td>
                     <td class="px-4 py-3 font-semibold text-olive-950">$2,249.00</td>
-                    <td class="px-4 py-3">43.8%</td>
+                    <td class="px-4 py-3">46.0%</td>
                     <td class="px-4 py-3">16.1 kWh nominal battery.</td>
                   </tr>
                   <tr>
@@ -328,7 +459,7 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">1 pair</td>
                     <td class="px-4 py-3">$181.99</td>
                     <td class="px-4 py-3 font-semibold text-olive-950">$181.99</td>
-                    <td class="px-4 py-3">1.9%</td>
+                    <td class="px-4 py-3">3.7%</td>
                     <td class="px-4 py-3">Battery-to-inverter connection.</td>
                   </tr>
                   <tr>
@@ -344,7 +475,7 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">1 kit</td>
                     <td class="px-4 py-3">$699.99</td>
                     <td class="px-4 py-3 font-semibold text-olive-950">$699.99</td>
-                    <td class="px-4 py-3">13.6%</td>
+                    <td class="px-4 py-3">14.3%</td>
                     <td class="px-4 py-3">900W total, about 48 sq ft of panel face.</td>
                   </tr>
                   <tr>
@@ -360,7 +491,7 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">1</td>
                     <td class="px-4 py-3">$82.98</td>
                     <td class="px-4 py-3 font-semibold text-olive-950">$82.98</td>
-                    <td class="px-4 py-3">1.6%</td>
+                    <td class="px-4 py-3">1.7%</td>
                     <td class="px-4 py-3">Preferred house-side panel for breakers, transfers, and safer circuit organization.</td>
                   </tr>
                 </tbody>
@@ -393,10 +524,10 @@ title: Will Prowse 2026 - Techmore
         <p class="mt-2 text-sm text-olive-800 leading-6">The <a href="https://yixiangpower.com/products/pre-sale-yixiang-us-stock-eve-mb56-finished-battery-pack-32kwh-51-2v-16s-628ah-eve-lifepo4-cell-lithium-battery-estimated-shipping-date-dec-20th?sca_ref=9207522.jYuzmwEjUpH" class="font-semibold text-olive-950 underline decoration-olive-300 hover:text-olive-700">Yixiang EVE MB56 32 kWh finished battery</a> is still the cleaner more-power option. Adding it back in place of the DIY kit and heater raises the model by about $1,579, but usable AC storage rises from about 11.6 kWh to about 23 kWh. That is the better match if overnight margin matters more than lowest entry price.</p>
       </div>
 
-          <p class="mt-6 text-sm text-olive-700 leading-6">The updated model is 1 linked 900W panel pair plus the battery, inverter, a DC disconnect, and a proper load center for selected house circuits. Before buying, verify panel Voc, cold-weather voltage rise, MPPT voltage range, conductor sizing, fusing, and disconnect requirements. The inverter supports split-phase 120/240V output and AC/grid charging modes, so a night-charge or utility-top-off path is possible in principle, but it should be built as a transfer-input or charge-input design that cannot backfeed the grid. A small AC charger like the VEVOR converter is optional, not a substitute for the inverter or house load center.</p>
+          <p class="mt-6 text-sm text-olive-700 leading-6">The updated model is 1 linked 900W panel pair plus the battery, inverter, a DC disconnect, and a proper load center for selected house circuits. Before buying, verify panel Voc, cold-weather voltage rise, MPPT voltage range, conductor sizing, fusing, and disconnect requirements. The inverter supports split-phase 120/240V output and AC/grid charging modes, so a night-charge or utility-top-off path is possible in principle, but it should be built as a transfer-input or charge-input design that cannot backfeed the grid.</p>
           <div class="mt-4 rounded-lg border border-olive-300 bg-olive-50 p-4">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Converter note</p>
-            <p class="mt-2 text-sm text-olive-800 leading-6">A VEVOR RV converter like the 35A or 55A units can be used as an AC-powered 12V battery charger if it feeds the battery bus on the input side of the system. It should not be wired into the inverter output. The safe mental model is: shore or generator AC into the converter, converter DC to the battery bank with proper fuse/disconnect, and then the inverter draws from the battery bank as usual.</p>
+            <p class="mt-2 text-sm text-olive-800 leading-6">The VEVOR RV converter is not a fit for directly charging this modeled battery bank. It is a 110V AC to 12V DC RV converter/charger, while the Prowse stack is a 48V battery system. Do not wire it into the inverter output, and do not wire it to the 48V battery bus. If we want grid, shore-power, or generator top-off, use the inverter's AC input path or a purpose-built 48V LiFePO4 charger with proper fusing and disconnects.</p>
           </div>
     </div>
   </section>
@@ -404,17 +535,49 @@ title: Will Prowse 2026 - Techmore
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
       <div>
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Install notes</p>
-        <h2 class="mt-3 text-3xl text-olive-950">What this does and does not solve.</h2>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Compatibility check</p>
+        <h2 class="mt-3 text-3xl text-olive-950">What fits together, and what still needs verification.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          Treat this as a blueprint for an electrician conversation. It is not a finished permitted design. The practical next step is choosing the exact backed-up circuits around the 10kW split-phase path and deciding whether to start with the new or refurbished inverter.
+          Treat this as a blueprint for an electrician conversation. The broad architecture fits: PV into a 48V split-phase inverter, 48V battery on the DC side, and a critical-load panel on the AC output side. The exact wiring still needs a licensed review before buying because PV string voltage, transfer design, battery communication, and breaker assignments are where mistakes get expensive.
         </p>
       </div>
-      <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
-        <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Electrician checklist</p>
-        <p class="mt-3 text-sm text-olive-800 leading-6">
-          Confirm the critical-load panel, inverter certification, battery communication, converter/charger input path, disconnects, fusing, conductor sizing, grounding, labeling, battery location, permits, and warranty support before treating this as purchase-ready.
-        </p>
+      <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-50">
+        <table class="min-w-full text-left text-sm text-olive-800">
+          <thead class="bg-olive-200 text-olive-950">
+            <tr>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Item relationship</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Status</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Action before purchase</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-olive-200">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">Callsun panels to SunGoldPower MPPT</td>
+              <td class="px-4 py-3 text-amber-700 font-semibold">Likely, verify stringing</td>
+              <td class="px-4 py-3">Confirm panel Voc in cold weather, MPPT voltage window, max PV current, and whether 2S2P or another string layout is correct.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">48V battery to inverter</td>
+              <td class="px-4 py-3 text-amber-700 font-semibold">Likely, verify BMS</td>
+              <td class="px-4 py-3">Confirm charge/discharge current, low-temp protection, BMS communication expectations, fusing, and 4/0 cable length.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">Inverter to Square D load center</td>
+              <td class="px-4 py-3 text-amber-700 font-semibold">Needs electrician</td>
+              <td class="px-4 py-3">Design the transfer path so there is no grid backfeed and only selected circuits move to the backed-up panel.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">VEVOR 12V RV converter to battery bank</td>
+              <td class="px-4 py-3 text-red-700 font-semibold">No</td>
+              <td class="px-4 py-3">Do not use it to charge the 48V battery. Use inverter AC input or a proper 48V LiFePO4 charger.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">Heat pump to backed-up panel</td>
+              <td class="px-4 py-3 text-red-700 font-semibold">Not this build</td>
+              <td class="px-4 py-3">Model separately as a larger solar/storage project or controlled load-shed/comfort strategy.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -520,7 +683,7 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ox_sc_act_title_2?smid=ACXRZOBKQSG34&th=1" class="underline decoration-olive-500 hover:text-olive-700">Amazon 450W bifacial 2-pack (Callsun Store)</a> for the 900W pair, N-Type 16BB / 25% efficiency / anti-shade dual-module specs, and the direct click path.</li>
         <li><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="underline decoration-olive-500 hover:text-olive-700">IntegraRack IR-30 BallastRack</a> and <a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/?searchid=2312447&amp;search_query=mounts" class="underline decoration-olive-500 hover:text-olive-700">IR EarthScrews 10-pack</a> for the fixed 30-degree rack and ground-mount note.</li>
         <li><a href="https://www.amazon.com/Shirbly-Battery-Automotive-Generator-Standard/dp/B0DBHLBBJR/ref=sr_1_6?dib=eyJ2IjoiMSJ9.2HRaIBWopgCRp2JwiILgkRQbka7xZoMDZrcwnNrh7JfPXDD86TDXHOR1s5DnbdfbXdsw62EaNKpYhgzE1RTzf5LlnYiyhTn3cLzMRdfJcIcBdHFoWNa0v6oH5cJZyiGhnboeUZZXwmxT7IMA4dR97fzRz2I23JGiEbNTYfBACegMeQzWJCxuoz6T4G4L1H4Pzmhw7sIjRLkvth1sZpXu47gdwzsdXSKQU8yVjZeKbMs.itqvqE2Wu8pPjJ1Ia1edB7Th4sfnUZcE1WXpv8D7i54&dib_tag=se&keywords=96in%2B4%2F0%2BAWG%2BBattery%2Bto%2BInverter%2BCables%2B%7C%2BBlack%2Band%2BRed&nsdOptOutParam=true&qid=1781489057&sr=8-6&th=1" class="underline decoration-olive-500 hover:text-olive-700">Shirbly 4/0 AWG battery-to-inverter cables</a> for the $181.99 black/red cable pair.</li>
-        <li><a href="https://www.amazon.com/VEVOR-Converter-Charging-Operating-Compatible/dp/B0FX2DWJB1" class="underline decoration-olive-500 hover:text-olive-700">VEVOR RV converter / charger</a> for optional AC-to-12V battery charging.</li>
+        <li><a href="https://www.amazon.com/VEVOR-Converter-Charging-Operating-Compatible/dp/B0FX2DWJB1" class="underline decoration-olive-500 hover:text-olive-700">VEVOR RV converter / charger</a> for the 12V charger compatibility note; it is not suitable for directly charging the modeled 48V battery bank.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards</a> for the current smart-thermostat demand-response enrollment incentive.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/faq/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards FAQ</a> for eligibility, summer event season, and thermostat-adjustment behavior.</li>
         <li><a href="https://www.sustainablejersey.com/fileadmin/media/Actions_and_Certification/Actions/Energy/Energy_Tracking_and_Management/Utility_Demand_Response_Programs.pdf" class="underline decoration-olive-500 hover:text-olive-700">Sustainable Jersey utility demand response summary</a> for the $75 enrollment and $25 annual JCP&amp;L device incentive snapshot.</li>
