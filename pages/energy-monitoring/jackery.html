@@ -218,6 +218,44 @@ title: Jackery Backup Plan - Techmore
     <p class="mt-3 text-xs text-olive-700 leading-5">Phantom baseline from 1-min data: 121W median, 145W avg, 50W minimum. The Jackery's idle draw is closer to 50W; the 145W avg reflects fridge compressor + radon cycling when the house is "off".</p>
   </section>
 
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Emporia per-circuit diagnostics</p>
+        <h2 class="mt-3 text-3xl text-olive-950">Single kit versus double kit.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          One 900W panel pair is the simple refill path. Doubling to two pairs gives the Jackery much better daytime headroom and makes the critical-load stack easier to sustain.
+        </p>
+      </div>
+      <div class="overflow-x-auto rounded-lg border border-olive-400 bg-olive-50">
+        <table class="min-w-full text-left text-sm text-olive-800">
+          <thead class="bg-olive-200 text-olive-950">
+            <tr>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Build</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Solar / day</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Critical fit</th>
+              <th class="px-4 py-3 font-mono text-xs tracking-widest uppercase">Readout</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-olive-200">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">1 kit / 2 panels</td>
+              <td class="px-4 py-3">~1.3 kWh/day</td>
+              <td class="px-4 py-3">Enough to slow discharge and stretch outage runtime.</td>
+              <td class="px-4 py-3">Best portable starter.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">2 kits / 4 panels</td>
+              <td class="px-4 py-3">~2.6 kWh/day</td>
+              <td class="px-4 py-3">Much better for holding the critical circuit set through daylight.</td>
+              <td class="px-4 py-3">Better if the array becomes semi-permanent.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-olive-200/70 border-y border-olive-400">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid gap-8 lg:grid-cols-2">
