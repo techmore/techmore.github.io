@@ -81,6 +81,11 @@ title: Will Prowse 2026 - Techmore
                 <td class="px-3 py-3">Not for this 48V battery bank.</td>
                 <td class="px-3 py-3">The VEVOR RV converter is a 12V charger; use inverter AC input or a proper 48V charger instead.</td>
               </tr>
+              <tr>
+                <td class="px-3 py-3 font-semibold text-white">What about a 58.4V 10A charger?</td>
+                <td class="px-3 py-3">Possible as a slow top-off charger.</td>
+                <td class="px-3 py-3">It is about 584W DC, so it is useful for overnight grid/shore charging but not fast recovery.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -411,6 +416,12 @@ title: Will Prowse 2026 - Techmore
                     <td class="px-4 py-3">~$520/mo over 12 months</td>
                     <td class="px-4 py-3">Adds 4 panel frames plus one EarthScrews 10-pack for the cleaner ground-mount model.</td>
                   </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold text-olive-950">Slow 48V grid charger add-on</td>
+                    <td class="px-4 py-3">+$39.99</td>
+                    <td class="px-4 py-3">~$3/mo over 12 months</td>
+                    <td class="px-4 py-3">Adds a possible 58.4V 10A LiFePO4 top-off path, pending BMS and wiring review.</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -528,7 +539,7 @@ title: Will Prowse 2026 - Techmore
           <p class="mt-6 text-sm text-olive-700 leading-6">The updated model is 1 linked 900W panel pair plus the battery, inverter, a DC disconnect, and a proper load center for selected house circuits. Before buying, verify panel Voc, cold-weather voltage rise, MPPT voltage range, conductor sizing, fusing, and disconnect requirements. The inverter supports split-phase 120/240V output and AC/grid charging modes, so a night-charge or utility-top-off path is possible in principle, but it should be built as a transfer-input or charge-input design that cannot backfeed the grid.</p>
           <div class="mt-4 rounded-lg border border-olive-300 bg-olive-50 p-4">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Converter note</p>
-            <p class="mt-2 text-sm text-olive-800 leading-6">The VEVOR RV converter is not a fit for directly charging this modeled battery bank. It is a 110V AC to 12V DC RV converter/charger, while the Prowse stack is a 48V battery system. Do not wire it into the inverter output, and do not wire it to the 48V battery bus. If we want grid, shore-power, or generator top-off, use the inverter's AC input path or a purpose-built 48V LiFePO4 charger with proper fusing and disconnects.</p>
+            <p class="mt-2 text-sm text-olive-800 leading-6">The VEVOR RV converter is not a fit for directly charging this modeled battery bank. It is a 110V AC to 12V DC RV converter/charger, while the Prowse stack is a 48V battery system. A 58.4V 10A LiFePO4 charger, like the BROODAY option, is a more plausible slow top-off charger because 58.4V matches a 16S LiFePO4 full-charge voltage. At 10A it is only about 584W DC, so expect roughly 20 hours to replace 11.6 kWh usable AC equivalent, or about 28 hours to refill a 16.1 kWh nominal battery before losses and taper. It still needs a fused DC connection, disconnect, BMS compatibility check, and a plan so it does not fight the inverter charger.</p>
           </div>
     </div>
   </section>
@@ -571,6 +582,11 @@ title: Will Prowse 2026 - Techmore
               <td class="px-4 py-3 font-semibold text-olive-950">VEVOR 12V RV converter to battery bank</td>
               <td class="px-4 py-3 text-red-700 font-semibold">No</td>
               <td class="px-4 py-3">Do not use it to charge the 48V battery. Use inverter AC input or a proper 48V LiFePO4 charger.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-olive-950">58.4V 10A LiFePO4 charger to battery bank</td>
+              <td class="px-4 py-3 text-amber-700 font-semibold">Possible, slow</td>
+              <td class="px-4 py-3">Confirm 16S LiFePO4 profile, BMS charge-current limits, fusing, connector, disconnect, and whether the inverter's AC input charger is cleaner.</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">Heat pump to backed-up panel</td>
@@ -630,7 +646,7 @@ title: Will Prowse 2026 - Techmore
         <p class="font-mono text-xs tracking-widest uppercase text-olive-500">System map</p>
         <h2 class="mt-3 text-3xl text-olive-950">This is the wiring story in one view.</h2>
         <p class="mt-4 text-olive-800 leading-7">
-          The cleaner MVP is PV into the inverter, inverter into a proper load center, and then breakers for the critical circuits. If we later want grid-top-off or utility assist, that belongs on the inverter's AC input or a licensed transfer design. A converter can help with battery charging, but it is not the main power path.
+          The cleaner MVP is PV into the inverter, inverter into a proper load center, and then breakers for the critical circuits. If we later want grid-top-off or utility assist, the first-choice path is the inverter's AC input or a licensed transfer design. A separate 58.4V LiFePO4 charger can be a slow battery top-off path, but it is not the main power path.
         </p>
       </div>
       <div class="rounded-lg border border-olive-400 bg-olive-950 p-5 overflow-x-auto">
@@ -685,6 +701,7 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="underline decoration-olive-500 hover:text-olive-700">IntegraRack IR-30 BallastRack</a> and <a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/?searchid=2312447&amp;search_query=mounts" class="underline decoration-olive-500 hover:text-olive-700">IR EarthScrews 10-pack</a> for the fixed 30-degree rack and ground-mount note.</li>
         <li><a href="https://www.amazon.com/Shirbly-Battery-Automotive-Generator-Standard/dp/B0DBHLBBJR/ref=sr_1_6?dib=eyJ2IjoiMSJ9.2HRaIBWopgCRp2JwiILgkRQbka7xZoMDZrcwnNrh7JfPXDD86TDXHOR1s5DnbdfbXdsw62EaNKpYhgzE1RTzf5LlnYiyhTn3cLzMRdfJcIcBdHFoWNa0v6oH5cJZyiGhnboeUZZXwmxT7IMA4dR97fzRz2I23JGiEbNTYfBACegMeQzWJCxuoz6T4G4L1H4Pzmhw7sIjRLkvth1sZpXu47gdwzsdXSKQU8yVjZeKbMs.itqvqE2Wu8pPjJ1Ia1edB7Th4sfnUZcE1WXpv8D7i54&dib_tag=se&keywords=96in%2B4%2F0%2BAWG%2BBattery%2Bto%2BInverter%2BCables%2B%7C%2BBlack%2Band%2BRed&nsdOptOutParam=true&qid=1781489057&sr=8-6&th=1" class="underline decoration-olive-500 hover:text-olive-700">Shirbly 4/0 AWG battery-to-inverter cables</a> for the $181.99 black/red cable pair.</li>
         <li><a href="https://www.amazon.com/VEVOR-Converter-Charging-Operating-Compatible/dp/B0FX2DWJB1" class="underline decoration-olive-500 hover:text-olive-700">VEVOR RV converter / charger</a> for the 12V charger compatibility note; it is not suitable for directly charging the modeled 48V battery bank.</li>
+        <li><a href="https://www.amazon.com/Over-Current-Over-Voltage-Protection-Phosphate-Batteries/dp/B0FWR4XD54" class="underline decoration-olive-500 hover:text-olive-700">BROODAY 48V 10A LiFePO4 battery charger</a> for the possible 58.4V slow grid/shore top-off charger note.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards</a> for the current smart-thermostat demand-response enrollment incentive.</li>
         <li><a href="https://www.thermostatrewards.com/jcpl/faq/" class="underline decoration-olive-500 hover:text-olive-700">JCP&amp;L Energy Savings Rewards FAQ</a> for eligibility, summer event season, and thermostat-adjustment behavior.</li>
         <li><a href="https://www.sustainablejersey.com/fileadmin/media/Actions_and_Certification/Actions/Energy/Energy_Tracking_and_Management/Utility_Demand_Response_Programs.pdf" class="underline decoration-olive-500 hover:text-olive-700">Sustainable Jersey utility demand response summary</a> for the $75 enrollment and $25 annual JCP&amp;L device incentive snapshot.</li>
