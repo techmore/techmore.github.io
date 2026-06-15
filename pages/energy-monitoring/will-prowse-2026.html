@@ -77,11 +77,6 @@ title: Will Prowse 2026 - Techmore
                 <td class="px-3 py-3">May+June heat-pump use is ~7.65 kWh/day, but winter stress-test days are much larger.</td>
               </tr>
               <tr>
-                <td class="px-3 py-3 font-semibold text-white">Can it use the VEVOR charger?</td>
-                <td class="px-3 py-3">Not for this 48V battery bank.</td>
-                <td class="px-3 py-3">The VEVOR RV converter is a 12V charger; use inverter AC input or a proper 48V charger instead.</td>
-              </tr>
-              <tr>
                 <td class="px-3 py-3 font-semibold text-white">What about a 58.4V 20A charger?</td>
                 <td class="px-3 py-3">Possible as a rescue/top-off charger.</td>
                 <td class="px-3 py-3">It is about 1.17kW DC, so it is useful as a rescue charger when solar is weak and comfort loads matter.</td>
@@ -544,7 +539,7 @@ title: Will Prowse 2026 - Techmore
           <p class="mt-6 text-sm text-olive-700 leading-6">The updated model is 1 linked 900W panel pair plus the battery, inverter, a DC disconnect, and a proper load center for selected house circuits. Before buying, verify panel Voc, cold-weather voltage rise, MPPT voltage range, conductor sizing, fusing, and disconnect requirements. The inverter supports split-phase 120/240V output and AC/grid charging modes, so a night-charge or utility-top-off path is possible in principle, but it should be built as a transfer-input or charge-input design that cannot backfeed the grid.</p>
           <div class="mt-4 rounded-lg border border-olive-300 bg-olive-50 p-4">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Converter note</p>
-            <p class="mt-2 text-sm text-olive-800 leading-6">The VEVOR RV converter is not a fit for directly charging this modeled battery bank. It is a 110V AC to 12V DC RV converter/charger, while the Prowse stack is a 48V battery system. A 58.4V 20A LiFePO4 charger, like the BROODAY option, is a more plausible rescue/top-off charger because 58.4V matches a 16S LiFePO4 full-charge voltage. At 20A it is about 1.17kW DC, so expect roughly 10 hours to replace 11.6 kWh usable AC equivalent, or about 14 hours to refill a 16.1 kWh nominal battery before losses and taper. It still needs a fused DC connection, disconnect, BMS compatibility check, and a plan so it does not fight the inverter charger.</p>
+            <p class="mt-2 text-sm text-olive-800 leading-6">A 58.4V 20A LiFePO4 charger, like the BROODAY option, is a more plausible rescue/top-off charger because 58.4V matches a 16S LiFePO4 full-charge voltage. At 20A it is about 1.17kW DC, so expect roughly 10 hours to replace 11.6 kWh usable AC equivalent, or about 14 hours to refill a 16.1 kWh nominal battery before losses and taper. It still needs a fused DC connection, disconnect, BMS compatibility check, and a plan so it does not fight the inverter charger.</p>
           </div>
           <div class="mt-4 rounded-lg border border-olive-300 bg-olive-50 p-4">
             <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Generator fallback note</p>
@@ -586,11 +581,6 @@ title: Will Prowse 2026 - Techmore
               <td class="px-4 py-3 font-semibold text-olive-950">Inverter to Square D load center</td>
               <td class="px-4 py-3 text-amber-700 font-semibold">Needs electrician</td>
               <td class="px-4 py-3">Design the transfer path so there is no grid backfeed and only selected circuits move to the backed-up panel.</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">VEVOR 12V RV converter to battery bank</td>
-              <td class="px-4 py-3 text-red-700 font-semibold">No</td>
-              <td class="px-4 py-3">Do not use it to charge the 48V battery. Use inverter AC input or a proper 48V LiFePO4 charger.</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">58.4V 20A LiFePO4 charger to battery bank</td>
@@ -714,7 +704,6 @@ title: Will Prowse 2026 - Techmore
         <li><a href="https://www.amazon.com/gp/product/B0GJ5KLM1B/ref=ox_sc_act_title_2?smid=ACXRZOBKQSG34&th=1" class="underline decoration-olive-500 hover:text-olive-700">Amazon 450W bifacial 2-pack (Callsun Store)</a> for the 900W pair, N-Type 16BB / 25% efficiency / anti-shade dual-module specs, and the direct click path.</li>
         <li><a href="https://signaturesolar.com/integrarack-ir-30-ballastrack-solar-module-rack-1-fixed-leg/" class="underline decoration-olive-500 hover:text-olive-700">IntegraRack IR-30 BallastRack</a> and <a href="https://signaturesolar.com/integrarack-ir-earthscrew-mounting-kit-10-pack-30/?searchid=2312447&amp;search_query=mounts" class="underline decoration-olive-500 hover:text-olive-700">IR EarthScrews 10-pack</a> for the fixed 30-degree rack and ground-mount note.</li>
         <li><a href="https://www.amazon.com/Shirbly-Battery-Automotive-Generator-Standard/dp/B0DBHLBBJR/ref=sr_1_6?dib=eyJ2IjoiMSJ9.2HRaIBWopgCRp2JwiILgkRQbka7xZoMDZrcwnNrh7JfPXDD86TDXHOR1s5DnbdfbXdsw62EaNKpYhgzE1RTzf5LlnYiyhTn3cLzMRdfJcIcBdHFoWNa0v6oH5cJZyiGhnboeUZZXwmxT7IMA4dR97fzRz2I23JGiEbNTYfBACegMeQzWJCxuoz6T4G4L1H4Pzmhw7sIjRLkvth1sZpXu47gdwzsdXSKQU8yVjZeKbMs.itqvqE2Wu8pPjJ1Ia1edB7Th4sfnUZcE1WXpv8D7i54&dib_tag=se&keywords=96in%2B4%2F0%2BAWG%2BBattery%2Bto%2BInverter%2BCables%2B%7C%2BBlack%2Band%2BRed&nsdOptOutParam=true&qid=1781489057&sr=8-6&th=1" class="underline decoration-olive-500 hover:text-olive-700">Shirbly 4/0 AWG battery-to-inverter cables</a> for the $181.99 black/red cable pair.</li>
-        <li><a href="https://www.amazon.com/VEVOR-Converter-Charging-Operating-Compatible/dp/B0FX2DWJB1" class="underline decoration-olive-500 hover:text-olive-700">VEVOR RV converter / charger</a> for the 12V charger compatibility note; it is not suitable for directly charging the modeled 48V battery bank.</li>
         <li><a href="https://www.amazon.com/Over-Current-Over-Voltage-Protection-Phosphate-Batteries/dp/B0FWQZWCB1" class="underline decoration-olive-500 hover:text-olive-700">BROODAY 48V 20A LiFePO4 battery charger</a> for the possible 58.4V rescue grid/shore top-off charger note.</li>
         <li><a href="https://www.genmaxpower.com/item/genmax-gm2200i-2200-watt-gasoline-inverter-generator-with-co-detect" class="underline decoration-olive-500 hover:text-olive-700">GENMAX GM2200i product page</a> for 1800 running watts, 2200 starting watts, 120V 20A duplex outlet, and 1-gallon fuel tank specs.</li>
         <li><a href="https://www.genmaxpower.com/cdn/1429984513066467330/1540221165159768065.pdf" class="underline decoration-olive-500 hover:text-olive-700">GENMAX GM2200i user manual PDF</a> for operating, safety, maintenance, and storage documentation.</li>
