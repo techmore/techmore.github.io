@@ -401,6 +401,56 @@ title: Will Prowse 2026 - Techmore
     </div>
   </section>
 
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">System map</p>
+        <h2 class="mt-3 text-3xl text-olive-950">This is the wiring story in one view.</h2>
+        <p class="mt-4 text-olive-800 leading-7">
+          The cleaner MVP is PV into the inverter, inverter into a proper load center, and then breakers for the selected circuits. If we later want grid-top-off or utility assist, that belongs on the inverter's AC input or a licensed transfer design, not on a random RV converter.
+        </p>
+      </div>
+      <div class="rounded-lg border border-olive-400 bg-olive-950 p-5 overflow-x-auto">
+        <svg viewBox="0 0 920 300" width="100%" class="block max-w-full">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="oklch(85% 0.020 110)"></path>
+            </marker>
+          </defs>
+
+          <rect x="30" y="80" width="150" height="70" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="105" y="108" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="16" text-anchor="middle">PV array</text>
+          <text x="105" y="128" fill="oklch(82% 0.020 110)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">1x or 2x 900W pairs</text>
+
+          <rect x="235" y="60" width="185" height="110" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="327.5" y="102" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="16" text-anchor="middle">SunGoldPower inverter</text>
+          <text x="327.5" y="122" fill="oklch(82% 0.020 110)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">48V battery bank + 120/240V split phase</text>
+          <text x="327.5" y="140" fill="oklch(82% 0.020 110)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">AC input charging / utility assist</text>
+
+          <rect x="495" y="60" width="175" height="110" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="582.5" y="102" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="16" text-anchor="middle">Load center</text>
+          <text x="582.5" y="122" fill="oklch(82% 0.020 110)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Square D QO 125A</text>
+          <text x="582.5" y="140" fill="oklch(82% 0.020 110)" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">Selected circuits + transfer path</text>
+
+          <rect x="735" y="45" width="150" height="52" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="810" y="76" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">120V loads</text>
+
+          <rect x="735" y="118" width="150" height="52" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="810" y="149" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">240V branch</text>
+
+          <rect x="495" y="205" width="175" height="52" rx="10" fill="oklch(22% 0.022 110)" stroke="oklch(44% 0.040 110)" stroke-width="2"></rect>
+          <text x="582.5" y="236" fill="oklch(95% 0.010 110)" font-family="Inter, sans-serif" font-size="14" text-anchor="middle">Battery bank</text>
+
+          <line x1="180" y1="115" x2="235" y2="115" stroke="oklch(85% 0.020 110)" stroke-width="3" marker-end="url(#arrow)"></line>
+          <line x1="420" y1="115" x2="495" y2="115" stroke="oklch(85% 0.020 110)" stroke-width="3" marker-end="url(#arrow)"></line>
+          <line x1="670" y1="75" x2="735" y2="75" stroke="oklch(85% 0.020 110)" stroke-width="3" marker-end="url(#arrow)"></line>
+          <line x1="670" y1="148" x2="735" y2="148" stroke="oklch(85% 0.020 110)" stroke-width="3" marker-end="url(#arrow)"></line>
+          <line x1="327.5" y1="170" x2="327.5" y2="205" stroke="oklch(85% 0.020 110)" stroke-width="3" marker-end="url(#arrow)"></line>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
     <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
       <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Sources</p>
