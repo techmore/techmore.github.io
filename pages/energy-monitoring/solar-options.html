@@ -16,7 +16,7 @@ title: Solar Option Summary - Techmore
 
   <section class="border-y border-olive-200 bg-olive-950 text-olive-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div class="grid gap-4 md:grid-cols-4">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Bill baseline</p>
           <p class="mt-3 text-3xl font-semibold text-white">$692.47</p>
@@ -29,8 +29,8 @@ title: Solar Option Summary - Techmore
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Daily use</p>
-          <p class="mt-3 text-3xl font-semibold text-white">22.9 kWh/day</p>
-          <p class="mt-2 text-sm text-olive-200">Average from the new bill period.</p>
+          <p class="mt-3 text-3xl font-semibold text-white">30.3 kWh/day</p>
+          <p class="mt-2 text-sm text-olive-200">Average from the Mar 31–Apr 29 bill period.</p>
         </div>
         <div class="rounded-lg border border-olive-800 bg-olive-900/70 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Best fit</p>
@@ -81,20 +81,42 @@ title: Solar Option Summary - Techmore
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">4</td>
               <td class="px-4 py-3 font-semibold text-olive-950"><a href="/pages/energy-monitoring/jackery/" class="underline decoration-olive-500 hover:text-olive-700">Jackery 5000 Plus</a></td>
-              <td class="px-4 py-3">Great for portable testing and selected circuits, but the battery is too small for broad bill offset.</td>
+              <td class="px-4 py-3">Great for portable testing and selected circuits. Adding a <a href="/pages/energy-monitoring/jackery/" class="underline decoration-olive-500 hover:text-olive-700">Callsun 2-pack x2</a> ($1,400) doubles the offset to ~$562/yr with materially faster recharge.</td>
             </tr>
             <tr>
               <td class="px-4 py-3 font-semibold text-olive-950">5</td>
-              <td class="px-4 py-3 font-semibold text-olive-950"><a href="/pages/energy-monitoring/jackery/" class="underline decoration-olive-500 hover:text-olive-700">Callsun 2-pack x2 upgrade</a></td>
-              <td class="px-4 py-3">The best minimal upgrade beyond the MVP: 1.8 kW of panels, materially faster recharge, and still simple hardware.</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-olive-950">6</td>
               <td class="px-4 py-3 font-semibold text-olive-950"><a href="/pages/energy-monitoring/pecron/" class="underline decoration-olive-500 hover:text-olive-700">Pecron E3800LFP</a></td>
               <td class="px-4 py-3">Cheapest useful battery box, best value for outage support, least polished for whole-home use.</td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Choose EG4 if</p>
+          <p class="mt-2 text-sm text-olive-800 leading-6">You want real bill offset and can handle a ~$34k project with freight logistics.</p>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Choose Will Prowse if</p>
+          <p class="mt-2 text-sm text-olive-800 leading-6">You want a learning-first split-phase build with room to grow, at ~$4,889 base.</p>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Choose Anker if</p>
+          <p class="mt-2 text-sm text-olive-800 leading-6">Clean critical-circuit UX matters more than dollar efficiency. ~$4,000 target.</p>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Choose Jackery if</p>
+          <p class="mt-2 text-sm text-olive-800 leading-6">You need the safest test rig at $2,635. Add Callsun panels ($1,400) for real daytime recharge.</p>
+        </div>
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Choose Pecron if</p>
+          <p class="mt-2 text-sm text-olive-800 leading-6">Backup value per dollar is the priority. Lowest entry at $1,199, strong 4-panel ceiling.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -106,7 +128,7 @@ title: Solar Option Summary - Techmore
           <p class="font-mono text-xs tracking-widest uppercase text-olive-300">Decision dashboard</p>
           <h2 class="mt-3 text-3xl text-white">Cost, offset, runtime, and circuit fit in one view.</h2>
         </div>
-        <p class="max-w-xl text-sm text-olive-200">Use this table first. The individual pages explain why each row behaves this way.</p>
+        <p class="max-w-xl text-sm text-olive-200">Use this table first. The individual pages explain why each row behaves this way. Note: "Upfront" mixes project cost (EG4, includes labor) and hardware base (all others).</p>
       </div>
       <div class="mt-6 overflow-x-auto rounded-lg border border-olive-800 bg-olive-900/70">
         <table class="min-w-full text-left text-sm text-olive-100">
@@ -124,9 +146,9 @@ title: Solar Option Summary - Techmore
           <tbody class="divide-y divide-olive-800">
             <tr>
               <td class="px-3 py-3 font-semibold text-white"><a href="/pages/energy-monitoring/solar/" class="underline decoration-olive-500 hover:text-olive-200">EG4 offset</a></td>
-              <td class="px-3 py-3">~$30k+ project</td>
+              <td class="px-3 py-3">~$34k project</td>
               <td class="px-3 py-3">Financing TBD</td>
-              <td class="px-3 py-3">~$4,219</td>
+              <td class="px-3 py-3">~$3,500-$4,100</td>
               <td class="px-3 py-3">Battery-count dependent</td>
               <td class="px-3 py-3">Solar-first daily refill</td>
               <td class="px-3 py-3">Best whole-home architecture.</td>
@@ -147,16 +169,7 @@ title: Solar Option Summary - Techmore
               <td class="px-3 py-3">~$281</td>
               <td class="px-3 py-3">~21 hr battery-only, longer with sun</td>
               <td class="px-3 py-3">~1.2-3.0 solar days</td>
-              <td class="px-3 py-3">Best portable test rig for critical loads.</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-3 font-semibold text-white"><a href="/pages/energy-monitoring/jackery/" class="underline decoration-olive-500 hover:text-olive-200">Callsun x2 upgrade</a></td>
-              <td class="px-3 py-3">$1,400 panels</td>
-              <td class="px-3 py-3">~$117/mo</td>
-              <td class="px-3 py-3">~$562</td>
-              <td class="px-3 py-3">Improves daytime support only</td>
-              <td class="px-3 py-3">~0.6-1.5 Jackery days</td>
-              <td class="px-3 py-3">Worth it if panels are semi-permanent.</td>
+              <td class="px-3 py-3">Best portable test rig for critical loads. Add a <a href="/pages/energy-monitoring/jackery/" class="underline decoration-olive-500 hover:text-olive-200">Callsun 2-pack x2</a> ($1,400) for 1.8 kW panels — doubles offset to ~$562/yr.</td>
             </tr>
             <tr>
               <td class="px-3 py-3 font-semibold text-white"><a href="/pages/energy-monitoring/pecron/" class="underline decoration-olive-500 hover:text-olive-200">Pecron</a></td>
@@ -188,24 +201,17 @@ title: Solar Option Summary - Techmore
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Will Prowse</p>
-          <h3 class="mt-3 text-2xl text-olive-950">$4,989</h3>
+          <h3 class="mt-3 text-2xl text-olive-950">$4,889</h3>
           <p class="mt-2 text-sm text-olive-800 leading-6">DIY split-phase starter. Rough savings ceiling at the current bill rate is about $195/year from the 900W pair, or about $391/year if we double the panels. This is still mostly a resilience and learning purchase, just with better daytime headroom.</p>
           <p class="mt-3 text-sm text-olive-700">12mo flat: about $416/mo</p>
           <p class="mt-3 text-sm font-semibold text-olive-950">Payback: not really the point</p>
         </div>
         <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Jackery</p>
-          <h3 class="mt-3 text-2xl text-olive-950">$2,635</h3>
-          <p class="mt-2 text-sm text-olive-800 leading-6">Portable backup plus 900W of solar. Rough annual solar value from the array is about $281/year, but the real value is outage coverage and portability.</p>
-          <p class="mt-3 text-sm text-olive-700">12mo flat: about $220/mo</p>
-          <p class="mt-3 text-sm font-semibold text-olive-950">Payback: ~9 years on solar value alone</p>
-        </div>
-        <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
-          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Callsun x2</p>
-          <h3 class="mt-3 text-2xl text-olive-950">$1,400 panels</h3>
-          <p class="mt-2 text-sm text-olive-800 leading-6">Two 450W 2-packs: 1.8 kW total. This doubles the Jackery or Will Prowse starter array and is the first upgrade that clearly changes recharge behavior.</p>
-          <p class="mt-3 text-sm text-olive-700">Mount baseline: IR-30 frames + EarthScrews</p>
-          <p class="mt-3 text-sm font-semibold text-olive-950">Worth it if the array becomes semi-permanent</p>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Jackery + Callsun x2</p>
+          <h3 class="mt-3 text-2xl text-olive-950">$2,635 + $1,400</h3>
+          <p class="mt-2 text-sm text-olive-800 leading-6">Portable backup plus 900W of solar base ($2,635, ~$281/yr offset). Add the Callsun 2-pack x2 upgrade ($1,400, 1.8 kW total) to double the offset to ~$562/yr with materially faster recharge.</p>
+          <p class="mt-3 text-sm text-olive-700">Jackery 12mo flat: ~$220/mo. With x2 upgrade: ~$337/mo.</p>
+          <p class="mt-3 text-sm font-semibold text-olive-950">Best as a test rig; upgrade only if panels go semi-permanent</p>
         </div>
         <div class="rounded-lg border border-olive-400 bg-olive-100 p-5">
           <p class="font-mono text-xs tracking-widest uppercase text-olive-600">Pecron</p>
@@ -259,7 +265,7 @@ title: Solar Option Summary - Techmore
             <tr><td class="px-4 py-3 font-semibold text-olive-950">Will Prowse 2x pair</td><td class="px-4 py-3">~2,520 kWh</td><td class="px-4 py-3">~$562</td><td class="px-4 py-3">Better charging headroom with the same panel baseline.</td></tr>
             <tr><td class="px-4 py-3 font-semibold text-olive-950">Pecron four-panel mounted</td><td class="px-4 py-3">~2,200 kWh class</td><td class="px-4 py-3">~$490</td><td class="px-4 py-3">Best backup-energy value if mounted permanently.</td></tr>
             <tr><td class="px-4 py-3 font-semibold text-olive-950">Anker starter mounted array</td><td class="px-4 py-3">~1,800-3,200 kWh class</td><td class="px-4 py-3">~$401-$714</td><td class="px-4 py-3">Depends on panel count and whether you expand.</td></tr>
-            <tr><td class="px-4 py-3 font-semibold text-olive-950">EG4 full offset build</td><td class="px-4 py-3">~18,947 kWh class</td><td class="px-4 py-3">~$4,219</td><td class="px-4 py-3">Only one here that clearly chases the bill itself.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-olive-950">EG4 full offset build</td><td class="px-4 py-3">~18,947 kWh class</td><td class="px-4 py-3">~$3,500-$4,100</td><td class="px-4 py-3">Only one here that clearly chases the bill itself. See <a href="/pages/energy-monitoring/solar/" class="underline decoration-olive-500 hover:text-olive-700">solar offset page</a> for net savings breakdown.</td></tr>
           </tbody>
         </table>
       </div>
