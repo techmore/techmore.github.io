@@ -170,27 +170,79 @@ title: Pecron Backup Plan - Techmore
         </div>
         <div>
           <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Runtime</p>
-          <h2 class="mt-3 text-3xl text-olive-950">Realistic battery-only window</h2>
-          <div class="mt-5 space-y-3">
-            <div class="rounded-lg border border-olive-400 bg-olive-100 p-4">
-              <p class="font-semibold text-olive-950">Network only, 60W</p>
-              <p class="mt-1 text-sm text-olive-800">Roughly 105 hours DC-equivalent across two units, closer to 85-95 hours through AC loads and losses.</p>
-            </div>
-            <div class="rounded-lg border border-olive-400 bg-olive-100 p-4">
-              <p class="font-semibold text-olive-950">Fridge + network, 180W average</p>
-              <p class="mt-1 text-sm text-olive-800">Roughly 32-38 hours depending on fridge cycling and inverter loss.</p>
-            </div>
-            <div class="rounded-lg border border-olive-400 bg-olive-100 p-4">
-              <p class="font-semibold text-olive-950">Fridge + network + fan/lights, 250W average</p>
-              <p class="mt-1 text-sm text-olive-800">Roughly 26-28 hours battery-only. Solar can stretch this a lot during daylight.</p>
-            </div>
-            <div class="rounded-lg border border-olive-400 bg-olive-100 p-4">
-              <p class="font-semibold text-olive-950">Full critical set incl. radon + well, ~5.8 kWh/day</p>
-              <p class="mt-1 text-sm text-olive-800">Roughly 26-29 hours battery-only across both units. The 10-panel array covers the daily set by itself in all seasons, so the battery only carries the night.</p>
-            </div>
-            <div class="rounded-lg border border-olive-400 bg-olive-100 p-4">
-              <p class="font-semibold text-olive-950">Coffee maker</p>
-              <p class="mt-1 text-sm text-olive-800">Fine for short cycles. The issue is peak watts, not energy consumed per cup.</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Battery-only window, in hours.</h2>
+          <p class="mt-4 text-olive-800 leading-7">
+            Both units hold about 7,680 Wh nominal and roughly 6.5 kWh usable. Dividing that by the load draw gives the battery-only hours below. Solar shifts the real answer to "indefinite during the day."
+          </p>
+          <div class="mt-5 overflow-x-auto rounded-lg border border-olive-400 bg-olive-100">
+            <table class="w-full min-w-[560px] text-left text-sm">
+              <thead class="bg-olive-300 text-olive-950">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">Load set</th>
+                  <th class="px-4 py-3 font-semibold text-right">Avg draw</th>
+                  <th class="px-4 py-3 font-semibold text-right">Battery-only</th>
+                  <th class="px-4 py-3 font-semibold">Read</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-olive-300 text-olive-800">
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Network only</td>
+                  <td class="px-4 py-3 text-right">60W</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~90-100h</td>
+                  <td class="px-4 py-3">About 4 days.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Fridge + network</td>
+                  <td class="px-4 py-3 text-right">180W</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~32-38h</td>
+                  <td class="px-4 py-3">About 1.5 days.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Fridge + network + lights/fan</td>
+                  <td class="px-4 py-3 text-right">250W</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~24-28h</td>
+                  <td class="px-4 py-3">About a day.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Full critical set incl. radon + well</td>
+                  <td class="px-4 py-3 text-right">~240W (5.8 kWh/day)</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~26-29h</td>
+                  <td class="px-4 py-3">About 1.2 days; the 10-panel array covers the day, so the battery only carries the night.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Well pump (while running)</td>
+                  <td class="px-4 py-3 text-right">~280W</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~22-24h</td>
+                  <td class="px-4 py-3">It only runs ~15% of the day, so its real draw is 0.59 kWh/day.</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-olive-950">Jura brewing</td>
+                  <td class="px-4 py-3 text-right">~1,450W</td>
+                  <td class="px-4 py-3 text-right font-semibold text-olive-950">~4.5h</td>
+                  <td class="px-4 py-3">Continuous. A brew cycle is minutes, so the real cost per cup is tiny.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-5 overflow-x-auto rounded-lg border border-olive-400 bg-olive-100">
+            <table class="w-full min-w-[420px] text-left text-sm">
+              <thead class="bg-olive-300 text-olive-950">
+                <tr>
+                  <th class="px-4 py-3 font-semibold">1 kWh of stored energy runs...</th>
+                  <th class="px-4 py-3 font-semibold text-right">For about</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-olive-300 text-olive-800">
+                <tr><td class="px-4 py-3">An LED bulb (5W)</td><td class="px-4 py-3 text-right">200 hours</td></tr>
+                <tr><td class="px-4 py-3">A standing fan (30W)</td><td class="px-4 py-3 text-right">33 hours</td></tr>
+                <tr><td class="px-4 py-3">Network gear (60W)</td><td class="px-4 py-3 text-right">16 hours</td></tr>
+                <tr><td class="px-4 py-3">Fridge compressor average (~90W)</td><td class="px-4 py-3 text-right">11 hours</td></tr>
+                <tr><td class="px-4 py-3">Well pump running (~280W)</td><td class="px-4 py-3 text-right">3.5 hours</td></tr>
+                <tr><td class="px-4 py-3">Jura brew cycle (~1,450W)</td><td class="px-4 py-3 text-right">41 minutes</td></tr>
+              </tbody>
+            </table>
+            <div class="border-t border-olive-300 p-4 text-sm text-olive-700">
+              The 10-panel array makes ~8-19 kWh/day, so it can refill 1-3 of these "1 kWh" blocks per hour of good sun — the full critical set (~5.8 kWh/day) is a little over one sunny day's worth of array output.
             </div>
           </div>
         </div>
