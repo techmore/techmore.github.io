@@ -9,11 +9,6 @@ Generated from an AI working session on May 21, 2026.
   - Uses the Emporia Energy Monitor visual theme: olive/stone palette, Instrument Serif + Inter, compact cards, sticky pill nav.
   - Main goal: daytime solar offset, automatic grid fallback, zero/no intentional export, minimal starting battery.
 
-- `pages/delta-pro-3-issues.html`
-  - Standalone mobile-first HTML tab/page for portable power station comparison.
-  - Covers EcoFlow DELTA Pro 3 known issue areas and explains why it is oversized for the RV/camping load.
-  - Compares Anker C1000/C1000 Gen 2, Pecron F1000LFP/E1000LFP, Bluetti AC180, Jackery Explorer 1000 v2, and EcoFlow Delta 2/3 Plus.
-
 ## Solar Plan Data
 
 Emporia export source originally extracted at:
@@ -84,4 +79,3 @@ These files are currently standalone HTML pages. They can be integrated into the
 Suggested public paths after GitHub Pages deploy:
 
 - `/pages/eg4-solar-no-backfeed-plan.html`
-- `/pages/delta-pro-3-issues.html`
