@@ -1,2 +1,7 @@
 .DS_Store
 .claude/
+
+# Generated Jekyll output.
+_site/
+.jekyll-cache/
+.sass-cache/
