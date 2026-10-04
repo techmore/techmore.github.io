@@ -164,7 +164,7 @@
 .sb .chip { background:oklch(90.2% .0232 117.63); } .sb .badge.live { color:var(--green); background:oklch(93% .025 145); border-color:oklch(76% .05 145); }
 .sb .badge.plan { color:var(--amber); background:oklch(94% .028 75); border-color:oklch(77% .06 75); }
 .sb .frame { background:var(--ink); color:oklch(93% .02 110); border-radius:16px; overflow:hidden; border:1px solid var(--border); }
-.sb .frame img { width:100%; height:auto; display:block; } .sb .frame figcaption { padding:12px 16px; font-size:11px; color:oklch(84% .025 110); }
+.sb .frame video { width:100%; height:auto; display:block; } .sb .frame img { width:100%; height:auto; display:block; } .sb .frame figcaption { padding:12px 16px; font-size:11px; color:oklch(84% .025 110); }
 .sb figure { margin:0; } .sb .jump { display:flex; flex-wrap:wrap; gap:7px; padding:18px 0 30px; }
 .sb a { text-decoration:underline; text-underline-offset:3px; } .sb .jump a { padding:7px 13px; border:1px solid var(--border); border-radius:8px; background:oklch(90.2% .0232 117.63); text-decoration:none; font-size:12px; }
 .sb a:hover,.sb button:hover { filter:brightness(1.04); } .sb .section { padding:44px 0; border-top:1px solid var(--border); scroll-margin-top:76px; }
@@ -213,7 +213,7 @@
 <figure class="frame"><img src="https://techmore.github.io/assets/images/swarmbound/frontier.png" width="1440" height="810" alt="Actual Godot prototype: equipped ranger exploring the snowy outpost beside a habitat building and gated perimeter"><figcaption>Actual prototype capture · ranger, outpost, and gated perimeter. This world capture predates the latest rifle pass; the new rifle appears below.</figcaption></figure>
 </div>
 </section>
-<nav class="jump" aria-label="Field guide sections"><a href="#loop">Expedition loop</a><a href="#circles">Leveling</a><a href="#skills">Skill training</a><a href="#talents">Skill tree</a><a href="#abilities">Attacks &amp; controls</a><a href="#enemies">Enemies &amp; XP</a><a href="#gear">Equipment</a><a href="#roadmap">Build plan</a></nav>
+<nav class="jump" aria-label="Field guide sections"><a href="#loop">Expedition loop</a><a href="#motion">Ranger movement</a><a href="#circles">Leveling</a><a href="#skills">Skill training</a><a href="#talents">Skill tree</a><a href="#abilities">Attacks &amp; controls</a><a href="#enemies">Enemies &amp; XP</a><a href="#gear">Equipment</a><a href="#roadmap">Build plan</a></nav>
 <!-- ── LOOP ── -->
 <section id="loop" class="section">
 <div class="section-head"><div><p class="eyebrow">01 / The experience</p><h2>A cautious expedition, one contact at a time.</h2></div><span class="badge live">Playable foundation</span></div>
@@ -223,6 +223,15 @@
 <article class="card dark"><h3>Hunt beyond the gate</h3><p>Scout a creature, commit to a fight, then decide whether you can afford another. Return with salvage, field XP, and practiced skills.</p><p class="small muted">Target a 28–45 second opening encounter, with stronger fights demanding more decisions. This is a playtest target, not a measured live-fight guarantee.</p></article>
 </div>
 <div class="note"><strong>The tension:</strong> shooting costs stamina; moving reduces shot damage; sprinting stops fire. A reload is an opening for the creature. A second pull adds another lunge to read, rather than merely inflating the first creature’s health.</div>
+</section>
+<!-- ── RANGER MOVEMENT ── -->
+<section id="motion" class="section">
+<div class="section-head"><div><p class="eyebrow">Ranger / Heavy human movement pass</p><h2>Weight in the armor. A person underneath.</h2><p>The movement pass adds knee compression, planted stance phases, hip and chest counter-motion, supported rifle grips, and smoother acceleration and turns. While targeting, the ranger sidesteps or backpedals while facing the contact; sprint turns into the direction of travel.</p></div><span class="badge live">Implemented · 12 animation clips</span></div>
+<figure class="frame"><video controls loop muted playsinline preload="metadata" poster="https://techmore.github.io/assets/images/swarmbound/movement-world.png" aria-label="Actual Godot ranger movement: jog, aimed sidestep and sprint"><source src="https://techmore.github.io/assets/images/swarmbound/ranger-gameplay.mp4" type="video/mp4">Your browser cannot play this video. <a href="https://techmore.github.io/assets/images/swarmbound/ranger-gameplay.mp4">Download the movement preview</a>.</video><figcaption>Actual Godot gameplay model and movement controller · scripted input, with enemies held still for the movement demonstration. Jog → aimed sidestep → sprint. This is native game footage.</figcaption></figure>
+<div class="grid two mt-6">
+<figure class="frame"><video controls loop muted playsinline preload="metadata" poster="https://techmore.github.io/assets/images/swarmbound/movement-run.png" aria-label="Authored ranger run animation"><source src="https://techmore.github.io/assets/images/swarmbound/ranger-run.mp4" type="video/mp4"></video><figcaption>Run cycle · actual imported model in Godot’s asset studio, at the authored playback rate. In-game playback scales with movement speed.</figcaption></figure>
+<figure class="frame"><video controls loop muted playsinline preload="metadata" poster="https://techmore.github.io/assets/images/swarmbound/movement-strafe.png" aria-label="Authored ranger sidestep animation"><source src="https://techmore.github.io/assets/images/swarmbound/ranger-strafe.mp4" type="video/mp4"></video><figcaption>Aimed sidestep · wider stance, lifted recovery foot, torso stabilization and rifle support. Same model and clip used by the game.</figcaption></figure>
+</div><div class="note">This refines the existing rig and controller. It is still a prototype: foot placement is baked for flat ground; terrain-adaptive IK, motion-captured pivots, production skin deformation and polished additive action blending remain future work.</div>
 </section>
 <!-- ── CIRCLES ── -->
 <section id="circles" class="section">
@@ -277,7 +286,7 @@
 <tr><td>Melee</td><td>Q or 2 / R1</td><td>10 stamina · 1.5 s cooldown</td><td>2.8 m range; shared creature weapon-training budget</td></tr>
 <tr><td>Reload</td><td>R / Square away from interactables</td><td>2.2 s</td><td>Holding fire starts reload when empty; reserve ammunition is unlimited in this slice</td></tr>
 <tr><td>Field patch</td><td>F or 3 / Triangle</td><td>20 stamina · 18 s cooldown</td><td>Restore 35 health</td></tr>
-<tr><td>Sprint</td><td>Shift / L3</td><td>16 stamina per second</td><td>8 m/s vs 4.6 m/s walking; blocks firing</td></tr>
+<tr><td>Sprint</td><td>Shift / L3</td><td>16 stamina per second</td><td>6.4 m/s sprint vs 4 m/s jog; blocks firing. Aimed sidestep 2.4 m/s; backpedal 1.8 m/s.</td></tr>
 <tr><td>Target / inspect ranks</td><td>Tab / L1 · C / touchpad</td><td>No resource cost</td><td>Cycle target / open progression. Backspace or Circle clears target.</td></tr>
 <tr><td>Interact</td><td>E / Square</td><td>Context dependent</td><td>Power, wreck recovery, armory, Command</td></tr>
 </tbody></table></div>
