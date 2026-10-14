@@ -1,0 +1,4 @@
+#!/bin/bash
+# Short link for the elementary OS (M-series) installer:
+#   curl -L techmore.github.io/e-setup|bash
+exec bash -c 'curl -fsSL https://raw.githubusercontent.com/techmore/ElementaryOS_MSeries/main/bin/elementary-mac-setup | bash'
