@@ -529,6 +529,123 @@ title: Solar Offset - Techmore
     </div>
   </section>
 
+  <!-- Payback calculator -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Calculator</p>
+          <h2 class="mt-3 text-3xl text-olive-950">Solar offset and payback</h2>
+        </div>
+        <p class="max-w-xl text-sm text-olive-700">Defaults come from the model above: 19.8 kW DC, 18,947 kWh/year, 22,083 kWh/year of measured use, and the $33.6k-$35.6k planning total. Change any input to test your own case.</p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" data-preset="conservative" class="rounded-lg border border-olive-400 bg-olive-100 px-3 py-2 text-sm font-semibold text-olive-950 hover:bg-olive-50 transition-colors">Conservative case</button>
+        <button type="button" data-preset="midpoint" class="rounded-lg border border-olive-400 bg-olive-100 px-3 py-2 text-sm font-semibold text-olive-950 hover:bg-olive-50 transition-colors">Planning midpoint</button>
+        <button type="button" data-preset="optimistic" class="rounded-lg border border-olive-400 bg-olive-100 px-3 py-2 text-sm font-semibold text-olive-950 hover:bg-olive-50 transition-colors">Optimistic case</button>
+      </div>
+
+      <div class="mt-6 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <form id="sc-form" class="grid gap-4 sm:grid-cols-2 rounded-lg border border-olive-400 bg-olive-200 p-5 content-start" onsubmit="return false">
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Array size (kW DC)</span>
+            <input id="sc-kw" type="number" inputmode="decimal" min="0" step="0.1" value="19.8" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Yield (kWh/kW/yr)</span>
+            <input id="sc-yield" type="number" inputmode="decimal" min="0" step="1" value="956.9" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Annual use (kWh)</span>
+            <input id="sc-use" type="number" inputmode="decimal" min="0" step="100" value="22083" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Practical capture (%)</span>
+            <input id="sc-capture" type="number" inputmode="decimal" min="0" max="100" step="1" value="88" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Avoidable rate ($/kWh)</span>
+            <input id="sc-rate" type="number" inputmode="decimal" min="0" step="0.001" value="0.200" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Rate escalation (%/yr)</span>
+            <input id="sc-escalation" type="number" inputmode="decimal" min="0" max="20" step="0.1" value="2.5" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Installed cost ($)</span>
+            <input id="sc-cost" type="number" inputmode="decimal" min="0" step="100" value="34600.75" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Incentives ($)</span>
+            <input id="sc-incentive" type="number" inputmode="decimal" min="0" step="100" value="0" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Panel degradation (%/yr)</span>
+            <input id="sc-degradation" type="number" inputmode="decimal" min="0" max="5" step="0.1" value="0.5" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <label class="block">
+            <span class="font-mono text-xs tracking-widest uppercase text-olive-500">Horizon (years)</span>
+            <input id="sc-years" type="number" inputmode="numeric" min="1" max="40" step="1" value="25" class="mt-2 w-full rounded-lg border border-olive-400 bg-olive-50 px-3 py-2 text-sm text-olive-950 focus:outline-none focus:ring-2 focus:ring-olive-600">
+          </label>
+          <p class="sm:col-span-2 text-xs text-olive-700 leading-5">Capture is the share of production that offsets real use (the rest clips, spills, or arrives when batteries are full). Yield defaults to the model's 18,947 kWh/year across 19.8 kW. Offset is capped at annual use. Incentives are left at $0 because eligibility is not assumed.</p>
+        </form>
+
+        <div>
+          <dl class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Annual production</dt>
+              <dd id="sc-production" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Offset of annual use</dt>
+              <dd id="sc-offset" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Year-1 savings</dt>
+              <dd id="sc-savings" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Simple payback</dt>
+              <dd id="sc-simple" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Payback with escalation</dt>
+              <dd id="sc-payback" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+            <div class="rounded-lg border border-olive-400 bg-olive-200 p-5">
+              <dt class="font-mono text-xs tracking-widest uppercase text-olive-500">Net after horizon</dt>
+              <dd id="sc-net" class="mt-2 text-2xl font-semibold text-olive-950">-</dd>
+            </div>
+          </dl>
+          <p id="sc-status" class="mt-4 text-sm text-olive-700" role="status"></p>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-lg border border-olive-400 bg-olive-200 p-5">
+        <p class="font-mono text-xs tracking-widest uppercase text-olive-500">Cumulative net cash</p>
+        <canvas id="sc-chart" class="mt-4 w-full h-72 sm:h-80 rounded-lg bg-olive-50" role="img" aria-label="Line chart of cumulative net cash by year, crossing zero at the payback year."></canvas>
+        <details class="mt-4 text-sm text-olive-800">
+          <summary class="cursor-pointer font-semibold text-olive-950">Year-by-year table</summary>
+          <div class="mt-3 max-h-80 overflow-auto rounded-lg border border-olive-400">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-olive-300 text-olive-950">
+                <tr>
+                  <th class="px-4 py-2 font-semibold">Year</th>
+                  <th class="px-4 py-2 font-semibold text-right">Offset kWh</th>
+                  <th class="px-4 py-2 font-semibold text-right">Rate</th>
+                  <th class="px-4 py-2 font-semibold text-right">Savings</th>
+                  <th class="px-4 py-2 font-semibold text-right">Cumulative net</th>
+                </tr>
+              </thead>
+              <tbody id="sc-rows" class="divide-y divide-olive-300 bg-olive-100"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-olive-200/70 border-y border-olive-400">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="max-w-3xl">
@@ -681,5 +798,242 @@ title: Solar Offset - Techmore
       </div>
     </div>
   </section>
+
+  <script>
+    var SC_FIELDS = {
+      kw: 'sc-kw', yieldKwh: 'sc-yield', use: 'sc-use', capture: 'sc-capture',
+      rate: 'sc-rate', escalation: 'sc-escalation', cost: 'sc-cost',
+      incentive: 'sc-incentive', degradation: 'sc-degradation', years: 'sc-years'
+    };
+    var SC_DEFAULTS = {
+      kw: 19.8, yieldKwh: 956.9, use: 22083, capture: 88, rate: 0.2,
+      escalation: 2.5, cost: 34600.75, incentive: 0, degradation: 0.5, years: 25
+    };
+    var SC_PRESETS = {
+      conservative: { capture: 80, rate: 0.184, cost: 35600.75, escalation: 0, degradation: 0 },
+      midpoint: { capture: 88, rate: 0.2, cost: 34600.75, escalation: 2.5, degradation: 0.5 },
+      optimistic: { capture: 95, rate: 0.217, cost: 33600.75, escalation: 0, degradation: 0 }
+    };
+    var scChart = null;
+
+    // Pure model: no DOM access, so it can be checked on its own.
+    function solarModel(p) {
+      var outlay = Math.max(p.cost - p.incentive, 0);
+      var prod1 = p.kw * p.yieldKwh;
+      var rows = [];
+      var cum = -outlay;
+      var payback = null;
+      var y, prod, used, rate, sav, prev;
+      for (y = 1; y <= p.years; y++) {
+        prod = prod1 * Math.pow(1 - p.degradation / 100, y - 1);
+        used = Math.min(prod * p.capture / 100, p.use);
+        rate = p.rate * Math.pow(1 + p.escalation / 100, y - 1);
+        sav = used * rate;
+        prev = cum;
+        cum += sav;
+        if (payback === null && cum >= 0 && sav > 0) {
+          payback = (y - 1) + (-prev / sav);
+        }
+        rows.push({ year: y, kwh: used, rate: rate, savings: sav, cumulative: cum });
+      }
+      if (payback === null && outlay === 0) { payback = 0; }
+      var used1 = rows.length ? rows[0].kwh : 0;
+      var sav1 = rows.length ? rows[0].savings : 0;
+      return {
+        outlay: outlay,
+        production: prod1,
+        offsetKwh: used1,
+        offsetPct: p.use > 0 ? used1 / p.use * 100 : 0,
+        savings1: sav1,
+        simplePayback: outlay === 0 ? 0 : (sav1 > 0 ? outlay / sav1 : null),
+        payback: payback,
+        net: rows.length ? rows[rows.length - 1].cumulative : -outlay,
+        rows: rows
+      };
+    }
+
+    function scReadInputs() {
+      var p = {};
+      var k, el, v;
+      for (k in SC_FIELDS) {
+        el = document.getElementById(SC_FIELDS[k]);
+        v = parseFloat(el.value);
+        if (!isFinite(v) || v < 0) { v = (el.value === '') ? 0 : SC_DEFAULTS[k]; }
+        p[k] = v;
+      }
+      p.capture = Math.min(p.capture, 100);
+      p.degradation = Math.min(p.degradation, 5);
+      p.escalation = Math.min(p.escalation, 20);
+      p.years = Math.max(1, Math.min(40, Math.round(p.years)));
+      return p;
+    }
+
+    function scMoney(n, cents) {
+      var sign = n < 0 ? '-' : '';
+      return sign + '$' + Math.abs(n).toLocaleString('en-US', {
+        minimumFractionDigits: cents ? 2 : 0,
+        maximumFractionDigits: cents ? 2 : 0
+      });
+    }
+
+    function scYears(v, horizon) {
+      if (v === null) { return 'Beyond ' + horizon + ' years'; }
+      return v.toFixed(1) + ' years';
+    }
+
+    function scSetText(id, text) {
+      document.getElementById(id).textContent = text;
+    }
+
+    function scDrawChart(m, p) {
+      var canvas = document.getElementById('sc-chart');
+      var dpr = window.devicePixelRatio || 1;
+      var w = canvas.clientWidth;
+      var h = canvas.clientHeight;
+      if (!w || !h) { return; }
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      var ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+
+      var ink = 'oklch(24% 0.0185 117)';
+      var muted = 'oklch(46% 0.049 117)';
+      var grid = 'oklch(90% 0.023 118)';
+      var line = 'oklch(45% 0.090 145)';
+      var neg = 'oklch(45% 0.160 25)';
+      var small = Math.min(w, 360) < 360;
+      var padL = small ? 52 : 64, padR = 16, padT = 16, padB = 44;
+      var pw = w - padL - padR, ph = h - padT - padB;
+
+      var pts = [{ year: 0, cumulative: -m.outlay }].concat(m.rows);
+      var lo = Math.min(0, -m.outlay), hi = 0, i;
+      for (i = 0; i < pts.length; i++) {
+        if (pts[i].cumulative > hi) { hi = pts[i].cumulative; }
+        if (pts[i].cumulative < lo) { lo = pts[i].cumulative; }
+      }
+      // Round the axis to a tidy step.
+      var span = (hi - lo) || 1;
+      var rough = span / 5;
+      var mag = Math.pow(10, Math.floor(Math.log(rough) / Math.LN10));
+      var step = [1, 2, 5, 10].filter(function (s) { return s * mag >= rough; })[0] * mag;
+      var yMin = Math.floor(lo / step) * step;
+      var yMax = Math.ceil(hi / step) * step;
+      if (yMax === yMin) { yMax = yMin + step; }
+
+      function X(year) { return padL + (p.years > 0 ? year / p.years : 0) * pw; }
+      function Y(val) { return padT + (1 - (val - yMin) / (yMax - yMin)) * ph; }
+
+      ctx.font = '11px Inter, system-ui, sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'right';
+      var v;
+      for (v = yMin; v <= yMax + step / 2; v += step) {
+        ctx.strokeStyle = (Math.abs(v) < step / 2) ? muted : grid;
+        ctx.lineWidth = (Math.abs(v) < step / 2) ? 1.5 : 1;
+        ctx.beginPath();
+        ctx.moveTo(padL, Y(v));
+        ctx.lineTo(w - padR, Y(v));
+        ctx.stroke();
+        ctx.fillStyle = muted;
+        ctx.fillText(Math.abs(v) >= 1000 ? scMoney(v / 1000, false) + 'k' : scMoney(v, false), padL - 8, Y(v));
+      }
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      var xs = p.years <= 12 ? 1 : (p.years <= 30 ? 5 : 10);
+      var yr;
+      for (yr = 0; yr <= p.years; yr += xs) {
+        ctx.fillStyle = muted;
+        ctx.fillText(String(yr), X(yr), h - padB + 8);
+      }
+      ctx.fillText('Years', padL + pw / 2, h - 18);
+
+      // Cumulative line; segments below zero are red, above zero green.
+      ctx.lineWidth = 2.5;
+      ctx.lineJoin = 'round';
+      for (i = 1; i < pts.length; i++) {
+        ctx.strokeStyle = (pts[i].cumulative >= 0 && pts[i - 1].cumulative >= 0) ? line : (pts[i].cumulative < 0 && pts[i - 1].cumulative < 0 ? neg : line);
+        ctx.beginPath();
+        ctx.moveTo(X(pts[i - 1].year), Y(pts[i - 1].cumulative));
+        ctx.lineTo(X(pts[i].year), Y(pts[i].cumulative));
+        ctx.stroke();
+      }
+
+      if (m.payback !== null && m.payback > 0) {
+        var px = X(m.payback), py = Y(0);
+        ctx.fillStyle = ink;
+        ctx.beginPath();
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.textBaseline = 'top';
+        ctx.textAlign = px > w - 90 ? 'right' : 'left';
+        ctx.fillText('Payback ' + m.payback.toFixed(1) + ' yr', px + (px > w - 90 ? -8 : 8), py + 8);
+      }
+    }
+
+    function scRender() {
+      var p = scReadInputs();
+      var m = solarModel(p);
+      scSetText('sc-production', Math.round(m.production).toLocaleString('en-US') + ' kWh');
+      scSetText('sc-offset', m.offsetPct.toFixed(0) + '% (' + Math.round(m.offsetKwh).toLocaleString('en-US') + ' kWh)');
+      scSetText('sc-savings', scMoney(m.savings1, false) + '/year');
+      scSetText('sc-simple', m.simplePayback === null ? 'Never' : m.simplePayback.toFixed(1) + ' years');
+      scSetText('sc-payback', scYears(m.payback, p.years));
+      scSetText('sc-net', scMoney(m.net, false));
+
+      var status;
+      if (m.payback === null) {
+        status = 'Does not pay back within ' + p.years + ' years at these inputs. Net outlay is ' + scMoney(m.outlay, false) + '.';
+      } else {
+        status = 'Net outlay ' + scMoney(m.outlay, false) + ' is recovered about ' + m.payback.toFixed(1) + ' years in once rate escalation and panel degradation are applied. Savings do not include financing, maintenance, battery replacement, or inverter replacement.';
+      }
+      if (m.production * p.capture / 100 > p.use) {
+        status += ' Captured production exceeds annual use, so offset is capped at 100% of use and the extra is not credited.';
+      }
+      scSetText('sc-status', status);
+      document.getElementById('sc-chart').setAttribute('aria-label', 'Line chart of cumulative net cash over ' + p.years + ' years, from ' + scMoney(-m.outlay, false) + ' to ' + scMoney(m.net, false) + '. ' + (m.payback === null ? 'No payback inside the horizon.' : 'Payback at about ' + m.payback.toFixed(1) + ' years.'));
+
+      var html = '';
+      var i, r;
+      for (i = 0; i < m.rows.length; i++) {
+        r = m.rows[i];
+        html += '<tr><td class="px-4 py-2 font-semibold text-olive-950">' + r.year + '</td>' +
+          '<td class="px-4 py-2 text-right">' + Math.round(r.kwh).toLocaleString('en-US') + '</td>' +
+          '<td class="px-4 py-2 text-right">$' + r.rate.toFixed(3) + '</td>' +
+          '<td class="px-4 py-2 text-right">' + scMoney(r.savings, false) + '</td>' +
+          '<td class="px-4 py-2 text-right font-semibold text-olive-950">' + scMoney(r.cumulative, false) + '</td></tr>';
+      }
+      document.getElementById('sc-rows').innerHTML = html;
+      scChart = { m: m, p: p };
+      scDrawChart(m, p);
+    }
+
+    function scApplyPreset(name) {
+      var set = {};
+      var k;
+      for (k in SC_DEFAULTS) { set[k] = SC_DEFAULTS[k]; }
+      for (k in SC_PRESETS[name]) { set[k] = SC_PRESETS[name][k]; }
+      for (k in SC_FIELDS) { document.getElementById(SC_FIELDS[k]).value = set[k]; }
+      scRender();
+    }
+
+    (function () {
+      var k, i;
+      var btns = document.querySelectorAll('[data-preset]');
+      for (k in SC_FIELDS) {
+        document.getElementById(SC_FIELDS[k]).addEventListener('input', scRender);
+      }
+      for (i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+          scApplyPreset(this.getAttribute('data-preset'));
+        });
+      }
+      window.addEventListener('resize', function () {
+        if (scChart) { scDrawChart(scChart.m, scChart.p); }
+      });
+      scRender();
+    })();
+  </script>
 
 </main>
