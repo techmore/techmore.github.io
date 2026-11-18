@@ -14,7 +14,7 @@ conventions for agentic coding agents working in this codebase.
 | Custom color scale | `olive` palette, OKLCH hue 110, steps 50–950 |
 | Fonts | Inter (body/UI), Instrument Serif (display headings) |
 | JavaScript | Vanilla only, inline `<script>` tags |
-| Deployment | `refresh.sh` — Linux server only, do not run locally |
+| Deployment | GitHub Pages, built from the `master` branch on push |
 
 ---
 
@@ -34,8 +34,9 @@ jekyll build
 There are **no tests, no lint tools, no CI, no package.json, no Makefile**.
 Do not create any of these unless explicitly asked.
 
-`refresh.sh` is a server-side deployment script that destroys local files.
-Never run it in the working directory.
+The site deploys through GitHub Pages from `master`; a merge to `master`
+triggers the build. `refresh.sh` is a legacy server-side script that destroys
+local files. Never run it in the working directory.
 
 ---
 
@@ -47,14 +48,28 @@ _includes/nav.html        # Sticky nav — olive-950 bg, hover dropdowns
 _includes/footer.html     # Footer + </body></html>
 _layouts/default.html     # Wraps: head → nav → {{ content }} → footer
 _config.yml               # title, permalink: pretty, markdown: kramdown
+_includes/card-filter-script.html # Shared search + filter-pill script for card grids
 index.html                # Main F.I.R.E. blog page
-energy-monitoring.html    # HVAC project hub — project overview + guide cards
-phase1_erv_guide.html     # Phase 1 ERV guide — Jekyll layout + inline CSS
-phase2_heatpump_guide.html# Phase 2 heat pump guide — Jekyll layout + inline CSS
-energy-monitoring/solar.html # Interactive solar payback calculator
-books.html                # Main reading list / book notes
-modern-western.html       # Modern Western reading pathway
+pages/index.html          # Site Index — filterable card grid, incl. sister sites
+pages/repos.html          # Projects grouped by area, links to live sister sites
+pages/energy-monitoring.html      # HVAC project hub — project overview + guide cards
+pages/energy-monitoring/          # solar, solar-options, hvac, pecron, anker, jackery, will-prowse-2026
+pages/phase1_erv_guide.html       # Phase 1 ERV guide — Jekyll layout + inline CSS
+pages/phase2_heatpump_guide.html  # Phase 2 heat pump guide — Jekyll layout + inline CSS
+pages/phase3_visual_dashboard.html# Phase 3 monitoring dashboard guide
+pages/books.html          # Main reading list / book notes
+pages/western-classics.html       # Western Classics reading list
+pages/modern-western.html # Modern Western reading pathway
+pages/unifi-*.html        # UniFi network project and comparisons
+pages/misc/taxes.html     # PA tax notes
+pages/*.html              # Other topic pages (e-cars, guitar, dnd, writingprompts, ...)
+assets/                   # downloads, emporia-data, images, videos
+legacy/                   # 2017-2018 archive pages — leave as is
+e-setup                   # Live curl short link — do not delete
+refresh.sh, july-2017.sh  # Legacy scripts — do not run
 ```
+
+Everything under `pages/` is served at `/pages/<name>/`.
 
 Pages using `layout: default` get the site nav and footer automatically.
 Guide pages (`phase1_erv_guide.html`, `phase2_heatpump_guide.html`) include a
@@ -78,7 +93,7 @@ title: Page Title - Techmore
 - No `permalink`, `date`, `description`, `tags`, or other keys
 
 `_config.yml` uses `permalink: pretty` so pages are served at `/page-name/`
-(directory-style URLs). Nav links must match: `/energy-monitoring/`, `/energy-monitoring/solar/`, etc.
+(directory-style URLs). Nav links must match: `/pages/energy-monitoring/`, `/pages/energy-monitoring/solar/`, etc.
 
 ---
 
@@ -252,6 +267,6 @@ are inline `<script>` tags at the bottom of the page body, before `</main>`:
 - Add a Gemfile, package.json, or any build tooling unless explicitly asked
 - Use `const`/`let` if adding JS — use `var` to match existing style
 - Add front matter keys beyond `layout` and `title`
-- Run `refresh.sh` locally — it is a destructive server deployment script
+- Run `refresh.sh` locally — it is a destructive legacy server script; deploys go through GitHub Pages
 - Use hex colors (`#ffffff`) — use `oklch()` or Tailwind `olive-*` classes
 - Use Google Fonts families other than Inter and Instrument Serif in new pages

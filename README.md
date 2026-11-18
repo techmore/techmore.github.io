@@ -11,7 +11,7 @@ Techmore is a personal technical notebook and project hub for F.I.R.E., home ene
 - [Solar offset calculator](https://techmore.github.io/pages/energy-monitoring/solar/): quick production and payback estimates
 - [Will Prowse 2026 model](https://techmore.github.io/pages/energy-monitoring/will-prowse-2026/): battery, inverter, panel, runtime, and rescue-charging model
 - [Pecron backup plan](https://techmore.github.io/pages/energy-monitoring/pecron/): a separate portable-storage and critical-load path
-- [Repo directory](https://techmore.github.io/pages/repos/): other public Techmore projects
+- [Repo directory](https://techmore.github.io/pages/repos/): public Techmore projects grouped by area, with links to live sister sites
 
 ## What Is In This Repo
 
@@ -46,7 +46,8 @@ Local development runs at `http://localhost:4000`.
 
 ## Important Notes
 
-- Do not run `refresh.sh` locally. It is a server-side deployment script that can destroy local files.
+- The site deploys through GitHub Pages from the `master` branch.
+- Do not run `refresh.sh` locally. It is a legacy server-side script that can destroy local files.
 - Generated Jekyll output belongs in `_site/` and is ignored by Git.
 - Pages use only this front matter shape:
 
@@ -65,11 +66,17 @@ title: Page Title - Techmore
 - `_layouts/default.html`: default page shell
 - `_config.yml`: Jekyll configuration
 - `index.html`: home page and F.I.R.E. feed
+- `pages/index.html`: Site Index, a filterable card grid that includes the sister sites
+- `pages/repos.html`: projects grouped by area, with links to live sister sites
 - `pages/energy-monitoring.html`: energy hub
 - `pages/energy-monitoring/`: solar, battery, and energy-system detail pages
 - `pages/phase1_erv_guide.html`: ERV guide
 - `pages/phase2_heatpump_guide.html`: heat-pump guide
 - `pages/books.html`: books landing page
+- `pages/western-classics.html`, `pages/modern-western.html`: reading pathways
+- `pages/unifi-*.html`: network project and comparisons
+- `assets/`: downloads, Emporia data, images, and videos
+- `legacy/`: 2017-2018 archive pages
 
 ## Conventions
 
